@@ -1,0 +1,17 @@
+/*
+Theme Name: ZEN Central
+Theme URI: https://zencentralapartments.com/
+Author: InfoStudio Hungary
+Author URI: https://infostudio.hu
+Description: Ultramodern, villámgyors téma a ZEN Central Apartments számára. 10 megjelenési forma, világos/sötét mód, minden szöveg, kép és videó adminból állítható (a ZEN Core pluginnal). Rank Math, Site Kit és Cloudflare kompatibilis.
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.9
+Requires PHP: 8.0
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: zen-central
+Tags: one-column, custom-colors, custom-logo, translation-ready, accessibility-ready
+*/
+
+/* A teljes stílus: assets/css/zen.css (egyetlen, gyorsítótárazható fájl). */

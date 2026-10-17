@@ -1,0 +1,1011 @@
+{
+  "lang": "sl",
+  "snippets": {
+    "cta": {
+      "type": "cta",
+      "style": {
+        "bg": "U/ZEN_Central_Lotus_feher.webp",
+        "tone": "accent",
+        "pad": "l"
+      },
+      "data": {
+        "title": "Zahtevajte ponudbo in rezervirajte neposredno!",
+        "lines": [
+          "Proste termine in ponudbo zahtevajte hitro in preprosto."
+        ],
+        "buttons": [
+          {
+            "label": "Preverite razpoložljivost in rezervirajte",
+            "url": "{page:booking}",
+            "style": "primary"
+          }
+        ]
+      }
+    },
+    "cta2": {
+      "type": "cta",
+      "style": {
+        "bg": "U/ZEN_Central_Lotus_feher.webp",
+        "tone": "accent",
+        "pad": "l"
+      },
+      "data": {
+        "title": "Zahtevajte ponudbo in rezervirajte neposredno pri nas!",
+        "lines": [
+          "Preverite razpoložljivost in zahtevajte ponudbo hitro in preprosto!"
+        ],
+        "buttons": [
+          {
+            "label": "Preverite razpoložljivost in rezervirajte",
+            "url": "{page:booking}",
+            "style": "primary"
+          }
+        ]
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "style": {
+        "tone": "auto",
+        "pad": "l",
+        "anchor": "faq"
+      },
+      "data": {
+        "title": "Pogosta vprašanja",
+        "groups": [
+          {
+            "title": "Rezervacija in kontakt",
+            "items": [
+              {
+                "q": "Kako lahko rezerviram apartma?",
+                "a": "<p>Rezervirate lahko na <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> ali po telefonu na številki <b>+36 20 971 7556</b>.</p>"
+              },
+              {
+                "q": "Ali moram plačati predplačilo?",
+                "a": "<p>Da, predplačilo znaša 50 % skupnega zneska. Pri rezervacijah prek nekaterih partnerskih portalov se celoten znesek plača vnaprej.</p>"
+              },
+              {
+                "q": "Kako lahko odpovem rezervacijo?",
+                "a": "<p>Pri neposrednih rezervacijah (spletna stran, e-pošta) je odpoved brezplačna do <b>15 dni</b> pred prihodom, vplačani znesek pa vam vrnemo.<br>Pri odpovedi v zadnjih 15 dneh zaračunamo <b>50 %</b> cene nastanitve, v primeru neprihoda pa <b>100 %</b> kot odpovednino. Odpoved nam prosimo pošljite po e-pošti: <b>zencentralapartments@gmail.com</b></p>"
+              }
+            ]
+          },
+          {
+            "title": "Prihod in odhod",
+            "items": [
+              {
+                "q": "Kdaj je prijava in odjava?",
+                "a": "<p>Apartma vas pričaka od <b>14:00</b>, na dan odhoda pa vas prosimo, da ga zapustite do <b>10:00</b>. Zgodnejši prihod ali poznejši odhod je mogoč po predhodnem dogovoru, glede na zasedenost in za doplačilo.</p>"
+              },
+              {
+                "q": "Prispemo zelo pozno – kako pridemo noter?",
+                "a": "<p>Prijava je samostojna s sefom za ključe, zato pozen prihod ni nobena težava.</p>"
+              }
+            ]
+          },
+          {
+            "title": "Plačilo in računi",
+            "items": [
+              {
+                "q": "Kdaj moram plačati?",
+                "a": "<p>Preostanek zneska po predplačilu poravnate ob prihodu.</p>"
+              },
+              {
+                "q": "Katere načine plačila sprejemate?",
+                "a": "<ul><li>Gotovina ali bančno nakazilo (pri neposrednih rezervacijah)</li><li>Bančna kartica (MasterCard, Maestro, VISA, VISA Electron) – samo prek spleta, pri rezervacijah na spletni strani ali partnerskih portalih</li><li>Kartice SZÉP trenutno ne sprejemamo</li></ul>"
+              },
+              {
+                "q": "Ali cene vključujejo DDV in turistično takso?",
+                "a": "<p>Cene vključujejo DDV, ne pa turistične takse. Turistična taksa znaša 500 HUF / oseba / noč (starejši od 18 let).</p>"
+              }
+            ]
+          },
+          {
+            "title": "Storitve in oprema",
+            "items": [
+              {
+                "q": "Kaj je vključeno v ceno?",
+                "a": "<p>Cena vključuje nastanitev brez obrokov in poleg tega:</p><ul><li>brezplačen WiFi v celotnem apartmaju</li><li>brezplačno parkiranje na dvorišču ali pred hišo</li><li>DDV</li><li>osnovne gospodinjske in higienske pripomočke</li></ul>"
+              },
+              {
+                "q": "Ali je v apartmaju internet?",
+                "a": "<p>Da, v celotni stavbi je na voljo hiter brezžični internet.</p>"
+              },
+              {
+                "q": "Ali lahko v apartmaju kuhamo?",
+                "a": "<p>Da, vsak apartma ima dobro opremljeno kuhinjo – na voljo so jedilni pribor, posoda, kozarci, grelnik vode, hladilnik, kavni aparat, indukcijska plošča in mikrovalovna pečica.</p>"
+              },
+              {
+                "q": "Ali moramo prinesti predmete za vsakdanjo rabo?",
+                "a": "<p>Ne. Brisače, posteljnina, jedilni pribor, kozarci, sušilnik za lase, toaletni papir, razkužilo za roke in obešalniki so na voljo.</p>"
+              },
+              {
+                "q": "Ali je pozimi ogrevanje?",
+                "a": "<p>Da, naše apartmaje lahko rezervirate vse leto in imajo sodobno ogrevanje.</p>"
+              }
+            ]
+          },
+          {
+            "title": "Druge informacije",
+            "items": [
+              {
+                "q": "Ali lahko pripeljemo hišne ljubljenčke?",
+                "a": "<p>Čeprav imamo živali radi, hišnih ljubljenčkov v naših apartmajih žal ne moremo sprejeti.</p>"
+              },
+              {
+                "q": "Kje lahko kadim?",
+                "a": "<p>Apartmaji so nekadilski. Kajenje je dovoljeno le na za to določenem mestu na dvorišču ali na skupni terasi.</p>"
+              },
+              {
+                "q": "Kje lahko parkiram?",
+                "a": "<p>Vsak apartma ima 1 lastno parkirno mesto. Če pridete z več avtomobili, nas prosimo kontaktirajte vnaprej; na voljo je tudi brezplačno parkiranje na ulici.</p>"
+              }
+            ]
+          },
+          {
+            "title": "Lokacija",
+            "items": [
+              {
+                "q": "Kje točno se nahajajo ZEN Central Apartments?",
+                "a": "<p>Naslov: 8200 Veszprém, Festő utca 6. Mestno središče je le nekaj minut hoje stran; soseska je mirna in varna – idealna za oddih in ogled mesta.</p>"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "aside": {
+      "aside_title": "Zahtevajte ponudbo in rezervirajte neposredno!",
+      "aside_text": "Proste termine in ponudbo zahtevajte hitro in preprosto.",
+      "aside_button": {
+        "label": "Preverite razpoložljivost in rezervirajte",
+        "url": "{page:booking}",
+        "style": "primary"
+      }
+    }
+  },
+  "pages": {
+    "home": {
+      "slug": "zen-central-slovenscina",
+      "title": "ZEN Central Apartments",
+      "seo_title": "ZEN Central Apartments Veszprém | Bivanje v središču",
+      "seo_desc": "Trije apartmaji ZEN Central Apartments v mirni ulici v središču Veszpréma ponujajo osvežujoč mir in lahek dostop do glavnih znamenitosti mesta.",
+      "focus_kw": "apartmaji Veszprém",
+      "og": "U/ZEN_Central_Apartments_fooldal.webp",
+      "sections": [
+        {
+          "type": "hero",
+          "style": {
+            "overlay": 0.38
+          },
+          "data": {
+            "kicker": "Veszprém",
+            "title": "ZEN Central Apartments",
+            "text": "Pri nas rezervirate po zagotovljeno najboljši ceni!",
+            "buttons": [
+              {
+                "label": "rezerviraj neposredno",
+                "url": "{page:booking}",
+                "style": "primary"
+              }
+            ],
+            "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
+            "height": "full",
+            "booking_bar": true,
+            "side_logo": true,
+            "side_badge": "U/ZEN_Central_Contact_us1.svg"
+          }
+        },
+        {
+          "type": "intro",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "kicker": "ZEN CENTRAL",
+            "title": "Sodobno udobje in mirno okolje v središču Veszpréma",
+            "html": "<p>Apartmaji ZEN Central Apartments goste pričakajo v regiji Bakony-Balaton, v središču Veszpréma, v mirni ulici. Idealna izbira za sodobno in domačno okolje.</p>",
+            "buttons": [
+              {
+                "label": "Preverite razpoložljivost in rezervirajte",
+                "url": "{page:booking}",
+                "style": "primary"
+              }
+            ],
+            "media": "U/ZEN_Central_Veszprem_7.webp",
+            "layout": "right"
+          }
+        },
+        {
+          "type": "cards",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "kicker": "SODOBNO IN PRIJETNO",
+            "title": "ZEN Central Apartments",
+            "source": "manual",
+            "items": [
+              {
+                "title": "Apartma RELAX",
+                "apt": "relax",
+                "url": "{page:apt_relax}",
+                "media": "U/Zen_Central_Relax.webp"
+              },
+              {
+                "title": "Apartma JIN-JANG",
+                "apt": "jinjang",
+                "url": "{page:apt_jinjang}",
+                "media": "U/Zen_Central_Jin_Jang.webp"
+              },
+              {
+                "title": "Apartma LOTUS",
+                "apt": "lotus",
+                "url": "{page:apt_lotus}",
+                "media": "U/Zen_Central_Lotus.webp"
+              }
+            ]
+          }
+        },
+        {
+          "type": "intro",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "kicker": "mirno okolje",
+            "title": "V srcu Veszpréma",
+            "html": "<p>V srcu Veszpréma, v mirni ulici nekoliko stran od vrveža, boste našli ZEN Central Apartments – oazo osvežujočega miru. Zaradi idealne lege so glavne znamenitosti mesta na dosegu roke, hkrati pa ste daleč od mestnega hrupa.</p><p>Parkiranje osebnih avtomobilov na ulici Festő utca je brezplačno, gostje pa si lahko rezervirajo tudi lastno parkirno mesto na zasebnem zemljišču. Tako vam ni treba skrbeti za parkiranje in lahko v celoti uživate v miru in udobju ZEN Central Apartments.</p>",
+            "buttons": [
+              {
+                "label": "Preverite razpoložljivost in rezervirajte",
+                "url": "{page:booking}",
+                "style": "primary"
+              }
+            ],
+            "media": "U/ZEN_Central_Veszprem_varos1.webp",
+            "layout": "left"
+          }
+        },
+        {
+          "type": "map_list",
+          "style": {
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "title": "Znamenitosti v bližini",
+            "map_query": "ZEN Central Apartments Veszprém",
+            "items": [
+              "Trg starega mesta: 400 m",
+              "Peš cona: 900 m",
+              "Tržnica: 1200 m",
+              "Živalski vrt: 1300 m",
+              "Tovarniški vrt: 1400 m",
+              "Otok ljubezni: 1100 m",
+              "Dolina potoka Séd: 1400 m",
+              "Izvir Laczkó: 2600 m",
+              "Veszprém Arena: 3200 m",
+              "Tihany: 27 km"
+            ]
+          }
+        },
+        {
+          "type": "guide",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "title": "Odkrijte Veszprém",
+            "text": "Izbor najlepših znamenitosti in doživetij v bližini, ki ga je za vas pripravil Zen, naš digitalni concierge.",
+            "category": "sight",
+            "limit": 6
+          }
+        },
+        {
+          "type": "reviews",
+          "style": {
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "title": "Kaj pravijo naši gostje",
+            "text": "",
+            "source": "feedback",
+            "items": []
+          }
+        },
+        {
+          "ref": "cta",
+          "data": {
+            "lines": [
+              "Pri nas rezervirate po zagotovljeno najboljši ceni!",
+              "Proste termine in ponudbo zahtevajte hitro in preprosto."
+            ]
+          }
+        },
+        {
+          "ref": "faq",
+          "enabled": false
+        }
+      ]
+    },
+    "apartments": {
+      "slug": "apartmaji",
+      "title": "Apartmaji",
+      "seo_title": "Apartmaji v središču Veszpréma | ZEN Central",
+      "seo_desc": "Trije sodobni klimatizirani apartmaji s kuhinjo in brezplačnim zaprtim parkiriščem v mirni ulici v središču Veszpréma, blizu Blatnega jezera.",
+      "focus_kw": "apartma Veszprém",
+      "og": "U/Zen_Central_Relax.webp",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "title": "Apartmaji",
+            "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
+            "height": "small",
+            "breadcrumbs": true,
+            "side_logo": true,
+            "side_badge": "U/ZEN_Central_Contact_us1.svg"
+          }
+        },
+        {
+          "type": "cards",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "kicker": "Sodobno in prijetno",
+            "title": "Apartmaji ZEN Central",
+            "source": "manual",
+            "html": "<p>Naša novozgrajena, sodobna nastanitev ZEN Central Apartments se nahaja v nadstropju hiše z vrtom, v samem srcu središča Veszpréma. Sestavljajo jo 3 apartmaji: studio RELAX za 2 gosta, studio LOTUS za 3 goste in JIN JANG, apartma z 2 spalnicama za do 4 goste. Vsak apartma je klimatiziran ter ima dobro opremljeno kuhinjo, kopalnico s prho in brezplačno parkiranje na zaprtem dvorišču.</p>",
+            "items": [
+              {
+                "title": "Apartma RELAX",
+                "apt": "relax",
+                "url": "{page:apt_relax}",
+                "media": "U/Zen_Central_Relax.webp"
+              },
+              {
+                "title": "Apartma JIN-JANG",
+                "apt": "jinjang",
+                "url": "{page:apt_jinjang}",
+                "media": "U/Zen_Central_Jin_Jang.webp"
+              },
+              {
+                "title": "Apartma LOTUS",
+                "apt": "lotus",
+                "url": "{page:apt_lotus}",
+                "media": "U/Zen_Central_Lotus.webp"
+              }
+            ]
+          }
+        },
+        {
+          "ref": "cta"
+        }
+      ]
+    },
+    "apt_relax": {
+      "slug": "apartma-relax",
+      "title": "Apartma RELAX",
+      "seo_title": "Apartma RELAX za 2 – središče Veszpréma | ZEN Central",
+      "seo_desc": "Sprostite se v srcu Veszpréma v apartmaju RELAX: udobni postelji, terasa, brezplačno zaprto parkirišče – popolno izhodišče ob Blatnem jezeru.",
+      "focus_kw": "apartma RELAX Veszprém",
+      "og": "U/Zen_Central_Relax.webp",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "title": "Apartma RELAX",
+            "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
+            "height": "small",
+            "breadcrumbs": true,
+            "side_logo": true,
+            "side_badge": "U/ZEN_Central_Contact_us1.svg"
+          }
+        },
+        {
+          "type": "apt_detail",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "apt": "relax",
+            "title": "Apartma RELAX",
+            "media": "U/Zen_Central_Relax_apartman_6.webp",
+            "html": "<p>2 udobni postelji (90×200 cm), ki ju je mogoče združiti v zakonsko posteljo (180×200 cm). Apartma ima opremljeno teraso s senčnikom, dostopno s hodnika.</p><p>Zagotavljamo brezplačno zaprto parkirišče.<br>Nekadilski apartma.</p>",
+            "facts": [
+              "Turistična taksa: 500 HUF / oseba / noč, plačljiva v gotovini ob prihodu",
+              "Največja zmogljivost: 2 osebi",
+              "Velikost sobe: 20 m2"
+            ],
+            "amenities_title": "Oprema apartmaja",
+            "amenities": [
+              "Nekadilski apartma",
+              "2 postelji, ki ju je mogoče združiti v 1 zakonsko posteljo",
+              "Klimatska naprava, ogrevanje",
+              "Garderobna omara",
+              "Lesena tla",
+              "Smart TV",
+              "Hiter WiFi",
+              "Kopalnica z walk-in prho, 2 brisači na osebo, brezplačne toaletne potrebščine (šampon, gel za prhanje, milo, tekoče milo, kapa za prhanje), sušilnik za lase, WC",
+              "Sušilnik za perilo",
+              "Dobro opremljena kuhinja (mikrovalovna pečica, opekač kruha, grelnik vode, kavni aparat (z grelnikom), jedilna miza s 4 stoli, hladilnik, posoda za kuhanje in serviranje, detergent za pomivanje, cedilo za čaj in Nescafé)"
+            ],
+            "buttons": [
+              {
+                "label": "Preverite razpoložljivost in rezervirajte",
+                "url": "{page:booking}?apt=relax",
+                "style": "primary"
+              }
+            ],
+            "@aside": true,
+            "gallery": [
+              "U/Zen_Central_Relax_apartman_8.webp",
+              "U/Zen_Central_Relax_apartman_6.webp",
+              "U/Zen_Central_Relax_apartman_1.webp",
+              "U/Zen_Central_Relax_apartman_3.webp",
+              "U/Zen_Central_Relax_apartman_4.webp",
+              "U/Zen_Central_Relax_apartman_5.webp",
+              "U/Zen_Central_Relax_apartman_7.webp",
+              "U/Zen_Central_Relax_apartman_9.webp"
+            ]
+          }
+        },
+        {
+          "ref": "cta2"
+        },
+        {
+          "type": "cards",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "kicker": "Sodobno in prijetno",
+            "title": "Drugi apartmaji",
+            "source": "manual",
+            "items": [
+              {
+                "title": "Apartma JIN-JANG",
+                "apt": "jinjang",
+                "url": "{page:apt_jinjang}",
+                "media": "U/Zen_Central_Jin_Jang.webp"
+              },
+              {
+                "title": "Apartma LOTUS",
+                "apt": "lotus",
+                "url": "{page:apt_lotus}",
+                "media": "U/Zen_Central_Lotus.webp"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "apt_jinjang": {
+      "slug": "apartma-jin-jang",
+      "title": "Apartma JIN-JANG",
+      "seo_title": "Apartma JIN-JANG za 4 – Veszprém | ZEN Central",
+      "seo_desc": "Prostoren apartma JIN-JANG z 2 spalnicama, teraso in zaprtim parkiriščem, idealen za družine in prijatelje v središču Veszpréma.",
+      "focus_kw": "družinski apartma Veszprém",
+      "og": "U/Zen_Central_Jin_Jang.webp",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "title": "Apartma JIN-JANG",
+            "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
+            "height": "small",
+            "breadcrumbs": true,
+            "side_logo": true,
+            "side_badge": "U/ZEN_Central_Contact_us1.svg"
+          }
+        },
+        {
+          "type": "apt_detail",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "apt": "jinjang",
+            "title": "Apartma JIN-JANG",
+            "media": "U/Zen_Central_Jin_Jang_8.webp",
+            "html": "<p>Idealno za družine ali skupine prijateljev.<br>2 osebi v ločeni spalnici na veliki zakonski postelji (180×200 cm) in še 2 osebi na zakonski postelji (180×200 cm) v dnevni sobi. Po potrebi lahko za peto osebo zagotovimo manjšo posteljo (90×200).</p><p>Apartma ima opremljeno teraso s senčnikom, dostopno s hodnika.</p><p>Zagotavljamo brezplačno zaprto parkirišče.<br>Nekadilski apartma.</p>",
+            "facts": [
+              "Turistična taksa: 500 HUF / oseba / noč, plačljiva v gotovini ob prihodu",
+              "Največja zmogljivost: 4 osebe",
+              "Velikost sobe: 35 m2"
+            ],
+            "amenities_title": "Oprema apartmaja",
+            "amenities": [
+              "Nekadilski apartma",
+              "2 zakonski postelji, ki ju je mogoče uporabiti tudi kot 4 ločene postelje",
+              "Klimatska naprava, ogrevanje",
+              "Garderobna omara",
+              "Lesena tla",
+              "Smart TV",
+              "Hiter WiFi",
+              "Kopalnica s tuš kabino, 2 brisači na osebo, brezplačne toaletne potrebščine (šampon, gel za prhanje, milo, tekoče milo, kapa za prhanje), sušilnik za lase, WC",
+              "Sušilnik za perilo",
+              "Dobro opremljena kuhinja (mikrovalovna pečica, opekač kruha, grelnik vode, kavni aparat (z grelnikom), jedilna miza s 4 stoli, hladilnik, posoda za kuhanje in serviranje, detergent za pomivanje, cedilo za čaj in Nescafé)"
+            ],
+            "buttons": [
+              {
+                "label": "Preverite razpoložljivost in rezervirajte",
+                "url": "{page:booking}?apt=jinjang",
+                "style": "primary"
+              }
+            ],
+            "@aside": true,
+            "gallery": [
+              "U/Zen_Central_Jin_Jang_1.webp",
+              "U/Zen_Central_Jin_Jang_2.webp",
+              "U/Zen_Central_Jin_Jang_4.webp",
+              "U/Zen_Central_Jin_Jang_7.webp",
+              "U/Zen_Central_Jin_Jang_6.webp",
+              "U/Zen_Central_Jin_Jang_5.webp",
+              "U/Zen_Central_Jin_Jang_3.webp",
+              "U/Zen_Central_apartman_5.webp"
+            ]
+          }
+        },
+        {
+          "ref": "cta2"
+        },
+        {
+          "type": "cards",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "kicker": "Sodobno in prijetno",
+            "title": "Drugi apartmaji",
+            "source": "manual",
+            "items": [
+              {
+                "title": "Apartma RELAX",
+                "apt": "relax",
+                "url": "{page:apt_relax}",
+                "media": "U/Zen_Central_Relax.webp"
+              },
+              {
+                "title": "Apartma LOTUS",
+                "apt": "lotus",
+                "url": "{page:apt_lotus}",
+                "media": "U/Zen_Central_Lotus.webp"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "apt_lotus": {
+      "slug": "apartma-lotus",
+      "title": "Apartma LOTUS",
+      "seo_title": "Apartma LOTUS za 3 – središče Veszpréma | ZEN Central",
+      "seo_desc": "Apartma LOTUS za 3 goste s teraso, klimatsko napravo in brezplačnim zaprtim parkiriščem v mirni ulici v središču Veszpréma.",
+      "focus_kw": "apartma LOTUS Veszprém",
+      "og": "U/Zen_Central_Lotus.webp",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "title": "Apartma LOTUS",
+            "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
+            "height": "small",
+            "breadcrumbs": true,
+            "side_logo": true,
+            "side_badge": "U/ZEN_Central_Contact_us1.svg"
+          }
+        },
+        {
+          "type": "apt_detail",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "apt": "lotus",
+            "title": "Apartma LOTUS",
+            "media": "U/Zen_Central_Lotus_apartman_8.webp",
+            "html": "<p>2 udobni postelji (90×200 cm), ki ju je mogoče združiti v zakonsko posteljo (180×200 cm), in 1 ločena postelja 90×200 cm. Apartma ima opremljeno teraso s senčnikom, dostopno s hodnika.</p><p>Zagotavljamo brezplačno zaprto parkirišče.<br>Nekadilski apartma.</p>",
+            "facts": [
+              "Turistična taksa: 500 HUF / oseba / noč, plačljiva v gotovini ob prihodu",
+              "Največja zmogljivost: 3 osebe",
+              "Velikost sobe: 25 m2"
+            ],
+            "amenities_title": "Oprema apartmaja",
+            "amenities": [
+              "Nekadilski apartma",
+              "2 postelji, ki ju je mogoče združiti v 1 zakonsko posteljo, + 1 postelja",
+              "Klimatska naprava, ogrevanje",
+              "Garderobna omara",
+              "Lesena tla",
+              "Smart TV",
+              "Hiter WiFi",
+              "Kopalnica s tuš kabino, 2 brisači na osebo, brezplačne toaletne potrebščine (šampon, gel za prhanje, milo, tekoče milo, kapa za prhanje), sušilnik za lase, WC",
+              "Sušilnik za perilo",
+              "Dobro opremljena kuhinja (mikrovalovna pečica, opekač kruha, grelnik vode, kavni aparat, jedilna miza s 4 stoli, hladilnik, posoda za kuhanje in serviranje, detergent za pomivanje, cedilo za čaj in Nescafé)"
+            ],
+            "buttons": [
+              {
+                "label": "Preverite razpoložljivost in rezervirajte",
+                "url": "{page:booking}?apt=lotus",
+                "style": "primary"
+              }
+            ],
+            "@aside": true,
+            "gallery": [
+              "U/Zen_Central_Lotus_apartman_8.webp",
+              "U/Zen_Central_Lotus_apartman_9.webp",
+              "U/Zen_Central_Lotus_apartman_7.webp",
+              "U/Zen_Central_Lotus_apartman_3.webp",
+              "U/Zen_Central_Lotus_apartman_2.webp",
+              "U/Zen_Central_Lotus_apartman_6.webp",
+              "U/Zen_Central_Lotus_apartman_11.webp",
+              "U/Zen_Central_Lotus_apartman_12.webp",
+              "U/Zen_Central_Lotus_apartman_5.webp",
+              "U/Zen_Central_Lotus_apartman_4.webp",
+              "U/Zen_Central_Lotus_apartman_1jpg.webp",
+              "U/Zen_Central_Lotus_apartman_10.webp",
+              "U/Zen_Central_apartman_6.webp"
+            ]
+          }
+        },
+        {
+          "ref": "cta2"
+        },
+        {
+          "type": "cards",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "kicker": "Sodobno in prijetno",
+            "title": "Drugi apartmaji",
+            "source": "manual",
+            "items": [
+              {
+                "title": "Apartma RELAX",
+                "apt": "relax",
+                "url": "{page:apt_relax}",
+                "media": "U/Zen_Central_Relax.webp"
+              },
+              {
+                "title": "Apartma JIN-JANG",
+                "apt": "jinjang",
+                "url": "{page:apt_jinjang}",
+                "media": "U/Zen_Central_Jin_Jang.webp"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "gallery": {
+      "slug": "galerija",
+      "title": "Galerija",
+      "seo_title": "Galerija – fotografije apartmajev | ZEN Central Veszprém",
+      "seo_desc": "Fotografije apartmajev RELAX, JIN-JANG in LOTUS, hiše in okolice – ZEN Central Apartments v mirni ulici v središču Veszpréma.",
+      "focus_kw": "ZEN Central Apartments fotografije",
+      "og": "U/ZEN_Central_Apartments_fooldal.webp",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "title": "Galerija",
+            "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
+            "height": "small",
+            "breadcrumbs": true,
+            "side_logo": true,
+            "side_badge": "U/ZEN_Central_Contact_us1.svg"
+          }
+        },
+        {
+          "type": "gallery",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "title": "",
+            "groups": [
+              {
+                "title": "Apartma RELAX",
+                "items": [
+                  "U/Zen_Central_Relax_apartman_6.webp",
+                  "U/Zen_Central_Relax_apartman_7.webp",
+                  "U/Zen_Central_galeria5.webp",
+                  "U/Zen_Central_Relax_apartman_5.webp",
+                  "U/ZEN_Central_Relax_icon.webp",
+                  "U/Zen_Central_Relax_apartman_2.webp",
+                  "U/Zen_Central_galeria3.webp",
+                  "U/Zen_Central_Relax_apartman_4.webp",
+                  "U/Zen_Central_Relax_apartman_3.webp"
+                ]
+              },
+              {
+                "title": "Apartma JIN-JANG",
+                "items": [
+                  "U/Zen_Central_Jin_Jang_8.webp",
+                  "U/Zen_Central_Jin_Jang_4.webp",
+                  "U/Zen_Central_Jin_Jang-1.webp",
+                  "U/Zen_Central_Jin_Jang_7.webp",
+                  "U/ZEN_Central_YinYang_icon.webp",
+                  "U/Zen_Central_Jin_Jang_6.webp",
+                  "U/Zen_Central_galeria7.webp",
+                  "U/Zen_Central_Jin_Jang_5.webp",
+                  "U/Zen_Central_Jin_Jang_3.webp",
+                  "U/Zen_Central_Jin_Jang_2.webp",
+                  "U/Zen_Central_Jin_Jang_1.webp"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "ref": "cta"
+        },
+        {
+          "type": "gallery",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "title": "",
+            "groups": [
+              {
+                "title": "Apartma LOTUS",
+                "items": [
+                  "U/Zen_Central_Lotus_apartman_8.webp",
+                  "U/Zen_Central_Lotus_apartman_6.webp",
+                  "U/Zen_Central_galeria6.webp",
+                  "U/Zen_Central_Lotus_apartman_9.webp",
+                  "U/ZEN_Central_Lotus_icon.webp",
+                  "U/Zen_Central_Lotus_apartman_12.webp",
+                  "U/Zen_Central_galeria1.webp",
+                  "U/Zen_Central_Lotus_apartman_7.webp",
+                  "U/Zen_Central_Lotus_apartman_3.webp",
+                  "U/Zen_Central_Lotus_apartman_2.webp",
+                  "U/Zen_Central_Lotus_apartman_5.webp",
+                  "U/Zen_Central_Lotus_apartman_4.webp"
+                ]
+              },
+              {
+                "title": "Hiša in okolica",
+                "items": [
+                  "U/Zen_Central_apartman_10.webp",
+                  "U/Zen_Central_apartman_12.webp",
+                  "U/Zen_Central_apartman_13.webp",
+                  "U/Zen_Central_galeria.webp",
+                  "U/Zen_Central_apartman_9.webp",
+                  "U/Zen_Central_apartman_1.webp",
+                  "U/Zen_Central_apartman_2.webp",
+                  "U/Zen_Central_Lotus_apartman_11.webp",
+                  "U/Zen_Central_galeria2.webp"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "ref": "cta"
+        }
+      ]
+    },
+    "contact": {
+      "slug": "kontakt",
+      "title": "Kontakt",
+      "seo_title": "Kontakt – ZEN Central Apartments, Veszprém, Festő utca 6.",
+      "seo_desc": "Kontaktni podatki, dostop in informacije o prijavi – ZEN Central Apartments, Veszprém, Festő utca 6.",
+      "focus_kw": "ZEN Central Apartments kontakt",
+      "og": "U/ZEN_Central_Veszprem_a.webp",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "title": "Kontakt",
+            "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
+            "height": "small",
+            "breadcrumbs": true,
+            "side_logo": true,
+            "side_badge": "U/ZEN_Central_Contact_us1.svg"
+          }
+        },
+        {
+          "type": "contact",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "kicker": "ZEN CENTRAL",
+            "title": "Naši kontaktni podatki",
+            "notice": "Informacij o prostih terminih in cenah apartmajev po telefonu ne dajemo! Ponudbo lahko zahtevate s klikom na gumb »REZERVIRAJ« na naši spletni strani.",
+            "info_title": "Splošne informacije:",
+            "info": [
+              {
+                "label": "+36 30 116 9431",
+                "url": "tel:+36301169431",
+                "icon": "phone"
+              },
+              {
+                "label": "info@zencentralapartments.com",
+                "url": "mailto:info@zencentralapartments.com",
+                "icon": "mail"
+              },
+              {
+                "label": "H-8200 Veszprém, Festő utca 6.",
+                "url": "https://maps.google.com/?q=ZEN+Central+Apartments+Veszpr%C3%A9m",
+                "icon": "pin"
+              }
+            ],
+            "booking_title": "Rezervacija, prosti termini:",
+            "buttons": [
+              {
+                "label": "Preverite razpoložljivost in rezervirajte",
+                "url": "{page:booking}",
+                "style": "primary"
+              }
+            ],
+            "community_title": "Smo del skupnosti",
+            "media": "U/ZEN_Central_Veszprem_a.webp",
+            "access_title": "Kako do nas",
+            "access_html": "<p>Z AVTOMOBILOM: Parkiranje na ulici Festő utca je brezplačno, na zemljišču pa lahko rezervirate tudi zasebna parkirna mesta.</p><p>AVTOBUSNA POSTAJA: Nastanitev je oddaljena 16 minut hoje, dosegljiva pa je tudi z mestnima avtobusoma št. 2 ali 3.</p><p>ŽELEZNIŠKA POSTAJA: Do nastanitve pridete neposredno z mestnimi avtobusi št. 2, 5, 10 ali s taksijem.</p>",
+            "checkin_title": "Prijava",
+            "checkin_html": "<p>Apartmaji imajo sef za ključe z edinstveno kodo, ki velja ves čas vaše rezervacije. Na voljo je tudi spletna brezstična prijava, zato nam časa prihoda ni treba sporočati vnaprej niti se usklajevati ob morebitnih spremembah. Če želite osebni sprejem ob prijavi ali odjavi, nam to prosimo sporočite vnaprej.</p>",
+            "map_query": "ZEN Central Apartments Veszprém"
+          }
+        },
+        {
+          "type": "form",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "form": "contact",
+            "title": "Imate vprašanje? Pišite nam!",
+            "text": ""
+          }
+        }
+      ]
+    },
+    "booking": {
+      "slug": "rezervacija",
+      "title": "Rezervacija",
+      "seo_title": "Rezervacija po najboljši ceni | ZEN Central Veszprém",
+      "seo_desc": "Rezervirajte bivanje v Veszprému po zagotovljeno najboljši ceni neposredno na naši spletni strani – hitro in preprosto, ob Blatnem jezeru.",
+      "focus_kw": "rezervacija apartmaja Veszprém",
+      "og": "U/ZEN_Central_Apartments_fooldal.webp",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "title": "Rezervacija",
+            "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
+            "height": "small",
+            "breadcrumbs": true,
+            "side_logo": true,
+            "side_badge": "U/ZEN_Central_Contact_us1.svg"
+          }
+        },
+        {
+          "type": "booking",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "title": "",
+            "text": "",
+            "engine": "inherit"
+          }
+        }
+      ]
+    },
+    "feedback": {
+      "slug": "mnenja",
+      "title": "Portal zadovoljstva gostov",
+      "seo_title": "Mnenja gostov | ZEN Central Apartments Veszprém",
+      "seo_desc": "Delite svojo izkušnjo z nami! Ocenite bivanje v ZEN Central Apartments – vaše mnenje nam pomaga, da smo še boljši.",
+      "focus_kw": "ZEN Central mnenja",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "kicker": "Hvala, ker ste bivali pri nas",
+            "title": "Portal zadovoljstva gostov",
+            "text": "Vzame le nekaj klikov – vaše mnenje zelo pomaga nam in prihodnjim gostom.",
+            "media": "U/ZEN_Central_Veszprem_varos1.webp",
+            "height": "medium",
+            "breadcrumbs": true
+          }
+        },
+        {
+          "type": "form",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "form": "feedback",
+            "title": "Kakšno je bilo vaše bivanje?",
+            "text": "Ocenite nas z zvezdicami in nam v nekaj besedah povejte, kaj vam je bilo všeč in kaj bi lahko izboljšali."
+          }
+        },
+        {
+          "type": "reviews",
+          "style": {
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "title": "Kaj pravijo naši gostje",
+            "text": "",
+            "source": "feedback",
+            "items": []
+          }
+        }
+      ]
+    },
+    "help": {
+      "slug": "pomoc",
+      "title": "Pomoč in podpora",
+      "seo_title": "Pomoč – AI concierge Zen | ZEN Central Veszprém",
+      "seo_desc": "Vprašanja o rezervaciji, prihodu, parkiranju ali doživetjih v Veszprému? Zen, naš AI concierge, vam pomaga podnevi in ponoči.",
+      "focus_kw": "ZEN Central pomoč",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "kicker": "Na voljo 24/7",
+            "title": "Kako vam lahko pomagamo?",
+            "text": "Vprašajte Zen, našega digitalnega conciergea – pozna apartmaje, postopek rezervacije in vsak kotiček Veszpréma.",
+            "media": "U/ZEN_Central_Veszprem_7.webp",
+            "height": "medium",
+            "breadcrumbs": true
+          }
+        },
+        {
+          "type": "richtext",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "title": "",
+            "html": "[zen_help]"
+          }
+        },
+        {
+          "ref": "faq"
+        },
+        {
+          "type": "form",
+          "style": {
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "form": "contact",
+            "title": "Imate vprašanje? Pišite nam!",
+            "text": ""
+          }
+        }
+      ]
+    }
+  }
+}

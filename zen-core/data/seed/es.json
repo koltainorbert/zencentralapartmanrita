@@ -1,0 +1,1011 @@
+{
+  "lang": "es",
+  "snippets": {
+    "cta": {
+      "type": "cta",
+      "style": {
+        "bg": "U/ZEN_Central_Lotus_feher.webp",
+        "tone": "accent",
+        "pad": "l"
+      },
+      "data": {
+        "title": "¡Solicite un presupuesto y reserve directamente!",
+        "lines": [
+          "Consulte fechas disponibles y solicite presupuesto de forma rápida y sencilla."
+        ],
+        "buttons": [
+          {
+            "label": "Consultar disponibilidad y reservar",
+            "url": "{page:booking}",
+            "style": "primary"
+          }
+        ]
+      }
+    },
+    "cta2": {
+      "type": "cta",
+      "style": {
+        "bg": "U/ZEN_Central_Lotus_feher.webp",
+        "tone": "accent",
+        "pad": "l"
+      },
+      "data": {
+        "title": "¡Solicite una oferta y reserve directamente!",
+        "lines": [
+          "¡Consulte la disponibilidad y solicite una oferta de forma rápida y sencilla!"
+        ],
+        "buttons": [
+          {
+            "label": "Consultar disponibilidad y reservar",
+            "url": "{page:booking}",
+            "style": "primary"
+          }
+        ]
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "style": {
+        "tone": "auto",
+        "pad": "l",
+        "anchor": "faq"
+      },
+      "data": {
+        "title": "Preguntas frecuentes",
+        "groups": [
+          {
+            "title": "Reservas y contacto",
+            "items": [
+              {
+                "q": "¿Cómo puedo reservar un apartamento?",
+                "a": "<p>Puede reservar en <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> o por teléfono en el <b>+36 20 971 7556</b>.</p>"
+              },
+              {
+                "q": "¿Es necesario pagar un depósito?",
+                "a": "<p>Sí, el depósito es del 50 % del importe total. En las reservas realizadas a través de algunos sitios asociados, el importe íntegro se paga por adelantado.</p>"
+              },
+              {
+                "q": "¿Cómo puedo cancelar mi reserva?",
+                "a": "<p>En las reservas directas (web, correo electrónico) la cancelación es gratuita hasta <b>15 días</b> antes de la llegada y se reembolsa el importe abonado.<br>Para cancelaciones dentro de los 15 días previos cobramos como penalización el <b>50 %</b> del precio del alojamiento y, en caso de no presentarse, el <b>100 %</b>. Envíe su cancelación por correo electrónico: <b>zencentralapartments@gmail.com</b></p>"
+              }
+            ]
+          },
+          {
+            "title": "Llegada y salida",
+            "items": [
+              {
+                "q": "¿A qué hora son el check-in y el check-out?",
+                "a": "<p>El apartamento está disponible a partir de las <b>14:00</b> y le rogamos que lo deje antes de las <b>10:00</b> el día de salida. Es posible hacer el check-in antes o el check-out más tarde previo acuerdo, según disponibilidad y con un suplemento.</p>"
+              },
+              {
+                "q": "Llegamos muy tarde, ¿cómo entramos?",
+                "a": "<p>El check-in es autónomo con caja de llaves, así que llegar tarde no es ningún problema.</p>"
+              }
+            ]
+          },
+          {
+            "title": "Pago y facturación",
+            "items": [
+              {
+                "q": "¿Cuándo tengo que pagar?",
+                "a": "<p>El importe restante tras el depósito se abona a la llegada.</p>"
+              },
+              {
+                "q": "¿Qué formas de pago aceptan?",
+                "a": "<ul><li>Efectivo o transferencia bancaria (para reservas directas)</li><li>Tarjeta bancaria (MasterCard, Maestro, VISA, VISA Electron) – solo online, para reservas en la web o en sitios asociados</li><li>Actualmente no se acepta la tarjeta SZÉP</li></ul>"
+              },
+              {
+                "q": "¿Los precios incluyen el IVA y la tasa turística?",
+                "a": "<p>Los precios incluyen el IVA, pero no la tasa turística, que es de 500 HUF / persona / noche (mayores de 18 años).</p>"
+              }
+            ]
+          },
+          {
+            "title": "Servicios y equipamiento",
+            "items": [
+              {
+                "q": "¿Qué incluye el precio?",
+                "a": "<p>El precio incluye el alojamiento sin comidas y además:</p><ul><li>WiFi gratuito en todo el apartamento</li><li>aparcamiento gratuito en el patio o delante de la casa</li><li>IVA</li><li>productos básicos de limpieza e higiene</li></ul>"
+              },
+              {
+                "q": "¿Hay internet en el apartamento?",
+                "a": "<p>Sí, hay internet inalámbrico rápido en todo el edificio.</p>"
+              },
+              {
+                "q": "¿Podemos cocinar en el apartamento?",
+                "a": "<p>Sí, todos los apartamentos tienen una cocina bien equipada: cubiertos, vajilla, vasos, hervidor, nevera, cafetera, placa de inducción y microondas.</p>"
+              },
+              {
+                "q": "¿Tenemos que traer artículos de uso diario?",
+                "a": "<p>No. Se proporcionan toallas, ropa de cama, cubiertos, vasos, secador de pelo, papel higiénico, gel desinfectante de manos y perchas.</p>"
+              },
+              {
+                "q": "¿Hay calefacción en invierno?",
+                "a": "<p>Sí, nuestros apartamentos se pueden reservar todo el año y cuentan con calefacción moderna.</p>"
+              }
+            ]
+          },
+          {
+            "title": "Otra información",
+            "items": [
+              {
+                "q": "¿Podemos llevar mascotas?",
+                "a": "<p>Aunque nos encantan los animales, no podemos alojar mascotas en nuestros apartamentos.</p>"
+              },
+              {
+                "q": "¿Dónde puedo fumar?",
+                "a": "<p>Los apartamentos son para no fumadores. Solo se permite fumar en la zona habilitada, en el patio o en la terraza común.</p>"
+              },
+              {
+                "q": "¿Dónde puedo aparcar?",
+                "a": "<p>Cada apartamento tiene 1 plaza de aparcamiento privada. Si vienen con más coches, contáctenos con antelación; también hay aparcamiento gratuito en la calle.</p>"
+              }
+            ]
+          },
+          {
+            "title": "Ubicación",
+            "items": [
+              {
+                "q": "¿Dónde se encuentra exactamente ZEN Central Apartments?",
+                "a": "<p>Dirección: 8200 Veszprém, Festő utca 6. El centro de la ciudad está a pocos minutos a pie; el barrio es tranquilo y seguro, ideal para descansar y hacer turismo.</p>"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "aside": {
+      "aside_title": "¡Solicite un presupuesto y reserve directamente!",
+      "aside_text": "Consulte fechas disponibles y solicite presupuesto de forma rápida y sencilla.",
+      "aside_button": {
+        "label": "Consultar disponibilidad y reservar",
+        "url": "{page:booking}",
+        "style": "primary"
+      }
+    }
+  },
+  "pages": {
+    "home": {
+      "slug": "zen-central-espanol",
+      "title": "ZEN Central Apartments",
+      "seo_title": "ZEN Central Apartments Veszprém | En el corazón de la ciudad",
+      "seo_desc": "En una tranquila calle residencial, ZEN Central Apartments ofrece una calma reparadora en sus tres apartamentos, muy cerca de los principales atractivos.",
+      "focus_kw": "apartamentos Veszprém",
+      "og": "U/ZEN_Central_Apartments_fooldal.webp",
+      "sections": [
+        {
+          "type": "hero",
+          "style": {
+            "overlay": 0.38
+          },
+          "data": {
+            "kicker": "Veszprém",
+            "title": "ZEN Central Apartments",
+            "text": "¡Reserve con nosotros aquí al mejor precio garantizado!",
+            "buttons": [
+              {
+                "label": "reserva directa",
+                "url": "{page:booking}",
+                "style": "primary"
+              }
+            ],
+            "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
+            "height": "full",
+            "booking_bar": true,
+            "side_logo": true,
+            "side_badge": "U/ZEN_Central_Contact_us1.svg"
+          }
+        },
+        {
+          "type": "intro",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "kicker": "ZEN CENTRAL",
+            "title": "Confort moderno y entorno tranquilo en el centro de Veszprém",
+            "html": "<p>Los apartamentos de ZEN Central Apartments esperan a sus huéspedes en la región de Bakony-Balaton, en el centro de Veszprém, en una calle tranquila. La elección ideal para quien busca un entorno moderno y acogedor.</p>",
+            "buttons": [
+              {
+                "label": "Consultar disponibilidad y reservar",
+                "url": "{page:booking}",
+                "style": "primary"
+              }
+            ],
+            "media": "U/ZEN_Central_Veszprem_7.webp",
+            "layout": "right"
+          }
+        },
+        {
+          "type": "cards",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "kicker": "MODERNO Y ACOGEDOR",
+            "title": "ZEN Central Apartments",
+            "source": "manual",
+            "items": [
+              {
+                "title": "Apartamento RELAX",
+                "apt": "relax",
+                "url": "{page:apt_relax}",
+                "media": "U/Zen_Central_Relax.webp"
+              },
+              {
+                "title": "Apartamento JIN-JANG",
+                "apt": "jinjang",
+                "url": "{page:apt_jinjang}",
+                "media": "U/Zen_Central_Jin_Jang.webp"
+              },
+              {
+                "title": "Apartamento LOTUS",
+                "apt": "lotus",
+                "url": "{page:apt_lotus}",
+                "media": "U/Zen_Central_Lotus.webp"
+              }
+            ]
+          }
+        },
+        {
+          "type": "intro",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "kicker": "entorno tranquilo",
+            "title": "En el corazón de Veszprém",
+            "html": "<p>En el corazón de Veszprém, en una tranquila calle residencial, encontrará ZEN Central Apartments, que ofrece una calma reparadora. Su ubicación ideal permite acceder fácilmente a los principales atractivos de la ciudad, lejos a la vez del bullicio urbano.</p><p>En la calle Festő el aparcamiento para turismos es gratuito, y los huéspedes también pueden reservar su propia plaza en el recinto privado del alojamiento. Así no tendrá que preocuparse por aparcar mientras disfruta de la tranquilidad y el confort de ZEN Central Apartments.</p>",
+            "buttons": [
+              {
+                "label": "Consultar disponibilidad y reservar",
+                "url": "{page:booking}",
+                "style": "primary"
+              }
+            ],
+            "media": "U/ZEN_Central_Veszprem_varos1.webp",
+            "layout": "left"
+          }
+        },
+        {
+          "type": "map_list",
+          "style": {
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "title": "Lugares de interés cercanos",
+            "map_query": "ZEN Central Apartments Veszprém",
+            "items": [
+              "Plaza del Casco Antiguo: 400 m",
+              "Calle peatonal: 900 m",
+              "Mercado cubierto, mercado: 1200 m",
+              "Zoológico: 1300 m",
+              "Jardín de la Fábrica (Gyárkert): 1400 m",
+              "Isla del Amor: 1100 m",
+              "Valle del arroyo Séd: 1400 m",
+              "Manantial Laczkó: 2600 m",
+              "Veszprém Arena: 3200 m",
+              "Tihany: 27 km"
+            ]
+          }
+        },
+        {
+          "type": "guide",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "title": "Descubra Veszprém",
+            "text": "Una selección de los mejores lugares y experiencias de los alrededores, elegidos por Zen, nuestro conserje digital.",
+            "category": "sight",
+            "limit": 6
+          }
+        },
+        {
+          "type": "reviews",
+          "style": {
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "title": "Lo que dicen nuestros huéspedes",
+            "text": "",
+            "source": "feedback",
+            "items": []
+          }
+        },
+        {
+          "ref": "cta",
+          "data": {
+            "lines": [
+              "¡Reserve con nosotros aquí al mejor precio garantizado!",
+              "Consulte fechas disponibles y solicite presupuesto de forma rápida y sencilla."
+            ]
+          }
+        },
+        {
+          "ref": "faq",
+          "enabled": false
+        }
+      ]
+    },
+    "apartments": {
+      "slug": "apartamentos",
+      "title": "Apartamentos",
+      "seo_title": "Apartamentos en el centro de Veszprém | ZEN Central",
+      "seo_desc": "En una tranquila calle residencial, ZEN Central Apartments ofrece una calma reparadora en sus tres apartamentos, muy cerca de los principales atractivos.",
+      "focus_kw": "apartamento Veszprém",
+      "og": "U/Zen_Central_Relax.webp",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "title": "Apartamentos",
+            "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
+            "height": "small",
+            "breadcrumbs": true,
+            "side_logo": true,
+            "side_badge": "U/ZEN_Central_Contact_us1.svg"
+          }
+        },
+        {
+          "type": "cards",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "kicker": "Moderno y acogedor",
+            "title": "Apartamentos ZEN Central",
+            "source": "manual",
+            "html": "<p>Nuestro alojamiento moderno y de nueva construcción, ZEN Central Apartments, se encuentra en la planta superior de una casa con jardín en pleno centro de Veszprém. Consta de 3 apartamentos: el estudio RELAX para 2 huéspedes, el estudio LOTUS para 3 huéspedes y JIN JANG, un apartamento de 2 dormitorios para hasta 4 huéspedes. Todos los apartamentos tienen aire acondicionado, una cocina bien equipada, baño con ducha y aparcamiento gratuito en el patio cerrado.</p>",
+            "items": [
+              {
+                "title": "Apartamento RELAX",
+                "apt": "relax",
+                "url": "{page:apt_relax}",
+                "media": "U/Zen_Central_Relax.webp"
+              },
+              {
+                "title": "Apartamento JIN-JANG",
+                "apt": "jinjang",
+                "url": "{page:apt_jinjang}",
+                "media": "U/Zen_Central_Jin_Jang.webp"
+              },
+              {
+                "title": "Apartamento LOTUS",
+                "apt": "lotus",
+                "url": "{page:apt_lotus}",
+                "media": "U/Zen_Central_Lotus.webp"
+              }
+            ]
+          }
+        },
+        {
+          "ref": "cta"
+        }
+      ]
+    },
+    "apt_relax": {
+      "slug": "apartamento-relax",
+      "title": "Apartamento RELAX",
+      "seo_title": "Apartamento RELAX para 2 – centro de Veszprém | ZEN Central",
+      "seo_desc": "Relájese en el corazón de Veszprém en el apartamento RELAX: camas cómodas, terraza privada, aparcamiento cerrado gratuito, cerca del Balaton.",
+      "focus_kw": "apartamento RELAX Veszprém",
+      "og": "U/Zen_Central_Relax.webp",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "title": "Apartamento RELAX",
+            "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
+            "height": "small",
+            "breadcrumbs": true,
+            "side_logo": true,
+            "side_badge": "U/ZEN_Central_Contact_us1.svg"
+          }
+        },
+        {
+          "type": "apt_detail",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "apt": "relax",
+            "title": "Apartamento RELAX",
+            "media": "U/Zen_Central_Relax_apartman_6.webp",
+            "html": "<p>2 camas cómodas (90×200 cm) que pueden convertirse en una cama doble (180×200 cm). El apartamento cuenta con una terraza amueblada con sombrilla, con acceso desde el pasillo.</p><p>Ofrecemos aparcamiento cerrado gratuito.<br>Apartamento para no fumadores.</p>",
+            "facts": [
+              "Tasa turística: 500 HUF / persona / noche, a pagar en efectivo a la llegada",
+              "Capacidad máxima: 2 personas",
+              "Superficie: 20 m2"
+            ],
+            "amenities_title": "Equipamiento del apartamento",
+            "amenities": [
+              "Apartamento para no fumadores",
+              "2 camas que pueden convertirse en 1 cama doble",
+              "Aire acondicionado, calefacción",
+              "Vestidor/armario",
+              "Suelo de madera",
+              "Smart TV",
+              "WiFi rápido",
+              "Baño con ducha a ras de suelo, 2 toallas por persona, artículos de aseo gratuitos (champú, gel de ducha, jabón, jabón líquido, gorro de ducha), secador de pelo, inodoro",
+              "Tendedero",
+              "Cocina bien equipada (microondas, tostadora, hervidor, cafetera (con hervidor), mesa de comedor con 4 sillas, nevera, utensilios de cocina y vajilla, lavavajillas líquido, filtro de té y lo necesario para preparar Nescafé)"
+            ],
+            "buttons": [
+              {
+                "label": "Consultar disponibilidad y reservar",
+                "url": "{page:booking}?apt=relax",
+                "style": "primary"
+              }
+            ],
+            "@aside": true,
+            "gallery": [
+              "U/Zen_Central_Relax_apartman_8.webp",
+              "U/Zen_Central_Relax_apartman_6.webp",
+              "U/Zen_Central_Relax_apartman_1.webp",
+              "U/Zen_Central_Relax_apartman_3.webp",
+              "U/Zen_Central_Relax_apartman_4.webp",
+              "U/Zen_Central_Relax_apartman_5.webp",
+              "U/Zen_Central_Relax_apartman_7.webp",
+              "U/Zen_Central_Relax_apartman_9.webp"
+            ]
+          }
+        },
+        {
+          "ref": "cta2"
+        },
+        {
+          "type": "cards",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "kicker": "Moderno y acogedor",
+            "title": "Otros apartamentos",
+            "source": "manual",
+            "items": [
+              {
+                "title": "Apartamento JIN-JANG",
+                "apt": "jinjang",
+                "url": "{page:apt_jinjang}",
+                "media": "U/Zen_Central_Jin_Jang.webp"
+              },
+              {
+                "title": "Apartamento LOTUS",
+                "apt": "lotus",
+                "url": "{page:apt_lotus}",
+                "media": "U/Zen_Central_Lotus.webp"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "apt_jinjang": {
+      "slug": "apartamento-jin-jang",
+      "title": "Apartamento JIN-JANG",
+      "seo_title": "Apartamento JIN-JANG para 4, 2 dormitorios – Veszprém",
+      "seo_desc": "Amplio apartamento JIN-JANG de 2 dormitorios con terraza y aparcamiento cerrado, ideal para familias o amigos, en el centro de Veszprém.",
+      "focus_kw": "apartamento familiar Veszprém",
+      "og": "U/Zen_Central_Jin_Jang.webp",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "title": "Apartamento JIN-JANG",
+            "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
+            "height": "small",
+            "breadcrumbs": true,
+            "side_logo": true,
+            "side_badge": "U/ZEN_Central_Contact_us1.svg"
+          }
+        },
+        {
+          "type": "apt_detail",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "apt": "jinjang",
+            "title": "Apartamento JIN-JANG",
+            "media": "U/Zen_Central_Jin_Jang_8.webp",
+            "html": "<p>Ideal para familias o grupos de amigos.<br>2 personas en un dormitorio independiente con una amplia cama doble (180×200 cm) y otras 2 personas en una cama doble (180×200 cm) en el salón. Si es necesario, se puede añadir una cama más pequeña (9×200) para una quinta persona.</p><p>El apartamento cuenta con una terraza amueblada con sombrilla, con acceso desde el pasillo.</p><p>Ofrecemos aparcamiento cerrado gratuito.<br>Apartamento para no fumadores.</p>",
+            "facts": [
+              "Tasa turística: 500 HUF / persona / noche, a pagar en efectivo a la llegada",
+              "Capacidad máxima: 4 personas",
+              "Superficie: 35 m2"
+            ],
+            "amenities_title": "Equipamiento del apartamento",
+            "amenities": [
+              "Apartamento para no fumadores",
+              "2 camas dobles, que también pueden usarse como 4 camas individuales",
+              "Aire acondicionado, calefacción",
+              "Vestidor/armario",
+              "Suelo de madera",
+              "Smart TV",
+              "WiFi rápido",
+              "Baño con cabina de ducha, 2 toallas por persona, artículos de aseo gratuitos (champú, gel de ducha, jabón, jabón líquido, gorro de ducha), secador de pelo, inodoro",
+              "Tendedero",
+              "Cocina bien equipada (microondas, tostadora, hervidor, cafetera (con hervidor), mesa de comedor con 4 sillas, nevera, utensilios de cocina y vajilla, lavavajillas líquido, filtro de té y lo necesario para preparar Nescafé)"
+            ],
+            "buttons": [
+              {
+                "label": "Consultar disponibilidad y reservar",
+                "url": "{page:booking}?apt=jinjang",
+                "style": "primary"
+              }
+            ],
+            "@aside": true,
+            "gallery": [
+              "U/Zen_Central_Jin_Jang_1.webp",
+              "U/Zen_Central_Jin_Jang_2.webp",
+              "U/Zen_Central_Jin_Jang_4.webp",
+              "U/Zen_Central_Jin_Jang_7.webp",
+              "U/Zen_Central_Jin_Jang_6.webp",
+              "U/Zen_Central_Jin_Jang_5.webp",
+              "U/Zen_Central_Jin_Jang_3.webp",
+              "U/Zen_Central_apartman_5.webp"
+            ]
+          }
+        },
+        {
+          "ref": "cta2"
+        },
+        {
+          "type": "cards",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "kicker": "Moderno y acogedor",
+            "title": "Otros apartamentos",
+            "source": "manual",
+            "items": [
+              {
+                "title": "Apartamento RELAX",
+                "apt": "relax",
+                "url": "{page:apt_relax}",
+                "media": "U/Zen_Central_Relax.webp"
+              },
+              {
+                "title": "Apartamento LOTUS",
+                "apt": "lotus",
+                "url": "{page:apt_lotus}",
+                "media": "U/Zen_Central_Lotus.webp"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "apt_lotus": {
+      "slug": "apartamento-lotus",
+      "title": "Apartamento LOTUS",
+      "seo_title": "Apartamento LOTUS para 3 – centro de Veszprém | ZEN Central",
+      "seo_desc": "En una tranquila calle residencial, ZEN Central Apartments ofrece una calma reparadora en sus tres apartamentos, muy cerca de los principales atractivos.",
+      "focus_kw": "apartamento LOTUS Veszprém",
+      "og": "U/Zen_Central_Lotus.webp",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "title": "Apartamento LOTUS",
+            "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
+            "height": "small",
+            "breadcrumbs": true,
+            "side_logo": true,
+            "side_badge": "U/ZEN_Central_Contact_us1.svg"
+          }
+        },
+        {
+          "type": "apt_detail",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "apt": "lotus",
+            "title": "Apartamento LOTUS",
+            "media": "U/Zen_Central_Lotus_apartman_8.webp",
+            "html": "<p>2 camas cómodas (90×200 cm) que pueden convertirse en una cama doble (180×200 cm) y 1 cama individual independiente de 90×200 cm. El apartamento cuenta con una terraza amueblada con sombrilla, con acceso desde el pasillo.</p><p>Ofrecemos aparcamiento cerrado gratuito.<br>Apartamento para no fumadores.</p>",
+            "facts": [
+              "Tasa turística: 500 HUF / persona / noche, a pagar en efectivo a la llegada",
+              "Capacidad máxima: 3 personas",
+              "Superficie: 25 m2"
+            ],
+            "amenities_title": "Equipamiento del apartamento",
+            "amenities": [
+              "Apartamento para no fumadores",
+              "2 camas que pueden convertirse en 1 cama doble, + 1 cama",
+              "Aire acondicionado, calefacción",
+              "Vestidor/armario",
+              "Suelo de madera",
+              "Smart TV",
+              "WiFi rápido",
+              "Baño con cabina de ducha, 2 toallas por persona, artículos de aseo gratuitos (champú, gel de ducha, jabón, jabón líquido, gorro de ducha), secador de pelo, inodoro",
+              "Tendedero",
+              "Cocina bien equipada (microondas, tostadora, hervidor, cafetera, mesa de comedor con 4 sillas, nevera, utensilios de cocina y vajilla, lavavajillas líquido, filtro de té y lo necesario para preparar Nescafé)"
+            ],
+            "buttons": [
+              {
+                "label": "Consultar disponibilidad y reservar",
+                "url": "{page:booking}?apt=lotus",
+                "style": "primary"
+              }
+            ],
+            "@aside": true,
+            "gallery": [
+              "U/Zen_Central_Lotus_apartman_8.webp",
+              "U/Zen_Central_Lotus_apartman_9.webp",
+              "U/Zen_Central_Lotus_apartman_7.webp",
+              "U/Zen_Central_Lotus_apartman_3.webp",
+              "U/Zen_Central_Lotus_apartman_2.webp",
+              "U/Zen_Central_Lotus_apartman_6.webp",
+              "U/Zen_Central_Lotus_apartman_11.webp",
+              "U/Zen_Central_Lotus_apartman_12.webp",
+              "U/Zen_Central_Lotus_apartman_5.webp",
+              "U/Zen_Central_Lotus_apartman_4.webp",
+              "U/Zen_Central_Lotus_apartman_1jpg.webp",
+              "U/Zen_Central_Lotus_apartman_10.webp",
+              "U/Zen_Central_apartman_6.webp"
+            ]
+          }
+        },
+        {
+          "ref": "cta2"
+        },
+        {
+          "type": "cards",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "kicker": "Moderno y acogedor",
+            "title": "Otros apartamentos",
+            "source": "manual",
+            "items": [
+              {
+                "title": "Apartamento RELAX",
+                "apt": "relax",
+                "url": "{page:apt_relax}",
+                "media": "U/Zen_Central_Relax.webp"
+              },
+              {
+                "title": "Apartamento JIN-JANG",
+                "apt": "jinjang",
+                "url": "{page:apt_jinjang}",
+                "media": "U/Zen_Central_Jin_Jang.webp"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "gallery": {
+      "slug": "galeria",
+      "title": "Galería",
+      "seo_title": "Galería – fotos de los apartamentos | ZEN Central Veszprém",
+      "seo_desc": "En una tranquila calle residencial, ZEN Central Apartments ofrece una calma reparadora en sus tres apartamentos, muy cerca de los principales atractivos.",
+      "focus_kw": "fotos ZEN Central Apartments",
+      "og": "U/ZEN_Central_Apartments_fooldal.webp",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "title": "Galería",
+            "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
+            "height": "small",
+            "breadcrumbs": true,
+            "side_logo": true,
+            "side_badge": "U/ZEN_Central_Contact_us1.svg"
+          }
+        },
+        {
+          "type": "gallery",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "title": "",
+            "groups": [
+              {
+                "title": "Apartamento RELAX",
+                "items": [
+                  "U/Zen_Central_Relax_apartman_6.webp",
+                  "U/Zen_Central_Relax_apartman_7.webp",
+                  "U/Zen_Central_galeria5.webp",
+                  "U/Zen_Central_Relax_apartman_5.webp",
+                  "U/ZEN_Central_Relax_icon.webp",
+                  "U/Zen_Central_Relax_apartman_2.webp",
+                  "U/Zen_Central_galeria3.webp",
+                  "U/Zen_Central_Relax_apartman_4.webp",
+                  "U/Zen_Central_Relax_apartman_3.webp"
+                ]
+              },
+              {
+                "title": "Apartamento JIN-JANG",
+                "items": [
+                  "U/Zen_Central_Jin_Jang_8.webp",
+                  "U/Zen_Central_Jin_Jang_4.webp",
+                  "U/Zen_Central_Jin_Jang-1.webp",
+                  "U/Zen_Central_Jin_Jang_7.webp",
+                  "U/ZEN_Central_YinYang_icon.webp",
+                  "U/Zen_Central_Jin_Jang_6.webp",
+                  "U/Zen_Central_galeria7.webp",
+                  "U/Zen_Central_Jin_Jang_5.webp",
+                  "U/Zen_Central_Jin_Jang_3.webp",
+                  "U/Zen_Central_Jin_Jang_2.webp",
+                  "U/Zen_Central_Jin_Jang_1.webp"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "ref": "cta"
+        },
+        {
+          "type": "gallery",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "title": "",
+            "groups": [
+              {
+                "title": "Apartamento LOTUS",
+                "items": [
+                  "U/Zen_Central_Lotus_apartman_8.webp",
+                  "U/Zen_Central_Lotus_apartman_6.webp",
+                  "U/Zen_Central_galeria6.webp",
+                  "U/Zen_Central_Lotus_apartman_9.webp",
+                  "U/ZEN_Central_Lotus_icon.webp",
+                  "U/Zen_Central_Lotus_apartman_12.webp",
+                  "U/Zen_Central_galeria1.webp",
+                  "U/Zen_Central_Lotus_apartman_7.webp",
+                  "U/Zen_Central_Lotus_apartman_3.webp",
+                  "U/Zen_Central_Lotus_apartman_2.webp",
+                  "U/Zen_Central_Lotus_apartman_5.webp",
+                  "U/Zen_Central_Lotus_apartman_4.webp"
+                ]
+              },
+              {
+                "title": "La casa y sus alrededores",
+                "items": [
+                  "U/Zen_Central_apartman_10.webp",
+                  "U/Zen_Central_apartman_12.webp",
+                  "U/Zen_Central_apartman_13.webp",
+                  "U/Zen_Central_galeria.webp",
+                  "U/Zen_Central_apartman_9.webp",
+                  "U/Zen_Central_apartman_1.webp",
+                  "U/Zen_Central_apartman_2.webp",
+                  "U/Zen_Central_Lotus_apartman_11.webp",
+                  "U/Zen_Central_galeria2.webp"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "ref": "cta"
+        }
+      ]
+    },
+    "contact": {
+      "slug": "contacto",
+      "title": "Contacto",
+      "seo_title": "Contacto – ZEN Central Apartments, Veszprém, Festő utca 6.",
+      "seo_desc": "En una tranquila calle residencial, ZEN Central Apartments ofrece una calma reparadora en sus tres apartamentos, muy cerca de los principales atractivos.",
+      "focus_kw": "contacto ZEN Central Apartments",
+      "og": "U/ZEN_Central_Veszprem_a.webp",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "title": "Contacto",
+            "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
+            "height": "small",
+            "breadcrumbs": true,
+            "side_logo": true,
+            "side_badge": "U/ZEN_Central_Contact_us1.svg"
+          }
+        },
+        {
+          "type": "contact",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "kicker": "ZEN CENTRAL",
+            "title": "Nuestros datos de contacto",
+            "notice": "¡No podemos informar por teléfono sobre la disponibilidad ni los precios de los apartamentos! Puede solicitar un presupuesto pulsando el botón \"RESERVAR\" de nuestra web.",
+            "info_title": "Información general:",
+            "info": [
+              {
+                "label": "+36 30 116 9431",
+                "url": "tel:+36301169431",
+                "icon": "phone"
+              },
+              {
+                "label": "info@zencentralapartments.com",
+                "url": "mailto:info@zencentralapartments.com",
+                "icon": "mail"
+              },
+              {
+                "label": "H-8200 Veszprém, Festő utca 6.",
+                "url": "https://maps.google.com/?q=ZEN+Central+Apartments+Veszpr%C3%A9m",
+                "icon": "pin"
+              }
+            ],
+            "booking_title": "Reservas, fechas disponibles:",
+            "buttons": [
+              {
+                "label": "Consultar disponibilidad y reservar",
+                "url": "{page:booking}",
+                "style": "primary"
+              }
+            ],
+            "community_title": "Formamos parte de la comunidad",
+            "media": "U/ZEN_Central_Veszprem_a.webp",
+            "access_title": "Cómo llegar",
+            "access_html": "<p>EN COCHE: el aparcamiento es gratuito en la calle Festő, y se pueden reservar plazas privadas dentro del recinto del alojamiento.</p><p>ESTACIÓN DE AUTOBUSES: el alojamiento está a 16 minutos a pie, o se puede llegar con los autobuses urbanos número 2 o 3.</p><p>ESTACIÓN DE TREN: puede llegar directamente al alojamiento con los autobuses urbanos número 2, 5, 10 o en taxi.</p>",
+            "checkin_title": "Check-in",
+            "checkin_html": "<p>Los apartamentos disponen de una caja de llaves con un código único, válido durante toda su reserva. También ofrecemos la opción de check-in online sin contacto, de modo que no es necesario avisarnos de antemano de su hora de llegada ni coordinar posibles cambios. Si lo prefiere, puede solicitar nuestra presencia en el check-in y el check-out; le rogamos que nos lo comunique con antelación.</p>",
+            "map_query": "ZEN Central Apartments Veszprém"
+          }
+        },
+        {
+          "type": "form",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "form": "contact",
+            "title": "¿Tiene alguna pregunta? ¡Escríbanos!",
+            "text": ""
+          }
+        }
+      ]
+    },
+    "booking": {
+      "slug": "reserva",
+      "title": "Reserva",
+      "seo_title": "Reserva – disponibilidad y mejor precio | ZEN Veszprém",
+      "seo_desc": "Reserve su estancia en Veszprém al mejor precio garantizado en nuestra web, de forma rápida y sencilla, en cómodos apartamentos cerca del lago Balaton.",
+      "focus_kw": "reservar apartamento Veszprém",
+      "og": "U/ZEN_Central_Apartments_fooldal.webp",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "title": "Reserva",
+            "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
+            "height": "small",
+            "breadcrumbs": true,
+            "side_logo": true,
+            "side_badge": "U/ZEN_Central_Contact_us1.svg"
+          }
+        },
+        {
+          "type": "booking",
+          "style": {
+            "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp",
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "title": "",
+            "text": "",
+            "engine": "inherit"
+          }
+        }
+      ]
+    },
+    "feedback": {
+      "slug": "opiniones",
+      "title": "Portal de satisfacción de huéspedes",
+      "seo_title": "Opiniones de huéspedes | ZEN Central Apartments Veszprém",
+      "seo_desc": "¡Comparta su experiencia! Valore su estancia en ZEN Central Apartments: su opinión nos ayuda a ser aún mejores.",
+      "focus_kw": "opiniones ZEN Central",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "kicker": "Gracias por alojarse con nosotros",
+            "title": "Portal de satisfacción de huéspedes",
+            "text": "Solo son unos clics: su opinión nos ayuda mucho a nosotros y a los futuros huéspedes.",
+            "media": "U/ZEN_Central_Veszprem_varos1.webp",
+            "height": "medium",
+            "breadcrumbs": true
+          }
+        },
+        {
+          "type": "form",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "form": "feedback",
+            "title": "¿Qué tal fue su estancia?",
+            "text": "Valórenos con estrellas y cuéntenos en pocas palabras qué le gustó y qué podríamos mejorar."
+          }
+        },
+        {
+          "type": "reviews",
+          "style": {
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "title": "Lo que dicen nuestros huéspedes",
+            "text": "",
+            "source": "feedback",
+            "items": []
+          }
+        }
+      ]
+    },
+    "help": {
+      "slug": "ayuda",
+      "title": "Ayuda y soporte",
+      "seo_title": "Ayuda – Zen, conserje IA | ZEN Central Apartments Veszprém",
+      "seo_desc": "¿Dudas sobre la reserva, la llegada, el aparcamiento o qué hacer en Veszprém? Zen, nuestro conserje IA, le ayuda de día y de noche.",
+      "focus_kw": "ayuda ZEN Central",
+      "sections": [
+        {
+          "type": "hero",
+          "data": {
+            "kicker": "Disponible 24/7",
+            "title": "¿Cómo podemos ayudarle?",
+            "text": "Pregunte a Zen, nuestro conserje digital: conoce los apartamentos, el proceso de reserva y cada rincón de Veszprém.",
+            "media": "U/ZEN_Central_Veszprem_7.webp",
+            "height": "medium",
+            "breadcrumbs": true
+          }
+        },
+        {
+          "type": "richtext",
+          "style": {
+            "pad": "l"
+          },
+          "data": {
+            "title": "",
+            "html": "[zen_help]"
+          }
+        },
+        {
+          "ref": "faq"
+        },
+        {
+          "type": "form",
+          "style": {
+            "tone": "alt",
+            "pad": "l"
+          },
+          "data": {
+            "form": "contact",
+            "title": "¿Tiene alguna pregunta? ¡Escríbanos!",
+            "text": ""
+          }
+        }
+      ]
+    }
+  }
+}

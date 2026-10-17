@@ -1,0 +1,311 @@
+{
+  "lang": "hu",
+  "snippets": {
+    "cta": {
+      "type": "cta",
+      "style": { "bg": "U/ZEN_Central_Lotus_feher.webp", "tone": "accent", "pad": "l" },
+      "data": {
+        "title": "Kérjen ajánlatot, és foglaljon közvetlenül!",
+        "lines": ["Szabad időpontok és árajánlat kérése gyorsan és egyszerűen."],
+        "buttons": [{ "label": "Szabad időpontok és foglalás", "url": "{page:booking}", "style": "primary" }]
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "style": { "tone": "auto", "pad": "l", "anchor": "gyik" },
+      "data": {
+        "title": "Gyakran Ismételt Kérdések",
+        "groups": [
+          { "title": "Foglalás és kapcsolatfelvétel", "items": [
+            { "q": "Hogyan tudom lefoglalni a szobát vagy az apartmant?", "a": "<p>Foglalni a <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> oldalon vagy telefonon a <b>06/20 971 7556</b> számon lehet.</p>" },
+            { "q": "Kell előleget fizetni a foglaláshoz?", "a": "<p>Igen, az előleg mértéke a teljes összeg 50%-a. Bizonyos partneroldalakon keresztül történő foglalás esetén a teljes összeg előre fizetendő.</p>" },
+            { "q": "Hogyan mondhatom le a foglalásomat?", "a": "<p>Közvetlen foglalás (honlap, email) esetén az érkezést megelőző <b>15 napig</b> a lemondás díjmentes, a befizetett összeget visszatérítjük.<br>15 napon belüli lemondás esetén a szállásdíj <b>50%-át</b>, meg nem jelenés esetén a <b>100%-át</b> számítjuk fel kötbérként. Lemondási igényét e-mailben kérjük jelezze: <b>zencentralapartments@gmail.com</b></p>" }
+          ]},
+          { "title": "Érkezés és távozás", "items": [
+            { "q": "Mikor lehet elfoglalni és mikor kell elhagyni az apartmant?", "a": "<p>Az apartman <b>14:00 órától</b> foglalható el, és a távozás napján <b>10:00 óráig</b> kérjük elhagyni. Korábbi bejelentkezés vagy későbbi kijelentkezés előzetes egyeztetéssel, a foglaltság függvényében felár ellenében lehetséges.</p>" },
+            { "q": "Nagyon későn érkezünk, hogyan jutunk be?", "a": "<p>A bejutás önállóan történik kulcsszéf segítségével, így késői érkezés esetén is zökkenőmentes a check-in.</p>" }
+          ]},
+          { "title": "Fizetés és számlázás", "items": [
+            { "q": "Mikor kell fizetni?", "a": "<p>Az előleg után fennmaradó összeget érkezéskor kell rendezni.</p>" },
+            { "q": "Milyen fizetési módokat fogadnak el?", "a": "<ul><li>Készpénz vagy átutalás (közvetlen foglalás esetén)</li><li>Bankkártya (MasterCard, Maestro, VISA, VISA Electron) – csak online, a weboldalon vagy közvetítő oldalakon történő foglalásnál</li><li>SZÉP kártyát jelenleg nem fogadunk el</li></ul>" },
+            { "q": "Tartalmazzák az árak az ÁFÁ-t és az idegenforgalmi adót?", "a": "<p>Az árak ÁFÁ-t tartalmazzák, az idegenforgalmi adót nem. Az IFA mértéke 2025 évben 500 Ft / fő / éj (18 év felett).</p>" }
+          ]},
+          { "title": "Szolgáltatások és felszereltség", "items": [
+            { "q": "Mit tartalmaz az ár?", "a": "<p>Az ár a szállást ellátás nélkül tartalmazza, valamint:</p><ul><li>ingyenes WiFi az egész apartman területén</li><li>ingyenes parkolás az udvarban vagy a ház előtt</li><li>ÁFA</li><li>alapvető háztartási és higiéniai felszerelések</li></ul>" },
+            { "q": "Van internet az apartmanban?", "a": "<p>Igen, az egész épületben gyors, vezeték nélküli internet elérhető.</p>" },
+            { "q": "Tudunk főzni az apartmanban?", "a": "<p>Igen, minden apartman jól felszerelt konyhával rendelkezik – evőeszközök, edények, poharak, vízforraló, hűtő, kávéfőző, indukciós főzőlap és mikrohullámú sütő biztosított.</p>" },
+            { "q": "Mindennapi használati tárgyakat hoznunk kell?", "a": "<p>Nem szükséges. Az apartmanban megtalálható törölköző, ágynemű, evőeszközök, poharak, hajszárító, toalettpapír, kézfertőtlenítő, vállfák.</p>" },
+            { "q": "Van fűtés télen?", "a": "<p>Igen, apartmanjaink egész évben foglalhatók, modern fűtéssel rendelkeznek.</p>" }
+          ]},
+          { "title": "Egyéb tudnivalók", "items": [
+            { "q": "Lehet háziállatot hozni?", "a": "<p>Bár szeretjük az állatokat, apartmanjainkban nem tudunk kisállatot fogadni.</p>" },
+            { "q": "Hol lehet dohányozni?", "a": "<p>Az apartmanok nemdohányzóak. Dohányozni csak a kijelölt helyen, az udvaron vagy a közös teraszon lehetséges.</p>" },
+            { "q": "Hol tudok parkolni?", "a": "<p>Minden apartmanhoz 1 saját parkolóhely tartozik. Több autó esetén előzetes egyeztetés szükséges, de az utcán is ingyenes parkolás biztosított.</p>" }
+          ]},
+          { "title": "Elhelyezkedés", "items": [
+            { "q": "Hol található pontosan a ZEN Central Apartments?", "a": "<p>Cím: 8200 Veszprém, Festő utca 6. A belváros pár perc sétával elérhető, a környék csendes, biztonságos, ideális pihenéshez és városnézéshez.</p>" }
+          ]}
+        ]
+      }
+    },
+    "amenities": ["Nem dohányzó apartman", "Légkondicionáló, fűtés", "Gardrób/szekrény", "Parketta", "Smart TV", "Gyors WIFI"],
+    "kitchen": "Jól felszerelt konyha (Mikrohullámú sütő, Kenyérpirító, Vízforraló, Kávéfőző (kotyogós), Étkezőasztal 4 székkel, Hűtőszekrény, Főzőlap, Főző és tálaló edények, mosogatószer, teafilter és Nescafé bekészítés)",
+    "aside": { "aside_title": "Kérjen ajánlatot, és foglaljon közvetlenül!", "aside_text": "Szabad időpontok és árajánlat kérése gyorsan és egyszerűen.", "aside_button": { "label": "Szabad időpontok és foglalás", "url": "{page:booking}", "style": "primary" } }
+  },
+  "pages": {
+    "home": {
+      "slug": "fooldal",
+      "front": true,
+      "title": "Zen Central Apartmanok",
+      "seo_title": "ZEN Central Apartmanok Veszprém | Szállás a belváros szívében",
+      "seo_desc": "Csendes kertvárosi utcában található az üdítő csendet kínáló 3 apartmanból álló ZEN Central Apartments. Ideális elhelyezkedése lehetővé teszi a város főbb látnivalóinak könnyű elérését.",
+      "focus_kw": "szállás Veszprém",
+      "og": "U/ZEN_Central_Apartments_fooldal.webp",
+      "sections": [
+        { "type": "hero", "style": { "overlay": 0.38 }, "data": {
+          "kicker": "Veszprém", "title": "ZEN Central Apartmanok",
+          "text": "A garantáltan legjobb áron itt foglalhat hozzánk!",
+          "buttons": [{ "label": "foglaljon közvetlenül!", "url": "{page:booking}", "style": "primary" }],
+          "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp", "height": "full", "booking_bar": true, "side_logo": true } },
+        { "type": "intro", "style": { "pad": "l" }, "data": {
+          "kicker": "ZEN CENTRAL", "title": "Modern kényelem, csendes környezet Veszprém belvárosában",
+          "html": "<p>A ZEN CENTRAL APARTMENTS szálláshely apartmanjai a Bakony-Balaton térségben, Veszprém belvárosában, mégis csendes, kertvárosi utcában várják a vendégeket. Ha fontos a modern és otthonos környezet, ideális választás.</p>",
+          "buttons": [{ "label": "Szabad időpontok és foglalás", "url": "{page:booking}", "style": "primary" }],
+          "media": "U/ZEN_Central_Veszprem_7.webp", "layout": "right" } },
+        { "type": "cards", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": {
+          "kicker": "Modern és otthonos", "title": "ZEN Central Apartments", "source": "manual",
+          "items": [
+            { "title": "JIN-JANG Apartman", "apt": "jinjang", "url": "{page:apt_jinjang}", "media": "U/Zen_Central_Jin_Jang.webp" },
+            { "title": "LOTUS Apartman", "apt": "lotus", "url": "{page:apt_lotus}", "media": "U/Zen_Central_Lotus.webp" },
+            { "title": "RELAX Apartman", "apt": "relax", "url": "{page:apt_relax}", "media": "U/Zen_Central_Relax.webp" }
+          ] } },
+        { "type": "intro", "style": { "pad": "l" }, "data": {
+          "kicker": "csendes környezet", "title": "Veszprém szívében",
+          "html": "<p>Veszprém szívében, egy csendes kertvárosi utcában található az üdítő csendet kínáló 3 apartmanból álló ZEN Central Apartments. Ideális elhelyezkedése lehetővé teszi a város főbb látnivalóinak könnyű elérését, miközben kívül esik a város zajától.</p><p>Személygépjárművel a Festő utcában ingyenes a parkolás, és a szálláshely privát területén saját parkolóhely is foglalható. Így Önnek nem kell aggódnia a parkolóhelyekért, miközben élvezheti a ZEN Central Apartments nyugalmát és kényelmét.</p>",
+          "buttons": [{ "label": "Szabad időpontok és foglalás", "url": "{page:booking}", "style": "primary" }],
+          "media": "U/ZEN_Central_Veszprem_varos1.webp", "layout": "left" } },
+        { "type": "map_list", "style": { "tone": "alt", "pad": "l" }, "data": {
+          "title": "Közeli látnivalók", "map_query": "ZEN Central Apartments Veszprém",
+          "items": ["Óváros tér: 400 m", "Sétálóutca: 900 m", "Vásárcsarnok, piac: 1200 m", "Állatkert: 1300 m", "Gyárkert: 1400 m", "Szerelem sziget: 1100 m", "Séd patak völgye: 1400 m", "Laczkó forrás: 2600 m", "Veszprém Aréna: 3200 m", "Tihany: 27 km"] } },
+        { "type": "guide", "style": { "pad": "l" }, "data": { "title": "Fedezze fel Veszprémet", "text": "Zen, a digitális concierge-ünk válogatása a környék legjobb látnivalóiból és programjaiból.", "category": "sight", "limit": 6 } },
+        { "type": "reviews", "style": { "tone": "alt", "pad": "l" }, "data": { "title": "Vendégeink mondták", "text": "", "source": "feedback", "items": [] } },
+        { "ref": "cta", "data": { "lines": ["A garantáltan legjobb áron itt foglalhat hozzánk!", "Szabad időpontok és árajánlat kérése gyorsan és egyszerűen."] } },
+        { "ref": "faq" }
+      ]
+    },
+    "apartments": {
+      "slug": "apartmanok",
+      "title": "Apartmanok",
+      "seo_title": "Apartmanok Veszprém belvárosában | ZEN Central Apartments",
+      "seo_desc": "Modern és otthonos apartmanok Veszprém belvárosában! A ZEN Central Apartments 3 klimatizált szállást kínál, jól felszerelt konyhával, privát parkolóval és kényelmes pihenési lehetőséggel.",
+      "focus_kw": "apartman Veszprém",
+      "og": "U/Zen_Central_Jin_Jang-1.webp",
+      "sections": [
+        { "type": "hero", "data": { "title": "Apartmanok", "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp", "height": "small", "breadcrumbs": true, "side_logo": true } },
+        { "type": "cards", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": {
+          "kicker": "Modern és otthonos", "title": "ZEN Central apartmanok", "source": "manual",
+          "html": "<p>Veszprém belvárosában egy kertes családi ház emeletén található új építésű, modern szálláshelyünk a ZEN Central Apartments, mely 3 apartmanból áll: RELAX Studio 2 fő, LOTUS Studio 3 fő, JIN JANG 2 hálószobás 4 fő részére lett kialakítva. Mindegyik apartman klimatizált. jól felszerelt konyhával, zuhanyzós fürdőszobával ingyenes zárt udvari parkolóval várja vendégeit.</p>",
+          "items": [
+            { "title": "JIN-JANG Apartman", "apt": "jinjang", "url": "{page:apt_jinjang}", "media": "U/Zen_Central_Jin_Jang.webp" },
+            { "title": "LOTUS Apartman", "apt": "lotus", "url": "{page:apt_lotus}", "media": "U/Zen_Central_Lotus.webp" },
+            { "title": "RELAX Apartman", "apt": "relax", "url": "{page:apt_relax}", "media": "U/Zen_Central_Relax.webp" }
+          ] } },
+        { "ref": "cta" }
+      ]
+    },
+    "apt_relax": {
+      "slug": "relax-apartman",
+      "title": "RELAX Apartman",
+      "seo_title": "RELAX Apartman 2 főre – Veszprém belváros | ZEN Central",
+      "seo_desc": "Pihenjen Veszprém szívében a RELAX Apartmanban: kényelmes ágyak, privát terasz, ingyenes zárt parkoló. Tökéletes választás Balaton-közeli kikapcsolódáshoz.",
+      "focus_kw": "RELAX apartman Veszprém",
+      "og": "U/Zen_Central_Relax.webp",
+      "sections": [
+        { "type": "hero", "data": { "title": "RELAX Apartman", "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp", "height": "small", "breadcrumbs": true, "side_logo": true } },
+        { "type": "apt_detail", "style": { "pad": "l" }, "data": {
+          "apt": "relax", "title": "RELAX Apartman", "media": "U/Zen_Central_Relax_apartman_6.webp",
+          "html": "<p>2 db extra kényelmes (90×200 cm) boxspring ágy, ami franciaággyá (180x200cm) alakítható. Az apartmanhoz tartozik a folyosóról nyíló kerti bútorokkal, napernyővel berendezett terasz.</p><p>Az ingyenes, zárt, udvari parkoló hasznos lehet autóval érkező vendégeinknek.</p><p>Nem dohányzó apartman.</p>",
+          "facts": ["Idegenforgalmi adó: 500,- Ft / fő / éj, az Önkormányzat részére érkezéskor készpénzben fizetendő", "Maximum kapacitás: 2 fő", "Szoba mérete: 20 m2"],
+          "amenities_title": "Apartman felszereltsége",
+          "amenities": ["Nem dohányzó apartman", "2 db boxspring ágy, ami 1 db franciaággyá alakítható", "Légkondicionáló, fűtés", "Gardrób/szekrény", "Parketta", "Smart TV", "Gyors WIFI", "Fürdőszoba, walk in zuhannyal, 2 db törölköző személyenként, ingyen piperecikkek (sampon, tusfürdő, szappan, folyékony szappan, zuhanysapka), hajszárító, WC", "Ruhaszárító", "Jól felszerelt konyha (Mikrohullámú sütő, Kenyérpirító, Vízforraló, Kávéfőző (kotyogós), Étkezőasztal 4 székkel, Hűtőszekrény, Főzőlap, Főző és tálaló edények, mosogatószer, teafilter és Nescafé bekészítés)"],
+          "buttons": [{ "label": "Szabad időpontok és foglalás", "url": "{page:booking}?apt=relax", "style": "primary" }],
+          "@aside": true,
+          "gallery": ["U/Zen_Central_Relax_apartman_8.webp", "U/Zen_Central_Relax_apartman_6.webp", "U/Zen_Central_Relax_apartman_1.webp", "U/Zen_Central_Relax_apartman_3.webp", "U/Zen_Central_Relax_apartman_4.webp", "U/Zen_Central_Relax_apartman_5.webp", "U/Zen_Central_Relax_apartman_7.webp", "U/Zen_Central_Relax_apartman_9.webp"] } },
+        { "ref": "cta" },
+        { "type": "cards", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": {
+          "kicker": "Modern és otthonos", "title": "További apartmanok", "source": "manual",
+          "items": [
+            { "title": "JIN-JANG Apartman", "apt": "jinjang", "url": "{page:apt_jinjang}", "media": "U/Zen_Central_Jin_Jang.webp" },
+            { "title": "LOTUS Apartman", "apt": "lotus", "url": "{page:apt_lotus}", "media": "U/Zen_Central_Lotus.webp" }
+          ] } }
+      ]
+    },
+    "apt_jinjang": {
+      "slug": "jin-jang-apartman",
+      "title": "JIN-JANG Apartman",
+      "seo_title": "JIN-JANG Apartman 4 főre, 2 hálószoba – Veszprém | ZEN Central",
+      "seo_desc": "Tágas, 2 hálószobás Jin-Jang apartman terasszal és zárt parkolóval, ideális családoknak vagy baráti társaságoknak. Kényelmes boxspring ágyak, nyugodt pihenés Veszprém belvárosában, a Balaton közelében.",
+      "focus_kw": "családi apartman Veszprém",
+      "og": "U/Zen_Central_Jin_Jang.webp",
+      "sections": [
+        { "type": "hero", "data": { "title": "JIN-JANG Apartman", "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp", "height": "small", "breadcrumbs": true, "side_logo": true } },
+        { "type": "apt_detail", "style": { "pad": "l" }, "data": {
+          "apt": "jinjang", "title": "JIN-JANG Apartman", "media": "U/Zen_Central_Jin_Jang_8.webp",
+          "html": "<p>Ideális családok, vagy baráti társaságok részére. 2 fő külön hálószobában nagy franciaágyon (180×200 cm), további 2 fő pedig a nappaliban franciaágyon (180×200 cm). Igény esetén az extra kényelmes 4 db boxspring ágy (90×200 cm) külön is használható.</p><p>Az apartmanhoz tartozik a folyosóról nyíló kerti bútorokkal, napernyővel berendezett terasz.</p><p>Az ingyenes, zárt, udvari parkoló hasznos lehet autóval érkező vendégeinknek.</p><p>Nem dohányzó apartman.</p>",
+          "facts": ["Idegenforgalmi adó: 500,- Ft / fő / éj, az Önkormányzat részére érkezéskor készpénzben fizetendő", "Maximum kapacitás: 4 fő", "Szoba mérete: 35 m2"],
+          "amenities_title": "Apartman felszereltsége",
+          "amenities": ["Nem dohányzó apartman", "2 db franciaágy, ami 4 db külön boxspring ágyként is használható", "Légkondicionáló, fűtés", "Gardrób/szekrény", "Parketta", "Smart TV", "Gyors WIFI", "Fürdőszoba, zuhanykabinnal, 2 db törölköző személyenként, ingyen piperecikkek (sampon, tusfürdő, szappan, folyékony szappan, zuhanysapka), hajszárító, WC", "Ruhaszárító", "Jól felszerelt konyha (Mikrohullámú sütő, Kenyérpirító, Vízforraló, Kávéfőző (kotyogós), Étkezőasztal 4 székkel, Hűtőszekrény, Főzőlap, Főző és tálaló edények, mosogatószer, teafilter és Nescafé bekészítés)"],
+          "buttons": [{ "label": "Szabad időpontok és foglalás", "url": "{page:booking}?apt=jinjang", "style": "primary" }],
+          "@aside": true,
+          "gallery": ["U/Zen_Central_Jin_Jang_1.webp", "U/Zen_Central_Jin_Jang_2.webp", "U/Zen_Central_Jin_Jang_4.webp", "U/Zen_Central_Jin_Jang_7.webp", "U/Zen_Central_Jin_Jang_6.webp", "U/Zen_Central_Jin_Jang_5.webp", "U/Zen_Central_Jin_Jang_3.webp", "U/Zen_Central_apartman_5.webp"] } },
+        { "ref": "cta" },
+        { "type": "cards", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": {
+          "kicker": "Modern és otthonos", "title": "További apartmanok", "source": "manual",
+          "items": [
+            { "title": "LOTUS Apartman", "apt": "lotus", "url": "{page:apt_lotus}", "media": "U/Zen_Central_Lotus.webp" },
+            { "title": "RELAX Apartman", "apt": "relax", "url": "{page:apt_relax}", "media": "U/Zen_Central_Relax.webp" }
+          ] } }
+      ]
+    },
+    "apt_lotus": {
+      "slug": "lotus-apartman",
+      "title": "LOTUS Apartman",
+      "seo_title": "LOTUS Apartman 3 főre – Veszprém belváros | ZEN Central",
+      "seo_desc": "Csendes kertvárosi utcában található az üdítő csendet kínáló 3 apartmanból álló ZEN Central Apartments. Ideális elhelyezkedése lehetővé teszi a város főbb látnivalóinak könnyű elérését.",
+      "focus_kw": "LOTUS apartman Veszprém",
+      "og": "U/Zen_Central_Lotus.webp",
+      "sections": [
+        { "type": "hero", "data": { "title": "LOTUS Apartman", "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp", "height": "small", "breadcrumbs": true, "side_logo": true } },
+        { "type": "apt_detail", "style": { "pad": "l" }, "data": {
+          "apt": "lotus", "title": "LOTUS Apartman", "media": "U/Zen_Central_Lotus_apartman_8.webp",
+          "html": "<p>2 db extra kényelmes (90×200 cm) boxspring ágy, ami franciaágyassá (180×200 cm) alakítható, valamint 1 db 90×200 cm méretű boxspring ágy. Az apartmanhoz tartozik a folyosóról nyíló kerti bútorokkal, napernyővel berendezett terasz.</p><p>Az ingyenes, zárt, udvari parkoló hasznos lehet autóval érkező vendégeinknek.</p><p>Nem dohányzó apartman.</p>",
+          "facts": ["Idegenforgalmi adó: 500,- Ft / fő / éj, az Önkormányzat részére érkezéskor készpénzben fizetendő", "Maximum kapacitás: 3 fő", "Szoba mérete: 25 m2"],
+          "amenities_title": "Apartman felszereltsége",
+          "amenities": ["Nem dohányzó apartman", "2 db boxspring ágy, ami 1db franciaággyá alakítható, + 1 db boxspring ágy", "Légkondicionáló, fűtés", "Gardrób/szekrény", "Parketta", "Smart TV", "Gyors WIFI", "Fürdőszoba, zuhanykabinnal, 2 db törölköző személyenként, ingyen piperecikkek (sampon, tusfürdő, szappan, folyékony szappan, zuhanysapka), hajszárító, WC", "Ruhaszárító", "Jól felszerelt konyha (Mikrohullámú sütő, Kenyérpirító, Vízforraló, Kávéfőző (kotyogós), Étkezőasztal 4 székkel, Hűtőszekrény, Főzőlap, Főző és tálaló edények, mosogatószer, teafilter és Nescafé bekészítés)"],
+          "buttons": [{ "label": "Szabad időpontok és foglalás", "url": "{page:booking}?apt=lotus", "style": "primary" }],
+          "@aside": true,
+          "gallery": ["U/Zen_Central_Lotus_apartman_8.webp", "U/Zen_Central_Lotus_apartman_9.webp", "U/Zen_Central_Lotus_apartman_7.webp", "U/Zen_Central_Lotus_apartman_3.webp", "U/Zen_Central_Lotus_apartman_2.webp", "U/Zen_Central_Lotus_apartman_6.webp", "U/Zen_Central_Lotus_apartman_11.webp", "U/Zen_Central_Lotus_apartman_12.webp", "U/Zen_Central_Lotus_apartman_5.webp", "U/Zen_Central_Lotus_apartman_4.webp", "U/Zen_Central_Lotus_apartman_1jpg.webp", "U/Zen_Central_Lotus_apartman_10.webp", "U/Zen_Central_apartman_6.webp"] } },
+        { "ref": "cta" },
+        { "type": "cards", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": {
+          "kicker": "Modern és otthonos", "title": "További apartmanok", "source": "manual",
+          "items": [
+            { "title": "JIN-JANG Apartman", "apt": "jinjang", "url": "{page:apt_jinjang}", "media": "U/Zen_Central_Jin_Jang.webp" },
+            { "title": "RELAX Apartman", "apt": "relax", "url": "{page:apt_relax}", "media": "U/Zen_Central_Relax.webp" }
+          ] } }
+      ]
+    },
+    "gallery": {
+      "slug": "galeria",
+      "title": "Galéria",
+      "seo_title": "Galéria – fotók az apartmanokról | ZEN Central Apartments Veszprém",
+      "seo_desc": "Csendes kertvárosi utcában található az üdítő csendet kínáló 3 apartmanból álló ZEN Central Apartments. Ideális elhelyezkedése lehetővé teszi a város főbb látnivalóinak könnyű elérését.",
+      "focus_kw": "ZEN Central Apartments képek",
+      "og": "U/ZEN_Central_Apartments_fooldal.webp",
+      "sections": [
+        { "type": "hero", "data": { "title": "Galéria", "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp", "height": "small", "breadcrumbs": true, "side_logo": true } },
+        { "type": "gallery", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": { "title": "", "groups": [
+          { "title": "RELAX Apartman", "items": ["U/Zen_Central_Relax_apartman_6.webp", "U/Zen_Central_Relax_apartman_7.webp", "U/Zen_Central_galeria5.webp", "U/Zen_Central_Relax_apartman_5.webp", "U/ZEN_Central_Relax_icon.webp", "U/Zen_Central_Relax_apartman_2.webp", "U/Zen_Central_galeria3.webp", "U/Zen_Central_Relax_apartman_4.webp", "U/Zen_Central_Relax_apartman_3.webp"] },
+          { "title": "JIN-JANG Apartman", "items": ["U/Zen_Central_Jin_Jang_8.webp", "U/Zen_Central_Jin_Jang_4.webp", "U/Zen_Central_Jin_Jang-1.webp", "U/Zen_Central_Jin_Jang_7.webp", "U/ZEN_Central_YinYang_icon.webp", "U/Zen_Central_Jin_Jang_6.webp", "U/Zen_Central_galeria7.webp", "U/Zen_Central_Jin_Jang_5.webp", "U/Zen_Central_Jin_Jang_3.webp", "U/Zen_Central_Jin_Jang_2.webp", "U/Zen_Central_Jin_Jang_1.webp"] }
+        ] } },
+        { "ref": "cta" },
+        { "type": "gallery", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": { "title": "", "groups": [
+          { "title": "LOTUS Apartman", "items": ["U/Zen_Central_Lotus_apartman_8.webp", "U/Zen_Central_Lotus_apartman_6.webp", "U/Zen_Central_galeria6.webp", "U/Zen_Central_Lotus_apartman_9.webp", "U/ZEN_Central_Lotus_icon.webp", "U/Zen_Central_Lotus_apartman_12.webp", "U/Zen_Central_galeria1.webp", "U/Zen_Central_Lotus_apartman_7.webp", "U/Zen_Central_Lotus_apartman_3.webp", "U/Zen_Central_Lotus_apartman_2.webp", "U/Zen_Central_Lotus_apartman_5.webp", "U/Zen_Central_Lotus_apartman_4.webp"] },
+          { "title": "Ház és környezet", "items": ["U/Zen_Central_apartman_10.webp", "U/Zen_Central_apartman_12.webp", "U/Zen_Central_apartman_13.webp", "U/Zen_Central_galeria.webp", "U/Zen_Central_apartman_9.webp", "U/Zen_Central_apartman_1.webp", "U/Zen_Central_apartman_2.webp", "U/Zen_Central_Lotus_apartman_11.webp", "U/Zen_Central_galeria2.webp"] }
+        ] } },
+        { "ref": "cta" }
+      ]
+    },
+    "blog": {
+      "slug": "blog",
+      "title": "Blog",
+      "posts_page": true,
+      "seo_title": "Blog – Veszprém programok, tippek | ZEN Central Apartments",
+      "seo_desc": "Veszprémi látnivalók, programok, szállás-útmutatók és helyi tippek a ZEN Central Apartments blogján.",
+      "focus_kw": "Veszprém blog",
+      "og": "U/ZEN_Central_Apartments_fooldal.webp",
+      "sections": [
+        { "type": "hero", "data": { "title": "Blog", "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp", "height": "small", "breadcrumbs": true, "side_logo": true } },
+        { "type": "blog_list", "style": { "pad": "l" }, "data": { "title": "", "count": 12, "show_excerpt": true } },
+        { "ref": "faq" }
+      ]
+    },
+    "contact": {
+      "slug": "kapcsolat",
+      "title": "Kapcsolat",
+      "seo_title": "Kapcsolat – ZEN Central Apartments, Veszprém Festő utca 6.",
+      "seo_desc": "Csendes kertvárosi utcában található az üdítő csendet kínáló 3 apartmanból álló ZEN Central Apartments. Ideális elhelyezkedése lehetővé teszi a város főbb látnivalóinak könnyű elérését.",
+      "focus_kw": "ZEN Central Apartments kapcsolat",
+      "og": "U/ZEN_Central_Apartments_fooldal1.webp",
+      "sections": [
+        { "type": "hero", "data": { "title": "Kapcsolat", "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp", "height": "small", "breadcrumbs": true, "side_logo": true } },
+        { "type": "contact", "style": { "pad": "l" }, "data": {
+          "kicker": "ZEN CENTRAL", "title": "Elérhetőségeink",
+          "notice": "Telefonon az apartmanok foglalhatóságáról és árakról nem tudunk tájékoztatást adni! Ajánlatot a FOGLALÁS gombra kattintva kérhet.",
+          "info_title": "Általános Információ:",
+          "info": [
+            { "label": "+36 30 116 9431", "url": "tel:+36301169431", "icon": "phone" },
+            { "label": "info@zencentralapartments.com", "url": "mailto:info@zencentralapartments.com", "icon": "mail" },
+            { "label": "H-8200 Veszprém, Festő utca 6.", "url": "https://maps.google.com/?q=ZEN+Central+Apartments+Veszpr%C3%A9m", "icon": "pin" }
+          ],
+          "booking_title": "Foglalás, szabad időpontok:",
+          "buttons": [{ "label": "Szabad időpontok és foglalás", "url": "{page:booking}", "style": "primary" }],
+          "community_title": "Tagja vagyunk a közösségnek:",
+          "media": "U/ZEN_Central_Veszprem_a.webp",
+          "access_title": "Megközelíthetőség",
+          "access_html": "<p>Személygépjárművel: a Festő utcában ingyenes a parkolás, a szálláshely privát területén saját parkolóhely foglalható.</p><p>Buszpályaudvar: A szálláshelytől 16 perc sétára található, vagy helyközi 2 vagy 3 számú autóbusszal elérhető.</p><p>Vasútállomás: helyközi 2, 5, 10 számú autóbusszal vagy taxival közvetlenül a szálláshelyig.</p>",
+          "checkin_title": "Bejelentkezés",
+          "checkin_html": "<p>Az apartmanokhoz kulcsszéf tartozik egyedi kóddal, melyek a foglalás időtartama alatt érvényes. Lehetőséget tudunk biztosítani online, érintésmentes bejelentkezésre is, így érkezésének időpontját nem szükséges előre jeleznie, vagy változás esetén egyeztetni. Igény szerint a bejelentkezés és távozás időpontjában személyes jelenlét kérhető, melyet kérünk szíveskedjen előre jelezni.</p>",
+          "map_query": "ZEN Central Apartments Veszprém" } },
+        { "type": "form", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": { "form": "contact", "title": "Kérdése van? Írjon nekünk!", "text": "" } }
+      ]
+    },
+    "booking": {
+      "slug": "foglalas",
+      "title": "Foglalás",
+      "seo_title": "Foglalás – szabad időpontok, legjobb ár | ZEN Central Apartments",
+      "seo_desc": "Foglaljon szállást Veszprémben garantáltan a legjobb áron honlapunkon! Biztosítsa helyét gyorsan és egyszerűen a Balaton közelében található kényelmes apartmanjainkban.",
+      "focus_kw": "szállásfoglalás Veszprém",
+      "og": "U/ZEN_Central_Apartments_fooldal.webp",
+      "sections": [
+        { "type": "hero", "data": { "title": "Foglalás", "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp", "height": "small", "breadcrumbs": true, "side_logo": true } },
+        { "type": "booking", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": { "title": "", "text": "", "engine": "inherit" } }
+      ]
+    },
+    "privacy": {
+      "slug": "adatkezelesi-tajekoztato",
+      "title": "Adatkezelési tájékoztató",
+      "seo_title": "Adatkezelési tájékoztató | ZEN Central Apartments",
+      "seo_desc": "A ZEN Central Apartments szálláshely szolgáltatásait igénybevevő természetes személyek adatainak kezelésével összefüggő tájékoztató.",
+      "noindex": false,
+      "sections": [
+        { "type": "hero", "data": { "title": "Adatkezelési tájékoztató", "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp", "height": "small", "breadcrumbs": true, "side_logo": false } },
+        { "type": "richtext", "style": { "pad": "l" }, "data": { "title": "", "html_file": "privacy-hu.html" } }
+      ]
+    },
+    "feedback": {
+      "slug": "elegedettseg",
+      "title": "Ügyfél-elégedettségi portál",
+      "seo_title": "Vendégvélemények és elégedettség | ZEN Central Apartments",
+      "seo_desc": "Ossza meg velünk tapasztalatait! Értékelje tartózkodását a ZEN Central Apartmentsben – véleménye segít, hogy még jobbak lehessünk.",
+      "focus_kw": "ZEN Central vélemények",
+      "sections": [
+        { "type": "hero", "data": { "kicker": "Köszönjük, hogy nálunk pihent", "title": "Ügyfél-elégedettségi portál", "text": "Néhány kattintás az egész – véleménye sokat segít nekünk és a jövőbeli vendégeknek.", "media": "U/ZEN_Central_Veszprem_varos1.webp", "height": "medium", "breadcrumbs": true } },
+        { "type": "form", "style": { "pad": "l" }, "data": { "form": "feedback", "title": "Milyen volt a tartózkodása?", "text": "Értékelje csillagokkal, és írja le pár szóban, mi tetszett és min javíthatunk." } },
+        { "type": "reviews", "style": { "tone": "alt", "pad": "l" }, "data": { "title": "Vendégeink mondták", "text": "", "source": "feedback", "items": [] } }
+      ]
+    },
+    "help": {
+      "slug": "sugo",
+      "title": "Súgó és ügyfélszolgálat",
+      "seo_title": "Súgó és ügyfélszolgálat – Zen AI concierge | ZEN Central Apartments",
+      "seo_desc": "Kérdése van foglalásról, érkezésről, parkolásról vagy veszprémi programokról? Zen, a mesterséges intelligenciás concierge-ünk éjjel-nappal segít.",
+      "focus_kw": "ZEN Central súgó",
+      "sections": [
+        { "type": "hero", "data": { "kicker": "Éjjel-nappal elérhető", "title": "Miben segíthetünk?", "text": "Kérdezze Zent, a digitális concierge-ünket – ismeri az apartmanokat, a foglalás menetét és Veszprém minden zugát.", "media": "U/ZEN_Central_Veszprem_7.webp", "height": "medium", "breadcrumbs": true } },
+        { "type": "richtext", "style": { "pad": "l" }, "data": { "title": "", "html": "[zen_help]" } },
+        { "ref": "faq" },
+        { "type": "form", "style": { "tone": "alt", "pad": "l" }, "data": { "form": "contact", "title": "Kérdése van? Írjon nekünk!", "text": "" } }
+      ]
+    }
+  }
+}
