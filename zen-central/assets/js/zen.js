@@ -211,13 +211,10 @@
 		// Süti-elfogadás után a térképek azonnal betöltődnek.
 		if (e.target.closest('[data-consent="all"]')) { setTimeout(function () { $$('[data-map-auto="consent"]').forEach(function (m) { loadMap(m); }); }, 50); }
 	});
-	var autoMaps = $$('[data-map-auto]').filter(function (m) { return m.getAttribute('data-map-auto') === 'always' || consentOk(); });
-	if (autoMaps.length) {
-		if ('IntersectionObserver' in w) {
-			var mo = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { loadMap(x.target); mo.unobserve(x.target); } }); }, { rootMargin: '300px 0px' });
-			autoMaps.forEach(function (m) { mo.observe(m); });
-		} else { autoMaps.forEach(function (m) { loadMap(m); }); }
-	}
+	// Magától: az iframe azonnal bekerül, a böngésző natív lusta betöltése (loading=lazy) időzíti – nincs kattintás.
+	$$('[data-map-auto]').forEach(function (m) {
+		if (m.getAttribute('data-map-auto') === 'always' || consentOk()) { loadMap(m); }
+	});
 
 	/* ---------- Fülek (GYIK) ---------- */
 	d.addEventListener('click', function (e) {

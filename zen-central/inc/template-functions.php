@@ -481,7 +481,7 @@ function zc_map_cfg() {
 		'lng'  => (float) zc_opt( 'general.lng', 0 ),
 		'key'  => trim( (string) zc_opt( 'general.google_maps_key', '' ) ),
 		'q'    => (string) zc_opt( 'general.map_query', '' ),
-		'auto' => (string) zc_opt( 'general.map_autoload', 'consent' ),
+		'auto' => (string) zc_opt( 'general.map_autoload', 'always' ),
 	);
 }
 
@@ -507,7 +507,7 @@ function zc_map( $query, $class = '' ) {
 		return '<div class="zc-map zc-map--osm ' . esc_attr( $class ) . '" data-map="' . esc_url( $src ) . '" data-map-auto="always"><div class="zc-map__ph">' . zc_icon( 'map', 34 ) . '<button type="button" class="zc-btn zc-btn--sm" data-map-load>' . esc_html( zc_t( 'map_load' ) ) . '</button></div><a class="zc-map__open" href="' . esc_url( $lnk ) . '" target="_blank" rel="noopener">' . zc_icon( 'pin', 16 ) . '<span>' . esc_html( zc_t( 'open_maps' ) ) . '</span>' . zc_icon( 'external', 14 ) . '</a></div>';
 	}
 	$origin = ( $c['lat'] && $c['lng'] ) ? sprintf( '%.6f,%.6f', $c['lat'], $c['lng'] ) : $c['q'];
-	return '<div class="zc-map zc-map--google ' . esc_attr( $class ) . '" data-map="' . esc_url( zc_map_src() ) . '" data-map-auto="' . esc_attr( 'always' === $c['auto'] ? 'always' : 'consent' ) . '" data-origin="' . esc_attr( $origin ) . '" data-key="' . esc_attr( $c['key'] ) . '" data-hl="' . esc_attr( zc_lang() ) . '">'
+	return '<div class="zc-map zc-map--google ' . esc_attr( $class ) . '" data-map="' . esc_url( zc_map_src() ) . '" data-map-auto="' . esc_attr( 'consent' === $c['auto'] ? 'consent' : 'always' ) . '" data-origin="' . esc_attr( $origin ) . '" data-key="' . esc_attr( $c['key'] ) . '" data-hl="' . esc_attr( zc_lang() ) . '">'
 		. '<div class="zc-map__ph">' . zc_icon( 'map', 34 ) . '<button type="button" class="zc-btn zc-btn--sm" data-map-load>' . esc_html( zc_t( 'map_load' ) ) . '</button><small>' . esc_html( zc_t( 'map_note' ) ) . '</small></div>'
 		. '<a class="zc-map__open" href="' . esc_url( $lnk ) . '" target="_blank" rel="noopener" data-map-open>' . zc_icon( 'pin', 16 ) . '<span>' . esc_html( zc_t( 'open_maps' ) ) . '</span>' . zc_icon( 'external', 14 ) . '</a></div>';
 }
