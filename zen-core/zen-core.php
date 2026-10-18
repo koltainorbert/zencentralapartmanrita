@@ -279,3 +279,47 @@ add_action(
 		}
 	}
 );
+
+/* Frissítés 1.1.0: GYIK telefonszám egységesítése (+36 30 116 9431) és az apartman-leírások
+ * magyar eredetihez igazított változatának betöltése a többi nyelven. Egyszer fut, adminban. */
+add_action(
+	'admin_init',
+	function () {
+		if ( '1.1.0' === get_option( 'zen_fix_v' ) || ! class_exists( 'Zen_Content' ) || ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+		update_option( 'zen_fix_v', '1.1.0', false );
+		// 1) Telefonszám minden oldal szekcióiban (GYIK válasz).
+		foreach ( Zen_Content::pages() as $p ) {
+			$raw = (string) get_post_meta( $p['id'], '_zen_sections', true );
+			if ( '' === $raw || false === strpos( $raw, '971 7556' ) ) {
+				continue;
+			}
+			$secs = Zen_Content::get_sections( $p['id'] );
+			array_walk_recursive(
+				$secs,
+				function ( &$v ) {
+					if ( is_string( $v ) ) {
+						$v = str_replace( array( '+36 20 971 7556', '06/20 971 7556' ), '+36 30 116 9431', $v );
+					}
+				}
+			);
+			Zen_Content::save_sections( $p['id'], $secs );
+		}
+		// 2) Apartman oldalak újratöltése a javított szövegekkel (URL-ek változatlanok).
+		if ( class_exists( 'Zen_Importer' ) ) {
+			$enabled = (array) Zen_Settings::get( 'languages.enabled', array() );
+			foreach ( array( 'en', 'de', 'it', 'es', 'pl', 'cs', 'sk', 'ro', 'hr', 'sl' ) as $l ) {
+				if ( in_array( $l, $enabled, true ) ) {
+					Zen_Importer::run( array( 'force' => true, 'lang' => $l, 'keys' => array( 'apt_relax', 'apt_jinjang', 'apt_lotus' ) ) );
+				}
+			}
+		}
+		if ( class_exists( 'Zen_AI' ) ) {
+			Zen_AI::flush_ctx();
+		}
+		if ( class_exists( 'Zen_Performance' ) ) {
+			Zen_Performance::purge_everything();
+		}
+	}
+);

@@ -122,6 +122,9 @@ class Zen_Importer {
 			$order = 0;
 			foreach ( $seed['pages'] as $key => $p ) {
 				$order++;
+				if ( ! empty( $opt['keys'] ) && ! in_array( $key, (array) $opt['keys'], true ) ) {
+					continue; // csak a megadott oldalak frissítése (célzott javításhoz)
+				}
 				$r = self::import_page( $key, $lang, $p, $snips, $parent, $force, $order );
 				$report[ $r ]++;
 			}
