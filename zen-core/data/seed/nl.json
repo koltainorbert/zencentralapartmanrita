@@ -11,7 +11,7 @@
       "data": {
         "title": "Vraag een offerte aan en boek rechtstreeks!",
         "lines": [
-          "Vraag snel en eenvoudig de beschikbare data en een prijsopgave aan."
+          "Vraag snel en eenvoudig de beschikbare data en een offerte aan."
         ],
         "buttons": [
           {
@@ -58,15 +58,15 @@
             "items": [
               {
                 "q": "Hoe kan ik een appartement boeken?",
-                "a": "<p>Je kunt boeken via <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> of telefonisch via <b>+36 20 971 7556</b>.</p>"
+                "a": "<p>U kunt boeken via <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> of telefonisch via <b>+36 20 971 7556</b>.</p>"
               },
               {
                 "q": "Moet ik een aanbetaling doen?",
-                "a": "<p>Ja, de aanbetaling bedraagt 50% van het totaalbedrag. Bij boekingen via bepaalde partnersites betaal je het volledige bedrag vooraf.</p>"
+                "a": "<p>Ja, de aanbetaling bedraagt 50% van het totaalbedrag. Bij boekingen via bepaalde partnersites betaalt u het volledige bedrag vooraf.</p>"
               },
               {
                 "q": "Hoe kan ik mijn boeking annuleren?",
-                "a": "<p>Bij rechtstreekse boekingen (website, e-mail) is annuleren kosteloos tot <b>15 dagen</b> voor aankomst en krijg je het betaalde bedrag terug.<br>Bij annulering binnen 15 dagen rekenen we <b>50%</b> van de verblijfsprijs, bij no-show <b>100%</b> als annuleringskosten. Stuur je annulering per e-mail naar: <b>zencentralapartments@gmail.com</b></p>"
+                "a": "<p>Bij een rechtstreekse boeking (website, e-mail) kunt u tot <b>15 dagen</b> voor aankomst kosteloos annuleren; het betaalde bedrag krijgt u dan terug.<br>Bij annulering binnen 15 dagen brengen we <b>50%</b> van de verblijfsprijs als annuleringskosten in rekening, bij een no-show <b>100%</b>. Uw annulering kunt u per e-mail doorgeven: <b>zencentralapartments@gmail.com</b></p>"
               }
             ]
           },
@@ -74,12 +74,12 @@
             "title": "Aankomst en vertrek",
             "items": [
               {
-                "q": "Hoe laat is inchecken en uitchecken?",
-                "a": "<p>Het appartement staat vanaf <b>14:00 uur</b> voor je klaar en op de dag van vertrek vragen we je het uiterlijk om <b>10:00 uur</b> te verlaten. Eerder inchecken of later uitchecken is in overleg mogelijk, afhankelijk van de beschikbaarheid, tegen een toeslag.</p>"
+                "q": "Wanneer kan ik inchecken en uitchecken?",
+                "a": "<p>Het appartement is beschikbaar vanaf <b>14.00 uur</b>; op de dag van vertrek vragen we u het uiterlijk om <b>10.00 uur</b> te verlaten. Eerder inchecken of later uitchecken is na overleg mogelijk, afhankelijk van de beschikbaarheid en tegen een toeslag.</p>"
               },
               {
                 "q": "We komen heel laat aan – hoe komen we binnen?",
-                "a": "<p>Inchecken gaat zelfstandig met een sleutelkluis, dus laat aankomen is geen enkel probleem.</p>"
+                "a": "<p>U checkt zelfstandig in met een sleutelkluis, dus ook bij een late aankomst verloopt het inchecken probleemloos.</p>"
               }
             ]
           },
@@ -88,15 +88,15 @@
             "items": [
               {
                 "q": "Wanneer moet ik betalen?",
-                "a": "<p>Het restbedrag na de aanbetaling voldoe je bij aankomst.</p>"
+                "a": "<p>Het restbedrag na aftrek van de aanbetaling voldoet u bij aankomst.</p>"
               },
               {
-                "q": "Welke betaalmethoden accepteren jullie?",
-                "a": "<ul><li>Contant of per bankoverschrijving (bij rechtstreekse boekingen)</li><li>Bankpas of creditcard (MasterCard, Maestro, VISA, VISA Electron) – alleen online, bij boekingen via de website of partnersites</li><li>De SZÉP-kaart accepteren we momenteel niet</li></ul>"
+                "q": "Welke betaalmethoden accepteert u?",
+                "a": "<ul><li>Contant of per bankoverschrijving (bij rechtstreekse boekingen)</li><li>Bankpas of creditcard (MasterCard, Maestro, VISA, VISA Electron) – alleen online, bij boekingen via de website of via partnersites</li><li>De SZÉP-kaart accepteren we momenteel niet</li></ul>"
               },
               {
                 "q": "Zijn btw en toeristenbelasting bij de prijs inbegrepen?",
-                "a": "<p>De prijzen zijn inclusief btw, maar exclusief toeristenbelasting. De toeristenbelasting bedraagt HUF 500 / persoon / nacht (vanaf 18 jaar).</p>"
+                "a": "<p>De prijzen zijn inclusief btw, maar exclusief toeristenbelasting. De toeristenbelasting bedraagt HUF 500 per persoon per nacht (vanaf 18 jaar).</p>"
               }
             ]
           },
@@ -105,7 +105,7 @@
             "items": [
               {
                 "q": "Wat is er bij de prijs inbegrepen?",
-                "a": "<p>De prijs omvat overnachting zonder maaltijden, en daarnaast:</p><ul><li>gratis wifi in het hele appartement</li><li>gratis parkeren op de binnenplaats of voor het huis</li><li>btw</li><li>basisbenodigdheden voor huishouden en hygiëne</li></ul>"
+                "a": "<p>De prijs omvat de overnachting zonder maaltijden, en daarnaast:</p><ul><li>gratis wifi in het hele appartement</li><li>gratis parkeren op de binnenplaats of voor het huis</li><li>btw</li><li>basisbenodigdheden voor huishouden en hygiëne</li></ul>"
               },
               {
                 "q": "Is er internet in het appartement?",
@@ -113,11 +113,11 @@
               },
               {
                 "q": "Kunnen we in het appartement koken?",
-                "a": "<p>Ja, elk appartement heeft een goed uitgeruste keuken – met bestek, servies, glazen, waterkoker, koelkast, koffiezetapparaat, inductiekookplaat en magnetron.</p>"
+                "a": "<p>Ja, elk appartement heeft een goed uitgeruste keuken met bestek, servies en pannen, glazen, waterkoker, koelkast, koffiezetapparaat, inductiekookplaat en magnetron.</p>"
               },
               {
-                "q": "Moeten we dagelijkse spullen meenemen?",
-                "a": "<p>Nee. Handdoeken, beddengoed, bestek, glazen, föhn, toiletpapier, handdesinfectie en kledinghangers zijn aanwezig.</p>"
+                "q": "Moeten we dagelijkse gebruiksartikelen meenemen?",
+                "a": "<p>Dat is niet nodig. In het appartement vindt u handdoeken, beddengoed, bestek, glazen, een föhn, toiletpapier, handdesinfectie en kledinghangers.</p>"
               },
               {
                 "q": "Is er verwarming in de winter?",
@@ -130,7 +130,7 @@
             "items": [
               {
                 "q": "Mogen we huisdieren meenemen?",
-                "a": "<p>Hoewel we dol zijn op dieren, kunnen we helaas geen huisdieren ontvangen in onze appartementen.</p>"
+                "a": "<p>Hoewel we dol zijn op dieren, kunnen we in onze appartementen helaas geen huisdieren ontvangen.</p>"
               },
               {
                 "q": "Waar mag ik roken?",
@@ -138,7 +138,7 @@
               },
               {
                 "q": "Waar kan ik parkeren?",
-                "a": "<p>Bij elk appartement hoort 1 eigen parkeerplaats. Kom je met meer auto's, neem dan vooraf contact met ons op; gratis parkeren op straat is ook mogelijk.</p>"
+                "a": "<p>Bij elk appartement hoort 1 eigen parkeerplaats. Komt u met meer auto's, overleg dit dan vooraf met ons; u kunt ook gratis op straat parkeren.</p>"
               }
             ]
           },
@@ -147,7 +147,7 @@
             "items": [
               {
                 "q": "Waar ligt ZEN Central Apartments precies?",
-                "a": "<p>Adres: 8200 Veszprém, Festő utca 6. Het stadscentrum ligt op een paar minuten lopen; de buurt is rustig en veilig – ideaal om te ontspannen en de stad te verkennen.</p>"
+                "a": "<p>Adres: 8200 Veszprém, Festő utca 6. Het stadscentrum ligt op enkele minuten lopen; de buurt is rustig en veilig – ideaal om te ontspannen en de stad te verkennen.</p>"
               }
             ]
           }
@@ -156,7 +156,7 @@
     },
     "aside": {
       "aside_title": "Vraag een offerte aan en boek rechtstreeks!",
-      "aside_text": "Vraag snel en eenvoudig de beschikbare data en een prijsopgave aan.",
+      "aside_text": "Vraag snel en eenvoudig de beschikbare data en een offerte aan.",
       "aside_button": {
         "label": "Beschikbaarheid bekijken & boeken",
         "url": "{page:booking}",
@@ -169,7 +169,7 @@
       "slug": "zen-central-nederlands",
       "title": "ZEN Central Apartments",
       "seo_title": "ZEN Central Apartments Veszprém | Verblijf in het centrum",
-      "seo_desc": "De drie appartementen van ZEN Central Apartments in een rustige straat in Veszprém bieden verkwikkende rust, met de bezienswaardigheden binnen handbereik.",
+      "seo_desc": "ZEN Central Apartments: drie appartementen vol weldadige rust in een stille woonstraat in Veszprém, met de bezienswaardigheden binnen handbereik.",
       "focus_kw": "appartementen Veszprém",
       "og": "U/ZEN_Central_Apartments_fooldal.webp",
       "sections": [
@@ -181,10 +181,10 @@
           "data": {
             "kicker": "Veszprém",
             "title": "ZEN Central Apartments",
-            "text": "Bij ons boek je gegarandeerd voor de beste prijs!",
+            "text": "Bij ons boekt u gegarandeerd tegen de beste prijs!",
             "buttons": [
               {
-                "label": "rechtstreeks boeken",
+                "label": "Boek rechtstreeks!",
                 "url": "{page:booking}",
                 "style": "primary"
               }
@@ -203,8 +203,8 @@
           },
           "data": {
             "kicker": "ZEN CENTRAL",
-            "title": "Modern comfort en rust in het centrum van Veszprém",
-            "html": "<p>De appartementen van ZEN Central Apartments verwelkomen hun gasten in de regio Bakony-Balaton, in het centrum van Veszprém, in een rustige straat. De ideale keuze voor een moderne en huiselijke sfeer.</p>",
+            "title": "Modern comfort in een rustige omgeving, midden in Veszprém",
+            "html": "<p>De appartementen van ZEN Central Apartments verwelkomen u in de regio Bakony-Balaton, in het centrum van Veszprém en toch in een rustige woonstraat. Hecht u aan een moderne, huiselijke sfeer? Dan bent u hier aan het juiste adres.</p>",
             "buttons": [
               {
                 "label": "Beschikbaarheid bekijken & boeken",
@@ -224,24 +224,24 @@
             "pad": "l"
           },
           "data": {
-            "kicker": "MODERN EN SFEERVOL",
+            "kicker": "MODERN EN HUISELIJK",
             "title": "ZEN Central Apartments",
             "source": "manual",
             "items": [
               {
-                "title": "RELAX Appartement",
+                "title": "RELAX-appartement",
                 "apt": "relax",
                 "url": "{page:apt_relax}",
                 "media": "U/Zen_Central_Relax.webp"
               },
               {
-                "title": "JIN-JANG Appartement",
+                "title": "JIN-JANG-appartement",
                 "apt": "jinjang",
                 "url": "{page:apt_jinjang}",
                 "media": "U/Zen_Central_Jin_Jang.webp"
               },
               {
-                "title": "LOTUS Appartement",
+                "title": "LOTUS-appartement",
                 "apt": "lotus",
                 "url": "{page:apt_lotus}",
                 "media": "U/Zen_Central_Lotus.webp"
@@ -257,7 +257,7 @@
           "data": {
             "kicker": "rustige omgeving",
             "title": "In het hart van Veszprém",
-            "html": "<p>In het hart van Veszprém, in een rustige straat net buiten het centrum, vind je ZEN Central Apartments – een plek van verkwikkende rust. Dankzij de ideale ligging zijn de belangrijkste bezienswaardigheden van de stad makkelijk bereikbaar, terwijl je toch ver weg zit van de drukte.</p><p>Parkeren in de Festő utca is gratis voor personenauto's en gasten kunnen ook een eigen parkeerplaats op het privéterrein reserveren. Zo hoef je je geen zorgen te maken over parkeren en kun je volop genieten van de rust en het comfort van ZEN Central Apartments.</p>",
+            "html": "<p>In het hart van Veszprém, in een rustige woonstraat, vindt u ZEN Central Apartments: drie appartementen die u een weldadige rust bieden. Dankzij de ideale ligging zijn de belangrijkste bezienswaardigheden van de stad makkelijk bereikbaar, terwijl u ver van de stadsdrukte verblijft.</p><p>In de Festő utca parkeert u gratis met uw auto en op het eigen terrein van de accommodatie kunt u bovendien een eigen parkeerplaats reserveren. Zo hoeft u zich geen zorgen te maken over parkeren en kunt u volop genieten van de rust en het comfort van ZEN Central Apartments.</p>",
             "buttons": [
               {
                 "label": "Beschikbaarheid bekijken & boeken",
@@ -279,13 +279,13 @@
             "title": "Bezienswaardigheden in de buurt",
             "map_query": "ZEN Central Apartments Veszprém",
             "items": [
-              "Oudestadsplein: 400 m",
-              "Winkelstraat: 900 m",
-              "Markthal, markt: 1200 m",
+              "Óváros tér (oude stadsplein): 400 m",
+              "Voetgangersstraat: 900 m",
+              "Markthal en markt: 1200 m",
               "Dierentuin: 1300 m",
-              "Fabriekstuin: 1400 m",
+              "Gyárkert (stadspark): 1400 m",
               "Liefdeseiland: 1100 m",
-              "Dal van de Séd-beek: 1400 m",
+              "Dal van de Séd: 1400 m",
               "Laczkó-bron: 2600 m",
               "Veszprém Arena: 3200 m",
               "Tihany: 27 km"
@@ -299,7 +299,7 @@
           },
           "data": {
             "title": "Ontdek Veszprém",
-            "text": "Een selectie van de mooiste bezienswaardigheden en belevenissen in de buurt, samengesteld door Zen, onze digitale concierge.",
+            "text": "Een selectie van de mooiste bezienswaardigheden en activiteiten in de omgeving, samengesteld door Zen, onze digitale conciërge.",
             "category": "sight",
             "limit": 6
           }
@@ -321,8 +321,8 @@
           "ref": "cta",
           "data": {
             "lines": [
-              "Bij ons boek je gegarandeerd voor de beste prijs!",
-              "Vraag snel en eenvoudig de beschikbare data en een prijsopgave aan."
+              "Bij ons boekt u gegarandeerd tegen de beste prijs!",
+              "Vraag snel en eenvoudig de beschikbare data en een offerte aan."
             ]
           }
         },
@@ -336,7 +336,7 @@
       "slug": "appartementen",
       "title": "Appartementen",
       "seo_title": "Appartementen in het centrum van Veszprém | ZEN Central",
-      "seo_desc": "Drie moderne appartementen met airco, keuken en gratis afgesloten parkeerplaats in een rustige straat in het centrum van Veszprém, vlak bij het Balatonmeer.",
+      "seo_desc": "Moderne, huiselijke appartementen in het centrum van Veszprém: drie accommodaties met airco, goed uitgeruste keuken en eigen parkeerplaats.",
       "focus_kw": "appartement Veszprém",
       "og": "U/Zen_Central_Relax.webp",
       "sections": [
@@ -359,25 +359,25 @@
             "pad": "l"
           },
           "data": {
-            "kicker": "Modern en sfeervol",
-            "title": "ZEN Central appartementen",
+            "kicker": "Modern en huiselijk",
+            "title": "ZEN Central-appartementen",
             "source": "manual",
-            "html": "<p>Onze nieuwgebouwde, moderne accommodatie ZEN Central Apartments ligt op de bovenverdieping van een huis met tuin, midden in het centrum van Veszprém. Er zijn 3 appartementen: RELAX Studio voor 2 gasten, LOTUS Studio voor 3 gasten en JIN JANG, een appartement met 2 slaapkamers voor maximaal 4 gasten. Elk appartement heeft airconditioning, een goed uitgeruste keuken, een badkamer met douche en gratis parkeren op de afgesloten binnenplaats.</p>",
+            "html": "<p>Midden in het centrum van Veszprém, op de verdieping van een vrijstaand huis met tuin, ligt onze nieuwgebouwde, moderne accommodatie ZEN Central Apartments. Ze bestaat uit 3 appartementen: RELAX Studio voor 2 personen, LOTUS Studio voor 3 personen en JIN JANG met 2 slaapkamers voor 4 personen. Alle appartementen hebben airconditioning, een goed uitgeruste keuken, een badkamer met douche en gratis parkeren op de afgesloten binnenplaats.</p>",
             "items": [
               {
-                "title": "RELAX Appartement",
+                "title": "RELAX-appartement",
                 "apt": "relax",
                 "url": "{page:apt_relax}",
                 "media": "U/Zen_Central_Relax.webp"
               },
               {
-                "title": "JIN-JANG Appartement",
+                "title": "JIN-JANG-appartement",
                 "apt": "jinjang",
                 "url": "{page:apt_jinjang}",
                 "media": "U/Zen_Central_Jin_Jang.webp"
               },
               {
-                "title": "LOTUS Appartement",
+                "title": "LOTUS-appartement",
                 "apt": "lotus",
                 "url": "{page:apt_lotus}",
                 "media": "U/Zen_Central_Lotus.webp"
@@ -392,16 +392,16 @@
     },
     "apt_relax": {
       "slug": "relax-appartement",
-      "title": "RELAX Appartement",
-      "seo_title": "RELAX Appartement voor 2 – Veszprém | ZEN Central",
-      "seo_desc": "Ontspan in het hart van Veszprém in het RELAX Appartement: comfortabele bedden, terras, gratis afgesloten parkeren – ideale uitvalsbasis bij het Balatonmeer.",
+      "title": "RELAX-appartement",
+      "seo_title": "RELAX-appartement voor 2 – Veszprém | ZEN Central",
+      "seo_desc": "Ontspan in het hart van Veszprém in het RELAX-appartement: comfortabele bedden, eigen terras en gratis afgesloten parkeerplaats, vlak bij het Balatonmeer.",
       "focus_kw": "RELAX appartement Veszprém",
       "og": "U/Zen_Central_Relax.webp",
       "sections": [
         {
           "type": "hero",
           "data": {
-            "title": "RELAX Appartement",
+            "title": "RELAX-appartement",
             "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
             "height": "small",
             "breadcrumbs": true,
@@ -416,26 +416,26 @@
           },
           "data": {
             "apt": "relax",
-            "title": "RELAX Appartement",
+            "title": "RELAX-appartement",
             "media": "U/Zen_Central_Relax_apartman_6.webp",
-            "html": "<p>2 comfortabele bedden (90×200 cm) die tot een tweepersoonsbed (180×200 cm) kunnen worden samengeschoven. Het appartement heeft een gemeubileerd terras met parasol, bereikbaar via de gang.</p><p>We bieden een gratis, afgesloten parkeerplaats.<br>Rookvrij appartement.</p>",
+            "html": "<p>2 extra comfortabele boxspringbedden (90×200 cm), die samen een tweepersoonsbed (180×200 cm) vormen. Bij het appartement hoort een terras met tuinmeubilair en parasol, bereikbaar via de gang.</p><p>Gasten die met de auto komen, parkeren gratis op onze afgesloten binnenplaats.<br>Rookvrij appartement.</p>",
             "facts": [
-              "Toeristenbelasting: HUF 500 / persoon / nacht, contant te voldoen bij aankomst",
-              "Maximale capaciteit: 2 personen",
-              "Oppervlakte: 20 m2"
+              "Toeristenbelasting: HUF 500 per persoon per nacht, bij aankomst contant te voldoen (wordt afgedragen aan de gemeente)",
+              "Maximale bezetting: 2 personen",
+              "Oppervlakte: 20 m²"
             ],
-            "amenities_title": "Voorzieningen in het appartement",
+            "amenities_title": "Voorzieningen van het appartement",
             "amenities": [
               "Rookvrij appartement",
-              "2 bedden die tot 1 tweepersoonsbed kunnen worden samengeschoven",
+              "2 boxspringbedden, samen te schuiven tot 1 tweepersoonsbed",
               "Airconditioning, verwarming",
               "Kledingkast",
-              "Houten vloer",
+              "Parketvloer",
               "Smart-tv",
               "Snelle wifi",
               "Badkamer met inloopdouche, 2 handdoeken per persoon, gratis toiletartikelen (shampoo, douchegel, zeep, vloeibare zeep, douchemuts), föhn, toilet",
               "Droogrek",
-              "Goed uitgeruste keuken (magnetron, broodrooster, waterkoker, koffiezetapparaat (met waterkoker), eettafel met 4 stoelen, koelkast, kook- en serveergerei, afwasmiddel, theezeefje en Nescafé)"
+              "Goed uitgeruste keuken (magnetron, broodrooster, waterkoker, percolator, eettafel met 4 stoelen, koelkast, kookplaat, kook- en serveergerei, afwasmiddel, theezakjes en Nescafé)"
             ],
             "buttons": [
               {
@@ -468,18 +468,18 @@
             "pad": "l"
           },
           "data": {
-            "kicker": "Modern en sfeervol",
-            "title": "Andere appartementen",
+            "kicker": "Modern en huiselijk",
+            "title": "Onze andere appartementen",
             "source": "manual",
             "items": [
               {
-                "title": "JIN-JANG Appartement",
+                "title": "JIN-JANG-appartement",
                 "apt": "jinjang",
                 "url": "{page:apt_jinjang}",
                 "media": "U/Zen_Central_Jin_Jang.webp"
               },
               {
-                "title": "LOTUS Appartement",
+                "title": "LOTUS-appartement",
                 "apt": "lotus",
                 "url": "{page:apt_lotus}",
                 "media": "U/Zen_Central_Lotus.webp"
@@ -491,16 +491,16 @@
     },
     "apt_jinjang": {
       "slug": "jin-jang-appartement",
-      "title": "JIN-JANG Appartement",
-      "seo_title": "JIN-JANG Appartement voor 4 – Veszprém | ZEN Central",
-      "seo_desc": "Ruim JIN-JANG appartement met 2 slaapkamers, terras en afgesloten parkeerplaats, ideaal voor gezinnen of vrienden in het centrum van Veszprém.",
+      "title": "JIN-JANG-appartement",
+      "seo_title": "JIN-JANG-appartement voor 4 – Veszprém | ZEN Central",
+      "seo_desc": "Ruim JIN-JANG-appartement met 2 slaapkamers, terras en afgesloten parkeerplaats: ideaal voor gezinnen en vrienden, in het centrum van Veszprém.",
       "focus_kw": "familieappartement Veszprém",
       "og": "U/Zen_Central_Jin_Jang.webp",
       "sections": [
         {
           "type": "hero",
           "data": {
-            "title": "JIN-JANG Appartement",
+            "title": "JIN-JANG-appartement",
             "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
             "height": "small",
             "breadcrumbs": true,
@@ -515,26 +515,26 @@
           },
           "data": {
             "apt": "jinjang",
-            "title": "JIN-JANG Appartement",
+            "title": "JIN-JANG-appartement",
             "media": "U/Zen_Central_Jin_Jang_8.webp",
-            "html": "<p>Ideaal voor gezinnen of vriendengroepen.<br>2 personen in een aparte slaapkamer op een groot tweepersoonsbed (180×200 cm) en nog 2 personen op een tweepersoonsbed (180×200 cm) in de woonkamer. Indien gewenst kunnen we een kleiner bed (90×200) voor een vijfde persoon plaatsen.</p><p>Het appartement heeft een gemeubileerd terras met parasol, bereikbaar via de gang.</p><p>We bieden een gratis, afgesloten parkeerplaats.<br>Rookvrij appartement.</p>",
+            "html": "<p>Ideaal voor gezinnen of vriendengroepen.<br>2 personen slapen in een aparte slaapkamer op een groot tweepersoonsbed (180×200 cm) en nog 2 personen op een tweepersoonsbed (180×200 cm) in de woonkamer. Desgewenst kunnen de 4 extra comfortabele boxspringbedden (90×200 cm) ook als losse bedden worden gebruikt.</p><p>Bij het appartement hoort een terras met tuinmeubilair en parasol, bereikbaar via de gang.</p><p>Gasten die met de auto komen, parkeren gratis op onze afgesloten binnenplaats.<br>Rookvrij appartement.</p>",
             "facts": [
-              "Toeristenbelasting: HUF 500 / persoon / nacht, contant te voldoen bij aankomst",
-              "Maximale capaciteit: 4 personen",
-              "Oppervlakte: 35 m2"
+              "Toeristenbelasting: HUF 500 per persoon per nacht, bij aankomst contant te voldoen (wordt afgedragen aan de gemeente)",
+              "Maximale bezetting: 4 personen",
+              "Oppervlakte: 35 m²"
             ],
-            "amenities_title": "Voorzieningen in het appartement",
+            "amenities_title": "Voorzieningen van het appartement",
             "amenities": [
               "Rookvrij appartement",
-              "2 tweepersoonsbedden, ook te gebruiken als 4 aparte bedden",
+              "2 tweepersoonsbedden, ook te gebruiken als 4 losse boxspringbedden",
               "Airconditioning, verwarming",
               "Kledingkast",
-              "Houten vloer",
+              "Parketvloer",
               "Smart-tv",
               "Snelle wifi",
               "Badkamer met douchecabine, 2 handdoeken per persoon, gratis toiletartikelen (shampoo, douchegel, zeep, vloeibare zeep, douchemuts), föhn, toilet",
               "Droogrek",
-              "Goed uitgeruste keuken (magnetron, broodrooster, waterkoker, koffiezetapparaat (met waterkoker), eettafel met 4 stoelen, koelkast, kook- en serveergerei, afwasmiddel, theezeefje en Nescafé)"
+              "Goed uitgeruste keuken (magnetron, broodrooster, waterkoker, percolator, eettafel met 4 stoelen, koelkast, kookplaat, kook- en serveergerei, afwasmiddel, theezakjes en Nescafé)"
             ],
             "buttons": [
               {
@@ -567,18 +567,18 @@
             "pad": "l"
           },
           "data": {
-            "kicker": "Modern en sfeervol",
-            "title": "Andere appartementen",
+            "kicker": "Modern en huiselijk",
+            "title": "Onze andere appartementen",
             "source": "manual",
             "items": [
               {
-                "title": "RELAX Appartement",
+                "title": "RELAX-appartement",
                 "apt": "relax",
                 "url": "{page:apt_relax}",
                 "media": "U/Zen_Central_Relax.webp"
               },
               {
-                "title": "LOTUS Appartement",
+                "title": "LOTUS-appartement",
                 "apt": "lotus",
                 "url": "{page:apt_lotus}",
                 "media": "U/Zen_Central_Lotus.webp"
@@ -590,16 +590,16 @@
     },
     "apt_lotus": {
       "slug": "lotus-appartement",
-      "title": "LOTUS Appartement",
-      "seo_title": "LOTUS Appartement voor 3 – Veszprém | ZEN Central",
-      "seo_desc": "LOTUS Appartement voor 3 gasten met terras, airco en gratis afgesloten parkeerplaats in een rustige straat in het centrum van Veszprém.",
+      "title": "LOTUS-appartement",
+      "seo_title": "LOTUS-appartement voor 3 – Veszprém | ZEN Central",
+      "seo_desc": "LOTUS-appartement voor 3 personen met terras, airco en gratis afgesloten parkeerplaats, in een rustige straat in het centrum van Veszprém.",
       "focus_kw": "LOTUS appartement Veszprém",
       "og": "U/Zen_Central_Lotus.webp",
       "sections": [
         {
           "type": "hero",
           "data": {
-            "title": "LOTUS Appartement",
+            "title": "LOTUS-appartement",
             "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp",
             "height": "small",
             "breadcrumbs": true,
@@ -614,26 +614,26 @@
           },
           "data": {
             "apt": "lotus",
-            "title": "LOTUS Appartement",
+            "title": "LOTUS-appartement",
             "media": "U/Zen_Central_Lotus_apartman_8.webp",
-            "html": "<p>2 comfortabele bedden (90×200 cm) die tot een tweepersoonsbed (180×200 cm) kunnen worden samengeschoven, en 1 apart bed van 90×200 cm. Het appartement heeft een gemeubileerd terras met parasol, bereikbaar via de gang.</p><p>We bieden een gratis, afgesloten parkeerplaats.<br>Rookvrij appartement.</p>",
+            "html": "<p>2 extra comfortabele boxspringbedden (90×200 cm), die samen een tweepersoonsbed (180×200 cm) vormen, plus 1 los boxspringbed van 90×200 cm. Bij het appartement hoort een terras met tuinmeubilair en parasol, bereikbaar via de gang.</p><p>Gasten die met de auto komen, parkeren gratis op onze afgesloten binnenplaats.<br>Rookvrij appartement.</p>",
             "facts": [
-              "Toeristenbelasting: HUF 500 / persoon / nacht, contant te voldoen bij aankomst",
-              "Maximale capaciteit: 3 personen",
-              "Oppervlakte: 25 m2"
+              "Toeristenbelasting: HUF 500 per persoon per nacht, bij aankomst contant te voldoen (wordt afgedragen aan de gemeente)",
+              "Maximale bezetting: 3 personen",
+              "Oppervlakte: 25 m²"
             ],
-            "amenities_title": "Voorzieningen in het appartement",
+            "amenities_title": "Voorzieningen van het appartement",
             "amenities": [
               "Rookvrij appartement",
-              "2 bedden die tot 1 tweepersoonsbed kunnen worden samengeschoven, + 1 bed",
+              "2 boxspringbedden, samen te schuiven tot 1 tweepersoonsbed, + 1 boxspringbed",
               "Airconditioning, verwarming",
               "Kledingkast",
-              "Houten vloer",
+              "Parketvloer",
               "Smart-tv",
               "Snelle wifi",
               "Badkamer met douchecabine, 2 handdoeken per persoon, gratis toiletartikelen (shampoo, douchegel, zeep, vloeibare zeep, douchemuts), föhn, toilet",
               "Droogrek",
-              "Goed uitgeruste keuken (magnetron, broodrooster, waterkoker, koffiezetapparaat, eettafel met 4 stoelen, koelkast, kook- en serveerborden, afwasmiddel, theezeefje en Nescafé)"
+              "Goed uitgeruste keuken (magnetron, broodrooster, waterkoker, percolator, eettafel met 4 stoelen, koelkast, kookplaat, kook- en serveergerei, afwasmiddel, theezakjes en Nescafé)"
             ],
             "buttons": [
               {
@@ -671,18 +671,18 @@
             "pad": "l"
           },
           "data": {
-            "kicker": "Modern en sfeervol",
-            "title": "Andere appartementen",
+            "kicker": "Modern en huiselijk",
+            "title": "Onze andere appartementen",
             "source": "manual",
             "items": [
               {
-                "title": "RELAX Appartement",
+                "title": "RELAX-appartement",
                 "apt": "relax",
                 "url": "{page:apt_relax}",
                 "media": "U/Zen_Central_Relax.webp"
               },
               {
-                "title": "JIN-JANG Appartement",
+                "title": "JIN-JANG-appartement",
                 "apt": "jinjang",
                 "url": "{page:apt_jinjang}",
                 "media": "U/Zen_Central_Jin_Jang.webp"
@@ -696,7 +696,7 @@
       "slug": "galerij",
       "title": "Galerij",
       "seo_title": "Galerij – foto's | ZEN Central Apartments Veszprém",
-      "seo_desc": "Foto's van de appartementen RELAX, JIN-JANG en LOTUS, het huis en de omgeving – ZEN Central Apartments in een rustige straat in Veszprém.",
+      "seo_desc": "Foto's van de RELAX-, JIN-JANG- en LOTUS-appartementen, het huis en de omgeving: ZEN Central Apartments in een rustige straat in Veszprém.",
       "focus_kw": "ZEN Central Apartments foto's",
       "og": "U/ZEN_Central_Apartments_fooldal.webp",
       "sections": [
@@ -722,7 +722,7 @@
             "title": "",
             "groups": [
               {
-                "title": "RELAX Appartement",
+                "title": "RELAX-appartement",
                 "items": [
                   "U/Zen_Central_Relax_apartman_6.webp",
                   "U/Zen_Central_Relax_apartman_7.webp",
@@ -736,7 +736,7 @@
                 ]
               },
               {
-                "title": "JIN-JANG Appartement",
+                "title": "JIN-JANG-appartement",
                 "items": [
                   "U/Zen_Central_Jin_Jang_8.webp",
                   "U/Zen_Central_Jin_Jang_4.webp",
@@ -768,7 +768,7 @@
             "title": "",
             "groups": [
               {
-                "title": "LOTUS Appartement",
+                "title": "LOTUS-appartement",
                 "items": [
                   "U/Zen_Central_Lotus_apartman_8.webp",
                   "U/Zen_Central_Lotus_apartman_6.webp",
@@ -810,7 +810,7 @@
       "slug": "contact",
       "title": "Contact",
       "seo_title": "Contact – ZEN Central Apartments, Veszprém, Festő utca 6.",
-      "seo_desc": "Contactgegevens, bereikbaarheid en informatie over inchecken – ZEN Central Apartments, Veszprém, Festő utca 6.",
+      "seo_desc": "Contactgegevens, bereikbaarheid en informatie over het inchecken bij ZEN Central Apartments, Festő utca 6., Veszprém.",
       "focus_kw": "ZEN Central Apartments contact",
       "og": "U/ZEN_Central_Veszprem_a.webp",
       "sections": [
@@ -833,7 +833,7 @@
           "data": {
             "kicker": "ZEN CENTRAL",
             "title": "Onze contactgegevens",
-            "notice": "Over de beschikbaarheid en prijzen van de appartementen kunnen we telefonisch geen informatie geven! Een offerte vraag je aan via de knop ‘BOEKEN’ op onze website.",
+            "notice": "Over de beschikbaarheid en de prijzen van de appartementen kunnen we telefonisch geen informatie geven! Een offerte vraagt u aan door op de knop ‘BOEKEN’ te klikken.",
             "info_title": "Algemene informatie:",
             "info": [
               {
@@ -852,7 +852,7 @@
                 "icon": "pin"
               }
             ],
-            "booking_title": "Boeken, beschikbare data:",
+            "booking_title": "Boeken en beschikbare data:",
             "buttons": [
               {
                 "label": "Beschikbaarheid bekijken & boeken",
@@ -860,12 +860,12 @@
                 "style": "primary"
               }
             ],
-            "community_title": "We maken deel uit van de gemeenschap",
+            "community_title": "Wij maken deel uit van de gemeenschap:",
             "media": "U/ZEN_Central_Veszprem_a.webp",
             "access_title": "Bereikbaarheid",
-            "access_html": "<p>MET DE AUTO: Parkeren in de Festő utca is gratis en op het terrein kun je een eigen parkeerplaats reserveren.</p><p>BUSSTATION: De accommodatie ligt op 16 minuten lopen, of is bereikbaar met de stadsbussen 2 of 3.</p><p>TREINSTATION: Je bereikt de accommodatie rechtstreeks met de stadsbussen 2, 5, 10 of met de taxi.</p>",
+            "access_html": "<p>Met de auto: in de Festő utca parkeert u gratis en op het eigen terrein van de accommodatie kunt u een eigen parkeerplaats reserveren.</p><p>Busstation: op 16 minuten lopen van de accommodatie, of bereikbaar met stadsbus 2 of 3.</p><p>Treinstation: met stadsbus 2, 5 of 10 of met de taxi rechtstreeks naar de accommodatie.</p>",
             "checkin_title": "Inchecken",
-            "checkin_html": "<p>De appartementen hebben een sleutelkluis met een unieke code die geldig is gedurende je hele reservering. We bieden ook online, contactloos inchecken aan, zodat je ons je aankomsttijd niet vooraf hoeft door te geven en niets hoeft af te stemmen als er iets verandert. Heb je liever een persoonlijke ontvangst bij het in- of uitchecken, laat het ons dan vooraf weten.</p>",
+            "checkin_html": "<p>Bij elk appartement hoort een sleutelkluis met een unieke code die gedurende uw hele verblijf geldig is. We bieden ook online, contactloos inchecken aan: u hoeft uw aankomsttijd dus niet vooraf door te geven en bij wijzigingen niets met ons af te stemmen. Wilt u liever persoonlijk worden ontvangen bij het in- of uitchecken, laat het ons dan vooraf weten.</p>",
             "map_query": "ZEN Central Apartments Veszprém"
           }
         },
@@ -878,7 +878,7 @@
           },
           "data": {
             "form": "contact",
-            "title": "Heb je een vraag? Schrijf ons!",
+            "title": "Heeft u een vraag? Schrijf ons!",
             "text": ""
           }
         }
@@ -887,8 +887,8 @@
     "booking": {
       "slug": "boeken",
       "title": "Boeken",
-      "seo_title": "Boeken voor de beste prijs | ZEN Central Veszprém",
-      "seo_desc": "Boek je verblijf in Veszprém gegarandeerd voor de beste prijs op onze website – snel en eenvoudig, in comfortabele appartementen bij het Balatonmeer.",
+      "seo_title": "Boeken tegen de beste prijs | ZEN Central Veszprém",
+      "seo_desc": "Boek uw verblijf in Veszprém op onze website, gegarandeerd tegen de beste prijs – snel en eenvoudig, in comfortabele appartementen vlak bij het Balatonmeer.",
       "focus_kw": "appartement boeken Veszprém",
       "og": "U/ZEN_Central_Apartments_fooldal.webp",
       "sections": [
@@ -921,16 +921,16 @@
     "feedback": {
       "slug": "beoordelingen",
       "title": "Gastentevredenheidsportaal",
-      "seo_title": "Gastbeoordelingen | ZEN Central Apartments Veszprém",
-      "seo_desc": "Deel je ervaring met ons! Beoordeel je verblijf bij ZEN Central Apartments – jouw feedback helpt ons nog beter te worden.",
+      "seo_title": "Gastbeoordelingen en tevredenheid | ZEN Central",
+      "seo_desc": "Deel uw ervaring met ons! Beoordeel uw verblijf bij ZEN Central Apartments – uw mening helpt ons om nog beter te worden.",
       "focus_kw": "ZEN Central beoordelingen",
       "sections": [
         {
           "type": "hero",
           "data": {
-            "kicker": "Bedankt voor je verblijf bij ons",
+            "kicker": "Bedankt voor uw verblijf bij ons",
             "title": "Gastentevredenheidsportaal",
-            "text": "Het kost maar een paar klikken – jouw mening helpt ons en toekomstige gasten enorm.",
+            "text": "Het kost maar een paar klikken – uw mening helpt ons en toekomstige gasten enorm.",
             "media": "U/ZEN_Central_Veszprem_varos1.webp",
             "height": "medium",
             "breadcrumbs": true
@@ -943,8 +943,8 @@
           },
           "data": {
             "form": "feedback",
-            "title": "Hoe was je verblijf?",
-            "text": "Geef ons sterren en vertel in een paar woorden wat je fijn vond en wat we kunnen verbeteren."
+            "title": "Hoe was uw verblijf?",
+            "text": "Geef ons een sterrenbeoordeling en vertel in een paar woorden wat u goed vond en wat we kunnen verbeteren."
           }
         },
         {
@@ -964,17 +964,17 @@
     },
     "help": {
       "slug": "hulp",
-      "title": "Hulp & ondersteuning",
-      "seo_title": "Hulp – AI-concierge Zen | ZEN Central Veszprém",
-      "seo_desc": "Vragen over boeken, aankomst, parkeren of wat te doen in Veszprém? Zen, onze AI-concierge, helpt je dag en nacht.",
+      "title": "Hulp en klantenservice",
+      "seo_title": "Hulp en klantenservice – AI-conciërge Zen | ZEN Central",
+      "seo_desc": "Vragen over boeken, aankomst, parkeren of uitjes in Veszprém? Zen, onze AI-conciërge, helpt u dag en nacht.",
       "focus_kw": "ZEN Central hulp",
       "sections": [
         {
           "type": "hero",
           "data": {
-            "kicker": "24/7 bereikbaar",
-            "title": "Waarmee kunnen we je helpen?",
-            "text": "Vraag het Zen, onze digitale concierge – die kent de appartementen, het boekingsproces en elk hoekje van Veszprém.",
+            "kicker": "Dag en nacht bereikbaar",
+            "title": "Waarmee kunnen we u helpen?",
+            "text": "Vraag het Zen, onze digitale conciërge: Zen kent de appartementen, het boekingsproces en elk hoekje van Veszprém.",
             "media": "U/ZEN_Central_Veszprem_7.webp",
             "height": "medium",
             "breadcrumbs": true
@@ -1001,7 +1001,7 @@
           },
           "data": {
             "form": "contact",
-            "title": "Heb je een vraag? Schrijf ons!",
+            "title": "Heeft u een vraag? Schrijf ons!",
             "text": ""
           }
         }
