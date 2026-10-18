@@ -1062,7 +1062,7 @@ TXT;
 				// magház a középső és az első sor között
 				$petals .= '<g class="zl-pod"><ellipse cx="50" cy="53.5" rx="6" ry="3" fill="url(#' . $u . 'pod)"/>'
 					. '<g fill="#7a4b10" opacity=".55"><circle cx="47.6" cy="53.2" r=".55"/><circle cx="50" cy="52.6" r=".55"/><circle cx="52.4" cy="53.2" r=".55"/><circle cx="48.8" cy="54.4" r=".5"/><circle cx="51.2" cy="54.4" r=".5"/></g>'
-					. '<g fill="#ffd54f"><circle cx="43.6" cy="52.2" r=".8"/><circle cx="45" cy="50.4" r=".8"/><circle cx="47.2" cy="49.4" r=".8"/><circle cx="50" cy="49" r=".8"/><circle cx="52.8" cy="49.4" r=".8"/><circle cx="55" cy="50.4" r=".8"/><circle cx="56.4" cy="52.2" r=".8"/></g></g>';
+					. '<g fill="#fff1c4"><circle cx="43.6" cy="52.2" r=".8"/><circle cx="45" cy="50.4" r=".8"/><circle cx="47.2" cy="49.4" r=".8"/><circle cx="50" cy="49" r=".8"/><circle cx="52.8" cy="49.4" r=".8"/><circle cx="55" cy="50.4" r=".8"/><circle cx="56.4" cy="52.2" r=".8"/></g></g>';
 			}
 			foreach ( $r[2] as $a ) {
 				$petals .= '<path class="zl-p" style="--a:' . $a . ';--i:' . $i . '" d="' . $r[1] . '" fill="url(#' . $u . 'p' . $r[0] . ')" stroke="rgba(255,255,255,.55)" stroke-width=".35"/>';
@@ -1071,14 +1071,14 @@ TXT;
 		}
 		$o  = '<svg class="zl' . ( $live ? '' : ' zl--static' ) . '" viewBox="0 0 100 100" fill="none" aria-hidden="true" focusable="false">';
 		$o .= '<defs>'
-			. '<radialGradient id="' . $u . 'sky" cx="50" cy="34" r="62" gradientUnits="userSpaceOnUse"><stop stop-color="#27506b"/><stop offset=".6" stop-color="#12304a"/><stop offset="1" stop-color="#081624"/></radialGradient>'
-			. '<linearGradient id="' . $u . 'water" x1="0" y1="70" x2="0" y2="100" gradientUnits="userSpaceOnUse"><stop stop-color="#3fb5c4" stop-opacity=".95"/><stop offset=".45" stop-color="#1f7f9a"/><stop offset="1" stop-color="#0b3550"/></linearGradient>'
-			. '<linearGradient id="' . $u . 'pa" x1="0" y1="62" x2="0" y2="26" gradientUnits="userSpaceOnUse"><stop stop-color="#ff4f93"/><stop offset=".5" stop-color="#ff9cc6"/><stop offset="1" stop-color="#fff4f9"/></linearGradient>'
-			. '<linearGradient id="' . $u . 'pb" x1="0" y1="62" x2="0" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#e83a7c"/><stop offset=".55" stop-color="#ff86b5"/><stop offset="1" stop-color="#ffe3f0"/></linearGradient>'
-			. '<linearGradient id="' . $u . 'pc" x1="0" y1="62" x2="0" y2="39" gradientUnits="userSpaceOnUse"><stop stop-color="#ff6ea6"/><stop offset=".6" stop-color="#ffb3d1"/><stop offset="1" stop-color="#fff7fb"/></linearGradient>'
-			. '<radialGradient id="' . $u . 'pod" cx="50" cy="52.5" r="6.5" gradientUnits="userSpaceOnUse"><stop stop-color="#fff0a6"/><stop offset=".55" stop-color="#ffcc3d"/><stop offset="1" stop-color="#e3931c"/></radialGradient>'
-			. '<linearGradient id="' . $u . 'leaf" x1="0" y1="68" x2="0" y2="77" gradientUnits="userSpaceOnUse"><stop stop-color="#8fe08a"/><stop offset="1" stop-color="#2c8a4c"/></linearGradient>'
-			. '<radialGradient id="' . $u . 'glow" cx="50" cy="48" r="30" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8fc0" stop-opacity=".55"/><stop offset="1" stop-color="#ff8fc0" stop-opacity="0"/></radialGradient>'
+			. '<radialGradient id="' . $u . 'sky" cx="50" cy="34" r="62" gradientUnits="userSpaceOnUse"><stop stop-color="#2e271d"/><stop offset=".6" stop-color="#18140e"/><stop offset="1" stop-color="#0b0907"/></radialGradient>'
+			. '<linearGradient id="' . $u . 'water" x1="0" y1="70" x2="0" y2="100" gradientUnits="userSpaceOnUse"><stop stop-color="#c9a463" stop-opacity=".9"/><stop offset=".45" stop-color="#6f5530"/><stop offset="1" stop-color="#2a1f12"/></linearGradient>'
+			. '<linearGradient id="' . $u . 'pa" x1="0" y1="62" x2="0" y2="26" gradientUnits="userSpaceOnUse"><stop stop-color="#a9844c"/><stop offset=".5" stop-color="#d6b47c"/><stop offset="1" stop-color="#fff5df"/></linearGradient>'
+			. '<linearGradient id="' . $u . 'pb" x1="0" y1="62" x2="0" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#94703a"/><stop offset=".55" stop-color="#c9a463"/><stop offset="1" stop-color="#f6e6c4"/></linearGradient>'
+			. '<linearGradient id="' . $u . 'pc" x1="0" y1="62" x2="0" y2="39" gradientUnits="userSpaceOnUse"><stop stop-color="#b8935a"/><stop offset=".6" stop-color="#e3c591"/><stop offset="1" stop-color="#fffaf0"/></linearGradient>'
+			. '<radialGradient id="' . $u . 'pod" cx="50" cy="52.5" r="6.5" gradientUnits="userSpaceOnUse"><stop stop-color="#fff4d0"/><stop offset=".55" stop-color="#f3d38a"/><stop offset="1" stop-color="#a9844c"/></radialGradient>'
+			. '<linearGradient id="' . $u . 'leaf" x1="0" y1="68" x2="0" y2="77" gradientUnits="userSpaceOnUse"><stop stop-color="#c9a463"/><stop offset="1" stop-color="#5e4626"/></linearGradient>'
+			. '<radialGradient id="' . $u . 'glow" cx="50" cy="48" r="30" gradientUnits="userSpaceOnUse"><stop stop-color="#f3d38a" stop-opacity=".5"/><stop offset="1" stop-color="#f3d38a" stop-opacity="0"/></radialGradient>'
 			. '<clipPath id="' . $u . 'clip"><circle cx="50" cy="50" r="50"/></clipPath>'
 			. '</defs>';
 		$o .= '<g clip-path="url(#' . $u . 'clip)">';
@@ -1087,19 +1087,19 @@ TXT;
 		$o .= '<circle class="zl-glow" cx="50" cy="48" r="30" fill="url(#' . $u . 'glow)"/>';
 		// víz két hullámréteggel
 		$o .= '<path class="zl-wave" d="M0 72.4q12.5-1.6 25 0t25 0t25 0t25 0t25 0t25 0t25 0t25 0V100H0Z" fill="url(#' . $u . 'water)"/>';
-		$o .= '<path class="zl-wave zl-wave--b" d="M-60 74.4q12.5-1.2 25 0t25 0t25 0t25 0t25 0t25 0t25 0t25 0t25 0V100H-60Z" fill="#0d4a66" opacity=".45"/>';
+		$o .= '<path class="zl-wave zl-wave--b" d="M-60 74.4q12.5-1.2 25 0t25 0t25 0t25 0t25 0t25 0t25 0t25 0t25 0V100H-60Z" fill="#3a2c18" opacity=".5"/>';
 		// gyökerek a vízben
 		$o .= '<g stroke="#f1cf94" stroke-width=".9" stroke-linecap="round" opacity=".8"><path class="zl-root" d="M50 74C49 80 45 85 42 93"/><path class="zl-root" d="M50 74C51 82 55 87 58 96"/><path class="zl-root" d="M50 74C50 82 49 89 50 98"/><path class="zl-root" d="M50 75C46 78 40 80 35 87"/><path class="zl-root" d="M50 75C54 79 61 81 66 88"/></g>';
 		// gyűrűk a vízen
 		$o .= '<ellipse class="zl-rip" cx="50" cy="72.6" rx="7" ry="1.4" stroke="rgba(255,255,255,.55)" stroke-width=".5"/><ellipse class="zl-rip zl-rip--b" cx="50" cy="72.6" rx="7" ry="1.4" stroke="rgba(255,255,255,.45)" stroke-width=".5"/>';
 		// tavirózsa-levelek
-		$o .= '<path class="zl-leaf" d="M29 72.6m-15 0a15 3.9 0 1 0 30 0a15 3.9 0 1 0 -30 0Z" fill="url(#' . $u . 'leaf)"/><path d="M29 72.6L43.2 71.4L42.6 74Z" fill="#1f7f9a" opacity=".9"/>';
-		$o .= '<path class="zl-leaf zl-leaf--r" d="M73 73.2m-12 0a12 3.2 0 1 0 24 0a12 3.2 0 1 0 -24 0Z" fill="url(#' . $u . 'leaf)" opacity=".92"/><path d="M73 73.2L61.6 72.2L62 74.4Z" fill="#1f7f9a" opacity=".9"/>';
+		$o .= '<path class="zl-leaf" d="M29 72.6m-15 0a15 3.9 0 1 0 30 0a15 3.9 0 1 0 -30 0Z" fill="url(#' . $u . 'leaf)"/><path d="M29 72.6L43.2 71.4L42.6 74Z" fill="#3a2c18" opacity=".9"/>';
+		$o .= '<path class="zl-leaf zl-leaf--r" d="M73 73.2m-12 0a12 3.2 0 1 0 24 0a12 3.2 0 1 0 -24 0Z" fill="url(#' . $u . 'leaf)" opacity=".92"/><path d="M73 73.2L61.6 72.2L62 74.4Z" fill="#3a2c18" opacity=".9"/>';
 		// szár + virág
-		$o .= '<g class="zl-flower"><path d="M50 73.5C50 69 50 66 50 61" stroke="#3f9a5a" stroke-width="2.2" stroke-linecap="round"/><g class="zl-petals">' . $petals . '</g></g>';
+		$o .= '<g class="zl-flower"><path d="M50 73.5C50 69 50 66 50 61" stroke="#8a6a38" stroke-width="2.2" stroke-linecap="round"/><g class="zl-petals">' . $petals . '</g></g>';
 		// vízkérő buborék, hulló cseppek, csillogás
-		$o .= '<g class="zl-ask"><circle cx="77" cy="22" r="9" fill="rgba(255,255,255,.94)"/><path d="M77 15.6C74.4 19.4 73.2 21.4 73.2 23.4a3.8 3.8 0 0 0 7.6 0C80.8 21.4 79.6 19.4 77 15.6Z" fill="#35a7dc"/><circle cx="75.6" cy="22.8" r=".9" fill="#d7f3ff"/></g>';
-		$o .= '<g fill="#a8e6ff"><path class="zl-drop" style="--d:0s" d="M42 8C40.6 10.2 40 11.4 40 12.4a2 2 0 0 0 4 0C44 11.4 43.4 10.2 42 8Z"/><path class="zl-drop" style="--d:.18s" d="M51 4C49.6 6.2 49 7.4 49 8.4a2 2 0 0 0 4 0C53 7.4 52.4 6.2 51 4Z"/><path class="zl-drop" style="--d:.34s" d="M59 9C57.6 11.2 57 12.4 57 13.4a2 2 0 0 0 4 0C61 12.4 60.4 11.2 59 9Z"/></g>';
+		$o .= '<g class="zl-ask"><circle cx="77" cy="22" r="9" fill="rgba(255,255,255,.94)"/><path d="M77 15.6C74.4 19.4 73.2 21.4 73.2 23.4a3.8 3.8 0 0 0 7.6 0C80.8 21.4 79.6 19.4 77 15.6Z" fill="#c9a463"/><circle cx="75.6" cy="22.8" r=".9" fill="#fff5df"/></g>';
+		$o .= '<g fill="#f3d38a"><path class="zl-drop" style="--d:0s" d="M42 8C40.6 10.2 40 11.4 40 12.4a2 2 0 0 0 4 0C44 11.4 43.4 10.2 42 8Z"/><path class="zl-drop" style="--d:.18s" d="M51 4C49.6 6.2 49 7.4 49 8.4a2 2 0 0 0 4 0C53 7.4 52.4 6.2 51 4Z"/><path class="zl-drop" style="--d:.34s" d="M59 9C57.6 11.2 57 12.4 57 13.4a2 2 0 0 0 4 0C61 12.4 60.4 11.2 59 9Z"/></g>';
 		$o .= '<g fill="#fff6c9"><path class="zl-spark" style="transform-origin:30px 36px" d="M30 32l1 3 3 1-3 1-1 3-1-3-3-1 3-1Z"/><path class="zl-spark" style="transform-origin:71px 38px" d="M71 35l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8Z"/><path class="zl-spark" style="transform-origin:50px 22px" d="M50 19l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8Z"/></g>';
 		$o .= '</g><circle cx="50" cy="50" r="49.4" stroke="rgba(255,255,255,.2)" stroke-width="1"/></svg>';
 		return $o;
