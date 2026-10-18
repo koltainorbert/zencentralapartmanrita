@@ -9,7 +9,13 @@ defined( 'ABSPATH' ) || exit;
 echo zc_section_open( $s, 'zc-contact' ); // phpcs:ignore
 ?>
 <div class="zc-wrap zc-contact__grid">
-	<?php if ( ! empty( $d['media']['url'] ) || ! empty( $d['media']['id'] ) ) : ?>
+	<?php
+	$zc_visual = in_array( (string) ( $d['visual'] ?? 'collage' ), array( 'collage', 'media', 'none' ), true ) ? (string) ( $d['visual'] ?? 'collage' ) : 'collage';
+	$zc_coll   = 'collage' === $zc_visual ? zc_apt_collage() : '';
+	?>
+	<?php if ( '' !== $zc_coll ) : ?>
+		<?php echo $zc_coll; // phpcs:ignore ?>
+	<?php elseif ( 'media' === $zc_visual && ( ! empty( $d['media']['url'] ) || ! empty( $d['media']['id'] ) ) ) : ?>
 		<figure class="zc-contact__media" data-reveal><?php echo zc_media( $d['media'], array( 'cover' => true, 'alt' => $d['title'] ?? '', 'sizes' => '(min-width: 900px) 45vw, 100vw' ) ); // phpcs:ignore ?></figure>
 	<?php endif; ?>
 	<div class="zc-contact__body">

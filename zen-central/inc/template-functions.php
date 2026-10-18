@@ -576,6 +576,49 @@ function zc_logo( $class = '' ) {
 }
 
 /** Apartman meta chipek (fő, m², hálószoba). */
+/**
+ * Apartman-kollázs: minden apartman borítóképe (arany logóval, névvel, linkkel) + 2 galériakép kitöltésnek.
+ * Új apartman automatikusan bekerül. Háttér és keret nélkül.
+ */
+function zc_apt_collage() {
+	if ( ! function_exists( 'zen_apartments' ) ) {
+		return '';
+	}
+	$apts  = array_values( array_filter( zen_apartments(), fn( $a ) => ! empty( $a['cover']['url'] ) || ! empty( $a['cover']['id'] ) ) );
+	if ( ! $apts ) {
+		return '';
+	}
+	$tiles = array();
+	foreach ( $apts as $a ) {
+		$tiles[] = array( 'apt' => $a, 'm' => $a['cover'] );
+	}
+	// Kitöltő galériaképek (apartmanonként felváltva), hogy a mozaik mindig 5 csempés legyen.
+	$extra = array();
+	for ( $i = 0; $i < 4 && count( $tiles ) + count( $extra ) < 5; $i++ ) {
+		foreach ( $apts as $a ) {
+			$g = array_values( array_filter( (array) ( $a['gallery'] ?? array() ), fn( $m ) => is_array( $m ) && 'video' !== ( $m['type'] ?? 'image' ) && ! empty( $m['url'] ) ) );
+			if ( isset( $g[ $i + 1 ] ) && count( $tiles ) + count( $extra ) < 5 ) {
+				$extra[] = array( 'apt' => $a, 'm' => $g[ $i + 1 ], 'fill' => true );
+			}
+		}
+	}
+	$tiles = array_slice( array_merge( $tiles, $extra ), 0, 6 );
+	$n     = count( $tiles );
+	$o     = '<div class="zc-collage zc-collage--n' . $n . '" data-reveal>';
+	foreach ( $tiles as $i => $t ) {
+		$a    = $t['apt'];
+		$name = function_exists( 'zen_apt_name' ) ? zen_apt_name( $a['key'] ) : ( $a['key'] ?? '' );
+		$url  = zc_page_url( 'apt_' . $a['key'] );
+		$o   .= '<a class="zc-collage__tile' . ( empty( $t['fill'] ) ? ' is-apt' : ' is-fill' ) . '" href="' . esc_url( $url ) . '" style="--k:' . (int) $i . '" aria-label="' . esc_attr( $name ) . '">';
+		$o   .= zc_media( $t['m'], array( 'cover' => true, 'alt' => $name, 'size' => 0 === $i ? 'zc-wide' : 'zc-card', 'sizes' => '(min-width: 900px) 30vw, 60vw' ) );
+		if ( empty( $t['fill'] ) ) {
+			$o .= '<span class="zc-collage__cap">' . ( function_exists( 'zen_apt_badge' ) ? zen_apt_badge( $a, 'zc-collage__badge' ) : '' ) . '<b>' . esc_html( $name ) . '</b></span>';
+		}
+		$o .= '</a>';
+	}
+	return $o . '</div>';
+}
+
 function zc_apt_meta( $key ) {
 	if ( ! function_exists( 'zen_apartment' ) ) {
 		return '';

@@ -552,6 +552,22 @@ html.zc-lock, html.zc-lock body { overflow: hidden; }
 
 /* ---------- Kapcsolat ---------- */
 .zc-contact__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+/* Apartman-kollázs (Kapcsolat): háttér és keret nélkül */
+.zc-collage { display: grid; grid-template-columns: 1.15fr 1fr; grid-template-rows: 1.3fr 1fr .9fr; gap: 10px; aspect-ratio: 4 / 5; background: none; }
+.zc-collage__tile { position: relative; display: block; overflow: hidden; border-radius: 22px; text-decoration: none; color: #fff; isolation: isolate; }
+.zc-collage__tile .zc-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.1s var(--zc-ease, ease); }
+.zc-collage__tile:hover .zc-media { transform: scale(1.06); }
+.zc-collage__tile.is-apt::after { content: ""; position: absolute; inset: 45% 0 0; z-index: 0; background: linear-gradient(transparent, rgba(10, 8, 6, .55)); pointer-events: none; }
+.zc-collage__cap { position: absolute; z-index: 1; left: 12px; right: 12px; bottom: 12px; display: flex; align-items: center; gap: 10px; }
+.zc-collage__cap b { font: 600 clamp(14px, 1.15vw, 17px)/1.2 var(--zc-font-h); letter-spacing: .01em; text-shadow: 0 1px 8px rgba(0, 0, 0, .45); }
+.zc-collage__cap .zen-badge { --zb-size: 44px; flex: none; }
+.zc-collage__tile:nth-child(1) { grid-row: span 2; }
+.zc-collage--n5 .zc-collage__tile:nth-child(4), .zc-collage--n5 .zc-collage__tile:nth-child(5) { grid-row: 3; }
+.zc-collage--n3 { grid-template-rows: 1fr 1fr; } .zc-collage--n3 .zc-collage__tile:nth-child(1) { grid-row: span 2; }
+.zc-collage--n4 .zc-collage__tile:nth-child(4) { grid-column: 1 / -1; }
+.zc-collage--n6 { grid-template-rows: 1.2fr 1fr 1fr; } .zc-collage--n6 .zc-collage__tile:nth-child(1) { grid-row: span 1; grid-column: 1 / -1; }
+.zc-collage[data-reveal] .zc-collage__tile { transition: opacity .8s ease calc(var(--k, 0) * 90ms), transform .9s var(--zc-ease, ease) calc(var(--k, 0) * 90ms); }
+@media (max-width: 900px) { .zc-collage { aspect-ratio: 4 / 4.4; } }
 .zc-contact__media { margin: 0; aspect-ratio: 4/5; border-radius: calc(var(--zc-radius) * 1.6); overflow: hidden; box-shadow: var(--zc-shadow); }
 .zc-contact__media .zc-media { width: 100%; height: 100%; object-fit: cover; }
 .zc-notice { display: flex; gap: 12px; align-items: flex-start; padding: 16px 18px; border-radius: var(--zc-radius-s); background: color-mix(in srgb, var(--zc-warn) 12%, var(--zc-surface)); border: 1px solid color-mix(in srgb, var(--zc-warn) 35%, transparent); font-size: 15px; font-weight: 600; }
@@ -776,7 +792,12 @@ html.zc-lock, html.zc-lock body { overflow: hidden; }
 .zc-szep svg { flex: none; }
 .zcb + .zc-szep, .zc-szep + .zcb { margin-top: 10px; }
 /* ---------- Fotósáv a lábléc fölött: nagy kép + 6 csempe, élő képcsere ---------- */
-.zc-strip { position: relative; padding: 0 6px; background: none; --zs-ease: cubic-bezier(.7, 0, .2, 1); }
+.zc-strip { position: relative; padding: 0 6px; background: none;}
+/* A sáv átveszi a felette lévő (utolsó) szekció tónusát – így a csempék sarkainál nem látszik eltérő háttér */
+main:has(> section.zc-sec:last-of-type.tone-alt) ~ .zc-strip { background: var(--zc-surface-2); }
+main:has(> section.zc-sec:last-of-type.tone-dark) ~ .zc-strip { background: #0f0d0b; }
+main:has(> section.zc-sec:last-of-type.tone-accent) ~ .zc-strip { background: var(--zc-bg); }
+.zc-strip { --zs-ease: cubic-bezier(.7, 0, .2, 1); }
 .zc-strip__grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); gap: 6px; height: clamp(340px, 34vw, 640px); }
 .zc-strip__tile { position: relative; overflow: hidden; display: block; width: 100%; height: 100%; padding: 0; border: 0; border-radius: 16px; background: none; cursor: zoom-in; isolation: isolate; -webkit-tap-highlight-color: transparent; }
 .zc-strip__tile--hero { grid-row: span 2; border-radius: 20px; }
