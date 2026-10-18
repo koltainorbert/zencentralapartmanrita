@@ -84,6 +84,7 @@ class Zen_Admin {
 			'apartments' => Zen_Settings::apartments(),
 			'skins'      => Zen_Settings::skins(),
 			'fonts'      => Zen_Settings::fonts(),
+			'logoOpts'   => class_exists( 'Zen_Logos' ) ? Zen_Logos::options() : array(),
 			'railStyles' => array_map( fn( $k, $v ) => array( $k, $v ), array_keys( self::rail_styles() ), array_values( self::rail_styles() ) ),
 			'langs'      => $langs,
 			'keys'       => Zen_Content::keys(),

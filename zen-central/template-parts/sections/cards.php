@@ -40,7 +40,13 @@ echo zc_section_open( $s, 'zc-cards' ); // phpcs:ignore
 			<article class="zc-apt-card" data-reveal style="--d:<?php echo (int) $zc_i; ?>">
 				<a class="zc-apt-card__media" href="<?php echo zc_url( $zc_it['url'] ?? '#' ); // phpcs:ignore ?>" tabindex="-1" aria-hidden="true">
 					<?php echo zc_media( $zc_it['media'] ?? array(), array( 'cover' => true, 'alt' => $zc_it['title'] ?? '', 'size' => 'zc-card', 'sizes' => '(min-width: 900px) 33vw, 100vw' ) ); // phpcs:ignore ?>
-					<?php if ( $zc_aptd && ! empty( $zc_aptd['icon']['url'] ) ) : ?><span class="zc-apt-card__icon"><img src="<?php echo esc_url( $zc_aptd['icon']['url'] ); ?>" alt="" loading="lazy" width="64" height="64"></span><?php endif; ?>
+					<?php
+					if ( $zc_aptd && function_exists( 'zen_apt_badge' ) ) {
+						echo zen_apt_badge( $zc_aptd, 'zc-apt-card__badge' ); // phpcs:ignore
+					} elseif ( $zc_aptd && ! empty( $zc_aptd['icon']['url'] ) ) {
+						echo '<span class="zen-badge zen-badge--image zc-apt-card__badge"><img src="' . esc_url( $zc_aptd['icon']['url'] ) . '" alt="" loading="lazy" width="64" height="64"></span>'; // phpcs:ignore
+					}
+					?>
 				</a>
 				<div class="zc-apt-card__body">
 					<h3 class="zc-apt-card__title"><a href="<?php echo zc_url( $zc_it['url'] ?? '#' ); // phpcs:ignore ?>"><?php echo esc_html( $zc_it['title'] ?? '' ); ?></a></h3>

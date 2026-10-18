@@ -355,6 +355,7 @@ class Zen_Settings {
 			$a['price']    = (float) ( $a['price'] ?? 0 );
 			$a['price_weekend'] = (float) ( $a['price_weekend'] ?? 0 );
 			$a['min_nights'] = max( 1, (int) ( $a['min_nights'] ?? 1 ) );
+			$a['badge']    = sanitize_key( (string) ( $a['badge'] ?? '' ) );
 			if ( empty( $a['ical_token'] ) ) {
 				$a['ical_token'] = wp_generate_password( 20, false );
 			}

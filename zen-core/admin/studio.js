@@ -179,7 +179,7 @@
 			{ k: 'bedrooms', l: 'Hálószobák (0 = stúdió)', t: 'number', min: 0 }, { k: 'min_nights', l: 'Min. éjszaka', t: 'number', min: 1 },
 			{ k: 'price', l: 'Alapár / éj (Ft) – 0 = árajánlat mód', t: 'number', min: 0, step: 500 }, { k: 'price_weekend', l: 'Hétvégi ár / éj (péntek, szombat)', t: 'number', min: 0, step: 500 },
 			{ k: 'short', l: 'Rövid leírás', t: 'langtext', langs: L, multiline: true },
-			{ k: 'cover', l: 'Borító (kép vagy videó)', t: 'media' }, { k: 'icon', l: 'Ikon / jelvény', t: 'media' },
+			{ k: 'cover', l: 'Borító (kép vagy videó)', t: 'media' }, { k: 'badge', l: 'Jelvény a kártyán (arany logó)', t: 'select', opts: Z.logoOpts || [['', 'Automatikus']], help: 'Az ismert apartmanok saját, vektoros arany logót kapnak. Új apartmannál: tölts fel képet (lehet SVG) az Ikon mezőbe, vagy monogram jelenik meg.' }, { k: 'icon', l: 'Ikon / jelvény kép (ha „Feltöltött kép”)', t: 'media' },
 			{ k: 'gallery', l: 'Galéria (képek és videók)', t: 'gallery', wide: true },
 			{ k: 'color', l: 'Szín (naptárban)', t: 'color' },
 			{ k: 'ical_booking', l: 'Booking.com iCal export link (ide másold a Booking naptár linkjét)', t: 'url', ph: 'https://admin.booking.com/hotel/hoteladmin/ical.html?t=…' },
