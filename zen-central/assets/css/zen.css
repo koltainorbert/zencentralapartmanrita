@@ -707,7 +707,8 @@ html.zc-lock, html.zc-lock body { overflow: hidden; }
 	color: var(--zc-accent); background: color-mix(in srgb, var(--zc-accent) 12%, transparent); border: 1px solid color-mix(in srgb, var(--zc-accent) 35%, transparent); }
 .zc-szep svg { flex: none; }
 .zcb + .zc-szep, .zc-szep + .zcb { margin-top: 10px; }
-.zc-promo { padding: clamp(18px, 3vw, 34px) 0 0; }
+.zc-promo { padding: clamp(24px, 4vw, 48px) 0; }
+.zc-promo + .zc-footer { margin-top: 0; }
 .zc-promo__in { display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: center; justify-content: space-between; padding: clamp(18px, 3vw, 30px) clamp(18px, 3.4vw, 38px);
 	border-radius: var(--zc-radius); background: linear-gradient(120deg, color-mix(in srgb, var(--zc-accent) 18%, var(--zc-surface)), color-mix(in srgb, var(--zc-accent-2) 14%, var(--zc-surface)));
 	border: 1px solid var(--zc-glass-line); box-shadow: var(--zc-shadow); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
