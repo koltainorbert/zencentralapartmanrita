@@ -220,6 +220,8 @@ function zc_deco_conf( $s ) {
 		'form'    => array( 'lotus', 'card', 'm' ),
 		'booking' => array( 'jinjang', 'tr', 'm' ),
 		'gallery' => array( 'jinjang', 'tl', 's' ),
+		// Közeli látnivalók: lótusz a lista jobb felső sarkán – 20%-kal nagyobb, halványabb.
+		'map_list' => array( 'lotus', 'card', 'm', 120, 50 ),
 	);
 	$d = $def[ $type ] ?? array( 'none', 'r', 'm' );
 	// Főoldal: az első bevezető szekció egy halvány lótuszt kap a szöveg oldalán (a kártyás Jin-Jang mellé).
@@ -241,7 +243,7 @@ function zc_deco_conf( $s ) {
 	}
 	if ( '' !== $motif ) {
 		$d[0] = $motif; // a háttérként megadott motívum lesz a vízjel (kicsiben)
-	} elseif ( ! in_array( $type, array( 'cards', 'cta', 'form' ), true ) ) {
+	} elseif ( ! in_array( $type, array( 'cards', 'cta', 'form', 'map_list' ), true ) ) {
 		$d[0] = 'none'; // űrlap / foglaló / galéria: csak ha a régi oldalon is volt motívum
 	}
 	$deco = (string) ( $st['deco'] ?? 'auto' );
@@ -251,13 +253,13 @@ function zc_deco_conf( $s ) {
 	}
 	$pos = (string) ( $st['deco_pos'] ?? 'auto' );
 	$pos = in_array( $pos, array( 'tl', 'tr', 'l', 'r', 'bl', 'br', 'card' ), true ) ? $pos : $d[1];
-	if ( 'card' === $pos && ! in_array( $type, array( 'cta', 'form', 'intro' ), true ) ) {
+	if ( 'card' === $pos && ! in_array( $type, array( 'cta', 'form', 'intro', 'map_list' ), true ) ) {
 		$pos = 'br';
 	}
 	$size = (string) ( $st['deco_size'] ?? 'auto' );
 	$size = in_array( $size, array( 's', 'm', 'l' ), true ) ? $size : $d[2];
-	$zoom = isset( $st['deco_scale'] ) && '' !== $st['deco_scale'] ? max( 30, min( 250, (int) $st['deco_scale'] ) ) : 100;
-	$op   = isset( $st['deco_opacity'] ) && '' !== $st['deco_opacity'] ? max( 0, min( 100, (int) $st['deco_opacity'] ) ) : 0; // 0 = automatikus
+	$zoom = isset( $st['deco_scale'] ) && '' !== $st['deco_scale'] && 100 !== (int) $st['deco_scale'] ? max( 30, min( 250, (int) $st['deco_scale'] ) ) : (int) ( $d[3] ?? 100 );
+	$op   = isset( $st['deco_opacity'] ) && '' !== $st['deco_opacity'] && 0 !== (int) $st['deco_opacity'] ? max( 0, min( 100, (int) $st['deco_opacity'] ) ) : (int) ( $d[4] ?? 0 ); // 0 = automatikus
 	return array( $deco, $pos, $size, $zoom, $op );
 }
 

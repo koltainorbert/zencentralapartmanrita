@@ -327,6 +327,7 @@
 				{ k: 'extras.strip.enabled', l: 'Fotósáv bekapcsolva', t: 'toggle' }, { k: 'extras.strip.animate', l: 'Animáció (képcsere, lassú zoom, belépő effekt)', t: 'toggle' },
 				{ k: 'extras.strip.show_link', l: '„Galéria megnyitása” gomb a nagy képen', t: 'toggle' }, { k: 'extras.strip.hide_gallery', l: 'A Galéria oldalon ne jelenjen meg', t: 'toggle' },
 				{ k: 'extras.strip.interval', l: 'Képcsere gyakorisága (másodperc)', t: 'range', min: 1.5, max: 10, step: 0.5, dflt: 3.2, unit: ' mp' },
+				{ k: 'extras.strip.intro', l: 'Belépő animáció (a csempék kinyílása)', t: 'select', opts: [['session', 'Látogatásonként csak egyszer (ajánlott)'], ['always', 'Minden oldalbetöltéskor'], ['never', 'Soha – azonnal kész állapot']] },
 				{ k: 'extras.strip.bg', l: 'A sáv háttere (a képek között)', t: 'select', opts: [['beige', 'Bézs (a szekciók tónusa)'], ['page', 'Oldal háttérszíne (világos)'], ['dark', 'Sötét']] },
 				{ k: 'extras.strip.images', l: 'Saját képek (üresen hagyva: az apartmanok borító- és galériaképei, felváltva)', t: 'gallery', wide: true }
 			]))], 'Minden oldal alján, a lábléc fölött jelenik meg. Kattintásra a képek nagyban, lapozhatóan nyílnak. Ha az egér a sáv fölött van, a képcsere szünetel. A shortcode: [zen_photo_strip].')

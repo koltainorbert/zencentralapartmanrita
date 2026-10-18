@@ -39,6 +39,7 @@ echo zc_section_open( $s, 'zc-maplist' ); // phpcs:ignore
 				</li>
 			<?php endforeach; ?>
 		</ul>
+		<?php echo zc_section_deco( $s, 'card' ); // phpcs:ignore – lótusz a lista jobb felső sarkán ?>
 	</div>
 </div>
 <?php

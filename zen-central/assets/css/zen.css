@@ -576,6 +576,12 @@ html.zc-lock, html.zc-lock body { overflow: hidden; }
 .zc-formsec .zc-title { font-size: clamp(26px, 2.8vw, 38px); }
 .zc-formsec__card > :not(.zc-deco--card) { position: relative; z-index: 1; }
 .zc-formsec { overflow-x: clip; }
+/* Közeli látnivalók: lótusz a lista jobb felső sarkán, a kártyák fölött */
+.zc-maplist__grid { position: relative; }
+.zc-maplist { overflow-x: clip; }
+.zc-maplist .zc-deco--card { top: 0; bottom: auto; }
+.zc-maplist .zc-deco--card .zc-deco__mark { bottom: auto; top: calc(var(--dw) * var(--dz, 1) * -.5); right: calc(var(--dw) * var(--dz, 1) * -.32); }
+@media (max-width: 900px) { .zc-maplist .zc-deco--card .zc-deco__mark { right: -8px; } }
 /* Bevezető: lótusz a kép alsó sarkán, a kép fölött */
 .zc-intro__grid { position: relative; }
 .zc-intro { overflow-x: clip; }
@@ -809,6 +815,7 @@ html.zc-lock, html.zc-lock body { overflow: hidden; }
 .zc-strip--anim .zc-strip__cta { opacity: 0; transform: translateY(14px); transition: opacity .8s ease .7s, transform .8s var(--zs-ease) .7s, background .3s; }
 .zc-strip--anim.is-in .zc-strip__cta { opacity: 1; transform: none; }
 .zc-strip--anim.is-in .zc-strip__cta:hover { transform: translateY(-2px); }
+.zc-strip--anim.is-instant .zc-strip__tile, .zc-strip--anim.is-instant .zc-strip__tile .zc-strip__img, .zc-strip--anim.is-instant .zc-strip__cta { transition: none; }
 /* Képcsere: 4 váltakozó effekt (jobbról törlés, kör, alulról, lágy élesedés) */
 .zc-strip__img--in { z-index: 0; transition: clip-path 1.25s var(--zs-ease), opacity 1.25s ease, filter 1.25s ease; }
 .zc-strip__img--in img { scale: 1.16; transition: scale 1.6s var(--zs-ease); }

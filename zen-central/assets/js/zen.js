@@ -351,6 +351,10 @@
 			t.addEventListener('click', function () { var p = pool[+t.getAttribute('data-i')]; if (p) { p.click(); } });
 		});
 		if (!anim) { st.classList.add('is-in'); return; }
+		// Belépő animáció: alapból látogatásonként csak egyszer, utána azonnal kész állapot.
+		var intro = st.getAttribute('data-intro') || 'session', seen = false;
+		if (intro === 'session') { try { seen = sessionStorage.getItem('zc-strip-in') === '1'; sessionStorage.setItem('zc-strip-in', '1'); } catch (e) { seen = false; } }
+		if (intro === 'never' || seen) { st.classList.add('is-instant', 'is-in'); }
 		var timer = null, hover = false, next = tiles.length, last = -1, fx = 0;
 		st.addEventListener('mouseenter', function () { hover = true; });
 		st.addEventListener('mouseleave', function () { hover = false; });
