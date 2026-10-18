@@ -234,6 +234,7 @@
 
 	/* ---------------- Nyelvi mező {hu:'',en:''} ---------------- */
 	function langtext(obj, langs, onch, multiline) {
+		if (typeof obj === 'string') { var o0 = {}; o0[langs[0] || 'hu'] = obj; obj = o0; } // régi, egynyelvű szöveg
 		obj = Object.assign({}, obj || {});
 		var cur = langs[0], wrap = h('div', { class: 'zs-lt' });
 		function render() {

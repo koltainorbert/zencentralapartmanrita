@@ -55,7 +55,14 @@ class Zen_Settings {
 				'side_badge'     => array( 'type' => 'image', 'url' => 'https://zencentralapartments.com/wp-content/uploads/Hotel_Szarvaskut_Lepjen_velunk_kapcsolatba.svg', 'id' => 0, 'poster' => '', 'alt' => '' ),
 				'payment_logo'   => array( 'type' => 'image', 'url' => 'https://zencentralapartments.com/wp-content/uploads/pmgw-logo-wide-black.png', 'id' => 0, 'poster' => '', 'alt' => 'PMGW' ),
 				'payment_url'    => 'https://paymentgateway.hu',
-				'credit_text'    => 'Designed by KOLORdsgn',
+				'credit_text'    => array(
+					'hu' => 'Készítette: InfoStudio Hungary', 'en' => 'Website by InfoStudio Hungary', 'de' => 'Webseite von InfoStudio Hungary',
+					'fr' => 'Site réalisé par InfoStudio Hungary', 'it' => 'Sito realizzato da InfoStudio Hungary', 'es' => 'Web creada por InfoStudio Hungary',
+					'pl' => 'Strona wykonana przez InfoStudio Hungary', 'cs' => 'Web vytvořil InfoStudio Hungary', 'sk' => 'Web vytvoril InfoStudio Hungary',
+					'ro' => 'Site realizat de InfoStudio Hungary', 'hr' => 'Web izradio InfoStudio Hungary', 'sl' => 'Spletno stran izdelal InfoStudio Hungary',
+					'nl' => 'Website door InfoStudio Hungary',
+				),
+				'credit_url'     => 'https://www.infostudio.hu',
 				'copyright_year' => '2024',
 			),
 			'design'     => array(

@@ -678,6 +678,8 @@ html.zc-lock, html.zc-lock body { overflow: hidden; }
 .zc-footer__bottom { border-top: 1px solid rgba(255,255,255,.08); font-size: 13px; }
 .zc-footer__bottom-in { display: flex; justify-content: center; text-align: center; align-items: center; gap: 16px; flex-wrap: wrap; padding-block: 20px; }
 .zc-footer__bottom p { margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; color: rgba(243,237,227,.55); }
+.zc-footer__credit { color: rgba(243,237,227,.7); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--zc-accent) 45%, transparent); transition: color .25s, border-color .25s; }
+.zc-footer__credit:hover, .zc-footer__credit:focus-visible { color: var(--zc-accent); border-color: var(--zc-accent); }
 .zc-footer__bottom .zc-lang--inline .zc-lang__list a { color: rgba(243,237,227,.7); border-color: rgba(255,255,255,.12); }
 .zc-footer__bottom .zc-lang__list a b { background: rgba(255,255,255,.08); }
 

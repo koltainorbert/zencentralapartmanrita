@@ -74,7 +74,17 @@ $zc_pay   = zc_opt( 'general.payment_logo', array() );
 				<span><?php echo esc_html( str_replace( '{year}', (string) zc_opt( 'general.copyright_year', gmdate( 'Y' ) ), zc_t( 'copyright' ) ) ); ?></span>
 				<a href="<?php echo esc_url( zc_page_url( 'privacy' ) ); ?>"><?php echo esc_html( zc_t( 'privacy' ) ); ?></a>
 				<span><?php echo esc_html( zc_t( 'ntak' ) ); ?></span>
-				<span><?php echo esc_html( zc_opt( 'general.credit_text', zc_t( 'credit' ) ) ); ?></span>
+				<?php
+				// Készítő: InfoStudio Hungary (szöveg nyelvenként és link adminból állítható; a régi „KOLORdsgn” felirat lecserélve).
+				$zc_cr  = zc_opt( 'general.credit_text', '' );
+				$zc_cr  = is_array( $zc_cr ) ? ( class_exists( 'Zen_I18n' ) ? Zen_I18n::pick( $zc_cr ) : (string) reset( $zc_cr ) ) : (string) $zc_cr;
+				if ( '' === trim( $zc_cr ) || false !== stripos( $zc_cr, 'KOLORdsgn' ) ) {
+					$zc_cr = 'hu' === ( function_exists( 'zen_lang' ) ? zen_lang() : 'hu' ) ? 'Készítette: InfoStudio Hungary' : 'Website by InfoStudio Hungary';
+				}
+				$zc_cru = (string) zc_opt( 'general.credit_url', 'https://www.infostudio.hu' );
+				$zc_cru = '' !== trim( $zc_cru ) ? $zc_cru : 'https://www.infostudio.hu';
+				?>
+				<a class="zc-footer__credit" href="<?php echo esc_url( $zc_cru ); ?>" target="_blank" rel="noopener"><?php echo esc_html( $zc_cr ); ?></a>
 			</p>
 		</div>
 	</div>

@@ -127,7 +127,7 @@
 			card('Logók és jelvények', [grid(fields([
 				{ k: 'general.logo', l: 'Logó (világos háttérre)', t: 'media', noAlt: false }, { k: 'general.logo_dark', l: 'Logó sötét módhoz (opcionális)', t: 'media' },
 				{ k: 'general.payment_logo', l: 'Fizetési partner logó (lábléc)', t: 'media' }, { k: 'general.payment_url', l: 'Fizetési partner link', t: 'url' },
-				{ k: 'general.copyright_year', l: 'Copyright év' }, { k: 'general.credit_text', l: 'Készítő szöveg (lábléc)' }
+				{ k: 'general.copyright_year', l: 'Copyright év' }, { k: 'general.credit_text', l: 'Készítő szöveg (lábléc, nyelvenként)', t: 'langtext', langs: LANGS() }, { k: 'general.credit_url', l: 'Készítő link', t: 'url', ph: 'https://www.infostudio.hu' }
 			]))])
 		]);
 	};
