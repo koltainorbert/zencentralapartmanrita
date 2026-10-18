@@ -58,7 +58,7 @@
             "items": [
               {
                 "q": "Kako mogu rezervirati apartman?",
-                "a": "<p>Rezervirati možete na <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> ili telefonom na broj <b>+36 20 971 7556</b>.</p>"
+                "a": "<p>Rezervirati možete na <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> ili telefonom na broj <b>+36 30 116 9431</b>.</p>"
               },
               {
                 "q": "Moram li platiti predujam?",
@@ -418,16 +418,16 @@
             "apt": "relax",
             "title": "Apartman RELAX",
             "media": "U/Zen_Central_Relax_apartman_6.webp",
-            "html": "<p>2 udobna kreveta (90×200 cm) koja se mogu spojiti u bračni krevet (180×200 cm). Apartman ima terasu s namještajem i suncobranom, s pristupom iz hodnika.</p><p>Osiguravamo besplatno zatvoreno parkiralište.<br>Nepušački apartman.</p>",
+            "html": "<p>2 iznimno udobna boxspring kreveta (90×200 cm) koja se mogu spojiti u bračni krevet (180×200 cm). Apartman ima terasu s pristupom iz hodnika, opremljenu vrtnim namještajem i suncobranom.</p><p>Osiguravamo besplatno zatvoreno parkiralište.<br>Nepušački apartman.</p>",
             "facts": [
-              "Boravišna pristojba: 500 HUF / osoba / noć, plaća se gotovinom pri dolasku",
+              "Boravišna pristojba: 500 HUF / osoba / noć, plaća se gotovinom pri dolasku (u korist lokalne samouprave)",
               "Maksimalni kapacitet: 2 osobe",
               "Veličina sobe: 20 m2"
             ],
             "amenities_title": "Oprema apartmana",
             "amenities": [
               "Nepušački apartman",
-              "2 kreveta koja se mogu spojiti u 1 bračni krevet",
+              "2 boxspring kreveta koja se mogu spojiti u 1 bračni krevet",
               "Klima-uređaj, grijanje",
               "Ormar",
               "Drveni pod",
@@ -435,7 +435,7 @@
               "Brzi WiFi",
               "Kupaonica s walk-in tušem, 2 ručnika po osobi, besplatna kozmetika (šampon, gel za tuširanje, sapun, tekući sapun, kapa za tuširanje), sušilo za kosu, WC",
               "Sušilo za rublje",
-              "Dobro opremljena kuhinja (mikrovalna pećnica, toster, kuhalo za vodu, aparat za kavu (s kuhalom), blagovaonski stol s 4 stolice, hladnjak, posuđe za kuhanje i posluživanje, deterdžent za posuđe, cjedilo za čaj i Nescafé)"
+              "Dobro opremljena kuhinja (mikrovalna pećnica, toster, kuhalo za vodu, moka kuhalo za kavu, blagovaonski stol s 4 stolca, hladnjak, ploča za kuhanje, posuđe za kuhanje i posluživanje, deterdžent za posuđe, cjedilo za čaj i Nescafé)"
             ],
             "buttons": [
               {
@@ -493,7 +493,7 @@
       "slug": "apartman-jin-jang",
       "title": "Apartman JIN-JANG",
       "seo_title": "Apartman JIN-JANG za 4 – Veszprém | ZEN Central",
-      "seo_desc": "Prostrani apartman JIN-JANG s 2 spavaće sobe, terasom i zatvorenim parkiralištem, idealan za obitelji i prijatelje u središtu Veszpréma.",
+      "seo_desc": "Prostrani apartman JIN-JANG s 2 spavaće sobe, boxspring krevetima, terasom i zatvorenim parkiralištem, idealan za obitelji i prijatelje u središtu Veszpréma.",
       "focus_kw": "obiteljski apartman Veszprém",
       "og": "U/Zen_Central_Jin_Jang.webp",
       "sections": [
@@ -517,16 +517,16 @@
             "apt": "jinjang",
             "title": "Apartman JIN-JANG",
             "media": "U/Zen_Central_Jin_Jang_8.webp",
-            "html": "<p>Idealno za obitelji ili grupe prijatelja.<br>2 osobe u zasebnoj spavaćoj sobi na velikom bračnom krevetu (180×200 cm) i još 2 osobe na bračnom krevetu (180×200 cm) u dnevnom boravku. Po potrebi možemo osigurati manji krevet (90×200) za petu osobu.</p><p>Apartman ima terasu s namještajem i suncobranom, s pristupom iz hodnika.</p><p>Osiguravamo besplatno zatvoreno parkiralište.<br>Nepušački apartman.</p>",
+            "html": "<p>Idealno za obitelji ili grupe prijatelja.<br>2 osobe u zasebnoj spavaćoj sobi na velikom bračnom krevetu (180×200 cm) i još 2 osobe na bračnom krevetu (180×200 cm) u dnevnom boravku. Po želji se 4 iznimno udobna boxspring kreveta (90×200 cm) mogu koristiti i zasebno.</p><p>Apartman ima terasu s pristupom iz hodnika, opremljenu vrtnim namještajem i suncobranom.</p><p>Osiguravamo besplatno zatvoreno parkiralište.<br>Nepušački apartman.</p>",
             "facts": [
-              "Boravišna pristojba: 500 HUF / osoba / noć, plaća se gotovinom pri dolasku",
+              "Boravišna pristojba: 500 HUF / osoba / noć, plaća se gotovinom pri dolasku (u korist lokalne samouprave)",
               "Maksimalni kapacitet: 4 osobe",
               "Veličina sobe: 35 m2"
             ],
             "amenities_title": "Oprema apartmana",
             "amenities": [
               "Nepušački apartman",
-              "2 bračna kreveta koji se mogu koristiti i kao 4 zasebna kreveta",
+              "2 bračna kreveta koji se mogu koristiti i kao 4 zasebna boxspring kreveta",
               "Klima-uređaj, grijanje",
               "Ormar",
               "Drveni pod",
@@ -534,7 +534,7 @@
               "Brzi WiFi",
               "Kupaonica s tuš-kabinom, 2 ručnika po osobi, besplatna kozmetika (šampon, gel za tuširanje, sapun, tekući sapun, kapa za tuširanje), sušilo za kosu, WC",
               "Sušilo za rublje",
-              "Dobro opremljena kuhinja (mikrovalna pećnica, toster, kuhalo za vodu, aparat za kavu (s kuhalom), blagovaonski stol s 4 stolice, hladnjak, posuđe za kuhanje i posluživanje, deterdžent za posuđe, cjedilo za čaj i Nescafé)"
+              "Dobro opremljena kuhinja (mikrovalna pećnica, toster, kuhalo za vodu, moka kuhalo za kavu, blagovaonski stol s 4 stolca, hladnjak, ploča za kuhanje, posuđe za kuhanje i posluživanje, deterdžent za posuđe, cjedilo za čaj i Nescafé)"
             ],
             "buttons": [
               {
@@ -616,16 +616,16 @@
             "apt": "lotus",
             "title": "Apartman LOTUS",
             "media": "U/Zen_Central_Lotus_apartman_8.webp",
-            "html": "<p>2 udobna kreveta (90×200 cm) koja se mogu spojiti u bračni krevet (180×200 cm) i 1 zaseban krevet 90×200 cm. Apartman ima terasu s namještajem i suncobranom, s pristupom iz hodnika.</p><p>Osiguravamo besplatno zatvoreno parkiralište.<br>Nepušački apartman.</p>",
+            "html": "<p>2 iznimno udobna boxspring kreveta (90×200 cm) koja se mogu spojiti u bračni krevet (180×200 cm) i 1 zaseban boxspring krevet 90×200 cm. Apartman ima terasu s pristupom iz hodnika, opremljenu vrtnim namještajem i suncobranom.</p><p>Osiguravamo besplatno zatvoreno parkiralište.<br>Nepušački apartman.</p>",
             "facts": [
-              "Boravišna pristojba: 500 HUF / osoba / noć, plaća se gotovinom pri dolasku",
+              "Boravišna pristojba: 500 HUF / osoba / noć, plaća se gotovinom pri dolasku (u korist lokalne samouprave)",
               "Maksimalni kapacitet: 3 osobe",
               "Veličina sobe: 25 m2"
             ],
             "amenities_title": "Oprema apartmana",
             "amenities": [
               "Nepušački apartman",
-              "2 kreveta koja se mogu spojiti u 1 bračni krevet, + 1 krevet",
+              "2 boxspring kreveta koja se mogu spojiti u 1 bračni krevet, + 1 boxspring krevet",
               "Klima-uređaj, grijanje",
               "Ormar",
               "Drveni pod",
@@ -633,7 +633,7 @@
               "Brzi WiFi",
               "Kupaonica s tuš-kabinom, 2 ručnika po osobi, besplatna kozmetika (šampon, gel za tuširanje, sapun, tekući sapun, kapa za tuširanje), sušilo za kosu, WC",
               "Sušilo za rublje",
-              "Dobro opremljena kuhinja (mikrovalna pećnica, toster, kuhalo za vodu, aparat za kavu, blagovaonski stol s 4 stolice, hladnjak, posuđe za kuhanje i posluživanje, deterdžent za posuđe, cjedilo za čaj i Nescafé)"
+              "Dobro opremljena kuhinja (mikrovalna pećnica, toster, kuhalo za vodu, moka kuhalo za kavu, blagovaonski stol s 4 stolca, hladnjak, ploča za kuhanje, posuđe za kuhanje i posluživanje, deterdžent za posuđe, cjedilo za čaj i Nescafé)"
             ],
             "buttons": [
               {

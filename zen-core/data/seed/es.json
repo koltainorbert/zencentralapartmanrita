@@ -58,7 +58,7 @@
             "items": [
               {
                 "q": "¿Cómo puedo reservar un apartamento?",
-                "a": "<p>Puede reservar en <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> o por teléfono en el <b>+36 20 971 7556</b>.</p>"
+                "a": "<p>Puede reservar en <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> o por teléfono en el <b>+36 30 116 9431</b>.</p>"
               },
               {
                 "q": "¿Es necesario pagar un depósito?",
@@ -418,16 +418,16 @@
             "apt": "relax",
             "title": "Apartamento RELAX",
             "media": "U/Zen_Central_Relax_apartman_6.webp",
-            "html": "<p>2 camas cómodas (90×200 cm) que pueden convertirse en una cama doble (180×200 cm). El apartamento cuenta con una terraza amueblada con sombrilla, con acceso desde el pasillo.</p><p>Ofrecemos aparcamiento cerrado gratuito.<br>Apartamento para no fumadores.</p>",
+            "html": "<p>2 camas boxspring extracómodas (90×200 cm) que pueden convertirse en una cama doble (180×200 cm). El apartamento cuenta con una terraza con acceso desde el pasillo, equipada con muebles de jardín y sombrilla.</p><p>Ofrecemos aparcamiento cerrado gratuito.<br>Apartamento para no fumadores.</p>",
             "facts": [
-              "Tasa turística: 500 HUF / persona / noche, a pagar en efectivo a la llegada",
+              "Tasa turística: 500 HUF / persona / noche, a pagar en efectivo a la llegada (se abona al ayuntamiento)",
               "Capacidad máxima: 2 personas",
               "Superficie: 20 m2"
             ],
             "amenities_title": "Equipamiento del apartamento",
             "amenities": [
               "Apartamento para no fumadores",
-              "2 camas que pueden convertirse en 1 cama doble",
+              "2 camas boxspring que pueden convertirse en 1 cama doble",
               "Aire acondicionado, calefacción",
               "Vestidor/armario",
               "Suelo de madera",
@@ -435,7 +435,7 @@
               "WiFi rápido",
               "Baño con ducha a ras de suelo, 2 toallas por persona, artículos de aseo gratuitos (champú, gel de ducha, jabón, jabón líquido, gorro de ducha), secador de pelo, inodoro",
               "Tendedero",
-              "Cocina bien equipada (microondas, tostadora, hervidor, cafetera (con hervidor), mesa de comedor con 4 sillas, nevera, utensilios de cocina y vajilla, lavavajillas líquido, filtro de té y lo necesario para preparar Nescafé)"
+              "Cocina bien equipada (microondas, tostadora, hervidor, cafetera italiana (moka), mesa de comedor con 4 sillas, nevera, placa de cocina, utensilios de cocina y vajilla, lavavajillas líquido, filtro de té y lo necesario para preparar Nescafé)"
             ],
             "buttons": [
               {
@@ -493,7 +493,7 @@
       "slug": "apartamento-jin-jang",
       "title": "Apartamento JIN-JANG",
       "seo_title": "Apartamento JIN-JANG para 4, 2 dormitorios – Veszprém",
-      "seo_desc": "Amplio apartamento JIN-JANG de 2 dormitorios con terraza y aparcamiento cerrado, ideal para familias o amigos, en el centro de Veszprém.",
+      "seo_desc": "Amplio apartamento JIN-JANG de 2 dormitorios con camas boxspring, terraza y aparcamiento cerrado, ideal para familias o amigos, en el centro de Veszprém.",
       "focus_kw": "apartamento familiar Veszprém",
       "og": "U/Zen_Central_Jin_Jang.webp",
       "sections": [
@@ -517,16 +517,16 @@
             "apt": "jinjang",
             "title": "Apartamento JIN-JANG",
             "media": "U/Zen_Central_Jin_Jang_8.webp",
-            "html": "<p>Ideal para familias o grupos de amigos.<br>2 personas en un dormitorio independiente con una amplia cama doble (180×200 cm) y otras 2 personas en una cama doble (180×200 cm) en el salón. Si es necesario, se puede añadir una cama más pequeña (9×200) para una quinta persona.</p><p>El apartamento cuenta con una terraza amueblada con sombrilla, con acceso desde el pasillo.</p><p>Ofrecemos aparcamiento cerrado gratuito.<br>Apartamento para no fumadores.</p>",
+            "html": "<p>Ideal para familias o grupos de amigos.<br>2 personas en un dormitorio independiente con una amplia cama doble (180×200 cm) y otras 2 personas en una cama doble (180×200 cm) en el salón. Si se desea, las 4 camas boxspring extracómodas (90×200 cm) también pueden usarse por separado.</p><p>El apartamento cuenta con una terraza con acceso desde el pasillo, equipada con muebles de jardín y sombrilla.</p><p>Ofrecemos aparcamiento cerrado gratuito.<br>Apartamento para no fumadores.</p>",
             "facts": [
-              "Tasa turística: 500 HUF / persona / noche, a pagar en efectivo a la llegada",
+              "Tasa turística: 500 HUF / persona / noche, a pagar en efectivo a la llegada (se abona al ayuntamiento)",
               "Capacidad máxima: 4 personas",
               "Superficie: 35 m2"
             ],
             "amenities_title": "Equipamiento del apartamento",
             "amenities": [
               "Apartamento para no fumadores",
-              "2 camas dobles, que también pueden usarse como 4 camas individuales",
+              "2 camas dobles, que también pueden usarse como 4 camas boxspring individuales",
               "Aire acondicionado, calefacción",
               "Vestidor/armario",
               "Suelo de madera",
@@ -534,7 +534,7 @@
               "WiFi rápido",
               "Baño con cabina de ducha, 2 toallas por persona, artículos de aseo gratuitos (champú, gel de ducha, jabón, jabón líquido, gorro de ducha), secador de pelo, inodoro",
               "Tendedero",
-              "Cocina bien equipada (microondas, tostadora, hervidor, cafetera (con hervidor), mesa de comedor con 4 sillas, nevera, utensilios de cocina y vajilla, lavavajillas líquido, filtro de té y lo necesario para preparar Nescafé)"
+              "Cocina bien equipada (microondas, tostadora, hervidor, cafetera italiana (moka), mesa de comedor con 4 sillas, nevera, placa de cocina, utensilios de cocina y vajilla, lavavajillas líquido, filtro de té y lo necesario para preparar Nescafé)"
             ],
             "buttons": [
               {
@@ -616,16 +616,16 @@
             "apt": "lotus",
             "title": "Apartamento LOTUS",
             "media": "U/Zen_Central_Lotus_apartman_8.webp",
-            "html": "<p>2 camas cómodas (90×200 cm) que pueden convertirse en una cama doble (180×200 cm) y 1 cama individual independiente de 90×200 cm. El apartamento cuenta con una terraza amueblada con sombrilla, con acceso desde el pasillo.</p><p>Ofrecemos aparcamiento cerrado gratuito.<br>Apartamento para no fumadores.</p>",
+            "html": "<p>2 camas boxspring extracómodas (90×200 cm) que pueden convertirse en una cama doble (180×200 cm) y 1 cama boxspring individual de 90×200 cm. El apartamento cuenta con una terraza con acceso desde el pasillo, equipada con muebles de jardín y sombrilla.</p><p>Ofrecemos aparcamiento cerrado gratuito.<br>Apartamento para no fumadores.</p>",
             "facts": [
-              "Tasa turística: 500 HUF / persona / noche, a pagar en efectivo a la llegada",
+              "Tasa turística: 500 HUF / persona / noche, a pagar en efectivo a la llegada (se abona al ayuntamiento)",
               "Capacidad máxima: 3 personas",
               "Superficie: 25 m2"
             ],
             "amenities_title": "Equipamiento del apartamento",
             "amenities": [
               "Apartamento para no fumadores",
-              "2 camas que pueden convertirse en 1 cama doble, + 1 cama",
+              "2 camas boxspring que pueden convertirse en 1 cama doble, + 1 cama boxspring",
               "Aire acondicionado, calefacción",
               "Vestidor/armario",
               "Suelo de madera",
@@ -633,7 +633,7 @@
               "WiFi rápido",
               "Baño con cabina de ducha, 2 toallas por persona, artículos de aseo gratuitos (champú, gel de ducha, jabón, jabón líquido, gorro de ducha), secador de pelo, inodoro",
               "Tendedero",
-              "Cocina bien equipada (microondas, tostadora, hervidor, cafetera, mesa de comedor con 4 sillas, nevera, utensilios de cocina y vajilla, lavavajillas líquido, filtro de té y lo necesario para preparar Nescafé)"
+              "Cocina bien equipada (microondas, tostadora, hervidor, cafetera italiana (moka), mesa de comedor con 4 sillas, nevera, placa de cocina, utensilios de cocina y vajilla, lavavajillas líquido, filtro de té y lo necesario para preparar Nescafé)"
             ],
             "buttons": [
               {

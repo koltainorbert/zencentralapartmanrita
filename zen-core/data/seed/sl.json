@@ -58,7 +58,7 @@
             "items": [
               {
                 "q": "Kako lahko rezerviram apartma?",
-                "a": "<p>Rezervirate lahko na <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> ali po telefonu na številki <b>+36 20 971 7556</b>.</p>"
+                "a": "<p>Rezervirate lahko na <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> ali po telefonu na številki <b>+36 30 116 9431</b>.</p>"
               },
               {
                 "q": "Ali moram plačati predplačilo?",
@@ -418,16 +418,16 @@
             "apt": "relax",
             "title": "Apartma RELAX",
             "media": "U/Zen_Central_Relax_apartman_6.webp",
-            "html": "<p>2 udobni postelji (90×200 cm), ki ju je mogoče združiti v zakonsko posteljo (180×200 cm). Apartma ima opremljeno teraso s senčnikom, dostopno s hodnika.</p><p>Zagotavljamo brezplačno zaprto parkirišče.<br>Nekadilski apartma.</p>",
+            "html": "<p>2 izjemno udobni boxspring postelji (90×200 cm), ki ju je mogoče združiti v zakonsko posteljo (180×200 cm). Apartma ima teraso, dostopno s hodnika, opremljeno z vrtnim pohištvom in senčnikom.</p><p>Zagotavljamo brezplačno zaprto parkirišče.<br>Nekadilski apartma.</p>",
             "facts": [
-              "Turistična taksa: 500 HUF / oseba / noč, plačljiva v gotovini ob prihodu",
+              "Turistična taksa: 500 HUF / oseba / noč, plačljiva v gotovini ob prihodu (odvede se občini)",
               "Največja zmogljivost: 2 osebi",
               "Velikost sobe: 20 m2"
             ],
             "amenities_title": "Oprema apartmaja",
             "amenities": [
               "Nekadilski apartma",
-              "2 postelji, ki ju je mogoče združiti v 1 zakonsko posteljo",
+              "2 boxspring postelji, ki ju je mogoče združiti v 1 zakonsko posteljo",
               "Klimatska naprava, ogrevanje",
               "Garderobna omara",
               "Lesena tla",
@@ -435,7 +435,7 @@
               "Hiter WiFi",
               "Kopalnica z walk-in prho, 2 brisači na osebo, brezplačne toaletne potrebščine (šampon, gel za prhanje, milo, tekoče milo, kapa za prhanje), sušilnik za lase, WC",
               "Sušilnik za perilo",
-              "Dobro opremljena kuhinja (mikrovalovna pečica, opekač kruha, grelnik vode, kavni aparat (z grelnikom), jedilna miza s 4 stoli, hladilnik, posoda za kuhanje in serviranje, detergent za pomivanje, cedilo za čaj in Nescafé)"
+              "Dobro opremljena kuhinja (mikrovalovna pečica, opekač kruha, grelnik vode, moka kuhalnik za kavo, jedilna miza s 4 stoli, hladilnik, kuhalna plošča, posoda za kuhanje in serviranje, detergent za pomivanje, cedilo za čaj in Nescafé)"
             ],
             "buttons": [
               {
@@ -493,7 +493,7 @@
       "slug": "apartma-jin-jang",
       "title": "Apartma JIN-JANG",
       "seo_title": "Apartma JIN-JANG za 4 – Veszprém | ZEN Central",
-      "seo_desc": "Prostoren apartma JIN-JANG z 2 spalnicama, teraso in zaprtim parkiriščem, idealen za družine in prijatelje v središču Veszpréma.",
+      "seo_desc": "Prostoren apartma JIN-JANG z 2 spalnicama, boxspring posteljami, teraso in zaprtim parkiriščem, idealen za družine in prijatelje v središču Veszpréma.",
       "focus_kw": "družinski apartma Veszprém",
       "og": "U/Zen_Central_Jin_Jang.webp",
       "sections": [
@@ -517,16 +517,16 @@
             "apt": "jinjang",
             "title": "Apartma JIN-JANG",
             "media": "U/Zen_Central_Jin_Jang_8.webp",
-            "html": "<p>Idealno za družine ali skupine prijateljev.<br>2 osebi v ločeni spalnici na veliki zakonski postelji (180×200 cm) in še 2 osebi na zakonski postelji (180×200 cm) v dnevni sobi. Po potrebi lahko za peto osebo zagotovimo manjšo posteljo (90×200).</p><p>Apartma ima opremljeno teraso s senčnikom, dostopno s hodnika.</p><p>Zagotavljamo brezplačno zaprto parkirišče.<br>Nekadilski apartma.</p>",
+            "html": "<p>Idealno za družine ali skupine prijateljev.<br>2 osebi v ločeni spalnici na veliki zakonski postelji (180×200 cm) in še 2 osebi na zakonski postelji (180×200 cm) v dnevni sobi. Po želji je mogoče 4 izjemno udobne boxspring postelje (90×200 cm) uporabljati tudi ločeno.</p><p>Apartma ima teraso, dostopno s hodnika, opremljeno z vrtnim pohištvom in senčnikom.</p><p>Zagotavljamo brezplačno zaprto parkirišče.<br>Nekadilski apartma.</p>",
             "facts": [
-              "Turistična taksa: 500 HUF / oseba / noč, plačljiva v gotovini ob prihodu",
+              "Turistična taksa: 500 HUF / oseba / noč, plačljiva v gotovini ob prihodu (odvede se občini)",
               "Največja zmogljivost: 4 osebe",
               "Velikost sobe: 35 m2"
             ],
             "amenities_title": "Oprema apartmaja",
             "amenities": [
               "Nekadilski apartma",
-              "2 zakonski postelji, ki ju je mogoče uporabiti tudi kot 4 ločene postelje",
+              "2 zakonski postelji, ki ju je mogoče uporabiti tudi kot 4 ločene boxspring postelje",
               "Klimatska naprava, ogrevanje",
               "Garderobna omara",
               "Lesena tla",
@@ -534,7 +534,7 @@
               "Hiter WiFi",
               "Kopalnica s tuš kabino, 2 brisači na osebo, brezplačne toaletne potrebščine (šampon, gel za prhanje, milo, tekoče milo, kapa za prhanje), sušilnik za lase, WC",
               "Sušilnik za perilo",
-              "Dobro opremljena kuhinja (mikrovalovna pečica, opekač kruha, grelnik vode, kavni aparat (z grelnikom), jedilna miza s 4 stoli, hladilnik, posoda za kuhanje in serviranje, detergent za pomivanje, cedilo za čaj in Nescafé)"
+              "Dobro opremljena kuhinja (mikrovalovna pečica, opekač kruha, grelnik vode, moka kuhalnik za kavo, jedilna miza s 4 stoli, hladilnik, kuhalna plošča, posoda za kuhanje in serviranje, detergent za pomivanje, cedilo za čaj in Nescafé)"
             ],
             "buttons": [
               {
@@ -616,16 +616,16 @@
             "apt": "lotus",
             "title": "Apartma LOTUS",
             "media": "U/Zen_Central_Lotus_apartman_8.webp",
-            "html": "<p>2 udobni postelji (90×200 cm), ki ju je mogoče združiti v zakonsko posteljo (180×200 cm), in 1 ločena postelja 90×200 cm. Apartma ima opremljeno teraso s senčnikom, dostopno s hodnika.</p><p>Zagotavljamo brezplačno zaprto parkirišče.<br>Nekadilski apartma.</p>",
+            "html": "<p>2 izjemno udobni boxspring postelji (90×200 cm), ki ju je mogoče združiti v zakonsko posteljo (180×200 cm), in 1 ločena boxspring postelja 90×200 cm. Apartma ima teraso, dostopno s hodnika, opremljeno z vrtnim pohištvom in senčnikom.</p><p>Zagotavljamo brezplačno zaprto parkirišče.<br>Nekadilski apartma.</p>",
             "facts": [
-              "Turistična taksa: 500 HUF / oseba / noč, plačljiva v gotovini ob prihodu",
+              "Turistična taksa: 500 HUF / oseba / noč, plačljiva v gotovini ob prihodu (odvede se občini)",
               "Največja zmogljivost: 3 osebe",
               "Velikost sobe: 25 m2"
             ],
             "amenities_title": "Oprema apartmaja",
             "amenities": [
               "Nekadilski apartma",
-              "2 postelji, ki ju je mogoče združiti v 1 zakonsko posteljo, + 1 postelja",
+              "2 boxspring postelji, ki ju je mogoče združiti v 1 zakonsko posteljo, + 1 boxspring postelja",
               "Klimatska naprava, ogrevanje",
               "Garderobna omara",
               "Lesena tla",
@@ -633,7 +633,7 @@
               "Hiter WiFi",
               "Kopalnica s tuš kabino, 2 brisači na osebo, brezplačne toaletne potrebščine (šampon, gel za prhanje, milo, tekoče milo, kapa za prhanje), sušilnik za lase, WC",
               "Sušilnik za perilo",
-              "Dobro opremljena kuhinja (mikrovalovna pečica, opekač kruha, grelnik vode, kavni aparat, jedilna miza s 4 stoli, hladilnik, posoda za kuhanje in serviranje, detergent za pomivanje, cedilo za čaj in Nescafé)"
+              "Dobro opremljena kuhinja (mikrovalovna pečica, opekač kruha, grelnik vode, moka kuhalnik za kavo, jedilna miza s 4 stoli, hladilnik, kuhalna plošča, posoda za kuhanje in serviranje, detergent za pomivanje, cedilo za čaj in Nescafé)"
             ],
             "buttons": [
               {

@@ -58,7 +58,7 @@
             "items": [
               {
                 "q": "Cum pot rezerva un apartament?",
-                "a": "<p>Puteți rezerva pe <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> sau telefonic la <b>+36 20 971 7556</b>.</p>"
+                "a": "<p>Puteți rezerva pe <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> sau telefonic la <b>+36 30 116 9431</b>.</p>"
               },
               {
                 "q": "Trebuie să plătesc un avans?",
@@ -418,16 +418,16 @@
             "apt": "relax",
             "title": "Apartamentul RELAX",
             "media": "U/Zen_Central_Relax_apartman_6.webp",
-            "html": "<p>2 paturi confortabile (90×200 cm), care pot fi unite într-un pat dublu (180×200 cm). Apartamentul are o terasă mobilată, cu umbrelă de soare, cu acces din hol.</p><p>Vă oferim parcare închisă gratuită.<br>Apartament pentru nefumători.</p>",
+            "html": "<p>2 paturi boxspring extrem de confortabile (90×200 cm), care pot fi unite într-un pat dublu (180×200 cm). Apartamentul are o terasă cu acces din hol, amenajată cu mobilier de grădină și umbrelă de soare.</p><p>Vă oferim parcare închisă gratuită.<br>Apartament pentru nefumători.</p>",
             "facts": [
-              "Taxă turistică: 500 HUF / persoană / noapte, plătibilă în numerar la sosire",
+              "Taxă turistică: 500 HUF / persoană / noapte, plătibilă în numerar la sosire (se virează primăriei)",
               "Capacitate maximă: 2 persoane",
               "Suprafață: 20 m2"
             ],
             "amenities_title": "Dotările apartamentului",
             "amenities": [
               "Apartament pentru nefumători",
-              "2 paturi care pot fi unite într-un pat dublu",
+              "2 paturi boxspring care pot fi unite într-un pat dublu",
               "Aer condiționat, încălzire",
               "Dulap / șifonier",
               "Pardoseală din lemn",
@@ -435,7 +435,7 @@
               "WiFi rapid",
               "Baie cu duș walk-in, 2 prosoape de persoană, produse de toaletă gratuite (șampon, gel de duș, săpun, săpun lichid, cască de duș), uscător de păr, toaletă",
               "Uscător de rufe",
-              "Bucătărie bine utilată (cuptor cu microunde, prăjitor de pâine, fierbător, cafetieră (cu fierbător), masă cu 4 scaune, frigider, vase pentru gătit și servit, detergent de vase, infuzor de ceai și Nescafé)"
+              "Bucătărie bine utilată (cuptor cu microunde, prăjitor de pâine, fierbător, cafetieră italiană (moka), masă cu 4 scaune, frigider, plită, vase pentru gătit și servit, detergent de vase, infuzor de ceai și Nescafé)"
             ],
             "buttons": [
               {
@@ -493,7 +493,7 @@
       "slug": "apartament-jin-jang",
       "title": "Apartamentul JIN-JANG",
       "seo_title": "Apartamentul JIN-JANG, 4 pers. – Veszprém | ZEN Central",
-      "seo_desc": "Apartamentul spațios JIN-JANG cu 2 dormitoare, terasă și parcare închisă, ideal pentru familii și prieteni, în centrul Veszprém, aproape de Balaton.",
+      "seo_desc": "Apartamentul spațios JIN-JANG cu 2 dormitoare, paturi boxspring, terasă și parcare închisă, ideal pentru familii și prieteni, în centrul Veszprém, aproape de Balaton.",
       "focus_kw": "apartament familie Veszprém",
       "og": "U/Zen_Central_Jin_Jang.webp",
       "sections": [
@@ -517,16 +517,16 @@
             "apt": "jinjang",
             "title": "Apartamentul JIN-JANG",
             "media": "U/Zen_Central_Jin_Jang_8.webp",
-            "html": "<p>Ideal pentru familii sau grupuri de prieteni.<br>2 persoane într-un dormitor separat, pe un pat dublu mare (180×200 cm), și alte 2 persoane pe un pat dublu (180×200 cm) în living. La cerere, putem pune la dispoziție un pat mai mic (90×200) pentru o a cincea persoană.</p><p>Apartamentul are o terasă mobilată, cu umbrelă de soare, cu acces din hol.</p><p>Vă oferim parcare închisă gratuită.<br>Apartament pentru nefumători.</p>",
+            "html": "<p>Ideal pentru familii sau grupuri de prieteni.<br>2 persoane într-un dormitor separat, pe un pat dublu mare (180×200 cm), și alte 2 persoane pe un pat dublu (180×200 cm) în living. La cerere, cele 4 paturi boxspring extrem de confortabile (90×200 cm) pot fi folosite și separat.</p><p>Apartamentul are o terasă cu acces din hol, amenajată cu mobilier de grădină și umbrelă de soare.</p><p>Vă oferim parcare închisă gratuită.<br>Apartament pentru nefumători.</p>",
             "facts": [
-              "Taxă turistică: 500 HUF / persoană / noapte, plătibilă în numerar la sosire",
+              "Taxă turistică: 500 HUF / persoană / noapte, plătibilă în numerar la sosire (se virează primăriei)",
               "Capacitate maximă: 4 persoane",
               "Suprafață: 35 m2"
             ],
             "amenities_title": "Dotările apartamentului",
             "amenities": [
               "Apartament pentru nefumători",
-              "2 paturi duble, care pot fi folosite și ca 4 paturi separate",
+              "2 paturi duble, care pot fi folosite și ca 4 paturi boxspring separate",
               "Aer condiționat, încălzire",
               "Dulap / șifonier",
               "Pardoseală din lemn",
@@ -534,7 +534,7 @@
               "WiFi rapid",
               "Baie cu cabină de duș, 2 prosoape de persoană, produse de toaletă gratuite (șampon, gel de duș, săpun, săpun lichid, cască de duș), uscător de păr, toaletă",
               "Uscător de rufe",
-              "Bucătărie bine utilată (cuptor cu microunde, prăjitor de pâine, fierbător, cafetieră (cu fierbător), masă cu 4 scaune, frigider, vase pentru gătit și servit, detergent de vase, infuzor de ceai și Nescafé)"
+              "Bucătărie bine utilată (cuptor cu microunde, prăjitor de pâine, fierbător, cafetieră italiană (moka), masă cu 4 scaune, frigider, plită, vase pentru gătit și servit, detergent de vase, infuzor de ceai și Nescafé)"
             ],
             "buttons": [
               {
@@ -616,16 +616,16 @@
             "apt": "lotus",
             "title": "Apartamentul LOTUS",
             "media": "U/Zen_Central_Lotus_apartman_8.webp",
-            "html": "<p>2 paturi confortabile (90×200 cm), care pot fi unite într-un pat dublu (180×200 cm), și 1 pat separat de 90×200 cm. Apartamentul are o terasă mobilată, cu umbrelă de soare, cu acces din hol.</p><p>Vă oferim parcare închisă gratuită.<br>Apartament pentru nefumători.</p>",
+            "html": "<p>2 paturi boxspring extrem de confortabile (90×200 cm), care pot fi unite într-un pat dublu (180×200 cm), și 1 pat boxspring separat de 90×200 cm. Apartamentul are o terasă cu acces din hol, amenajată cu mobilier de grădină și umbrelă de soare.</p><p>Vă oferim parcare închisă gratuită.<br>Apartament pentru nefumători.</p>",
             "facts": [
-              "Taxă turistică: 500 HUF / persoană / noapte, plătibilă în numerar la sosire",
+              "Taxă turistică: 500 HUF / persoană / noapte, plătibilă în numerar la sosire (se virează primăriei)",
               "Capacitate maximă: 3 persoane",
               "Suprafață: 25 m2"
             ],
             "amenities_title": "Dotările apartamentului",
             "amenities": [
               "Apartament pentru nefumători",
-              "2 paturi care pot fi unite într-un pat dublu, + 1 pat",
+              "2 paturi boxspring care pot fi unite într-un pat dublu, + 1 pat boxspring",
               "Aer condiționat, încălzire",
               "Dulap / șifonier",
               "Pardoseală din lemn",
@@ -633,7 +633,7 @@
               "WiFi rapid",
               "Baie cu cabină de duș, 2 prosoape de persoană, produse de toaletă gratuite (șampon, gel de duș, săpun, săpun lichid, cască de duș), uscător de păr, toaletă",
               "Uscător de rufe",
-              "Bucătărie bine utilată (cuptor cu microunde, prăjitor de pâine, fierbător, cafetieră, masă cu 4 scaune, frigider, vase pentru gătit și servit, detergent de vase, infuzor de ceai și Nescafé)"
+              "Bucătărie bine utilată (cuptor cu microunde, prăjitor de pâine, fierbător, cafetieră italiană (moka), masă cu 4 scaune, frigider, plită, vase pentru gătit și servit, detergent de vase, infuzor de ceai și Nescafé)"
             ],
             "buttons": [
               {

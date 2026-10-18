@@ -26,7 +26,7 @@
         "title": "Frequently Asked Questions",
         "groups": [
           { "title": "Booking and contact", "items": [
-            { "q": "How can I book an apartment?", "a": "<p>You can book on <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> or by phone at <b>+36 20 971 7556</b>.</p>" },
+            { "q": "How can I book an apartment?", "a": "<p>You can book on <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> or by phone at <b>+36 30 116 9431</b>.</p>" },
             { "q": "Do I need to pay a deposit?", "a": "<p>Yes, the deposit is 50% of the total amount. For bookings made through certain partner sites the full amount is payable in advance.</p>" },
             { "q": "How can I cancel my booking?", "a": "<p>For direct bookings (website, e-mail) cancellation is free of charge up to <b>15 days</b> before arrival and the amount paid is refunded.<br>For cancellations within 15 days we charge <b>50%</b> of the accommodation fee, in case of no-show <b>100%</b> as a penalty. Please send your cancellation by e-mail: <b>zencentralapartments@gmail.com</b></p>" }
           ]},
@@ -130,10 +130,10 @@
         { "type": "hero", "data": { "title": "RELAX Apartment", "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp", "height": "small", "breadcrumbs": true, "side_logo": true, "side_badge": "U/ZEN_Central_Contact_us1.svg" } },
         { "type": "apt_detail", "style": { "pad": "l" }, "data": {
           "apt": "relax", "title": "RELAX Apartment", "media": "U/Zen_Central_Relax_apartman_6.webp",
-          "html": "<p>2 comfortable (90×200 cm) beds that can be converted into a double bed (180×200 cm). The apartment has a terrace with furniture and a sunshade opening from the corridor.</p><p>We provide a free, closed parking lot.<br>Non-smoking apartment.</p>",
-          "facts": ["Tourist tax: HUF 500 / person / night, payable in cash upon arrival", "Maximum capacity: 2 persons", "Room size: 20 m2"],
+          "html": "<p>2 comfortable (90×200 cm) boxspring beds that can be converted into a double bed (180×200 cm). The apartment has a terrace with garden furniture and a sunshade, opening from the corridor.</p><p>We provide a free, closed parking lot.<br>Non-smoking apartment.</p>",
+          "facts": ["Tourist tax: HUF 500 / person / night, payable in cash upon arrival (collected for the local municipality)", "Maximum capacity: 2 persons", "Room size: 20 m2"],
           "amenities_title": "Apartment equipments",
-          "amenities": ["Non-smoking apartment", "2 beds that can be converted into 1 double bed", "Air conditioning, heating", "Wardrobe/cupboard", "Wood floor", "Smart TV", "Fast WIFI", "Bathroom with walk-in shower, 2 towels per person, free toiletries (shampoo, shower gel, soap, liquid soap, shower cap), hairdryer, toilet", "Clothes dryer", "Well-equipped kitchen (Microwave oven, Toaster, Kettle, Coffee machine (with kettle), Dining table with 4 chairs, Refrigerator, Cooking and serving dishes, dishwashing liquid, tea filter and Nescafé preparation)"],
+          "amenities": ["Non-smoking apartment", "2 boxspring beds that can be converted into 1 double bed", "Air conditioning, heating", "Wardrobe/cupboard", "Wood floor", "Smart TV", "Fast WIFI", "Bathroom with walk-in shower, 2 towels per person, free toiletries (shampoo, shower gel, soap, liquid soap, shower cap), hairdryer, toilet", "Clothes dryer", "Well-equipped kitchen (Microwave oven, Toaster, Kettle, Moka pot (stovetop espresso maker), Dining table with 4 chairs, Refrigerator, Hob, Cooking and serving dishes, dishwashing liquid, tea filter and Nescafé preparation)"],
           "buttons": [{ "label": "Check availability & book now", "url": "{page:booking}?apt=relax", "style": "primary" }],
           "@aside": true,
           "gallery": ["U/Zen_Central_Relax_apartman_8.webp", "U/Zen_Central_Relax_apartman_6.webp", "U/Zen_Central_Relax_apartman_1.webp", "U/Zen_Central_Relax_apartman_3.webp", "U/Zen_Central_Relax_apartman_4.webp", "U/Zen_Central_Relax_apartman_5.webp", "U/Zen_Central_Relax_apartman_7.webp", "U/Zen_Central_Relax_apartman_9.webp"] } },
@@ -150,17 +150,17 @@
       "slug": "jin-jang-apartment",
       "title": "JIN-JANG Apartment",
       "seo_title": "JIN-JANG Apartment for 4, 2 bedrooms – Veszprém | ZEN Central",
-      "seo_desc": "Spacious 2-bedroom JIN-JANG apartment with terrace and closed parking, ideal for families or groups of friends in downtown Veszprém, near Lake Balaton.",
+      "seo_desc": "Spacious 2-bedroom JIN-JANG apartment with boxspring beds, terrace and closed parking, ideal for families or groups of friends in downtown Veszprém, near Lake Balaton.",
       "focus_kw": "family apartment Veszprém",
       "og": "U/Zen_Central_Jin_Jang.webp",
       "sections": [
         { "type": "hero", "data": { "title": "JIN-JANG Apartment", "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp", "height": "small", "breadcrumbs": true, "side_logo": true, "side_badge": "U/ZEN_Central_Contact_us1.svg" } },
         { "type": "apt_detail", "style": { "pad": "l" }, "data": {
           "apt": "jinjang", "title": "JIN-JANG Apartment", "media": "U/Zen_Central_Jin_Jang_8.webp",
-          "html": "<p>Ideal for families or groups of friends.<br>2 people in a separate bedroom on a large double bed (180×200 cm), and another 2 people on a double bed (180×200 cm) in the living room. If required, a smaller (9×200) bed can be provided for a fifth person.</p><p>The apartment has a terrace with furniture and a sunshade opening from the corridor.</p><p>We provide a free, closed parking lot.<br>Non-smoking apartment.</p>",
-          "facts": ["Tourist tax: HUF 500 / person / night, payable in cash upon arrival", "Maximum capacity: 4 persons", "Room size: 35 m2"],
+          "html": "<p>Ideal for families or groups of friends.<br>2 people in a separate bedroom on a large double bed (180×200 cm), and another 2 people on a double bed (180×200 cm) in the living room. If required, the 4 extra-comfortable boxspring beds (90×200 cm) can also be used as separate beds.</p><p>The apartment has a terrace with garden furniture and a sunshade, opening from the corridor.</p><p>We provide a free, closed parking lot.<br>Non-smoking apartment.</p>",
+          "facts": ["Tourist tax: HUF 500 / person / night, payable in cash upon arrival (collected for the local municipality)", "Maximum capacity: 4 persons", "Room size: 35 m2"],
           "amenities_title": "Apartment equipments",
-          "amenities": ["Non-smoking apartment", "2 double beds, which can also be used as 4 separate beds", "Air conditioning, heating", "Wardrobe/cupboard", "Wood floor", "Smart TV", "Fast WIFI", "Bathroom with shower cabin, 2 towels per person, free toiletries (shampoo, shower gel, soap, liquid soap, shower cap), hairdryer, toilet", "Clothes dryer", "Well-equipped kitchen (Microwave oven, Toaster, Kettle, Coffee machine (with kettle) Dining table with 4 chairs, Refrigerator, Cooking and serving dishes, dishwashing liquid, tea filter and Nescafé preparation)"],
+          "amenities": ["Non-smoking apartment", "2 double beds, which can also be used as 4 separate boxspring beds", "Air conditioning, heating", "Wardrobe/cupboard", "Wood floor", "Smart TV", "Fast WIFI", "Bathroom with shower cabin, 2 towels per person, free toiletries (shampoo, shower gel, soap, liquid soap, shower cap), hairdryer, toilet", "Clothes dryer", "Well-equipped kitchen (Microwave oven, Toaster, Kettle, Moka pot (stovetop espresso maker), Dining table with 4 chairs, Refrigerator, Hob, Cooking and serving dishes, dishwashing liquid, tea filter and Nescafé preparation)"],
           "buttons": [{ "label": "Check availability & book now", "url": "{page:booking}?apt=jinjang", "style": "primary" }],
           "@aside": true,
           "gallery": ["U/Zen_Central_Jin_Jang_1.webp", "U/Zen_Central_Jin_Jang_2.webp", "U/Zen_Central_Jin_Jang_4.webp", "U/Zen_Central_Jin_Jang_7.webp", "U/Zen_Central_Jin_Jang_6.webp", "U/Zen_Central_Jin_Jang_5.webp", "U/Zen_Central_Jin_Jang_3.webp", "U/Zen_Central_apartman_5.webp"] } },
@@ -184,10 +184,10 @@
         { "type": "hero", "data": { "title": "LOTUS Apartment", "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp", "height": "small", "breadcrumbs": true, "side_logo": true, "side_badge": "U/ZEN_Central_Contact_us1.svg" } },
         { "type": "apt_detail", "style": { "pad": "l" }, "data": {
           "apt": "lotus", "title": "LOTUS Apartment", "media": "U/Zen_Central_Lotus_apartman_8.webp",
-          "html": "<p>2 comfortable (90×200 cm) beds, which can be converted into a double bed (180×200 cm), and 1 separate bed 90×200 cm. The apartment has a terrace with furniture and a sunshade opening from the corridor.</p><p>We provide a free, closed parking lot.<br>Non-smoking apartment.</p>",
-          "facts": ["Tourist tax: HUF 500 / person / night, payable in cash upon arrival", "Maximum capacity: 3 persons", "Room size: 25 m2"],
+          "html": "<p>2 comfortable (90×200 cm) boxspring beds, which can be converted into a double bed (180×200 cm), and 1 separate boxspring bed 90×200 cm. The apartment has a terrace with garden furniture and a sunshade, opening from the corridor.</p><p>We provide a free, closed parking lot.<br>Non-smoking apartment.</p>",
+          "facts": ["Tourist tax: HUF 500 / person / night, payable in cash upon arrival (collected for the local municipality)", "Maximum capacity: 3 persons", "Room size: 25 m2"],
           "amenities_title": "Apartment equipments",
-          "amenities": ["Non-smoking apartment", "2 beds, which can be converted into 1 double bed, + 1 bed", "Air conditioning, heating", "Wardrobe/cupboard", "Wood floor", "Smart TV", "Fast WIFI", "Bathroom with shower cabin, 2 towels per person, free toiletries (shampoo, shower gel, soap, liquid soap, shower cap), hairdryer, toilet Clothes dryer", "Clothes dryer", "Well-equipped kitchen (Microwave oven, Toaster, Kettle, Coffee machine, Dining table with 4 chairs, Refrigerator, Cooking and serving plates, dish soap, tea filter and Nescafé preparation)"],
+          "amenities": ["Non-smoking apartment", "2 boxspring beds, which can be converted into 1 double bed, + 1 boxspring bed", "Air conditioning, heating", "Wardrobe/cupboard", "Wood floor", "Smart TV", "Fast WIFI", "Bathroom with shower cabin, 2 towels per person, free toiletries (shampoo, shower gel, soap, liquid soap, shower cap), hairdryer, toilet Clothes dryer", "Clothes dryer", "Well-equipped kitchen (Microwave oven, Toaster, Kettle, Moka pot (stovetop espresso maker), Dining table with 4 chairs, Refrigerator, Hob, Cooking and serving plates, dish soap, tea filter and Nescafé preparation)"],
           "buttons": [{ "label": "Check availability & book now", "url": "{page:booking}?apt=lotus", "style": "primary" }],
           "@aside": true,
           "gallery": ["U/Zen_Central_Lotus_apartman_8.webp", "U/Zen_Central_Lotus_apartman_9.webp", "U/Zen_Central_Lotus_apartman_7.webp", "U/Zen_Central_Lotus_apartman_3.webp", "U/Zen_Central_Lotus_apartman_2.webp", "U/Zen_Central_Lotus_apartman_6.webp", "U/Zen_Central_Lotus_apartman_11.webp", "U/Zen_Central_Lotus_apartman_12.webp", "U/Zen_Central_Lotus_apartman_5.webp", "U/Zen_Central_Lotus_apartman_4.webp", "U/Zen_Central_Lotus_apartman_1jpg.webp", "U/Zen_Central_Lotus_apartman_10.webp", "U/Zen_Central_apartman_6.webp"] } },

@@ -58,7 +58,7 @@
             "items": [
               {
                 "q": "Jak mogę zarezerwować apartament?",
-                "a": "<p>Rezerwacji możesz dokonać na stronie <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> lub telefonicznie pod numerem <b>+36 20 971 7556</b>.</p>"
+                "a": "<p>Rezerwacji możesz dokonać na stronie <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> lub telefonicznie pod numerem <b>+36 30 116 9431</b>.</p>"
               },
               {
                 "q": "Czy trzeba wpłacić zaliczkę?",
@@ -418,16 +418,16 @@
             "apt": "relax",
             "title": "Apartament RELAX",
             "media": "U/Zen_Central_Relax_apartman_6.webp",
-            "html": "<p>2 wygodne łóżka (90×200 cm), które można połączyć w łóżko podwójne (180×200 cm). Apartament ma umeblowany taras z parasolem, z wyjściem z korytarza.</p><p>Zapewniamy bezpłatny, zamknięty parking.<br>Apartament dla niepalących.</p>",
+            "html": "<p>2 wyjątkowo wygodne łóżka typu boxspring (90×200 cm), które można połączyć w łóżko podwójne (180×200 cm). Apartament ma taras z wyjściem z korytarza, wyposażony w meble ogrodowe i parasol.</p><p>Zapewniamy bezpłatny, zamknięty parking.<br>Apartament dla niepalących.</p>",
             "facts": [
-              "Opłata turystyczna: 500 HUF / osoba / noc, płatna gotówką przy przyjeździe",
+              "Opłata turystyczna: 500 HUF / osoba / noc, płatna gotówką przy przyjeździe (na rzecz gminy)",
               "Maksymalna liczba osób: 2",
               "Powierzchnia: 20 m2"
             ],
             "amenities_title": "Wyposażenie apartamentu",
             "amenities": [
               "Apartament dla niepalących",
-              "2 łóżka, które można połączyć w 1 łóżko podwójne",
+              "2 łóżka typu boxspring, które można połączyć w 1 łóżko podwójne",
               "Klimatyzacja, ogrzewanie",
               "Garderoba/szafa",
               "Podłoga drewniana",
@@ -435,7 +435,7 @@
               "Szybkie WiFi",
               "Łazienka z prysznicem bez brodzika, 2 ręczniki na osobę, bezpłatne kosmetyki (szampon, żel pod prysznic, mydło, mydło w płynie, czepek), suszarka do włosów, toaleta",
               "Suszarka na pranie",
-              "Dobrze wyposażona kuchnia (kuchenka mikrofalowa, toster, czajnik, ekspres do kawy (z czajnikiem), stół jadalny z 4 krzesłami, lodówka, naczynia do gotowania i serwowania, płyn do naczyń, sitko do herbaty i zestaw do Nescafé)"
+              "Dobrze wyposażona kuchnia (kuchenka mikrofalowa, toster, czajnik, kawiarka (moka), stół jadalny z 4 krzesłami, lodówka, płyta kuchenna, naczynia do gotowania i serwowania, płyn do naczyń, sitko do herbaty i zestaw do Nescafé)"
             ],
             "buttons": [
               {
@@ -493,7 +493,7 @@
       "slug": "apartament-jin-jang",
       "title": "Apartament JIN-JANG",
       "seo_title": "Apartament JIN-JANG dla 4 os., 2 sypialnie – Veszprém",
-      "seo_desc": "Przestronny apartament JIN-JANG z 2 sypialniami, tarasem i zamkniętym parkingiem – idealny dla rodzin i przyjaciół w centrum Veszprém, blisko Balatonu.",
+      "seo_desc": "Przestronny apartament JIN-JANG z 2 sypialniami, łóżkami boxspring, tarasem i zamkniętym parkingiem – idealny dla rodzin i przyjaciół w centrum Veszprém, blisko Balatonu.",
       "focus_kw": "apartament rodzinny Veszprém",
       "og": "U/Zen_Central_Jin_Jang.webp",
       "sections": [
@@ -517,16 +517,16 @@
             "apt": "jinjang",
             "title": "Apartament JIN-JANG",
             "media": "U/Zen_Central_Jin_Jang_8.webp",
-            "html": "<p>Idealny dla rodzin lub grup przyjaciół.<br>2 osoby w osobnej sypialni na dużym łóżku podwójnym (180×200 cm) i kolejne 2 osoby na łóżku podwójnym (180×200 cm) w salonie. W razie potrzeby możemy zapewnić mniejsze łóżko (9×200) dla piątej osoby.</p><p>Apartament ma umeblowany taras z parasolem, z wyjściem z korytarza.</p><p>Zapewniamy bezpłatny, zamknięty parking.<br>Apartament dla niepalących.</p>",
+            "html": "<p>Idealny dla rodzin lub grup przyjaciół.<br>2 osoby w osobnej sypialni na dużym łóżku podwójnym (180×200 cm) i kolejne 2 osoby na łóżku podwójnym (180×200 cm) w salonie. Na życzenie 4 wyjątkowo wygodne łóżka typu boxspring (90×200 cm) mogą być używane również osobno.</p><p>Apartament ma taras z wyjściem z korytarza, wyposażony w meble ogrodowe i parasol.</p><p>Zapewniamy bezpłatny, zamknięty parking.<br>Apartament dla niepalących.</p>",
             "facts": [
-              "Opłata turystyczna: 500 HUF / osoba / noc, płatna gotówką przy przyjeździe",
+              "Opłata turystyczna: 500 HUF / osoba / noc, płatna gotówką przy przyjeździe (na rzecz gminy)",
               "Maksymalna liczba osób: 4",
               "Powierzchnia: 35 m2"
             ],
             "amenities_title": "Wyposażenie apartamentu",
             "amenities": [
               "Apartament dla niepalących",
-              "2 łóżka podwójne, które mogą służyć również jako 4 osobne łóżka",
+              "2 łóżka podwójne, które mogą służyć również jako 4 osobne łóżka typu boxspring",
               "Klimatyzacja, ogrzewanie",
               "Garderoba/szafa",
               "Podłoga drewniana",
@@ -534,7 +534,7 @@
               "Szybkie WiFi",
               "Łazienka z kabiną prysznicową, 2 ręczniki na osobę, bezpłatne kosmetyki (szampon, żel pod prysznic, mydło, mydło w płynie, czepek), suszarka do włosów, toaleta",
               "Suszarka na pranie",
-              "Dobrze wyposażona kuchnia (kuchenka mikrofalowa, toster, czajnik, ekspres do kawy (z czajnikiem), stół jadalny z 4 krzesłami, lodówka, naczynia do gotowania i serwowania, płyn do naczyń, sitko do herbaty i zestaw do Nescafé)"
+              "Dobrze wyposażona kuchnia (kuchenka mikrofalowa, toster, czajnik, kawiarka (moka), stół jadalny z 4 krzesłami, lodówka, płyta kuchenna, naczynia do gotowania i serwowania, płyn do naczyń, sitko do herbaty i zestaw do Nescafé)"
             ],
             "buttons": [
               {
@@ -616,16 +616,16 @@
             "apt": "lotus",
             "title": "Apartament LOTUS",
             "media": "U/Zen_Central_Lotus_apartman_8.webp",
-            "html": "<p>2 wygodne łóżka (90×200 cm), które można połączyć w łóżko podwójne (180×200 cm), oraz 1 osobne łóżko 90×200 cm. Apartament ma umeblowany taras z parasolem, z wyjściem z korytarza.</p><p>Zapewniamy bezpłatny, zamknięty parking.<br>Apartament dla niepalących.</p>",
+            "html": "<p>2 wyjątkowo wygodne łóżka typu boxspring (90×200 cm), które można połączyć w łóżko podwójne (180×200 cm), oraz 1 osobne łóżko typu boxspring 90×200 cm. Apartament ma taras z wyjściem z korytarza, wyposażony w meble ogrodowe i parasol.</p><p>Zapewniamy bezpłatny, zamknięty parking.<br>Apartament dla niepalących.</p>",
             "facts": [
-              "Opłata turystyczna: 500 HUF / osoba / noc, płatna gotówką przy przyjeździe",
+              "Opłata turystyczna: 500 HUF / osoba / noc, płatna gotówką przy przyjeździe (na rzecz gminy)",
               "Maksymalna liczba osób: 3",
               "Powierzchnia: 25 m2"
             ],
             "amenities_title": "Wyposażenie apartamentu",
             "amenities": [
               "Apartament dla niepalących",
-              "2 łóżka, które można połączyć w 1 łóżko podwójne, + 1 łóżko",
+              "2 łóżka typu boxspring, które można połączyć w 1 łóżko podwójne, + 1 łóżko typu boxspring",
               "Klimatyzacja, ogrzewanie",
               "Garderoba/szafa",
               "Podłoga drewniana",
@@ -633,7 +633,7 @@
               "Szybkie WiFi",
               "Łazienka z kabiną prysznicową, 2 ręczniki na osobę, bezpłatne kosmetyki (szampon, żel pod prysznic, mydło, mydło w płynie, czepek), suszarka do włosów, toaleta",
               "Suszarka na pranie",
-              "Dobrze wyposażona kuchnia (kuchenka mikrofalowa, toster, czajnik, ekspres do kawy, stół jadalny z 4 krzesłami, lodówka, naczynia do gotowania i serwowania, płyn do naczyń, sitko do herbaty i zestaw do Nescafé)"
+              "Dobrze wyposażona kuchnia (kuchenka mikrofalowa, toster, czajnik, kawiarka (moka), stół jadalny z 4 krzesłami, lodówka, płyta kuchenna, naczynia do gotowania i serwowania, płyn do naczyń, sitko do herbaty i zestaw do Nescafé)"
             ],
             "buttons": [
               {

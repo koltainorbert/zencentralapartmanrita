@@ -58,7 +58,7 @@
             "items": [
               {
                 "q": "Jak si mohu rezervovat apartmán?",
-                "a": "<p>Rezervovat můžete na <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> nebo telefonicky na čísle <b>+36 20 971 7556</b>.</p>"
+                "a": "<p>Rezervovat můžete na <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> nebo telefonicky na čísle <b>+36 30 116 9431</b>.</p>"
               },
               {
                 "q": "Je nutné platit zálohu?",
@@ -418,16 +418,16 @@
             "apt": "relax",
             "title": "Apartmán RELAX",
             "media": "U/Zen_Central_Relax_apartman_6.webp",
-            "html": "<p>2 pohodlná lůžka (90×200 cm), která lze spojit v manželskou postel (180×200 cm). Apartmán má zařízenou terasu se slunečníkem, přístupnou z chodby.</p><p>Zajišťujeme bezplatné uzavřené parkoviště.<br>Nekuřácký apartmán.</p>",
+            "html": "<p>2 mimořádně pohodlná boxspringová lůžka (90×200 cm), která lze spojit v manželskou postel (180×200 cm). Apartmán má terasu přístupnou z chodby, vybavenou zahradním nábytkem a slunečníkem.</p><p>Zajišťujeme bezplatné uzavřené parkoviště.<br>Nekuřácký apartmán.</p>",
             "facts": [
-              "Turistická daň: 500 HUF / osoba / noc, splatná v hotovosti při příjezdu",
+              "Turistická daň: 500 HUF / osoba / noc, splatná v hotovosti při příjezdu (odvádí se obci)",
               "Maximální kapacita: 2 osoby",
               "Velikost: 20 m2"
             ],
             "amenities_title": "Vybavení apartmánu",
             "amenities": [
               "Nekuřácký apartmán",
-              "2 lůžka, která lze spojit v 1 manželskou postel",
+              "2 boxspringová lůžka, která lze spojit v 1 manželskou postel",
               "Klimatizace, topení",
               "Šatna/skříň",
               "Dřevěná podlaha",
@@ -435,7 +435,7 @@
               "Rychlá WiFi",
               "Koupelna s bezbariérovým sprchovým koutem, 2 ručníky na osobu, bezplatné toaletní potřeby (šampon, sprchový gel, mýdlo, tekuté mýdlo, koupací čepice), fén, WC",
               "Sušák na prádlo",
-              "Dobře vybavená kuchyň (mikrovlnná trouba, toustovač, rychlovarná konvice, kávovar (s konvicí), jídelní stůl se 4 židlemi, lednice, nádobí na vaření a servírování, prostředek na mytí nádobí, sítko na čaj a vše pro přípravu Nescafé)"
+              "Dobře vybavená kuchyň (mikrovlnná trouba, toustovač, rychlovarná konvice, moka konvička na kávu, jídelní stůl se 4 židlemi, lednice, varná deska, nádobí na vaření a servírování, prostředek na mytí nádobí, sítko na čaj a vše pro přípravu Nescafé)"
             ],
             "buttons": [
               {
@@ -493,7 +493,7 @@
       "slug": "apartman-jin-jang",
       "title": "Apartmán JIN-JANG",
       "seo_title": "Apartmán JIN-JANG pro 4, 2 ložnice – Veszprém | ZEN",
-      "seo_desc": "Prostorný apartmán JIN-JANG se 2 ložnicemi, terasou a uzavřeným parkováním, ideální pro rodiny či přátele v centru města Veszprém, blízko Balatonu.",
+      "seo_desc": "Prostorný apartmán JIN-JANG se 2 ložnicemi, boxspringovými lůžky, terasou a uzavřeným parkováním, ideální pro rodiny či přátele v centru města Veszprém, blízko Balatonu.",
       "focus_kw": "rodinný apartmán Veszprém",
       "og": "U/Zen_Central_Jin_Jang.webp",
       "sections": [
@@ -517,16 +517,16 @@
             "apt": "jinjang",
             "title": "Apartmán JIN-JANG",
             "media": "U/Zen_Central_Jin_Jang_8.webp",
-            "html": "<p>Ideální pro rodiny nebo skupiny přátel.<br>2 osoby v samostatné ložnici na velké manželské posteli (180×200 cm) a další 2 osoby na manželské posteli (180×200 cm) v obývacím pokoji. V případě potřeby lze pro pátou osobu zajistit menší lůžko (9×200).</p><p>Apartmán má zařízenou terasu se slunečníkem, přístupnou z chodby.</p><p>Zajišťujeme bezplatné uzavřené parkoviště.<br>Nekuřácký apartmán.</p>",
+            "html": "<p>Ideální pro rodiny nebo skupiny přátel.<br>2 osoby v samostatné ložnici na velké manželské posteli (180×200 cm) a další 2 osoby na manželské posteli (180×200 cm) v obývacím pokoji. Na přání lze 4 mimořádně pohodlná boxspringová lůžka (90×200 cm) používat i samostatně.</p><p>Apartmán má terasu přístupnou z chodby, vybavenou zahradním nábytkem a slunečníkem.</p><p>Zajišťujeme bezplatné uzavřené parkoviště.<br>Nekuřácký apartmán.</p>",
             "facts": [
-              "Turistická daň: 500 HUF / osoba / noc, splatná v hotovosti při příjezdu",
+              "Turistická daň: 500 HUF / osoba / noc, splatná v hotovosti při příjezdu (odvádí se obci)",
               "Maximální kapacita: 4 osoby",
               "Velikost: 35 m2"
             ],
             "amenities_title": "Vybavení apartmánu",
             "amenities": [
               "Nekuřácký apartmán",
-              "2 manželské postele, které lze využít i jako 4 samostatná lůžka",
+              "2 manželské postele, které lze využít i jako 4 samostatná boxspringová lůžka",
               "Klimatizace, topení",
               "Šatna/skříň",
               "Dřevěná podlaha",
@@ -534,7 +534,7 @@
               "Rychlá WiFi",
               "Koupelna se sprchovým koutem, 2 ručníky na osobu, bezplatné toaletní potřeby (šampon, sprchový gel, mýdlo, tekuté mýdlo, koupací čepice), fén, WC",
               "Sušák na prádlo",
-              "Dobře vybavená kuchyň (mikrovlnná trouba, toustovač, rychlovarná konvice, kávovar (s konvicí), jídelní stůl se 4 židlemi, lednice, nádobí na vaření a servírování, prostředek na mytí nádobí, sítko na čaj a vše pro přípravu Nescafé)"
+              "Dobře vybavená kuchyň (mikrovlnná trouba, toustovač, rychlovarná konvice, moka konvička na kávu, jídelní stůl se 4 židlemi, lednice, varná deska, nádobí na vaření a servírování, prostředek na mytí nádobí, sítko na čaj a vše pro přípravu Nescafé)"
             ],
             "buttons": [
               {
@@ -616,16 +616,16 @@
             "apt": "lotus",
             "title": "Apartmán LOTUS",
             "media": "U/Zen_Central_Lotus_apartman_8.webp",
-            "html": "<p>2 pohodlná lůžka (90×200 cm), která lze spojit v manželskou postel (180×200 cm), a 1 samostatné lůžko 90×200 cm. Apartmán má zařízenou terasu se slunečníkem, přístupnou z chodby.</p><p>Zajišťujeme bezplatné uzavřené parkoviště.<br>Nekuřácký apartmán.</p>",
+            "html": "<p>2 mimořádně pohodlná boxspringová lůžka (90×200 cm), která lze spojit v manželskou postel (180×200 cm), a 1 samostatné boxspringové lůžko 90×200 cm. Apartmán má terasu přístupnou z chodby, vybavenou zahradním nábytkem a slunečníkem.</p><p>Zajišťujeme bezplatné uzavřené parkoviště.<br>Nekuřácký apartmán.</p>",
             "facts": [
-              "Turistická daň: 500 HUF / osoba / noc, splatná v hotovosti při příjezdu",
+              "Turistická daň: 500 HUF / osoba / noc, splatná v hotovosti při příjezdu (odvádí se obci)",
               "Maximální kapacita: 3 osoby",
               "Velikost: 25 m2"
             ],
             "amenities_title": "Vybavení apartmánu",
             "amenities": [
               "Nekuřácký apartmán",
-              "2 lůžka, která lze spojit v 1 manželskou postel, + 1 lůžko",
+              "2 boxspringová lůžka, která lze spojit v 1 manželskou postel, + 1 boxspringové lůžko",
               "Klimatizace, topení",
               "Šatna/skříň",
               "Dřevěná podlaha",
@@ -633,7 +633,7 @@
               "Rychlá WiFi",
               "Koupelna se sprchovým koutem, 2 ručníky na osobu, bezplatné toaletní potřeby (šampon, sprchový gel, mýdlo, tekuté mýdlo, koupací čepice), fén, WC",
               "Sušák na prádlo",
-              "Dobře vybavená kuchyň (mikrovlnná trouba, toustovač, rychlovarná konvice, kávovar, jídelní stůl se 4 židlemi, lednice, nádobí na vaření a servírování, prostředek na mytí nádobí, sítko na čaj a vše pro přípravu Nescafé)"
+              "Dobře vybavená kuchyň (mikrovlnná trouba, toustovač, rychlovarná konvice, moka konvička na kávu, jídelní stůl se 4 židlemi, lednice, varná deska, nádobí na vaření a servírování, prostředek na mytí nádobí, sítko na čaj a vše pro přípravu Nescafé)"
             ],
             "buttons": [
               {
