@@ -13,7 +13,7 @@ if ( ! $zc_html ) {
 }
 echo zc_section_open( $s, 'zc-formsec zc-formsec--' . $zc_type ); // phpcs:ignore
 ?>
-<div class="zc-wrap zc-wrap--narrow">
+<div class="zc-wrap<?php echo 'contact' === $zc_type ? '' : ' zc-wrap--narrow'; ?>">
 	<div class="zc-card zc-card--glass zc-formsec__card" data-reveal>
 		<?php echo zc_section_deco( $s, 'card' ); // phpcs:ignore – lótusz a doboz jobb alsó sarkán ?>
 		<?php echo zc_head( $d ); // phpcs:ignore ?>

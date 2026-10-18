@@ -3,7 +3,7 @@
  * Plugin Name:       ZEN Core – Apartman motor
  * Plugin URI:        https://zencentralapartments.com/
  * Description:       ZEN Central Apartments: Zen Studio admin (minden szöveg, kép, videó, design), többnyelvűség, foglalómotor, Zen AI concierge, űrlapok, elégedettségi portál, SEO + AI SEO (Rank Math és Site Kit kompatibilis), Cloudflare.
- * Version:           1.2.10
+ * Version:           1.2.11
  * Requires at least: 6.4
  * Requires PHP:      8.0
  * Author:            InfoStudio Hungary
@@ -16,7 +16,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'ZEN_CORE_VER', '1.2.10' );
+define( 'ZEN_CORE_VER', '1.2.11' );
 define( 'ZEN_CORE_FILE', __FILE__ );
 define( 'ZEN_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ZEN_CORE_URL', plugin_dir_url( __FILE__ ) );

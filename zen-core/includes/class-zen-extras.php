@@ -163,7 +163,6 @@ class Zen_Extras {
 				'animate'      => true,     // automatikus képcsere + Ken Burns + belépő animáció
 				'show_link'    => true,     // „Galéria megnyitása” gomb a nagy képen
 				'hide_gallery' => true,     // a Galéria oldalon ne jelenjen meg (ott amúgy is ott vannak a képek)
-				'bg'           => 'beige',  // beige | page | dark – a sáv háttere a képek között
 				'intro'        => 'session', // belépő animáció: session = látogatásonként egyszer | always = minden oldalon | never = soha
 			),
 		);
@@ -271,9 +270,8 @@ class Zen_Extras {
 				'a' => (string) ( $m['alt'] ?? '' ),
 			);
 		}
-		$sbg = in_array( (string) self::opt( 'strip.bg', 'beige' ), array( 'beige', 'page', 'dark' ), true ) ? (string) self::opt( 'strip.bg', 'beige' ) : 'beige';
 		$intro = in_array( (string) self::opt( 'strip.intro', 'session' ), array( 'session', 'always', 'never' ), true ) ? (string) self::opt( 'strip.intro', 'session' ) : 'session';
-		$h  = '<section data-intro="' . $intro . '" class="zc-strip zc-strip--bg-' . $sbg . ( $anim ? ' zc-strip--anim' : '' ) . ' zc-strip--n' . $n . '" data-zen-strip data-gallery data-interval="' . $ms . '" aria-label="' . esc_attr( $label ) . '">';
+		$h  = '<section data-intro="' . $intro . '" class="zc-strip' . ( $anim ? ' zc-strip--anim' : '' ) . ' zc-strip--n' . $n . '" data-zen-strip data-gallery data-interval="' . $ms . '" aria-label="' . esc_attr( $label ) . '">';
 		$h .= '<div class="zc-strip__grid">';
 		for ( $i = 0; $i < $n; $i++ ) {
 			$src = 0 === $i ? $json[ $i ]['w'] : $json[ $i ]['t'];
