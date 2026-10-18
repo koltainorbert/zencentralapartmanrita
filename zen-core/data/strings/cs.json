@@ -80,7 +80,6 @@
   "trust_checkin": "Samoobslužný check-in s trezorem na klíče",
   "trust_wifi": "Rychlá WiFi",
   "trust_center": "Staré město 400 m",
-
   "bk_title": "Dostupnost a rezervace",
   "bk_step_dates": "Termín",
   "bk_step_apartment": "Apartmán",
@@ -162,7 +161,6 @@
   "bk_mail_checkin": "Check-in od {in}, check-out do {out}. Adresa: {address}",
   "bk_mail_footer": "Máte-li jakékoli dotazy, stačí odpovědět na tento e-mail nebo nám zavolat: {phone}",
   "bk_sync_note": "Dostupnost je synchronizována s kalendáři Booking.com a Airbnb.",
-
   "fm_name": "Jméno",
   "fm_booking_no": "Č. rezervace",
   "fm_email": "E-mail",
@@ -202,7 +200,6 @@
   "fm_fb_count": "na základě hodnocení: {n}",
   "fm_mail_contact": "Nová zpráva z webu",
   "fm_mail_auto": "Děkujeme, že jste nás kontaktovali! Vaši zprávu jsme obdrželi a brzy vám odpovíme.",
-
   "ai_name": "Zen",
   "ai_role": "Digitální concierge",
   "ai_open": "Zeptat se Zen",
@@ -235,5 +232,23 @@
   "ai_help_ph": "Např. Kdy je check-in? Kde mohu parkovat?",
   "ai_help_topics": "Oblíbená témata",
   "ai_help_contact": "Raději byste mluvili s člověkem?",
-  "ai_online": "Online"
+  "ai_online": "Online",
+  "choose_language": "Vyberte jazyk",
+  "hero_panel_title": "Rezervujte přímo",
+  "faq_questions": "Otázky: {n}",
+  "faq_topics": "Témata: {n}",
+  "faq_help_title": "Nenašli jste odpověď?",
+  "faq_help_text": "Zen, náš digitální concierge, odpoví hned – nebo nám zavolejte.",
+  "bk_dates": "Termín",
+  "bk_pick_dates": "Vyberte termín",
+  "bk_apply": "Hotovo",
+  "bk_clear": "Vymazat",
+  "bk_legend_booked": "Obsazeno",
+  "bk_change": "Změnit",
+  "bk_free_count": "Volné apartmány: {n}",
+  "bk_range_hint": "Příjezd → odjezd: dvě kliknutí",
+  "ai_live": "Živý průvodce",
+  "ai_chip_history": "Historie Veszprému stručně",
+  "ai_chip_tonight": "Co je dnes večer ve městě?",
+  "ai_chip_food": "Kde se dá blízko dobře najíst?"
 }

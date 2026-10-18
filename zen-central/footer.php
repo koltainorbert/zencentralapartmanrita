@@ -71,7 +71,6 @@ $zc_pay   = zc_opt( 'general.payment_logo', array() );
 				<span><?php echo esc_html( zc_t( 'ntak' ) ); ?></span>
 				<span><?php echo esc_html( zc_opt( 'general.credit_text', zc_t( 'credit' ) ) ); ?></span>
 			</p>
-			<?php echo zc_lang_switcher( 'inline' ); // phpcs:ignore ?>
 		</div>
 	</div>
 </footer>
@@ -87,6 +86,8 @@ $zc_pay   = zc_opt( 'general.payment_logo', array() );
 	<button type="button" class="zc-icon-btn zc-lightbox__next" data-lb-next aria-label="<?php echo esc_attr( zc_t( 'next' ) ); ?>"><?php echo zc_icon( 'arrow', 22 ); // phpcs:ignore ?></button>
 	<p class="zc-lightbox__count" data-lb-count></p>
 </div>
+
+<?php echo zc_lang_modal(); // phpcs:ignore ?>
 
 <?php wp_footer(); ?>
 </body>

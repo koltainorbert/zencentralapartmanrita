@@ -14,12 +14,13 @@
 
 	/* --- Markdown-lite → biztonságos DOM (nincs innerHTML a modell szövegével) --- */
 	function inline(parent, text) {
-		var re = /(\*\*([^*]+)\*\*|\*([^*]+)\*|(https?:\/\/[^\s)<]+))/g, last = 0, m;
+		var re = /\[([^\]]{1,80})\]\((https?:\/\/[^\s)]+)\)|\*\*([^*]+)\*\*|\*([^*]+)\*|(https?:\/\/[^\s)<]+)/g, last = 0, m, a;
 		while ((m = re.exec(text))) {
 			if (m.index > last) { parent.appendChild(d.createTextNode(text.slice(last, m.index))); }
-			if (m[2]) { parent.appendChild(el('strong', '', m[2])); }
-			else if (m[3]) { parent.appendChild(el('em', '', m[3])); }
-			else if (m[4]) { var a = el('a', '', m[4].replace(/^https?:\/\/(www\.)?/, '').slice(0, 42)); a.href = m[4]; a.target = '_blank'; a.rel = 'noopener'; parent.appendChild(a); }
+			if (m[1]) { a = el('a', 'zca__src', m[1]); a.href = m[2]; a.target = '_blank'; a.rel = 'noopener'; parent.appendChild(a); }
+			else if (m[3]) { parent.appendChild(el('strong', '', m[3])); }
+			else if (m[4]) { parent.appendChild(el('em', '', m[4])); }
+			else if (m[5]) { a = el('a', '', m[5].replace(/^https?:\/\/(www\.)?/, '').slice(0, 42)); a.href = m[5]; a.target = '_blank'; a.rel = 'noopener'; parent.appendChild(a); }
 			last = re.lastIndex;
 		}
 		if (last < text.length) { parent.appendChild(d.createTextNode(text.slice(last))); }
@@ -43,7 +44,7 @@
 	panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-modal', 'false'); panel.setAttribute('aria-label', C.name); panel.hidden = true;
 	if (C.pos === 'left') { panel.classList.add('zca--left'); }
 	var ava = el('span', 'zca__ava');
-	if (C.avatar) { var im = el('img'); im.src = C.avatar; im.alt = ''; ava.appendChild(im); } else { ava.innerHTML = '<svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="12.5" stroke="currentColor" stroke-width="2.2" stroke-dasharray="70 9" stroke-linecap="round"/><path d="M10.5 18.5c1.6 2 3.4 3 5.5 3s3.9-1 5.5-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="13.5" r="1.4" fill="currentColor"/><circle cx="20" cy="13.5" r="1.4" fill="currentColor"/></svg>'; }
+	if (C.avatar) { var im = el('img'); im.src = C.avatar; im.alt = ''; ava.appendChild(im); } else { ava.innerHTML = C.mark || ''; }
 	var who = el('div', 'zca__who'); who.appendChild(el('b', '', C.name)); var role = el('small', '', t('ai_role') + ' · '); role.appendChild(el('i', 'zca__on', t('ai_online'))); who.appendChild(role);
 	var resetB = el('button', 'zca__ib'); resetB.type = 'button'; resetB.setAttribute('aria-label', t('ai_reset')); resetB.title = t('ai_reset'); resetB.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>';
 	var closeB = el('button', 'zca__ib'); closeB.type = 'button'; closeB.setAttribute('aria-label', t('close')); closeB.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>';

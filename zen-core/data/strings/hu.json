@@ -80,7 +80,6 @@
   "trust_checkin": "Önálló bejutás kulcsszéffel",
   "trust_wifi": "Gyors WiFi",
   "trust_center": "Belváros 400 m",
-
   "bk_title": "Szabad időpontok és foglalás",
   "bk_step_dates": "Időpont",
   "bk_step_apartment": "Apartman",
@@ -162,7 +161,6 @@
   "bk_mail_checkin": "Bejelentkezés {in} órától, távozás {out} óráig. Cím: {address}",
   "bk_mail_footer": "Kérdés esetén válaszoljon erre a levélre, vagy hívjon: {phone}",
   "bk_sync_note": "Az elérhetőség valós időben szinkronizált a Booking.com és az Airbnb naptárával.",
-
   "fm_name": "Név",
   "fm_booking_no": "Foglalási szám",
   "fm_email": "E-mail cím",
@@ -202,7 +200,6 @@
   "fm_fb_count": "{n} értékelés alapján",
   "fm_mail_contact": "Új üzenet a weboldalról",
   "fm_mail_auto": "Köszönjük megkeresését! Üzenetét megkaptuk, hamarosan válaszolunk.",
-
   "ai_name": "Zen",
   "ai_role": "Digitális concierge",
   "ai_open": "Kérdezze Zent",
@@ -235,5 +232,23 @@
   "ai_help_ph": "Pl. Mikor lehet bejelentkezni? Hol parkolhatok?",
   "ai_help_topics": "Gyakori témák",
   "ai_help_contact": "Inkább emberrel beszélne?",
-  "ai_online": "Online"
+  "ai_online": "Online",
+  "choose_language": "Válasszon nyelvet",
+  "hero_panel_title": "Foglaljon közvetlenül",
+  "faq_questions": "{n} kérdés",
+  "faq_topics": "{n} témakör",
+  "faq_help_title": "Nem találja a választ?",
+  "faq_help_text": "Zen, a digitális concierge azonnal válaszol – vagy hívjon minket bizalommal.",
+  "bk_dates": "Időpont",
+  "bk_pick_dates": "Válasszon időpontot",
+  "bk_apply": "Kész",
+  "bk_clear": "Törlés",
+  "bk_legend_booked": "Foglalt",
+  "bk_change": "Módosítás",
+  "bk_free_count": "{n} apartman szabad",
+  "bk_range_hint": "Érkezés → távozás: két kattintás",
+  "ai_live": "Élő idegenvezető",
+  "ai_chip_history": "Veszprém története röviden",
+  "ai_chip_tonight": "Mi lesz ma este a városban?",
+  "ai_chip_food": "Hol egyek jót a közelben?"
 }

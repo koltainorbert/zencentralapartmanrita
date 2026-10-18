@@ -1,15 +1,5 @@
 /* Zen AI – prémium high-tech panel, a téma tokenjeivel */
-.zca-launcher { transition: transform .45s cubic-bezier(.34,1.56,.64,1), opacity .3s, box-shadow .3s; }
-.zca-launcher:hover { transform: translateY(-3px) scale(1.02); }
-.zca-launcher::before { content: ""; position: absolute; inset: -2px; z-index: -1; border-radius: inherit; background: conic-gradient(from 0deg, var(--zc-accent, #A9844C), var(--zc-accent-2, #6E8B74), var(--zc-accent, #A9844C)); opacity: .9; animation: zcaSpin 6s linear infinite; filter: blur(.5px); }
-.zca-launcher { position: fixed; isolation: isolate; }
-.zca-launcher.is-hidden { opacity: 0; transform: translateY(20px) scale(.9); pointer-events: none; }
-.zca-launcher__mark { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 999px; background: rgba(243,211,138,.12); }
-.zca-launcher__mark img { width: 30px; height: 30px; border-radius: 999px; object-fit: cover; }
-.zca-launcher__dot { box-shadow: 0 0 0 4px rgba(54,194,122,.18); animation: zcaPulse 2s ease-in-out infinite; }
-@keyframes zcaSpin { to { transform: rotate(360deg); } }
-@keyframes zcaPulse { 50% { box-shadow: 0 0 0 8px rgba(54,194,122,0); } }
-@media (max-width: 1024px) { .zca-launcher { bottom: max(84px, calc(env(safe-area-inset-bottom) + 70px)) !important; } .zca-launcher__t { display: none; } .zca-launcher { padding: 0 12px !important; } }
+/* Az indító (ZEN ensō gomb) stílusa a launcher() inline <style>-jában van – a chat CSS csak megnyitáskor töltődik. */
 
 .zca { --a: var(--zc-accent, #A9844C); --a2: var(--zc-accent-2, #6E8B74); --tx: var(--zc-text, #1F1B16); --mu: var(--zc-muted, #6B6358); --ln: var(--zc-line, #E3DACB); --sf: var(--zc-surface, #fff); --sf2: var(--zc-surface-2, #EFE8DC);
 	position: fixed; z-index: 85; right: 18px; bottom: 18px; width: min(410px, calc(100vw - 24px)); height: min(640px, calc(100svh - 36px)); display: flex; flex-direction: column; border-radius: 28px; overflow: hidden;
@@ -21,8 +11,9 @@
 .zca--left { right: auto; left: 18px; transform-origin: bottom left; }
 .zca::before { content: ""; position: absolute; inset: 0 0 auto; height: 160px; background: radial-gradient(120% 100% at 0% 0%, color-mix(in srgb, var(--a) 26%, transparent), transparent 60%), radial-gradient(100% 100% at 100% 0%, color-mix(in srgb, var(--a2) 22%, transparent), transparent 60%); pointer-events: none; }
 .zca__head { position: relative; display: flex; align-items: center; gap: 12px; padding: 16px 14px 14px 18px; border-bottom: 1px solid color-mix(in srgb, var(--ln) 70%, transparent); }
-.zca__ava { display: grid; place-items: center; flex: none; width: 46px; height: 46px; border-radius: 999px; background: #0f0d0b; color: #f3d38a; box-shadow: 0 0 0 3px color-mix(in srgb, var(--a) 30%, transparent); overflow: hidden; }
+.zca__ava { display: grid; place-items: center; flex: none; width: 50px; height: 50px; border-radius: 999px; background: radial-gradient(120% 120% at 30% 20%, #2a241c, #0d0b09 70%); color: #f3d38a; box-shadow: 0 0 0 3px color-mix(in srgb, var(--a) 30%, transparent); overflow: hidden; }
 .zca__ava img { width: 100%; height: 100%; object-fit: cover; }
+.zca__ava svg { width: 40px; height: 40px; }
 .zca__who { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 .zca__who b { font: 600 18px/1.1 var(--zc-font-h, Georgia, serif); }
 .zca__who small { color: var(--mu); font-size: 12.5px; }
@@ -37,10 +28,11 @@
 .zca__m--a { align-self: flex-start; background: var(--sf); border: 1px solid var(--ln); border-bottom-left-radius: 6px; }
 .zca__m--u { align-self: flex-end; background: var(--tx); color: var(--zc-bg, #fff); border-bottom-right-radius: 6px; }
 .zca__m p { margin: 0 0 6px; } .zca__m p:last-child { margin: 0; }
-.zca__md ul, .zca__md ol { margin: 4px 0 6px; padding-left: 18px; }
-.zca__md li { margin: 2px 0; }
-.zca__md h5 { margin: 6px 0 4px; font-size: 14.5px; }
-.zca__md a { color: var(--a); font-weight: 600; }
+.zca-md ul, .zca-md ol { margin: 4px 0 6px; padding-left: 18px; }
+.zca-md li { margin: 2px 0; }
+.zca-md h5 { margin: 6px 0 4px; font-size: 14.5px; }
+.zca-md a { color: var(--a); font-weight: 600; }
+.zca-md a.zca__src { display: inline-flex; margin: 2px 2px 0 0; padding: 2px 10px; border-radius: 999px; background: color-mix(in srgb, var(--a) 12%, transparent); color: var(--a); font-size: 12.5px; font-weight: 700; text-decoration: none; }
 .zca__acts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .zca__act { display: inline-flex; align-items: center; gap: 6px; padding: 9px 14px; border-radius: 999px; background: var(--a); color: var(--zc-accent-ink, #fff); text-decoration: none; font-weight: 700; font-size: 13px; letter-spacing: .02em; transition: transform .3s cubic-bezier(.34,1.56,.64,1); }
 .zca__act:hover { transform: translateY(-1px); color: var(--zc-accent-ink, #fff); }
@@ -64,4 +56,4 @@
 	.zca, .zca--left { inset: 0; width: 100%; height: 100%; border-radius: 0; padding-bottom: env(safe-area-inset-bottom); }
 	.zca__head { padding-top: max(16px, env(safe-area-inset-top)); }
 }
-@media (prefers-reduced-motion: reduce) { .zca, .zca *, .zca-launcher, .zca-launcher::before { animation: none !important; transition: none !important; } }
+@media (prefers-reduced-motion: reduce) { .zca, .zca * { animation: none !important; transition: none !important; } }

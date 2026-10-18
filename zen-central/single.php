@@ -22,6 +22,7 @@ while ( have_posts() ) :
 				<p class="zc-article__meta">
 					<time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo esc_html( zc_t( 'posted_on', array( 'date' => get_the_date() ) ) ); ?></time>
 					<span><?php echo zc_icon( 'clock', 14 ); // phpcs:ignore ?><?php echo esc_html( zc_t( 'reading_time', array( 'n' => zc_reading_time( $zc_id ) ) ) ); ?></span>
+					<?php if ( zc_opt( 'design.post_author', true ) && get_the_author() ) : ?><span class="zc-article__author"><?php echo zc_icon( 'users', 14 ); // phpcs:ignore ?><?php the_author(); ?></span><?php endif; ?>
 				</p>
 			</div>
 		</header>

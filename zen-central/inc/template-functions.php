@@ -203,8 +203,57 @@ function zc_breadcrumbs() {
 	return $o;
 }
 
-/** Navigáció elemei (automatikus, nyelvfüggő). */
+/** WordPress menü (Megjelenés → Menük) elemei az adott nyelvre, ha hozzá van rendelve. */
+function zc_wp_menu_items() {
+	$lang = zc_lang();
+	$locs = get_nav_menu_locations();
+	$def  = zc_core() ? Zen_I18n::default_lang() : $lang;
+	$loc  = ( $lang !== $def && ! empty( $locs[ 'primary_' . $lang ] ) ) ? 'primary_' . $lang : ( $lang === $def ? 'primary' : '' );
+	if ( ! $loc || empty( $locs[ $loc ] ) ) {
+		return null;
+	}
+	$raw = wp_get_nav_menu_items( $locs[ $loc ], array( 'update_post_term_cache' => false ) );
+	if ( ! $raw ) {
+		return null;
+	}
+	_wp_menu_item_classes_by_context( $raw );
+	$cur_url = untrailingslashit( strtok( home_url( add_query_arg( array() ) ), '?' ) );
+	$by_id   = array();
+	$top     = array();
+	foreach ( $raw as $m ) {
+		$is_cur = in_array( 'current-menu-item', (array) $m->classes, true ) || untrailingslashit( $m->url ) === $cur_url;
+		$by_id[ $m->ID ] = array(
+			'key'      => 'menu-' . $m->ID,
+			'label'    => $m->title,
+			'url'      => $m->url,
+			'current'  => $is_cur,
+			'target'   => $m->target,
+			'parent'   => (int) $m->menu_item_parent,
+			'children' => array(),
+		);
+	}
+	foreach ( $by_id as $id => $it ) {
+		if ( $it['parent'] && isset( $by_id[ $it['parent'] ] ) ) {
+			$by_id[ $it['parent'] ]['children'][] = $it;
+		}
+	}
+	foreach ( array_keys( $by_id ) as $id ) {
+		$p = $by_id[ $id ]['parent'];
+		if ( ! $p || ! isset( $by_id[ $p ] ) ) {
+			$it            = $by_id[ $id ];
+			$it['current'] = $it['current'] || (bool) array_filter( $it['children'], fn( $c ) => $c['current'] );
+			$top[]         = $it;
+		}
+	}
+	return $top;
+}
+
+/** Navigáció elemei: hozzárendelt WP menü, különben automatikus, nyelvfüggő. */
 function zc_nav_items() {
+	$wp_menu = zc_wp_menu_items();
+	if ( $wp_menu ) {
+		return apply_filters( 'zc_nav_items', $wp_menu );
+	}
 	$items = array(
 		array( 'key' => 'home', 'label' => zc_t( 'nav_home' ) ),
 		array(
@@ -246,27 +295,115 @@ function zc_nav_items() {
 	return apply_filters( 'zc_nav_items', $out );
 }
 
-/** Nyelvváltó (pill legördülő). */
-function zc_lang_switcher( $variant = 'dropdown' ) {
+/** Élő nyelvek az aktuális oldal fordítási URL-jeivel: code => [url, native, hreflang, name]. */
+function zc_lang_links() {
 	if ( ! zc_core() ) {
-		return '';
+		return array();
 	}
 	$langs = Zen_I18n::live();
 	if ( count( $langs ) < 2 ) {
+		return array();
+	}
+	$trans = is_singular() ? zen_translations( get_queried_object_id() ) : array();
+	$out   = array();
+	foreach ( $langs as $code => $meta ) {
+		$out[ $code ] = array(
+			'url'      => $trans[ $code ] ?? zen_page_url( 'home', $code ),
+			'native'   => $meta['native'],
+			'name'     => $meta['name'] ?? $meta['native'],
+			'hreflang' => $meta['hreflang'],
+		);
+	}
+	return $out;
+}
+
+/** Nyelvváltó gomb. Alapértelmezés: felugró, középre zárt üveg ablak (languages.ui = popup); opcionálisan legördülő. */
+function zc_lang_switcher( $variant = 'dropdown' ) {
+	$links = zc_lang_links();
+	if ( ! $links ) {
 		return '';
 	}
-	$cur   = zc_lang();
-	$trans = is_singular() ? zen_translations( get_queried_object_id() ) : array();
-	$o     = '<div class="zc-lang' . ( 'inline' === $variant ? ' zc-lang--inline' : '' ) . '" data-lang>';
-	if ( 'inline' !== $variant ) {
-		$o .= '<button type="button" class="zc-lang__btn" aria-haspopup="true" aria-expanded="false" aria-label="' . esc_attr( zc_t( 'language' ) ) . '">' . zc_icon( 'globe', 18 ) . '<span>' . esc_html( strtoupper( $cur ) ) . '</span>' . zc_icon( 'chevron', 14 ) . '</button>';
+	$cur = zc_lang();
+	$ui  = zc_opt( 'languages.ui', 'popup' );
+	if ( 'popup' === $ui || 'inline' === $variant ) {
+		$cls = 'zc-lang__btn' . ( 'inline' === $variant ? ' zc-lang__btn--wide' : '' );
+		$lab = 'inline' === $variant ? '<span class="zc-lang__native">' . esc_html( $links[ $cur ]['native'] ?? strtoupper( $cur ) ) . '</span>' : '<span>' . esc_html( strtoupper( $cur ) ) . '</span>';
+		return '<button type="button" class="' . esc_attr( $cls ) . '" data-lang-open aria-haspopup="dialog" aria-controls="zc-langmodal" aria-label="' . esc_attr( zc_t( 'choose_language' ) ) . '">' . zc_icon( 'globe', 18 ) . $lab . zc_icon( 'chevron', 14 ) . '</button>';
 	}
+	$o  = '<div class="zc-lang" data-lang><button type="button" class="zc-lang__btn" aria-haspopup="true" aria-expanded="false" aria-label="' . esc_attr( zc_t( 'language' ) ) . '">' . zc_icon( 'globe', 18 ) . '<span>' . esc_html( strtoupper( $cur ) ) . '</span>' . zc_icon( 'chevron', 14 ) . '</button>';
 	$o .= '<ul class="zc-lang__list" role="menu">';
-	foreach ( $langs as $code => $meta ) {
-		$url = $trans[ $code ] ?? zen_page_url( 'home', $code );
-		$o  .= '<li role="none"><a role="menuitem" hreflang="' . esc_attr( $meta['hreflang'] ) . '" lang="' . esc_attr( $meta['hreflang'] ) . '" href="' . esc_url( $url ) . '"' . ( $code === $cur ? ' aria-current="true"' : '' ) . '><b>' . esc_html( strtoupper( $code ) ) . '</b> ' . esc_html( $meta['native'] ) . '</a></li>';
+	foreach ( $links as $code => $l ) {
+		$o .= '<li role="none"><a role="menuitem" hreflang="' . esc_attr( $l['hreflang'] ) . '" lang="' . esc_attr( $l['hreflang'] ) . '" href="' . esc_url( $l['url'] ) . '"' . ( $code === $cur ? ' aria-current="true"' : '' ) . '><b>' . esc_html( strtoupper( $code ) ) . '</b> ' . esc_html( $l['native'] ) . '</a></li>';
 	}
 	return $o . '</ul></div>';
+}
+
+/** Felugró nyelvválasztó ablak (egyszer, a lábléc után): széles, alacsony üveg rács, homályosított háttér. */
+function zc_lang_modal() {
+	$links = zc_lang_links();
+	if ( ! $links ) {
+		return '';
+	}
+	$cur = zc_lang();
+	$o   = '<div class="zc-langmodal" id="zc-langmodal" hidden data-langmodal><div class="zc-langmodal__box" role="dialog" aria-modal="true" aria-labelledby="zc-langmodal-t">';
+	$o  .= '<header class="zc-langmodal__head"><span class="zc-langmodal__ico" aria-hidden="true">' . zc_icon( 'globe', 22 ) . '</span><p class="zc-langmodal__t" id="zc-langmodal-t">' . esc_html( zc_t( 'choose_language' ) ) . '</p><button type="button" class="zc-icon-btn zc-langmodal__x" data-lang-close aria-label="' . esc_attr( zc_t( 'close' ) ) . '">' . zc_icon( 'close', 20 ) . '</button></header>';
+	$o  .= '<ul class="zc-langmodal__grid">';
+	foreach ( $links as $code => $l ) {
+		$o .= '<li><a class="zc-langmodal__item" hreflang="' . esc_attr( $l['hreflang'] ) . '" lang="' . esc_attr( $l['hreflang'] ) . '" href="' . esc_url( $l['url'] ) . '"' . ( $code === $cur ? ' aria-current="true"' : '' ) . '><b>' . esc_html( strtoupper( $code ) ) . '</b><span>' . esc_html( $l['native'] ) . '</span>' . ( $code === $cur ? zc_icon( 'check', 16 ) : '' ) . '</a></li>';
+	}
+	return $o . '</ul></div></div>';
+}
+
+/** Oldalsó kapcsolat-sáv stílusai (Zen Studio → Design). */
+function zc_rail_styles() {
+	return array(
+		'off'      => 'Kikapcsolva',
+		'glass'    => 'Üveg pill – bal oldal',
+		'glass-r'  => 'Üveg pill – jobb oldal',
+		'dock'     => 'Lebegő dokk – alul középen',
+		'minimal'  => 'Minimál ikonsor vonallal',
+		'accent'   => 'Kiemelő színű pill',
+		'dark'     => 'Sötét pill',
+		'tab'      => 'Fül a szélén (rámutatásra nyílik)',
+		'bubbles'  => 'Különálló buborékok – jobb oldal',
+		'outline'  => 'Körvonalas pill',
+		'gradient' => 'Színátmenetes pill',
+	);
+}
+
+/** Oldalsó kapcsolat-sáv – alapból kikapcsolva, 10 stílus. */
+function zc_rail() {
+	$style = (string) zc_opt( 'design.rail', 'off' );
+	if ( 'off' === $style || ! array_key_exists( $style, zc_rail_styles() ) ) {
+		return '';
+	}
+	$phone = zc_opt( 'general.phone', '' );
+	$email = zc_opt( 'general.email', '' );
+	$links = array();
+	foreach ( array( 'facebook' => 'Facebook', 'instagram' => 'Instagram' ) as $zc_k => $zc_l ) {
+		$zc_u = (string) zc_opt( 'general.' . $zc_k, '' );
+		if ( '' !== $zc_u ) {
+			$links[] = array( $zc_u, $zc_k, $zc_l, true );
+		}
+	}
+	if ( $email ) {
+		$links[] = array( 'mailto:' . $email, 'mail', $email, false );
+	}
+	if ( $phone ) {
+		$links[] = array( 'tel:' . preg_replace( '/[^+0-9]/', '', $phone ), 'phone', $phone, false );
+	}
+	$zc_map = (string) zc_opt( 'general.google_maps', '' );
+	if ( '' !== $zc_map ) {
+		$links[] = array( $zc_map, 'pin', zc_t( 'open_maps' ), true );
+	}
+	if ( ! $links ) {
+		return '';
+	}
+	$o = '<aside class="zc-rail zc-rail--' . esc_attr( $style ) . '" aria-label="' . esc_attr( zc_t( 'socials' ) ) . '"><div class="zc-rail__in">';
+	foreach ( $links as $l ) {
+		$o .= '<a href="' . esc_url( $l[0] ) . '"' . ( $l[3] ? ' target="_blank" rel="noopener"' : '' ) . ' aria-label="' . esc_attr( $l[2] ) . '" title="' . esc_attr( $l[2] ) . '">' . zc_icon( $l[1], 18 ) . '</a>';
+	}
+	return $o . '</div><span class="zc-rail__label">' . esc_html( zc_t( 'nav_contact' ) ) . '</span></aside>';
 }
 
 /** Világos/sötét kapcsoló – felirat nélkül (csak aria), körülötte ≥6px hely. */

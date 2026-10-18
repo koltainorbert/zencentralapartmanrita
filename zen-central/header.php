@@ -83,18 +83,8 @@ $zc_email = zc_opt( 'general.email', '' );
 </div>
 
 <?php
-// Oldalsó kapcsolat-sáv (az eredeti függőleges „Lépjen velünk kapcsolatba” jelvény modern változata).
-if ( zc_opt( 'design.show_side_badge', true ) ) :
-	?>
-	<aside class="zc-rail" aria-label="<?php echo esc_attr( zc_t( 'socials' ) ); ?>">
-		<?php $zc_fb = zc_opt( 'general.facebook', '' ); ?>
-		<?php if ( $zc_fb ) : ?><a href="<?php echo esc_url( $zc_fb ); ?>" target="_blank" rel="noopener" aria-label="Facebook"><?php echo zc_icon( 'facebook', 18 ); // phpcs:ignore ?></a><?php endif; ?>
-		<?php $zc_ig = zc_opt( 'general.instagram', '' ); ?>
-		<?php if ( $zc_ig ) : ?><a href="<?php echo esc_url( $zc_ig ); ?>" target="_blank" rel="noopener" aria-label="Instagram"><?php echo zc_icon( 'instagram', 18 ); // phpcs:ignore ?></a><?php endif; ?>
-		<a href="mailto:<?php echo esc_attr( $zc_email ); ?>" aria-label="E-mail"><?php echo zc_icon( 'mail', 18 ); // phpcs:ignore ?></a>
-		<a href="tel:<?php echo esc_attr( preg_replace( '/[^+0-9]/', '', $zc_phone ) ); ?>" aria-label="<?php echo esc_attr( $zc_phone ); ?>"><?php echo zc_icon( 'phone', 18 ); // phpcs:ignore ?></a>
-		<span class="zc-rail__label"><?php echo esc_html( zc_t( 'socials' ) ); ?></span>
-	</aside>
-<?php endif; ?>
+// Oldalsó kapcsolat-sáv: alapból kikapcsolva, Zen Studio → Design-ban 10 stílusból választható.
+echo zc_rail(); // phpcs:ignore
+?>
 
 <main id="zc-main" class="zc-main" tabindex="-1">

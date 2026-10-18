@@ -80,7 +80,6 @@
   "trust_checkin": "Self check-in con cassetta portachiavi",
   "trust_wifi": "WiFi veloce",
   "trust_center": "Centro storico a 400 m",
-
   "bk_title": "Disponibilità e prenotazione",
   "bk_step_dates": "Date",
   "bk_step_apartment": "Appartamento",
@@ -162,7 +161,6 @@
   "bk_mail_checkin": "Check-in dalle {in}, check-out entro le {out}. Indirizzo: {address}",
   "bk_mail_footer": "Per qualsiasi domanda, rispondi semplicemente a questa e-mail o chiamaci: {phone}",
   "bk_sync_note": "La disponibilità è sincronizzata con i calendari di Booking.com e Airbnb.",
-
   "fm_name": "Nome",
   "fm_booking_no": "N. prenotazione",
   "fm_email": "E-mail",
@@ -202,7 +200,6 @@
   "fm_fb_count": "su {n} recensioni",
   "fm_mail_contact": "Nuovo messaggio dal sito web",
   "fm_mail_auto": "Grazie per averci contattato! Abbiamo ricevuto il tuo messaggio e ti risponderemo presto.",
-
   "ai_name": "Zen",
   "ai_role": "Concierge digitale",
   "ai_open": "Chiedi a Zen",
@@ -235,5 +232,23 @@
   "ai_help_ph": "Es.: A che ora è il check-in? Dove posso parcheggiare?",
   "ai_help_topics": "Argomenti più richiesti",
   "ai_help_contact": "Preferisci parlare con una persona?",
-  "ai_online": "Online"
+  "ai_online": "Online",
+  "choose_language": "Scegli la lingua",
+  "hero_panel_title": "Prenota direttamente",
+  "faq_questions": "{n} domande",
+  "faq_topics": "{n} argomenti",
+  "faq_help_title": "Non trovi la risposta?",
+  "faq_help_text": "Zen, il nostro concierge digitale, risponde subito – oppure chiamaci.",
+  "bk_dates": "Date",
+  "bk_pick_dates": "Scegli le date",
+  "bk_apply": "Fatto",
+  "bk_clear": "Cancella",
+  "bk_legend_booked": "Occupato",
+  "bk_change": "Modifica",
+  "bk_free_count": "{n} appartamenti liberi",
+  "bk_range_hint": "Arrivo → partenza: due clic",
+  "ai_live": "Guida dal vivo",
+  "ai_chip_history": "La storia di Veszprém in breve",
+  "ai_chip_tonight": "Cosa c’è stasera in città?",
+  "ai_chip_food": "Dove mangiare bene qui vicino?"
 }

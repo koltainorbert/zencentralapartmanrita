@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'ZC_VER', '1.0.0' );
+define( 'ZC_VER', '1.1.0' );
 define( 'ZC_DIR', get_template_directory() . '/' );
 define( 'ZC_URI', get_template_directory_uri() . '/' );
 
@@ -26,11 +26,17 @@ add_action(
 		add_theme_support( 'custom-logo' );
 		add_image_size( 'zc-card', 900, 1100, true );
 		add_image_size( 'zc-wide', 1600, 1000, false );
-		register_nav_menus(
-			array(
-				'primary' => __( 'Fő menü (opcionális – üresen automatikus)', 'zen-central' ),
-			)
-		);
+		// Fő menü nyelvenként: ha a Megjelenés → Menük alatt hozzárendelsz egy menüt, az jelenik meg
+		// (minden módosítás azonnal, cache ürítéssel); ha nincs hozzárendelve, automatikus menü.
+		$zc_locs = array( 'primary' => __( 'Fő menü – alapnyelv (üresen automatikus)', 'zen-central' ) );
+		if ( class_exists( 'Zen_I18n' ) ) {
+			foreach ( Zen_I18n::all_languages() as $zc_code => $zc_meta ) {
+				if ( Zen_I18n::default_lang() !== $zc_code ) {
+					$zc_locs[ 'primary_' . $zc_code ] = sprintf( 'Fő menü – %s (üresen automatikus)', $zc_meta['native'] ?? strtoupper( $zc_code ) );
+				}
+			}
+		}
+		register_nav_menus( $zc_locs );
 	}
 );
 

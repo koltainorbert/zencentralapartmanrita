@@ -69,13 +69,16 @@ class Zen_Settings {
 				'radius'         => 22,
 				'container'      => 1240,
 				'custom_css'     => '',
-				'show_side_badge'=> true,
+				'show_side_badge'=> false,  // régi kapcsoló (nem használt) – helyette: rail
+				'rail'           => 'off',  // off|glass|glass-r|dock|minimal|accent|dark|tab|bubbles|outline|gradient
 				'sticky_book'    => true,
+				'post_author'    => true,   // blogbejegyzés szerzőjének kiírása
 			),
 			'languages'  => array(
 				'enabled' => array( 'hu', 'en', 'de', 'fr', 'it', 'es', 'pl', 'cs', 'sk', 'ro', 'hr', 'sl', 'nl' ),
 				'default' => 'hu',
-				'switcher'=> 'dropdown', // dropdown|inline
+				'switcher'=> 'dropdown', // régi (nem használt)
+				'ui'      => 'popup',    // popup|dropdown – felugró üveg ablak vagy legördülő
 				'detect'  => false,      // böngészőnyelv szerinti javaslat-sáv
 			),
 			'booking'    => array(
@@ -115,7 +118,10 @@ class Zen_Settings {
 				'api_key'      => '',
 				'model'        => 'claude-sonnet-5-5',
 				'temperature'  => 0.5,
-				'max_tokens'   => 700,
+				'max_tokens'   => 900,
+				'web_search'   => true,  // élő webes keresés (Anthropic web_search / Gemini Google Search)
+				'web_search_max' => 3,   // keresések száma válaszonként
+				'event_feeds'  => array( 'https://veszprem.hu/wp-json/wp/v2/posts?categories=63&per_page=30', 'https://agoraveszprem.hu/tc-events/feed/' ), // hivatalos programnaptárak (iCal / RSS / JSON) – naponta kétszer frissül
 				'system_prompt'=> '',
 				'kb_extra'     => '',
 				'log_chats'    => true,
@@ -152,7 +158,7 @@ class Zen_Settings {
 			'cloudflare' => array(
 				'zone_id'       => '',
 				'api_token'     => '',
-				'purge_on_save' => false,
+				'purge_on_save' => true,
 				'html_ttl'      => 0,
 			),
 			'strings'    => array(), // [lang => [key => value]]

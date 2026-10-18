@@ -80,7 +80,6 @@
   "trust_checkin": "Arrivée autonome avec boîte à clés",
   "trust_wifi": "WiFi rapide",
   "trust_center": "Vieille ville à 400 m",
-
   "bk_title": "Disponibilités et réservation",
   "bk_step_dates": "Dates",
   "bk_step_apartment": "Appartement",
@@ -162,7 +161,6 @@
   "bk_mail_checkin": "Arrivée à partir de {in}, départ avant {out}. Adresse : {address}",
   "bk_mail_footer": "Pour toute question, répondez simplement à cet e-mail ou appelez-nous : {phone}",
   "bk_sync_note": "Les disponibilités sont synchronisées avec les calendriers Booking.com et Airbnb.",
-
   "fm_name": "Nom",
   "fm_booking_no": "N° de réservation",
   "fm_email": "E-mail",
@@ -202,7 +200,6 @@
   "fm_fb_count": "sur la base de {n} avis",
   "fm_mail_contact": "Nouveau message depuis le site",
   "fm_mail_auto": "Merci de nous avoir contactés ! Nous avons bien reçu votre message et vous répondrons très vite.",
-
   "ai_name": "Zen",
   "ai_role": "Concierge numérique",
   "ai_open": "Demander à Zen",
@@ -235,5 +232,23 @@
   "ai_help_ph": "Ex. : À quelle heure est l'arrivée ? Où puis-je me garer ?",
   "ai_help_topics": "Sujets populaires",
   "ai_help_contact": "Vous préférez parler à une personne ?",
-  "ai_online": "En ligne"
+  "ai_online": "En ligne",
+  "choose_language": "Choisissez votre langue",
+  "hero_panel_title": "Réservez en direct",
+  "faq_questions": "{n} questions",
+  "faq_topics": "{n} thèmes",
+  "faq_help_title": "Vous ne trouvez pas la réponse ?",
+  "faq_help_text": "Zen, notre concierge numérique, répond immédiatement – ou appelez-nous.",
+  "bk_dates": "Dates",
+  "bk_pick_dates": "Choisir les dates",
+  "bk_apply": "Valider",
+  "bk_clear": "Effacer",
+  "bk_legend_booked": "Réservé",
+  "bk_change": "Modifier",
+  "bk_free_count": "{n} appartements libres",
+  "bk_range_hint": "Arrivée → départ : deux clics",
+  "ai_live": "Guide en direct",
+  "ai_chip_history": "L’histoire de Veszprém en bref",
+  "ai_chip_tonight": "Que faire ce soir en ville ?",
+  "ai_chip_food": "Où bien manger à proximité ?"
 }

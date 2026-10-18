@@ -162,8 +162,8 @@
 			]))]),
 			card('Effektek és elemek', [grid(fields([
 				{ k: 'design.animations', l: 'Finom megjelenési animációk', t: 'toggle' },
-				{ k: 'design.show_side_badge', l: 'Oldalsó kapcsolat-sáv', t: 'toggle' },
-				{ k: 'design.sticky_book', l: 'Mobil ragadós „Szabad időpontok” gomb', t: 'toggle' },
+				{ k: 'design.rail', l: 'Oldalsó kapcsolat-sáv (10 stílus)', t: 'select', opts: Z.railStyles || [['off', 'Kikapcsolva']] },
+				{ k: 'design.sticky_book', l: 'Mobil ragadós „Szabad időpontok” gomb', t: 'toggle' }, { k: 'design.post_author', l: 'Blogbejegyzés szerzőjének kiírása', t: 'toggle' },
 				{ k: 'design.grain', l: 'Finom szemcse textúra', t: 'toggle' }
 			])), F.field({ k: 'design.custom_css', l: 'Egyedi CSS', t: 'code', rows: 8, help: 'Haladó: saját CSS szabályok. Változók: --zc-accent, --zc-bg, --zc-text, --zc-radius…' }, S, mark)])
 		]);
@@ -256,7 +256,7 @@
 		return h('div', { class: 'zs-stack' }, [
 			card('Bekapcsolt nyelvek', [tg, grid(fields([
 				{ k: 'languages.default', l: 'Alapnyelv (gyökér URL)', t: 'select', opts: Z.langs.map(function (l) { return [l.code, l.native]; }) },
-				{ k: 'languages.switcher', l: 'Nyelvváltó stílusa', t: 'select', opts: [['dropdown', 'Legördülő pill'], ['inline', 'Sorban']] }
+				{ k: 'languages.ui', l: 'Nyelvváltó stílusa', t: 'select', opts: [['popup', 'Felugró üveg ablak középen (ajánlott)'], ['dropdown', 'Legördülő lista a fejlécben']] }
 			]))], 'A nyelvváltóban csak azok a nyelvek jelennek meg, amelyekhez már van oldal (Oldalak fül → Hiányzó nyelvi oldalak).'),
 			card('Felületi szövegek (menü, gombok, űrlapok, foglaló, Zen AI) – minden nyelven', [h('div', { class: 'zs-row' }, [langSel, search, strSave]), strBox], 'Az üres mező az alapértelmezett szöveget használja (szürkén látszik). Csak amit módosítani akarsz, azt írd be.')
 		]);
@@ -295,14 +295,17 @@
 			card('Zen – mesterséges intelligenciás concierge és súgó', [grid(fields([
 				{ k: 'ai.enabled', l: 'Zen AI bekapcsolva', t: 'toggle' }, { k: 'ai.name', l: 'Asszisztens neve' },
 				{ k: 'ai.provider', l: 'Szolgáltató', t: 'select', opts: [['anthropic', 'Anthropic Claude (ajánlott)'], ['openai', 'OpenAI'], ['gemini', 'Google Gemini']] },
-				{ k: 'ai.model', l: 'Modell', ph: 'pl. claude-sonnet-5-5 / gpt-4o-mini / gemini-2.0-flash' },
+				{ k: 'ai.model', l: 'Modell', ph: 'pl. claude-sonnet-5-5 / gpt-4o-mini / gemini-2.5-flash' },
 				{ k: 'ai.api_key', l: 'API kulcs (titkosítva tárolva)', t: 'password', ph: 'sk-…' },
 				{ k: 'ai.temperature', l: 'Kreativitás', t: 'range', min: 0, max: 1, step: 0.1 }, { k: 'ai.max_tokens', l: 'Max. válaszhossz (token)', t: 'number', min: 150, max: 2000, step: 50 },
 				{ k: 'ai.position', l: 'Gomb helye', t: 'select', opts: [['right', 'Jobbra lent'], ['left', 'Balra lent']] },
 				{ k: 'ai.avatar', l: 'Avatar (opcionális)', t: 'media' },
-				{ k: 'ai.log_chats', l: 'Beszélgetések naplózása (CRM, 180 nap)', t: 'toggle' }, { k: 'ai.collect_leads', l: 'E-mail/telefon kiemelése (lead)', t: 'toggle' }
+				{ k: 'ai.log_chats', l: 'Beszélgetések naplózása (CRM, 180 nap)', t: 'toggle' }, { k: 'ai.collect_leads', l: 'E-mail/telefon kiemelése (lead)', t: 'toggle' },
+				{ k: 'ai.web_search', l: 'Élő webes keresés (aktuális programok, nyitvatartás) – Anthropic/Gemini', t: 'toggle' }, { k: 'ai.web_search_max', l: 'Keresések száma válaszonként', t: 'number', min: 1, max: 8, step: 1 },
+				{ k: 'ai.event_feeds', l: 'Programnaptár feedek (iCal / RSS / JSON URL-ek) – naponta kétszer frissül', t: 'list', add: 'Új feed URL' }
 			]))], 'Kulcs nélkül is működik: ilyenkor a beépített GYIK-motor válaszol. Zen látja a weboldal teljes tartalmát (minden nyelven), a szabad időszakokat és a Veszprém tudásbázist.'),
 			card('Viselkedés (rendszer-prompt)', [F.field({ k: 'ai.system_prompt', t: 'textarea', rows: 12, ph: Z.defaultPrompt }, S, mark), h('div', { class: 'zs-row' }, [h('button', { type: 'button', class: 'zs-btn zs-btn--ghost zs-btn--sm', onclick: function () { S.ai.system_prompt = Z.defaultPrompt; mark(); render(); } }, ['Alapértelmezett betöltése szerkesztéshez']), h('button', { type: 'button', class: 'zs-btn zs-btn--ghost zs-btn--sm', onclick: function () { S.ai.system_prompt = ''; mark(); render(); } }, ['Visszaállítás alapra'])]), F.field({ k: 'ai.kb_extra', l: 'Saját tudnivalók (akciók, kódok, házirend, helyi tippek)', t: 'textarea', rows: 5 }, S, mark)]),
+			card('Élő programok (feedek)', [h('p', { class: 'zs-help', text: Z.eventsLast ? 'Utolsó frissítés: ' + new Date(Z.eventsLast * 1000).toLocaleString('hu-HU') + ' · ' + Z.eventsCount + ' program a listában.' : 'Még nem volt frissítés.' }), h('div', { class: 'zs-row' }, [h('button', { type: 'button', class: 'zs-btn zs-btn--sm', onclick: function (e) { var b = e.currentTarget; b.disabled = true; b.textContent = 'Frissítés…'; api('events', 'POST', {}).then(function (r) { b.disabled = false; b.textContent = 'Feedek frissítése most'; var ok = 0, n = 0; Object.keys(r.status || {}).forEach(function (k) { if (r.status[k].ok) { ok++; } n += r.status[k].count || 0; }); toast('Feedek: ' + ok + ' működik · ' + n + ' program'); }); } }, ['Feedek frissítése most'])])], 'A feedeket a fenti Zen AI kártyán adod meg (mentés után frissíts). Zen ezekből és élő webes kereséssel ismeri az aktuális veszprémi programokat.'),
 			card('Veszprém tudásbázis (JSON)', [kbTa, h('div', { class: 'zs-row' }, [h('button', { type: 'button', class: 'zs-btn zs-btn--sm', onclick: function () { try { JSON.parse(kbTa.value); } catch (e) { toast('Hibás JSON: ' + e.message, false); return; } api('settings', 'POST', { kb: kbTa.value }).then(function () { toast('Tudásbázis mentve ✓'); }); } }, ['Tudásbázis mentése']), h('button', { type: 'button', class: 'zs-btn zs-btn--ghost zs-btn--sm', onclick: function () { if (confirm('Visszaállítod a beépített tudásbázist?')) { api('settings', 'POST', { kb: '' }).then(function () { toast('Visszaállítva – frissítsd az oldalt'); }); } } }, ['Beépített visszaállítása'])])], 'Látnivalók, kirándulások, események, éttermek, programtervek – ezekből ajánl Zen. Szerkeszthető.'),
 			card('Próba', [h('div', { class: 'zs-row' }, [testIn, h('button', { type: 'button', class: 'zs-btn', onclick: function () { testOut.textContent = 'Zen gondolkodik…'; fetch(Z.restRoot + 'chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: [{ role: 'user', content: testIn.value }], lang: 'hu', sid: 'admintest' + Date.now() }) }).then(function (r) { return r.json(); }).then(function (j) { testOut.textContent = (j.reply || '') + (j.actions && j.actions.length ? '\n\n[Gombok: ' + j.actions.map(function (a) { return a.label; }).join(', ') + ']' : ''); }); } }, ['Kérdezem'])]), testOut], 'Mentés után teszteld (az új kulcs a mentéssel lép életbe).')
 		]);
@@ -339,7 +342,7 @@
 		return h('div', { class: 'zs-stack' }, [card('Cloudflare', [grid(fields([
 			{ k: 'cloudflare.zone_id', l: 'Zone ID' }, { k: 'cloudflare.api_token', l: 'API token (Cache Purge jog)', t: 'password' },
 			{ k: 'cloudflare.purge_on_save', l: 'Cache ürítése mentéskor', t: 'toggle' }, { k: 'cloudflare.html_ttl', l: 'HTML edge cache (mp, 0 = ki) – csak nem bejelentkezett látogatóknak', t: 'number', min: 0, step: 60 }
-		])), h('p', {}, [h('a', { class: 'zs-btn zs-btn--sm', href: Z.purgeUrl }, ['Teljes Cloudflare cache ürítése'])]), h('p', { class: 'zs-help', html: 'Javasolt Cloudflare beállítás: „Cache Everything” szabály a HTML-re bypass-szal a <code>wordpress_logged_in</code> sütire; a foglalás és a Zen AI REST-en megy (no-store), így mindig friss.' })])]);
+		])), h('p', {}, [h('a', { class: 'zs-btn zs-btn--sm', href: Z.purgeUrl }, ['Teljes cache ürítése most (szerver + Cloudflare)'])]), h('p', { class: 'zs-help', text: 'Minden mentés (Zen Studio, oldalak, menük, szerző, testreszabás) után a weboldal automatikusan üríti a telepített cache bővítményeket' + (Z.purgeLast && Z.purgeLast.time ? ' · utolsó ürítés: ' + new Date(Z.purgeLast.time * 1000).toLocaleString('hu-HU') + (Z.purgeLast.done && Z.purgeLast.done.length ? ' (' + Z.purgeLast.done.join(', ') + ')' : '') : '') + '.' }), h('p', { class: 'zs-help', html: 'Javasolt Cloudflare beállítás: „Cache Everything” szabály a HTML-re bypass-szal a <code>wordpress_logged_in</code> sütire; a foglalás és a Zen AI REST-en megy (no-store), így mindig friss.' })])]);
 	};
 
 	VIEWS.tools = function () {

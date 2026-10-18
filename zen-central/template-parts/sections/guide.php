@@ -39,7 +39,7 @@ echo zc_section_open( $s, 'zc-guide' ); // phpcs:ignore
 			<?php
 			$zc_desc = $zc_g[ 'desc_' . $zc_lang ] ?? ( 'hu' === $zc_lang ? ( $zc_g['desc_hu'] ?? '' ) : ( $zc_g['desc_en'] ?? ( $zc_g['desc_hu'] ?? '' ) ) );
 			$zc_name = $zc_g[ 'name_' . $zc_lang ] ?? ( $zc_g['name'] ?? '' );
-			$zc_dist = $zc_g['distance'] ?? ( isset( $zc_g['km'] ) ? $zc_g['km'] . ' km' : ( $zc_g['month'] ?? '' ) );
+			$zc_dist = $zc_g['distance'] ?? ( isset( $zc_g['km'] ) ? $zc_g['km'] . ' km' : ( $zc_g['when'] ?? ( $zc_g['month'] ?? ( $zc_g['address'] ?? '' ) ) ) );
 			?>
 			<article class="zc-guide__card" data-reveal style="--d:<?php echo (int) $zc_i; ?>">
 				<span class="zc-guide__num"><?php echo esc_html( str_pad( (string) ( $zc_i + 1 ), 2, '0', STR_PAD_LEFT ) ); ?></span>

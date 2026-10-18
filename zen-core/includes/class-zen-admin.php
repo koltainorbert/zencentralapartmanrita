@@ -84,16 +84,28 @@ class Zen_Admin {
 			'apartments' => Zen_Settings::apartments(),
 			'skins'      => Zen_Settings::skins(),
 			'fonts'      => Zen_Settings::fonts(),
+			'railStyles' => array_map( fn( $k, $v ) => array( $k, $v ), array_keys( self::rail_styles() ), array_values( self::rail_styles() ) ),
 			'langs'      => $langs,
 			'keys'       => Zen_Content::keys(),
 			'home'       => home_url( '/' ),
 			'calendar'   => admin_url( 'admin.php?page=zen-booking-calendar' ),
 			'purgeUrl'   => wp_nonce_url( admin_url( 'admin-post.php?action=zen_cf_purge' ), 'zen_cf_purge' ),
+			'purgeLast'  => get_option( 'zen_purge_last', array() ),
 			'icalUrls'   => self::ical_urls(),
 			'defaultPrompt' => class_exists( 'Zen_AI' ) ? Zen_AI::default_prompt() : '',
 			'kb'         => class_exists( 'Zen_AI' ) ? Zen_AI::kb() : array(),
+			'eventsLast' => (int) get_option( 'zen_events_last', 0 ),
+			'eventsCount'=> count( (array) get_option( 'zen_live_events', array() ) ),
 			'version'    => ZEN_CORE_VER,
 		);
+	}
+
+	/** Oldalsó sáv stílusai – a téma adja, ha aktív; különben a beépített lista. */
+	public static function rail_styles() {
+		if ( function_exists( 'zc_rail_styles' ) ) {
+			return zc_rail_styles();
+		}
+		return array( 'off' => 'Kikapcsolva', 'glass' => 'Üveg pill – bal oldal', 'glass-r' => 'Üveg pill – jobb oldal', 'dock' => 'Lebegő dokk – alul középen', 'minimal' => 'Minimál ikonsor vonallal', 'accent' => 'Kiemelő színű pill', 'dark' => 'Sötét pill', 'tab' => 'Fül a szélén (rámutatásra nyílik)', 'bubbles' => 'Különálló buborékok – jobb oldal', 'outline' => 'Körvonalas pill', 'gradient' => 'Színátmenetes pill' );
 	}
 
 	protected static function ical_urls() {
@@ -153,6 +165,9 @@ class Zen_Admin {
 		) );
 		register_rest_route( 'zen/v1', '/admin/sideload', array(
 			array( 'methods' => 'POST', 'permission_callback' => $perm, 'callback' => fn() => rest_ensure_response( Zen_Importer::sideload_batch( 8 ) ) ),
+		) );
+		register_rest_route( 'zen/v1', '/admin/events', array(
+			array( 'methods' => 'POST', 'permission_callback' => $perm, 'callback' => fn() => rest_ensure_response( array( 'status' => class_exists( 'Zen_AI' ) ? Zen_AI::sync_events() : array() ) ) ),
 		) );
 		register_rest_route( 'zen/v1', '/admin/sync', array(
 			array( 'methods' => 'POST', 'permission_callback' => $perm, 'callback' => function () {

@@ -1,65 +1,2426 @@
 {
-  "_info": "Zen AI tudásbázis – Veszprém és környéke. Az adminban (Zen Studio → Zen AI) szerkeszthető. Távolságok közúton, kerekítve; nyitvatartást, jegyárat és pontos rendezvénydátumot mindig a hivatalos oldalon érdemes ellenőrizni.",
-  "sights": [
-    { "name": "Várnegyed és Hősök kapuja", "distance": "belváros", "tags": "vár várnegyed castle burg hősök kapuja", "desc_hu": "Veszprém szíve: a dolomitszirten fekvő Várnegyed barokk palotákkal, a bejáratnál a Hősök kapujával. Gyalog bejárható, a vár végéből páratlan panoráma nyílik a Bakonyra.", "desc_en": "The heart of Veszprém: the Castle District on a dolomite rock with baroque palaces, entered through the Heroes' Gate. Walkable, with great views of the Bakony hills from the far end." },
-    { "name": "Tűztorony", "distance": "Óváros tér", "tags": "tűztorony fire tower feuerturm kilátó", "desc_hu": "A város jelképe, kilátóteraszáról 360°-os panoráma nyílik. Óraszerkezete egész órakor a Veszprémi verbunkot játssza.", "desc_en": "The town's landmark with a 360° viewing gallery. Its clock plays the 'Veszprém verbunkos' tune on the hour." },
-    { "name": "Szent Mihály-székesegyház", "distance": "Várnegyed", "tags": "székesegyház bazilika templom cathedral dom church", "desc_hu": "Az egyik legrégebbi magyar püspökség székesegyháza (Szent István korától), alatta középkori altemplom.", "desc_en": "Cathedral of one of Hungary's oldest dioceses (founded under King St Stephen) with a medieval crypt." },
-    { "name": "Gizella-kápolna", "distance": "Várnegyed", "tags": "gizella kápolna chapel kapelle freskó", "desc_hu": "Kora gótikus kápolna a 13. századból, értékes középkori apostol-freskókkal.", "desc_en": "Early Gothic 13th-century chapel with precious medieval frescoes of the apostles." },
-    { "name": "Érseki palota", "distance": "Várnegyed", "tags": "érseki palota archbishop palace palast barokk", "desc_hu": "Fellner Jakab tervezte barokk palota, nyáron udvarában a VeszprémFest koncertjei szólnak.", "desc_en": "Baroque palace designed by Jakab Fellner; in summer its courtyard hosts VeszprémFest concerts." },
-    { "name": "Szent István és Gizella szobor", "distance": "a Várnegyed végén", "tags": "szobor statue gizella istván kilátó panoráma", "desc_hu": "A vár északi csúcsán álló szoborpáros – Veszprém a 'királynék városa'. Innen a legszebb a kilátás a Séd-völgyre és a viaduktra.", "desc_en": "Statues of King Stephen and Queen Gisela at the tip of the castle – Veszprém is the 'city of queens'. Best view over the Séd valley and the viaduct." },
-    { "name": "Dubniczay-palota", "distance": "Várnegyed", "tags": "dubniczay múzeum kiállítás museum ausstellung művészet art", "desc_hu": "Barokk palota változó kiállításokkal és múzeumi gyűjteményekkel a vár közepén.", "desc_en": "Baroque palace in the castle with changing exhibitions and art collections." },
-    { "name": "Modern Képtár – Vass László Gyűjtemény", "distance": "Várnegyed", "tags": "képtár modern art galéria gallery vass", "desc_hu": "Jelentős magyar konstruktív és geometrikus absztrakt magángyűjtemény.", "desc_en": "Major private collection of Hungarian constructivist and geometric abstract art." },
-    { "name": "Laczkó Dezső Múzeum", "distance": "belváros", "tags": "múzeum museum régészet history történelem", "desc_hu": "A megyei múzeum régészeti és helytörténeti kiállításokkal; mellette a Bakonyi Ház népi építészeti emlék.", "desc_en": "County museum with archaeology and local history; next to it the Bakony House folk-architecture monument." },
-    { "name": "Veszprémi Petőfi Színház", "distance": "belváros", "tags": "színház theatre theater szecesszió", "desc_hu": "Medgyaszay István tervezte szecessziós épület (1908), Magyarország első vasbeton színháza.", "desc_en": "Art Nouveau building by István Medgyaszay (1908), Hungary's first reinforced-concrete theatre." },
-    { "name": "Szent István völgyhíd (viadukt)", "distance": "a belváros nyugati szélén", "tags": "viadukt völgyhíd viaduct bridge brücke", "desc_hu": "Az 1930-as években épült látványos völgyhíd a Séd-völgy felett – a Várnegyedből és a völgyből is szép.", "desc_en": "Striking 1930s viaduct over the Séd valley – great from the castle and from below." },
-    { "name": "Séd-völgy és Betekints-völgy", "distance": "a vár alatt", "tags": "séd völgy patak séta walk spaziergang park betekints kolostor", "desc_hu": "Kellemes sétaút a Séd patak mentén, a Betekints-völgyben a középkori Veszprémvölgyi apácakolostor romjaival.", "desc_en": "Pleasant walking trail along the Séd stream; in the Betekints valley lie the ruins of the medieval Veszprémvölgy convent." },
-    { "name": "Kittenberger Kálmán Növény- és Vadaspark (Állatkert)", "distance": "Gulya-domb, a Séd-völgy mellett", "tags": "állatkert zoo tiergarten gyerek kids kinder család family", "desc_hu": "Az ország egyik legrégebbi vidéki állatkertje, családdal fél napos program.", "desc_en": "One of Hungary's oldest regional zoos – a half-day family favourite." },
-    { "name": "Benedek-hegy", "distance": "a vár mellett", "tags": "benedek hegy kilátó viewpoint aussicht kereszt", "desc_hu": "Kis szikla a vár szomszédságában, keresztjétől különleges rálátás nyílik a Várnegyedre.", "desc_en": "A small rock next to the castle; from its cross there is a unique view back to the Castle District." },
-    { "name": "Óváros tér", "distance": "belváros", "tags": "óváros tér old town square kávézó cafe", "desc_hu": "Színes, felújított polgárházak, kávézók, teraszok – a belvárosi séták kiindulópontja.", "desc_en": "Colourful restored townhouses, cafés and terraces – the starting point for town walks." },
-    { "name": "Hangvilla", "distance": "belváros", "tags": "hangvilla koncert concert konzert zene music", "desc_hu": "Modern koncert- és rendezvényközpont, klasszikus és könnyűzenei estekkel.", "desc_en": "Modern concert and event venue with classical and contemporary programmes." },
-    { "name": "Veszprém Aréna – kézilabda", "distance": "a város keleti részén", "tags": "kézilabda handball aréna arena sport meccs match", "desc_hu": "A Telekom Veszprém kézilabdacsapat otthona; egy BL-meccs hangulata felejthetetlen – jegyet érdemes előre venni.", "desc_en": "Home of Telekom Veszprém handball club; a Champions League match atmosphere is unforgettable – buy tickets in advance." }
-  ],
-  "daytrips": [
-    { "name": "Balatonalmádi – szabadstrand és Wesselényi strand", "km": 13, "drive": "~15 perc", "tags": "balaton strand beach almádi fürdés swim", "desc_hu": "A legközelebbi Balaton-part: strandok, sétány, naplemente a vízparton.", "desc_en": "The nearest Lake Balaton shore: beaches, promenade and sunsets by the water." },
-    { "name": "Balatonfüred", "km": 18, "drive": "~20 perc", "tags": "balatonfüred füred tagore sétány móló hajó boat", "desc_hu": "Elegáns fürdőváros a Tagore sétánnyal, kikötővel, hajózással és borászatokkal.", "desc_en": "Elegant spa town with the Tagore promenade, marina, boat trips and wineries." },
-    { "name": "Tihany", "km": 27, "drive": "~30 perc", "tags": "tihany apátság abbey levendula lavender félsziget peninsula", "desc_hu": "A félsziget ékköve: az 1055-ben alapított bencés apátság, levendulamezők, Belső-tó, csodás kilátás a Balatonra.", "desc_en": "Jewel of the lake: the Benedictine Abbey founded in 1055, lavender fields, inner lake and stunning Balaton views." },
-    { "name": "Herend – Porcelánmanufaktúra", "km": 15, "drive": "~20 perc", "tags": "herend porcelán porcelain porzellan manufaktúra", "desc_hu": "A világhírű herendi porcelán otthona – manufaktúra-látogatás, múzeum, kávézó.", "desc_en": "Home of world-famous Herend porcelain – manufactory tour, museum and café." },
-    { "name": "Zirc – Ciszterci apátság és Arborétum", "km": 23, "drive": "~25 perc", "tags": "zirc apátság arborétum könyvtár library bakony", "desc_hu": "Ciszterci apátság műemlék könyvtárral és az egyik legszebb hazai arborétum a Bakony szívében.", "desc_en": "Cistercian abbey with a historic library and one of Hungary's finest arboretums in the heart of the Bakony." },
-    { "name": "Cuha-völgy túra", "km": 25, "drive": "~30 perc", "tags": "cuha túra hiking wandern bakony vasút erdő forest", "desc_hu": "A Bakony egyik leglátványosabb túraútja vasúti alagutak és sziklafalak között (Vinye–Porva-Csesznek).", "desc_en": "One of the Bakony's most spectacular hikes past railway tunnels and rock walls (Vinye–Porva-Csesznek)." },
-    { "name": "Csesznek – vár", "km": 30, "drive": "~35 perc", "tags": "csesznek vár castle burg rom", "desc_hu": "Sziklára épült középkori várrom, felújított részekkel és szép kilátással.", "desc_en": "Medieval castle ruin perched on a rock, partly restored, with fine views." },
-    { "name": "Nagyvázsony – Kinizsi-vár", "km": 24, "drive": "~25 perc", "tags": "nagyvázsony kinizsi vár castle lovas", "desc_hu": "Jó állapotú középkori vár öregtoronnyal, nyáron lovagi programokkal.", "desc_en": "Well-preserved medieval castle with a keep and summer knight shows." },
-    { "name": "Badacsony és a Tapolcai-medence", "km": 55, "drive": "~50 perc", "tags": "badacsony bor wine wein tanúhegy szőlő", "desc_hu": "Tanúhegyek, borteraszok, kilátás a Balatonra – egész napos borvidéki kirándulás.", "desc_en": "Volcanic buttes, wine terraces and lake views – a full-day wine-region trip." },
-    { "name": "Tapolca – Tavasbarlang", "km": 50, "drive": "~45 perc", "tags": "tapolca barlang cave höhle csónak", "desc_hu": "Csónakázás a barlang föld alatti tavában – gyerekekkel is élmény.", "desc_en": "Boating on an underground cave lake – fun with kids too." },
-    { "name": "Sümeg – vár", "km": 60, "drive": "~55 perc", "tags": "sümeg vár castle lovagi torna", "desc_hu": "Az ország egyik legjobban megmaradt vára lovagi programokkal.", "desc_en": "One of Hungary's best-preserved castles, with knight tournaments." },
-    { "name": "Pannonhalmi Főapátság (UNESCO)", "km": 65, "drive": "~55 perc", "tags": "pannonhalma apátság unesco abbey kloster", "desc_hu": "Ezeréves bencés főapátság, a világörökség része – könyvtár, levendulakert, pincészet.", "desc_en": "Thousand-year-old Benedictine archabbey, a UNESCO World Heritage site – library, lavender garden and winery." }
-  ],
-  "events": [
-    { "name": "Gizella Napok", "month": "május", "tags": "gizella napok fesztivál festival május may", "desc_hu": "A város hagyományos tavaszi fesztiválja koncertekkel, kulturális programokkal.", "desc_en": "The town's traditional spring festival with concerts and cultural events." },
-    { "name": "Rozé, Rizling és Jazz Napok", "month": "május–június", "tags": "rozé rizling jazz bor wine fesztivál", "desc_hu": "Borfesztivál a belvárosban jazz-koncertekkel.", "desc_en": "Wine festival in the town centre with jazz concerts." },
-    { "name": "VeszprémFest", "month": "július", "tags": "veszprémfest koncert concert nyár summer fesztivál", "desc_hu": "Nemzetközi zenei fesztivál az Érseki palota udvarán, neves világ- és jazzelőadókkal.", "desc_en": "International music festival in the Archbishop's Palace courtyard with renowned world and jazz artists." },
-    { "name": "Utcazene Fesztivál", "month": "július", "tags": "utcazene street music fesztivál ingyenes free", "desc_hu": "Több napos, ingyenes zenei kavalkád a belváros utcáin.", "desc_en": "Multi-day free street-music festival across the town centre." },
-    { "name": "Kézilabda – Telekom Veszprém hazai meccsek", "month": "szeptember–május", "tags": "kézilabda handball meccs match", "desc_hu": "Bajnoki és Bajnokok Ligája meccsek a Veszprém Arénában.", "desc_en": "League and Champions League matches at Veszprém Aréna." },
-    { "name": "Adventi vásár", "month": "december", "tags": "advent karácsony christmas weihnachten vásár market", "desc_hu": "Ünnepi vásár, forralt bor és koncertek a belvárosban.", "desc_en": "Christmas market, mulled wine and concerts in the town centre." }
-  ],
-  "food": [
-    { "name": "Balaton-felvidéki borok", "tags": "bor wine wein olaszrizling csopak somló", "desc_hu": "Kóstolja meg a csopaki olaszrizlinget, a somlói juhfarkot vagy a badacsonyi kéknyelűt – a környék borászatai gyakran fogadnak látogatókat.", "desc_en": "Try Csopak Olaszrizling, Somló Juhfark or Badacsony Kéknyelű – many local wineries welcome visitors." },
-    { "name": "Bakonyi ételek", "tags": "bakonyi gomba étel food essen magyaros hungarian", "desc_hu": "Helyi specialitás a gombás-tejfölös bakonyi sertésszelet és a betyárleves.", "desc_en": "Local specialities include Bakony-style pork with mushroom-sour cream sauce and outlaw ('betyár') soup." },
-    { "name": "Vámosi Csárda (Nemesvámos)", "km": 7, "tags": "csárda vámosi nemesvámos étterem restaurant", "desc_hu": "Történelmi, 18. századi csárda pár percre Veszprémtől, hagyományos magyar konyhával.", "desc_en": "Historic 18th-century inn a few minutes from Veszprém serving traditional Hungarian food." },
-    { "name": "Kávézók az Óváros téren és a Várnegyedben", "tags": "kávé coffee kaffee cukrászda sütemény cake", "desc_hu": "Reggelihez, süteményhez és esti borozáshoz is a belvárosi kávézók, teraszok a legjobbak.", "desc_en": "For breakfast, cake or an evening glass of wine, head to the cafés and terraces of the old town." },
-    { "name": "Lángos a Balatonon", "tags": "lángos balaton strand street food", "desc_hu": "Nyáron a strandon kötelező: frissen sült lángos tejföllel, sajttal.", "desc_en": "A must at the beach in summer: freshly fried lángos with sour cream and cheese." }
-  ],
-  "practical": [
-    { "topic": "Vészhelyzet", "tags": "vészhelyzet emergency notfall orvos doctor kórház hospital mentő 112", "text_hu": "Egységes segélyhívó: 112. A városi kórház a Csolnoky Ferenc Kórház.", "text_en": "European emergency number: 112. The town hospital is Csolnoky Ferenc Hospital." },
-    { "topic": "Érkezés vonattal/busszal", "tags": "vonat train zug busz bus érkezés anreise", "text_hu": "Veszprém vasútállomása az északi városrészben van, a helyközi buszpályaudvar a belvárosban. Budapestről autóval kb. 1,5 óra (M7/M8, 8-as főút).", "text_en": "Veszprém railway station is in the north of town; the intercity bus station is central. By car from Budapest about 1.5 hours (M7/8, road 8)." },
-    { "topic": "Parkolás a belvárosban", "tags": "parkolás parking parken belváros", "text_hu": "A belvárosban fizetős parkolózónák vannak; a szállásnál (Festő utca) a parkolás ingyenes, az udvari hely apartmanonként 1 autóé.", "text_en": "The town centre has paid parking zones; parking at the apartments (Festő Street) is free, with one courtyard space per apartment." },
-    { "topic": "Taxi és közlekedés", "tags": "taxi busz bus közlekedés transport", "text_hu": "A városban helyi buszjáratok közlekednek, taxi telefonon vagy alkalmazással rendelhető. A belváros gyalog is könnyen bejárható.", "text_en": "Local buses run across town and taxis can be ordered by phone or app. The centre is easy to explore on foot." },
-    { "topic": "Bolt, gyógyszertár", "tags": "bolt shop supermarket gyógyszertár pharmacy apotheke", "text_hu": "A szállás környékén és a belvárosban is több élelmiszerbolt és gyógyszertár található; a bevásárlóközpontok hétvégén is nyitva vannak.", "text_en": "Several grocery stores and pharmacies are near the apartments and in the centre; shopping centres open at weekends too." },
-    { "topic": "Európa Kulturális Fővárosa 2023", "tags": "ekf kulturális főváros capital of culture 2023", "text_hu": "Veszprém–Balaton régió 2023-ban Európa Kulturális Fővárosa volt – sok megújult helyszín és program maradt meg utána.", "text_en": "Veszprém–Balaton was European Capital of Culture in 2023 – many renewed venues and programmes remain." }
-  ],
-  "itineraries": [
-    { "title_hu": "Egy nap Veszprémben", "title_en": "One day in Veszprém", "steps_hu": ["Reggeli az Óváros téren", "Tűztorony kilátó", "Várnegyed: Gizella-kápolna, székesegyház, Érseki palota", "Kilátás a Szent István és Gizella szobortól", "Ebéd a belvárosban", "Séta a Séd-völgyben a viaduktig", "Állatkert vagy Modern Képtár", "Vacsora és bor a belvárosban"], "steps_en": ["Breakfast on Óváros Square", "Fire Tower viewpoint", "Castle District: Gisela Chapel, cathedral, Archbishop's Palace", "View from the St Stephen & Gisela statues", "Lunch in town", "Walk along the Séd valley to the viaduct", "Zoo or Modern Art Gallery", "Dinner and wine in the old town"] },
-    { "title_hu": "Balaton-nap", "title_en": "Lake Balaton day", "steps_hu": ["Tihany: apátság és levendulás", "Ebéd Tihanyban vagy Balatonfüreden", "Séta a Tagore sétányon", "Fürdés Balatonalmádiban", "Naplemente a vízparton, vissza Veszprémbe (15 perc)"], "steps_en": ["Tihany: abbey and lavender fields", "Lunch in Tihany or Balatonfüred", "Walk on the Tagore promenade", "Swim at Balatonalmádi", "Sunset by the water, back to Veszprém (15 min)"] },
-    { "title_hu": "Családi nap", "title_en": "Family day", "steps_hu": ["Kittenberger állatkert", "Piknik a Séd-völgyben", "Tapolcai Tavasbarlang csónakázás", "Lángos és strand a Balatonon"], "steps_en": ["Kittenberger Zoo", "Picnic in the Séd valley", "Boat ride in Tapolca lake cave", "Lángos and a swim at Lake Balaton"] },
-    { "title_hu": "Bakonyi aktív nap", "title_en": "Active Bakony day", "steps_hu": ["Zirc: apátság és arborétum", "Cuha-völgy túra", "Csesznek vára", "Vacsora a Vámosi Csárdában"], "steps_en": ["Zirc: abbey and arboretum", "Cuha valley hike", "Csesznek castle", "Dinner at Vámosi Csárda"] }
-  ]
+ "_info": "Veszprém és környéke tudásbázis a Zen AI-hoz – ellenőrzött, forrásokkal (frissítve: 2026-10-18). Szerkeszthető a Zen Studio → Zen AI fülön. Szakaszok: stats, history, sights, daytrips, food, shops_services, sports, events, practical, itineraries.",
+ "stats": [
+  {
+   "label_hu": "Lakónépesség (év végi)",
+   "label_en": "Resident population (year-end)",
+   "value": "56 029",
+   "year": "2023",
+   "url": "https://veszprem.hu/wp-content/uploads/2025/06/HEP_2025_evi_felulvizsgalata_2025_06_19_teljes_anyag.pdf"
+  },
+  {
+   "label_hu": "Népesség (népszámlálás)",
+   "label_en": "Population (census)",
+   "value": "56 262",
+   "year": "2022",
+   "url": "https://en.wikipedia.org/wiki/Veszpr%C3%A9m"
+  },
+  {
+   "label_hu": "Terület",
+   "label_en": "Area",
+   "value": "126,93 km²",
+   "year": "",
+   "url": "https://en.wikipedia.org/wiki/Veszpr%C3%A9m"
+  },
+  {
+   "label_hu": "Tengerszint feletti magasság",
+   "label_en": "Elevation",
+   "value": "266 m (átlag kb. 260 m – a legmagasabban fekvő megyeszékhely)",
+   "year": "",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "label_hu": "Dombok száma (hagyomány)",
+   "label_en": "Hills (tradition)",
+   "value": "7",
+   "year": "",
+   "url": "https://www.veszpreminfo.hu/en/place/walk-in-the-veszprem-castle"
+  },
+  {
+   "label_hu": "Távolság Budapesttől",
+   "label_en": "Distance from Budapest",
+   "value": "110 km",
+   "year": "",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "label_hu": "Távolság a Balatontól",
+   "label_en": "Distance from Lake Balaton",
+   "value": "15 km",
+   "year": "",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "label_hu": "Státusz",
+   "label_en": "Status",
+   "value": "Veszprém vármegye székhelye, megyei jogú város, érseki székhely",
+   "year": "",
+   "url": "https://en.wikipedia.org/wiki/Veszpr%C3%A9m"
+  },
+  {
+   "label_hu": "Testvérvárosok",
+   "label_en": "Twin towns",
+   "value": "10 (+2 partnerváros)",
+   "year": "",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "label_hu": "Vendégéjszakák Veszprém vármegyében",
+   "label_en": "Guest nights in Veszprém county",
+   "value": "3 463 128",
+   "year": "2024",
+   "url": "https://www.ksh.hu/evkonyvek/2024/teruleti-statisztikai-evkonyv-2024/pdf/terstat_2024_5_5.pdf"
+  },
+  {
+   "label_hu": "Vendégek Veszprém vármegyében",
+   "label_en": "Guests in Veszprém county",
+   "value": "1 296 619",
+   "year": "2024",
+   "url": "https://www.ksh.hu/evkonyvek/2024/teruleti-statisztikai-evkonyv-2024/pdf/terstat_2024_5_5.pdf"
+  },
+  {
+   "label_hu": "Pannon Egyetem hallgatói",
+   "label_en": "University of Pannonia students",
+   "value": "9 632",
+   "year": "",
+   "url": "https://en.wikipedia.org/wiki/University_of_Pannonia"
+  },
+  {
+   "label_hu": "One Veszprém Aréna befogadóképessége",
+   "label_en": "One Veszprém Arena capacity",
+   "value": "max. 5500 fő",
+   "year": "",
+   "url": "https://www.veszpreminfo.hu/en/place/one-veszprem-arena"
+  },
+  {
+   "label_hu": "Petőfi Színház éves nézőszáma",
+   "label_en": "Petőfi Theatre annual visitors",
+   "value": "kb. 100 000",
+   "year": "",
+   "url": "https://www.veszpreminfo.hu/en/place/petofi-theatre-of-veszprem"
+  },
+  {
+   "label_hu": "Laczkó Dezső Múzeum gyűjteménye",
+   "label_en": "Laczkó Dezső Museum collection",
+   "value": "kb. 330 000 tárgy",
+   "year": "",
+   "url": "https://www.veszpreminfo.hu/en/place/laczko-dezso-museum"
+  },
+  {
+   "label_hu": "V-Bike állomások",
+   "label_en": "V-Bike stations",
+   "value": "19",
+   "year": "",
+   "url": "https://www.veszpreminfo.hu/en/place/v-bike"
+  },
+  {
+   "label_hu": "EKF 2023 programban részt vevő települések",
+   "label_en": "Settlements in the ECoC 2023 programme",
+   "value": "116",
+   "year": "2023",
+   "url": "https://www.veszpreminfo.hu/en/place/gyarkert-culturepark"
+  }
+ ],
+ "history": [
+  {
+   "era_hu": "Újkőkor",
+   "era_en": "Neolithic",
+   "period": "Kr. e. 5. évezred",
+   "text_hu": "A mai Jutasi úti lakótelep területén már az újkőkor–rézkor idején település állt.",
+   "text_en": "A Neolithic–Chalcolithic settlement stood on the site of today's Jutasi housing estate.",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "era_hu": "Újkőkor – Bakonyi radiolarit",
+   "era_en": "Neolithic – Bakony radiolarite",
+   "period": "Újkőkor",
+   "text_hu": "A közeli Szentgál-Tűzköveshegyen radiolarit-lelőhely és bányászat volt; a környék újkőkori telepein ebből készítettek pattintott kőeszközöket.",
+   "text_en": "Radiolarite was extracted at nearby Szentgál-Tűzköveshegy, and Neolithic sites around Szentgál produced chipped stone tools from it.",
+   "url": "https://journals.iaepan.pl/apolona/article/view/282"
+  },
+  {
+   "era_hu": "Bronzkor",
+   "era_en": "Bronze Age",
+   "period": "Kr. e. 2. évezred",
+   "text_hu": "A középső bronzkorban a Várhegyen megerősített törzsfői székhely állt.",
+   "text_en": "In the Middle Bronze Age a fortified chieftain's seat stood on Castle Hill.",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "era_hu": "Római kor",
+   "era_en": "Roman era",
+   "period": "Kr. u. 1–4. század",
+   "text_hu": "A közeli Balácán a rómaiak az 1. században jelentek meg; a villagazdaság a 2–4. században nagy birtokközponttá nőtt, falfestményei és mozaikpadlói ma is láthatók.",
+   "text_en": "Romans arrived at nearby Baláca in the 1st century; the villa estate grew into a large manor in the 2nd–4th centuries, and its murals and mosaic floors can still be seen.",
+   "url": "https://www.veszpreminfo.hu/en/place/balaca-archaeological-park"
+  },
+  {
+   "era_hu": "Avar kor és honfoglalás",
+   "era_en": "Avar period and Hungarian conquest",
+   "period": "6–10. század",
+   "text_hu": "A környéken avar kori leletek kerültek elő; a 10. század elején Géza nemzetsége vette birtokba Veszprémet és vidékét, a század végére fejedelmi-királyi székhely lett.",
+   "text_en": "Avar-period finds come from the area; in the early 10th century Géza's family took the town, and by the century's end it had become a princely and royal seat.",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "era_hu": "Árpád-kor",
+   "era_en": "Árpád era",
+   "period": "997",
+   "text_hu": "István Veszprém közelében győzte le Koppányt.",
+   "text_en": "Stephen defeated Koppány in a battle near Veszprém.",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "era_hu": "Árpád-kor – Gizella",
+   "era_en": "Árpád era – Gisela",
+   "period": "1000/1001",
+   "text_hu": "Gizella királyné István feleségeként segítette a veszprémi püspökség és a székesegyház létrejöttét; a város emlékét a „Királynék városa” név őrzi.",
+   "text_en": "Queen Gisela, wife of Stephen I, helped establish the Veszprém bishopric and cathedral; the city honours her with the title 'City of Queens'.",
+   "url": "https://www.veszpreminfo.hu/en/hidden-gem-in-veszprem/queen-gisela"
+  },
+  {
+   "era_hu": "Árpád-kor – első püspökség",
+   "era_en": "Árpád era – first bishopric",
+   "period": "1001–1002",
+   "text_hu": "Létrejött a püspökség és az ország első székesegyháza, a Szent Mihály-templom.",
+   "text_en": "The bishopric and the country's first cathedral, St Michael's, were established.",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "era_hu": "Árpád-kor – görög apácakolostor",
+   "era_en": "Árpád era – Greek nunnery",
+   "period": "1018 körül",
+   "text_hu": "A Veszprém-völgyben görög apácakolostor alakult; görög nyelvű alapítólevele Szent István egyetlen hiteles fennmaradt oklevele.",
+   "text_en": "A Greek nunnery was founded in the Veszprém Valley; its Greek-language charter is the only authentic surviving document of St Stephen.",
+   "url": "https://www.veszpreminfo.hu/en/place/ruins-of-the-greek-orthodox-nunnery"
+  },
+  {
+   "era_hu": "Királynék városa",
+   "era_en": "City of Queens",
+   "period": "1216",
+   "text_hu": "A pápa megerősítette, hogy a veszprémi püspököket illeti a királynék koronázásának joga.",
+   "text_en": "The Pope confirmed the right of Veszprém's bishops to crown Hungary's queens.",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "era_hu": "Árpád-kor – domonkos apácák",
+   "era_en": "Árpád era – Dominican nuns",
+   "period": "1239–1240",
+   "text_hu": "Felépült a domonkos apácák Szent Katalin-kolostora, ahol Árpád-házi Szent Margit is nevelkedett; romjai ma a Margit-romok.",
+   "text_en": "The Dominican St Catherine nunnery was built, where St Margaret of the Árpád dynasty was raised; its remains are today's Margit Ruins.",
+   "url": "https://www.veszpreminfo.hu/en/place/margaret-ruins"
+  },
+  {
+   "era_hu": "Középkor",
+   "era_en": "Middle Ages",
+   "period": "1276",
+   "text_hu": "Csák Péter csapatai feldúlták a várat és a székesegyházat, és felgyújtották az ország első felsőfokú iskoláját.",
+   "text_en": "Péter Csák's troops attacked the castle, looted the cathedral and burned the country's first higher-education school.",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "era_hu": "Késő középkor",
+   "era_en": "Late Middle Ages",
+   "period": "1458–1486",
+   "text_hu": "Vetési Albert püspöksége alatt Veszprém kulturális központ lett; 1476-ban ő koronázta meg Beatrix királynét.",
+   "text_en": "Under Bishop Albert Vetési Veszprém became a cultural centre; in 1476 he crowned Queen Beatrix.",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "era_hu": "Török kor",
+   "era_en": "Ottoman wars",
+   "period": "1527–1683",
+   "text_hu": "A vár 1552-ben török kézre került, és a korszakban tizenegyszer cserélt gazdát; a törököket 1683-ban űzték ki véglegesen.",
+   "text_en": "The castle fell to the Ottomans in 1552 and changed hands eleven times during the period; the Turks were finally expelled in 1683.",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "era_hu": "Rákóczi-kor",
+   "era_en": "Early 18th century",
+   "period": "1701–1706",
+   "text_hu": "A végvári erődítést I. Lipót rendeletére felrobbantották, a vár védelmi szerepe megszűnt.",
+   "text_en": "The border fortress was blown up on Leopold I's orders, ending the castle's military role.",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "era_hu": "Barokk újjáépítés",
+   "era_en": "Baroque rebuilding",
+   "period": "1745–1776",
+   "text_hu": "Padányi Biró Márton püspök kezdte el a Várhegy barokk átalakítását (Szentháromság-szobor, 1750), Koller Ignác pedig felépíttette a Fellner Jakab tervezte érseki palotát.",
+   "text_en": "Bishop Márton Padányi Biró began the Baroque remodelling of Castle Hill (Holy Trinity statue, 1750), and Bishop Ignác Koller had the Archbishop's Palace designed by Jakab Fellner built.",
+   "url": "https://www.veszpreminfo.hu/en/place/archbishops-palace"
+  },
+  {
+   "era_hu": "19. század",
+   "era_en": "19th century",
+   "period": "1842–1848",
+   "text_hu": "Petőfi Sándor kétszer járt Veszprémben; 1848. március 17-én a polgárok csatlakoztak a forradalomhoz.",
+   "text_en": "Sándor Petőfi visited Veszprém twice; on 17 March 1848 citizens joined the revolution.",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "era_hu": "19. század – városi rang",
+   "era_en": "19th century – town status",
+   "period": "1870",
+   "text_hu": "Veszprém városi rangot kapott; 1887-ben felépült a megyeháza.",
+   "text_en": "Veszprém received town status; the County Hall was built in 1887.",
+   "url": "https://en.wikipedia.org/wiki/Veszpr%C3%A9m"
+  },
+  {
+   "era_hu": "20. század eleje",
+   "era_en": "Early 20th century",
+   "period": "1908",
+   "text_hu": "Megnyílt a Medgyaszay István tervezte, vasbeton szerkezetű Petőfi Színház, és kiépült a város villanyhálózata.",
+   "text_en": "The Petőfi Theatre, a reinforced-concrete building designed by István Medgyaszay, opened and the electricity network was built.",
+   "url": "https://vigado.hu/web/en/-/istvan-szenes-petofi-theatre-veszprem-hungary-1988-reconstruction"
+  },
+  {
+   "era_hu": "Utolsó királyné koronázása",
+   "era_en": "Last queen's coronation",
+   "period": "1916. december 31.",
+   "text_hu": "Hornig Károly veszprémi püspök koronázta meg Zitát, az utolsó magyar királynét.",
+   "text_en": "Bishop Károly Hornig of Veszprém crowned Zita, the last Hungarian queen.",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "era_hu": "Két világháború között",
+   "era_en": "Interwar years",
+   "period": "1937–1938",
+   "text_hu": "Felépült a Séd-völgy feletti viadukt (1937), amely 1938-ban a Szent István völgyhíd nevet kapta; ugyanekkor állították fel István és Gizella szobrát a Várban.",
+   "text_en": "The viaduct over the Séd valley was built (1937) and named St Stephen Viaduct in 1938, when the statues of Stephen and Gisela were also unveiled in the Castle.",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "era_hu": "II. világháború",
+   "era_en": "World War II",
+   "period": "1944–1945",
+   "text_hu": "1944 októberétől decemberig a Szent Koronát Veszprémben őrizték; a várost 1945. március 23-án foglalták el a szovjet csapatok.",
+   "text_en": "The Holy Crown was kept in Veszprém from October to December 1944; Soviet troops took the city on 23 March 1945.",
+   "url": "https://en.wikipedia.org/wiki/Veszpr%C3%A9m"
+  },
+  {
+   "era_hu": "Egyetemváros",
+   "era_en": "University town",
+   "period": "1949",
+   "text_hu": "Megalakult a vegyipari egyetem elődje, amely 1951-ben önálló lett; 2006 óta Pannon Egyetem néven működik.",
+   "text_en": "The predecessor of the chemical engineering university was founded, becoming independent in 1951; since 2006 it is the University of Pannonia.",
+   "url": "https://en.wikipedia.org/wiki/University_of_Pannonia"
+  },
+  {
+   "era_hu": "1956 és a szocialista évtizedek",
+   "era_en": "1956 and the socialist decades",
+   "period": "1956–1975",
+   "text_hu": "A város részt vett az 1956-os forradalomban; 1957-től lakótelepek épültek, 1958-ban megnyílt az állatkert, 1975-ben felújították a Várat és a belvárost.",
+   "text_en": "The city took part in the 1956 revolution; housing estates were built from 1957, the zoo opened in 1958, and the Castle and centre were renovated in 1975.",
+   "url": "https://www.veszpreminfo.hu/en/veszprem-the-city-of-queens"
+  },
+  {
+   "era_hu": "Rendszerváltás után",
+   "era_en": "After 1989",
+   "period": "1989–1993",
+   "text_hu": "A szovjet csapatok kivonultak, Veszprém megyei jogú város lett, a püspökség 1993-ban érsekség rangjára emelkedett.",
+   "text_en": "Soviet troops left, Veszprém became a city with county rights, and the bishopric was raised to an archbishopric in 1993.",
+   "url": "https://en.wikipedia.org/wiki/Veszpr%C3%A9m"
+  },
+  {
+   "era_hu": "Megújulás",
+   "era_en": "Renewal",
+   "period": "2010–2011",
+   "text_hu": "Elkezdődött a Veszprém-völgy és a belváros teljes megújítása; 2011 márciusától látogatható a Kolostorok és Kertek sétány.",
+   "text_en": "Full renewal of the Veszprém Valley and city centre began; the Cloisters and Gardens walkway opened in March 2011.",
+   "url": "https://www.veszpreminfo.hu/en/place/cloisters-and-gardens"
+  },
+  {
+   "era_hu": "Európa Kulturális Fővárosa",
+   "era_en": "European Capital of Culture",
+   "period": "2023",
+   "text_hu": "Veszprém a Bakony–Balaton régióval közösen viselte az Európa Kulturális Fővárosa címet; a nyitóünnep 2023. január 21-én volt.",
+   "text_en": "Veszprém, together with the Bakony–Balaton region, held the European Capital of Culture title; the opening was on 21 January 2023.",
+   "url": "https://szkopje.mfa.gov.hu/hu/articles/europa-kulturalis-fovarosa-2023-veszprem-es-a-bakony-balaton-regio"
+  },
+  {
+   "era_hu": "Napjainkban",
+   "era_en": "Today",
+   "period": "2026",
+   "text_hu": "Új kulturális helyszínek működnek (CODE, Gyárkert, FOTON), a One Veszprém Arénában koncertek és kézilabda BL-meccsek zajlanak.",
+   "text_en": "New cultural venues operate (CODE, Gyárkert, FOTON), and One Veszprém Arena hosts concerts and Champions League handball.",
+   "url": "https://www.veszpreminfo.hu/en/places/worth-seeing/l:theatres-event-venues"
+  }
+ ],
+ "sights": [
+  {
+   "name": "Veszprémi vár – Vár utca séta",
+   "category": "architecture",
+   "address": "Vár utca, 8200 Veszprém",
+   "tags": "vár ingyenes séta barokk",
+   "desc_hu": "A Hősök kapujától a Benedek-hegyig tartó séta a Vár utcán; a legtöbb épület barokk. A vár látogatása ingyenes, az egyes helyszínek jegyesek.",
+   "desc_en": "A walk along Vár utca from Heroes' Gate to Benedict Hill; most buildings are Baroque. The castle is free, individual sights charge admission.",
+   "hours_note_hu": "A Vár utca autóval hétköznap 17:00-tól másnap 6:00-ig, hétvégén és ünnepnap egész nap hajtható be.",
+   "url": "https://www.veszpreminfo.hu/en/place/walk-in-the-veszprem-castle"
+  },
+  {
+   "name": "Hősök kapuja",
+   "category": "monument",
+   "address": "Vár utca 2, 8200 Veszprém",
+   "tags": "vár múzeum emlékmű",
+   "desc_hu": "Az első világháború áldozatainak emlékére épült várkapu, 1939-ben nyílt meg; kiállítása a város 1848–49-es, világháborús és 1956-os történetét mutatja be.",
+   "desc_en": "A castle gate memorial to WWI victims opened in 1939; its exhibition covers the city's history in 1848–49, both World Wars and 1956.",
+   "hours_note_hu": "Az LDM oldala szerint átmenetileg zárva (2026. okt.).",
+   "url": "https://www.ldm.hu/hu/jegyarak-nyitva-tartas"
+  },
+  {
+   "name": "Tűztorony",
+   "category": "view",
+   "address": "Vár utca 9, 8200 Veszprém",
+   "tags": "kilátó vár jelkép",
+   "desc_hu": "Eredetileg őrtorony, később tűzjelző torony; csigalépcsőn lehet felmenni a városra néző erkélyre. Óraszerkezete óránként Csermák Antal verbunkos zenéjét játssza.",
+   "desc_en": "Originally a watchtower, later a fire-alarm tower; a spiral staircase leads to a city view. Its clock plays Antal Csermák's recruiting music every hour.",
+   "hours_note_hu": "K–V 9:00–17:00, hétfőn zárva; felnőtt jegy 1500 Ft (LDM, 2026).",
+   "url": "https://www.ldm.hu/hu/jegyarak-nyitva-tartas"
+  },
+  {
+   "name": "Érseki palota",
+   "category": "architecture",
+   "address": "Vár utca 16, 8200 Veszprém",
+   "tags": "vár barokk vezetett túra",
+   "desc_hu": "Koller Ignác püspök megbízásából Fellner Jakab tervezte; 1765 és 1776 között épült U alakú barokk palota, Johann Cymbal 1772-es freskóival.",
+   "desc_en": "Commissioned by Bishop Ignác Koller and designed by Jakab Fellner, this U-shaped Baroque palace was built 1765–1776 and has 1772 frescoes by Johann Cymbal.",
+   "hours_note_hu": "Vezetett túrával látogatható; részletek: vetk.hu.",
+   "url": "https://www.veszpreminfo.hu/en/place/archbishops-palace"
+  },
+  {
+   "name": "Gizella-kápolna",
+   "category": "church",
+   "address": "Vár utca 16, 8200 Veszprém",
+   "tags": "vár Árpád-kor freskó",
+   "desc_hu": "Robertus püspök által épített püspöki vagy királyi magánkápolna; falait 13. századi, bizánci stílusú apostolfreskók díszítik, amelyek az ország legrégebbi festményei közé tartoznak.",
+   "desc_en": "A private episcopal or royal chapel built by Bishop Robertus; its walls bear 13th-century Byzantine-style frescoes of the apostles, among Hungary's oldest paintings.",
+   "hours_note_hu": "Átmenetileg nem látogatható (veszpreminfo, 2026).",
+   "url": "https://www.veszpreminfo.hu/en/place/gisela-chapel"
+  },
+  {
+   "name": "Szent Mihály-főszékesegyház",
+   "category": "church",
+   "address": "Vár utca 20, 8200 Veszprém",
+   "tags": "vár bazilika Gizella",
+   "desc_hu": "Az ország első püspöki székesegyházának helyén áll; mai neoromán homlokzata az 1907–1910-es átépítésből származik. 1981 óta bazilika minor, alatta nagy barokk kripta van.",
+   "desc_en": "Stands on the site of Hungary's first episcopal cathedral; its neo-Romanesque facade dates from the 1907–1910 rebuild. A minor basilica since 1981, with a large Baroque crypt.",
+   "url": "https://www.veszpreminfo.hu/en/place/saint-michaels-cathedral"
+  },
+  {
+   "name": "Szent György-kápolna romjai",
+   "category": "church",
+   "address": "Vár utca 20, 8200 Veszprém",
+   "tags": "vár rom Szent Imre",
+   "desc_hu": "A székesegyház melletti körkápolna egykor Szent György fejereklyéjét őrizte; a hagyomány szerint itt tett szüzességi fogadalmat Szent Imre.",
+   "desc_en": "Remains of a round chapel beside the cathedral that once held St George's head relic; by tradition St Emeric took his vow of chastity here.",
+   "hours_note_hu": "Vezetett túrával látogatható (vetk.hu).",
+   "url": "https://www.veszpreminfo.hu/en/place/saint-george-chapel"
+  },
+  {
+   "name": "Dubniczay-palota",
+   "category": "museum",
+   "address": "Vár utca 29, 8200 Veszprém",
+   "tags": "vár kiállítás Művészetek Háza",
+   "desc_hu": "A Vár utca és a Szentháromság tér közötti barokk palota; udvara alatt 16. századi kőboltozatos pince, az ásatásokon várfal és ágyúbástya maradványai kerültek elő.",
+   "desc_en": "A Baroque palace between Vár utca and Holy Trinity Square with a 16th-century vaulted cellar; excavations revealed castle-wall and cannon-bastion remains.",
+   "url": "https://www.veszpreminfo.hu/en/place/dubniczay-palace"
+  },
+  {
+   "name": "Vass László Gyűjtemény – Modern Képtár",
+   "category": "museum",
+   "address": "Vár utca 3–7, 8200 Veszprém",
+   "tags": "vár modern művészet Művészetek Háza",
+   "desc_hu": "Konstruktivista és absztrakt művek magyar és európai mesterektől; 2026. december 31-ig a gyűjtemény francia anyagából látható kiállítás.",
+   "desc_en": "Constructivist and abstract works by Hungarian and European masters; a show from its French collection runs until 31 December 2026.",
+   "hours_note_hu": "H–K zárva; Sze–P 10:00–17:00, Szo–V 10:00–20:00.",
+   "url": "https://www.veszpreminfo.hu/en/place/modern-art-gallery-laszlo-vass-collection"
+  },
+  {
+   "name": "Csikász Galéria",
+   "category": "museum",
+   "address": "Vár utca 17, 8200 Veszprém",
+   "tags": "vár kortárs művészet Művészetek Háza",
+   "desc_hu": "A Vár utca elején, a boltíves kapu után balra; egész évben változó kortárs képzőművészeti kiállítások.",
+   "desc_en": "Just inside the arched gate at the start of Vár utca; rotating contemporary art exhibitions throughout the year.",
+   "url": "https://www.veszpreminfo.hu/en/place/csikasz-gallery"
+  },
+  {
+   "name": "Vár Börtön (Ember a rács mögött)",
+   "category": "museum",
+   "address": "Jókai Mór utca 8, 8200 Veszprém",
+   "tags": "vár interaktív kiállítás börtön",
+   "desc_hu": "A 2003-ig működő egykori várbörtön látogatóközpontja interaktív állandó kiállítással a rabok életéről; a börtön a 17. században egyetlen cellával indult.",
+   "desc_en": "Visitor centre in the former castle jail (closed 2003) with an interactive exhibition on prison life; the jail began with a single cell in the 1600s.",
+   "url": "https://www.veszpreminfo.hu/en/place/dungeon"
+  },
+  {
+   "name": "Szentháromság-szobor",
+   "category": "monument",
+   "address": "Szentháromság tér, 8200 Veszprém",
+   "tags": "vár barokk ingyenes",
+   "desc_hu": "Padányi Biró Márton püspök állíttatta 1750-ben; kb. 15 méter magas barokk emlékmű, eredeti szobrait másolatok váltották fel.",
+   "desc_en": "Erected by Bishop Márton Padányi Biró in 1750; a roughly 15 m Baroque monument whose original statues were replaced by copies.",
+   "url": "https://www.veszpreminfo.hu/en/place/holy-trinity-statue"
+  },
+  {
+   "name": "Ferences templom",
+   "category": "church",
+   "address": "Vár utca 33, 8200 Veszprém",
+   "tags": "vár rokokó",
+   "desc_hu": "1730-ban épült egyhajós templom; kriptájában nyugszik Ányos Pál pálos szerzetes költő.",
+   "desc_en": "Single-nave church built in 1730; poet and Pauline monk Pál Ányos is buried in its crypt.",
+   "hours_note_hu": "Átmenetileg nem látogatható (veszpreminfo, 2026).",
+   "url": "https://www.veszpreminfo.hu/en/place/franciscan-church"
+  },
+  {
+   "name": "Szent Imre piarista templom",
+   "category": "church",
+   "address": "Vár utca 12–14, 8200 Veszprém",
+   "tags": "vár klasszicista",
+   "desc_hu": "1828 és 1836 között épült piarista és helyőrségi templom, a vár legalacsonyabban fekvő temploma.",
+   "desc_en": "Piarist and garrison church built 1828–1836, the lowest-lying church in the Castle.",
+   "hours_note_hu": "Átmenetileg nem látogatható (veszpreminfo, 2026).",
+   "url": "https://www.veszpreminfo.hu/en/place/st-emeric-church"
+  },
+  {
+   "name": "Biró–Giczey-ház (Madaras ház)",
+   "category": "museum",
+   "address": "Vár utca 31, 8200 Veszprém",
+   "tags": "vár barokk érseki turisztikai központ",
+   "desc_hu": "Földszintje 1733-ban épült, emelete 1772 után; madaras secco-díszítései miatt Madaras háznak is hívják. 2023 óta érseki turisztikai központ.",
+   "desc_en": "Ground floor built 1733, upper floor after 1772; nicknamed the House of Birds for its bird seccos. Since 2023 it is the Archiepiscopal Tourist Centre.",
+   "url": "https://www.veszpreminfo.hu/en/place/the-biro-giczey-house"
+  },
+  {
+   "name": "Szent István és Gizella szobra",
+   "category": "view",
+   "address": "Vár utca 39, 8200 Veszprém",
+   "tags": "vár kilátó jelkép ingyenes",
+   "desc_hu": "Ispánky József 1938-ban felállított szoborpárja a Vár utca végi kilátóteraszon; a városra és a Bakonyra nyílik kilátás.",
+   "desc_en": "József Ispánky's 1938 statues of the royal couple on the lookout terrace at the end of Vár utca, with views of the city and the Bakony.",
+   "url": "https://www.veszpreminfo.hu/en/place/statues-of-saint-stephen-and-gisela"
+  },
+  {
+   "name": "Benedek-hegy",
+   "category": "view",
+   "address": "Benedek-hegy, 8200 Veszprém",
+   "tags": "kilátó ingyenes kutyabarát",
+   "desc_hu": "A vár északi oldaláról keskeny lépcsőn érhető el; a kőkeresztől a városra, a Séd-völgyre és a viaduktra látni.",
+   "desc_en": "Reached by narrow stairs on the castle's north side; from the stone cross you see the city, Séd valley and the viaduct.",
+   "url": "https://www.veszpreminfo.hu/en/place/benedict-hill"
+  },
+  {
+   "name": "Szent István völgyhíd (viadukt)",
+   "category": "architecture",
+   "address": "Fejes-völgy, 8200 Veszprém",
+   "tags": "híd kilátás ingyenes",
+   "desc_hu": "Vasbeton ívhíd, 1937 decemberében készült el; kb. 50 méterrel ível át a Séd felett, róla a várra és a Bakonyra látni.",
+   "desc_en": "Reinforced-concrete arch bridge completed in December 1937; it spans the Séd stream at about 50 m with views of the castle and Bakony.",
+   "url": "https://www.veszpreminfo.hu/en/place/saint-stephan-viaduct"
+  },
+  {
+   "name": "Kolostorok és Kertek",
+   "category": "park",
+   "address": "Veszprémvölgyi u. 68, 8200 Veszprém",
+   "tags": "park Séd játszótér ingyenes kerékpár",
+   "desc_hu": "Séd-völgyi parkrendszer két Árpád-kori kolostorromal, tóval és három játszótérrel; sétány köti össze a várral és az állatkerttel.",
+   "desc_en": "A Séd-valley park with two Árpád-era cloister ruins, a lake and three playgrounds; a walkway links it to the castle and the zoo.",
+   "url": "https://www.veszpreminfo.hu/en/place/cloisters-and-gardens"
+  },
+  {
+   "name": "Görög apácakolostor romjai",
+   "category": "monument",
+   "address": "Veszprémvölgyi út, 8200 Veszprém",
+   "tags": "rom Árpád-kor ingyenes",
+   "desc_hu": "Az ország egyik legkorábbi apácakolostora; a legenda szerint itt készült a koronázási palást.",
+   "desc_en": "One of Hungary's earliest nunneries; legend says the coronation mantle was made here.",
+   "url": "https://www.veszpreminfo.hu/en/place/ruins-of-the-greek-orthodox-nunnery"
+  },
+  {
+   "name": "Jezsuita templom (Kolostorok és Kertek)",
+   "category": "church",
+   "address": "Veszprémvölgyi út, 8200 Veszprém",
+   "tags": "barokk rom ingyenes",
+   "desc_hu": "A jezsuiták 1744-ben kezdték építeni a barokk kápolnát, de a rend 1773-as feloszlatása miatt sosem fejezték be és nem szentelték fel.",
+   "desc_en": "The Jesuits began this Baroque chapel in 1744, but it was never finished or consecrated after the order was dissolved in 1773.",
+   "url": "https://www.veszpreminfo.hu/en/place/jesuit-church"
+  },
+  {
+   "name": "Margit-romok",
+   "category": "monument",
+   "address": "Margit tér 2, 8200 Veszprém",
+   "tags": "rom Árpád-kor Szent Margit",
+   "desc_hu": "Az 1240 körül épült domonkos apácakolostor romjai, ahol Szent Margit hat évig nevelkedett; 1938-ban tárták fel.",
+   "desc_en": "Ruins of the Dominican nunnery built around 1240, where St Margaret was raised for six years; excavated in 1938.",
+   "url": "https://www.veszpreminfo.hu/en/place/margaret-ruins"
+  },
+  {
+   "name": "Szerelem-sziget",
+   "category": "park",
+   "address": "Úrkút utca, 8200 Veszprém",
+   "tags": "romantikus Séd ingyenes kutyabarát",
+   "desc_hu": "Árnyas sétány hidacskákkal és padokkal a vár keleti lábánál, a Séd partján.",
+   "desc_en": "A shady path with small bridges and benches at the castle's eastern foot by the Séd stream.",
+   "url": "https://www.veszpreminfo.hu/en/place/love-island"
+  },
+  {
+   "name": "História Kert",
+   "category": "park",
+   "address": "Remete köz 8, 8200 Veszprém",
+   "tags": "park VeszprémFest ingyenes",
+   "desc_hu": "Közel 4000 m²-es park a várhegy keleti lábánál, a Kolostorok és Kertek sétány kiindulópontja; a VeszprémFest fő helyszíne.",
+   "desc_en": "A nearly 4,000 m² park at the castle hill's eastern foot, start of the Cloisters and Gardens path and main venue of VeszprémFest.",
+   "url": "https://www.veszpreminfo.hu/en/place/historia-garden"
+  },
+  {
+   "name": "Kutas tér",
+   "category": "park",
+   "address": "Pajta utca 7, 8200 Veszprém",
+   "tags": "Séd ivókút ingyenes",
+   "desc_hu": "2011-ben felújított tér a vár alján, ivókúttal; innen látni az érseki palota hátsó teraszát.",
+   "desc_en": "A square at the foot of the castle renovated in 2011, with a drinking fountain and a view of the Archbishop's Palace terrace.",
+   "url": "https://www.veszpreminfo.hu/en/place/kutas-square"
+  },
+  {
+   "name": "Laczkó-forrás",
+   "category": "nature",
+   "address": "Veszprémvölgyi u. 122, 8200 Veszprém",
+   "tags": "forrás tűzrakó kerékpár ingyenes",
+   "desc_hu": "1935-ben épült forrásfoglalás a Betekints-völgy végén, a Gulya-domb lábánál; 2017 óta újra folyik a víz, tűzrakóhely és esőbeálló is van.",
+   "desc_en": "A 1935 spring house at the end of Betekints valley below Gulya Hill; water has flowed again since 2017, with a fire pit and rain shelter.",
+   "url": "https://www.veszpreminfo.hu/en/place/laczko-spring"
+  },
+  {
+   "name": "Gizella királyné kilátó (Gulya-domb)",
+   "category": "view",
+   "address": "Gulya-dombi parkerdő, 8200 Veszprém",
+   "tags": "kilátó erdő állatkert",
+   "desc_hu": "22 méteres kilátó a Gulya-dombon, kb. 10 perc sétára az állatkert felső parkolójától.",
+   "desc_en": "A 22 m lookout tower on Gulya Hill, about a 10-minute walk from the zoo's upper car park.",
+   "url": "https://www.veszpreminfo.hu/en/place/lookout-points"
+  },
+  {
+   "name": "Harmat utcai kilátópont",
+   "category": "view",
+   "address": "Harmat utca, 8200 Veszprém",
+   "tags": "kilátó fotó",
+   "desc_hu": "Az egyetlen pont, ahonnan a vár és a viadukt együtt látható.",
+   "desc_en": "The only spot where the castle and the viaduct are visible together.",
+   "url": "https://www.veszpreminfo.hu/en/place/lookout-points"
+  },
+  {
+   "name": "Jutas vitéz kilátó",
+   "category": "view",
+   "address": "Aranyos-völgy (Fenyves utca felől), 8200 Veszprém",
+   "tags": "kilátó túra",
+   "desc_hu": "6,15 méteres rönkkilátó, az Aranyos-völgyön át érhető el; kilátás a Bakonyra, a városra és a várra.",
+   "desc_en": "A 6.15 m log lookout reached via the Aranyos valley, with views of the Bakony, the city and the castle.",
+   "url": "https://www.veszpreminfo.hu/en/place/lookout-points"
+  },
+  {
+   "name": "Csatár-hegyi kilátó",
+   "category": "view",
+   "address": "Csatár-hegy, 8200 Veszprém",
+   "tags": "kilátó túra",
+   "desc_hu": "A kb. 375 m magas Csatár-hegyen álló, háromszintes, közel 12 m-es torony; a közelben a Szent Kereszt-kápolna.",
+   "desc_en": "A three-level, almost 12 m tower on the roughly 375 m Csatár Hill, near the Holy Cross chapel.",
+   "url": "https://www.programturizmus.hu/partner-csatar-hegyi-kilato-veszprem.html"
+  },
+  {
+   "name": "Tethys-zöldút és Őskori alagút",
+   "category": "nature",
+   "address": "Kittenberger Kálmán u. 2, 8200 Veszprém",
+   "tags": "falfestmény őslénytan ingyenes",
+   "desc_hu": "A Dózsa György út alatti aluljáróban 230 millió éves ősállatokat ábrázoló falfestmény; fő alakja a város jelképévé vált Placochelys teknős.",
+   "desc_en": "An underpass mural of animals from about 230 million years ago; its star is the Placochelys turtle, now a city symbol.",
+   "url": "https://www.veszpreminfo.hu/en/place/tethys-veszprem-green-route-and-the-prehistoric-tunnel"
+  },
+  {
+   "name": "Szent Miklós-szeg és Kálvária-domb",
+   "category": "nature",
+   "address": "Erzsébet liget, 8200 Veszprém",
+   "tags": "rom dolomit ingyenes",
+   "desc_hu": "Középkori városrész a Szent Miklós-templom romjával (1552-ben pusztult el); a Kálvária-domb 210–230 millió éves dolomitjában kövületek láthatók.",
+   "desc_en": "A medieval quarter with the ruined St Nicholas church (destroyed 1552); Calvary Hill's 210–230-million-year-old dolomite shows fossils.",
+   "url": "https://www.veszpreminfo.hu/en/place/szent-miklos-szeg"
+  },
+  {
+   "name": "Óváros tér és Rákóczi utca",
+   "category": "architecture",
+   "address": "Óváros tér, 8200 Veszprém",
+   "tags": "belváros tér fesztivál ingyenes",
+   "desc_hu": "Nyolcszögletű tér, a város szíve, egykor piactér; itt tartják a Rozé, Rizling és Jazz Napokat. A 8-as számú házban ma is gyógyszertár működik.",
+   "desc_en": "An octagonal square, the heart of the city and a former market; it hosts the Rosé, Riesling and Jazz Days. House no. 8 still operates as a pharmacy.",
+   "url": "https://www.veszpreminfo.hu/en/place/old-town-square-rakoczi-street"
+  },
+  {
+   "name": "Városháza és Zsuzsi-szobor",
+   "category": "architecture",
+   "address": "Óváros tér 9, 8200 Veszprém",
+   "tags": "belváros szobor fotó",
+   "desc_hu": "Az 1857-ben épült romantikus stílusú épület 1990 óta városháza; mellette áll 1962 óta a Korsós lány, közismert nevén Zsuzsi-szobor.",
+   "desc_en": "A romantic-style building from 1857, city hall since 1990; beside it stands the 1962 'Girl with a Jug', known locally as the Zsuzsi statue.",
+   "url": "https://www.veszpreminfo.hu/en/place/city-hall-statue-of-zsuzsi"
+  },
+  {
+   "name": "Laczkó Dezső Múzeum",
+   "category": "museum",
+   "address": "Erzsébet sétány 1, 8200 Veszprém",
+   "tags": "múzeum helytörténet esőnap",
+   "desc_hu": "A városligeti főépület 1925-ben nyílt; mintegy 330 ezer tárgyat őriz. Az Emlékgép helytörténeti kiállítás 2026. december 31-ig látható.",
+   "desc_en": "The main building in the city park opened in 1925 and holds about 330,000 items. The 'Memory Machine' local history exhibition runs until 31 December 2026.",
+   "hours_note_hu": "K–V 10:00–18:00 (pénztár 17:30-ig), hétfőn zárva.",
+   "url": "https://www.ldm.hu/hu/jegyarak-nyitva-tartas"
+  },
+  {
+   "name": "Bakonyi Ház",
+   "category": "museum",
+   "address": "Erzsébet sétány 3, 8200 Veszprém",
+   "tags": "skanzen néprajz múzeum",
+   "desc_hu": "Az ország egyik legrégebbi szabadtéri néprajzi kiállítása; 1935-ben épült közadakozásból, kisnemesi ház mintájára.",
+   "desc_en": "One of Hungary's oldest open-air folk exhibitions, built in 1935 from public donations on the model of a lesser-noble house.",
+   "hours_note_hu": "K–V 10:00–18:00, hétfőn zárva; felnőtt jegy 1600 Ft.",
+   "url": "https://www.ldm.hu/hu/jegyarak-nyitva-tartas"
+  },
+  {
+   "name": "Kittenberger Kálmán Növény- és Vadaspark (Veszprémi Állatkert)",
+   "category": "park",
+   "address": "Kittenberger Kálmán u. 17, 8200 Veszprém",
+   "tags": "állatkert család Fejes-völgy dínópark",
+   "desc_hu": "1958-ban nyílt állatkert a Fejes-völgyben és a Gulya-dombon; többek közt pápaszemes pingvinek, fókák, orrszarvú, elefántok és oroszlánok, valamint dínópark.",
+   "desc_en": "Opened in 1958 in the Fejes valley and on Gulya Hill; animals include penguins, seals, a rhino, elephants and lions, plus a dinosaur park.",
+   "url": "https://www.veszpreminfo.hu/en/place/veszprem-zoo"
+  },
+  {
+   "name": "CODE – Digitális Élmények Központja",
+   "category": "museum",
+   "address": "Dózsa György utca 2, 8200 Veszprém",
+   "tags": "digitális immerzív esőnap gyerek",
+   "desc_hu": "A felújított egykori megyei művelődési központban digitális és immerzív kiállítások; 2026 végéig Notre-Dame és Vasarely tárlat.",
+   "desc_en": "Digital and immersive exhibitions in the renovated former county cultural centre; Notre-Dame and Vasarely shows run until the end of 2026.",
+   "url": "https://www.veszpreminfo.hu/en/place/code-centre-of-digital-experiences"
+  },
+  {
+   "name": "Fenyves-malom",
+   "category": "museum",
+   "address": "Fenyves utca 65, 8200 Veszprém",
+   "tags": "malom interaktív gyerek",
+   "desc_hu": "Veszprém egyetlen ép vízimalmában interaktív malomtörténeti kiállítás; előzetes bejelentkezéssel látogatható.",
+   "desc_en": "An interactive milling exhibition in Veszprém's only intact watermill; visits by prior arrangement.",
+   "url": "https://www.veszpreminfo.hu/en/place/fenyves-mill"
+  },
+  {
+   "name": "Vízellátási Múzeum",
+   "category": "museum",
+   "address": "Kittenberger Kálmán u. 5–6, 8200 Veszprém",
+   "tags": "múzeum ingyenes",
+   "desc_hu": "Ingyenes kiállítás a vízellátás és szennyvíztisztítás történetéről; egyéni vagy csoportos látogatás előre egyeztetve.",
+   "desc_en": "A free exhibition on the history of water supply and sewage treatment; visits by appointment.",
+   "url": "https://www.veszpreminfo.hu/en/place/water-supply-museum"
+  },
+  {
+   "name": "Auer-ház",
+   "category": "architecture",
+   "address": "Thököly Imre utca 1, 8200 Veszprém",
+   "tags": "zene hegedűkészítő műemlék",
+   "desc_hu": "Auer Lipót hegedűművész gyermekkori otthona; műemlék, nyitott hegedűkészítő műhellyel.",
+   "desc_en": "Childhood home of violinist Leopold Auer, a protected building with an open violin-making workshop.",
+   "url": "https://www.veszpreminfo.hu/en/place/auer-house"
+  },
+  {
+   "name": "Petőfi Színház",
+   "category": "architecture",
+   "address": "Óvári Ferenc utca 2, 8200 Veszprém",
+   "tags": "színház szecesszió Medgyaszay",
+   "desc_hu": "1908-ban nyílt, Medgyaszay István tervezte szecessziós épület vasbeton szerkezettel; évente kb. 100 ezer néző.",
+   "desc_en": "Opened in 1908, a Secession building designed by István Medgyaszay using reinforced concrete; about 100,000 visitors a year.",
+   "hours_note_hu": "Jegypénztár H–P 9:00–17:00.",
+   "url": "https://www.veszpreminfo.hu/en/place/petofi-theatre-of-veszprem"
+  },
+  {
+   "name": "Hangvilla",
+   "category": "architecture",
+   "address": "Brusznyai Árpád utca 2, 8200 Veszprém",
+   "tags": "koncert színház kávézó",
+   "desc_hu": "2013-ban átadott többfunkciós közösségi ház a régi Séd mozi helyén; itt játszik a Pannon Várszínház 500 fős nagytermében.",
+   "desc_en": "A multifunctional community centre opened in 2013 on the site of the old Séd cinema; home of the Pannon Castle Theatre with a 500-seat hall.",
+   "url": "https://www.veszpreminfo.hu/en/place/hangvilla-multifunctional-community-centre"
+  },
+  {
+   "name": "Agóra Veszprém Kulturális Központ",
+   "category": "architecture",
+   "address": "Táborállás park 1, 8200 Veszprém",
+   "tags": "kultúra kiállítás néptánc",
+   "desc_hu": "A város legnagyobb közművelődési intézménye, 2015-ben újult meg; 290 fős színházterem és évi kb. 30 kiállítás.",
+   "desc_en": "The city's largest public cultural institution, renovated in 2015, with a 290-seat theatre and about 30 exhibitions a year.",
+   "url": "https://www.veszpreminfo.hu/en/place/agora-veszprem-cultural-centre"
+  },
+  {
+   "name": "Kabóca Bábszínház",
+   "category": "architecture",
+   "address": "Deák Ferenc utca 13, 8200 Veszprém",
+   "tags": "bábszínház gyerek család",
+   "desc_hu": "Veszprém bábszínháza; évadonként kb. tizenkét előadás 4 éves kortól, és havonta felnőtt előadás.",
+   "desc_en": "Veszprém's puppet theatre, with about twelve shows a season for ages 4+ and a monthly adult production.",
+   "hours_note_hu": "K–P 9:00–17:00, Szo 9:00–12:00; pénztár az előadás előtt 1 órával.",
+   "url": "https://www.veszpreminfo.hu/en/place/kaboca-puppet-theatre"
+  },
+  {
+   "name": "Gyárkert Kultúrpark",
+   "category": "park",
+   "address": "Jutasi út 3, 8200 Veszprém",
+   "tags": "rendezvénytér koncert EKF 2023",
+   "desc_hu": "Az egykori bútorgyár helyén kialakított 2 hektáros rendezvénypark 5000 fős befogadóképességgel; csak rendezvénynapokon nyitva.",
+   "desc_en": "A 2-hectare event park for 5,000 people on the former furniture-factory site; open on event days only.",
+   "url": "https://www.veszpreminfo.hu/en/place/gyarkert-culturepark"
+  },
+  {
+   "name": "Séd-völgy és Betekints-völgy",
+   "distance": "a vár alatt",
+   "tags": "séd völgy patak séta walk spaziergang park betekints kolostor",
+   "desc_hu": "Kellemes sétaút a Séd patak mentén, a Betekints-völgyben a középkori Veszprémvölgyi apácakolostor romjaival.",
+   "desc_en": "Pleasant walking trail along the Séd stream; in the Betekints valley lie the ruins of the medieval Veszprémvölgy convent."
+  },
+  {
+   "name": "Veszprém Aréna – kézilabda",
+   "distance": "a város keleti részén",
+   "tags": "kézilabda handball aréna arena sport meccs match",
+   "desc_hu": "A Telekom Veszprém kézilabdacsapat otthona; egy BL-meccs hangulata felejthetetlen – jegyet érdemes előre venni.",
+   "desc_en": "Home of Telekom Veszprém handball club; a Champions League match atmosphere is unforgettable – buy tickets in advance."
+  }
+ ],
+ "daytrips": [
+  {
+   "name": "Baláca Római Villa (Nemesvámos)",
+   "km": "kb. 10",
+   "drive": "kb. 15 perc",
+   "tags": "római kor régészeti park mozaik",
+   "desc_hu": "Magyarország legnagyobb látogatható római villagazdasága; a 3–4. századi lakóépületek falfestményei és mozaikpadlói különlegesek.",
+   "desc_en": "Hungary's largest visitable Roman villa estate, with notable 3rd–4th-century murals and mosaic floors.",
+   "url": "https://www.veszpreminfo.hu/en/place/balaca-archaeological-park"
+  },
+  {
+   "name": "Balatonfüred",
+   "km": "15",
+   "drive": "kb. 20 perc",
+   "tags": "Balaton fürdőváros sétány",
+   "desc_hu": "1772 óta hivatalos fürdőhely; a Tagore sétány a parton a szívkórház mellett húzódik. A Vaszary-villa galériának és kávézónak ad otthont.",
+   "desc_en": "An official spa since 1772; the Tagore promenade runs along the shore by the heart hospital. Vaszary Villa houses a gallery and café.",
+   "url": "https://en.wikipedia.org/wiki/Balatonf%C3%BCred"
+  },
+  {
+   "name": "GAPA Terasz és Parkerdő (Balatonfüred)",
+   "km": "kb. 17",
+   "drive": "kb. 20 perc",
+   "tags": "kilátó erdő szezonális",
+   "desc_hu": "Szezonálisan nyitva tartó panorámateraszok és lombkorona-platform a Száka-hegyen, erdei tanösvényekkel.",
+   "desc_en": "Seasonal panoramic terraces and a treetop platform on Száka Hill with forest learning trails.",
+   "url": "https://www.veszpreminfo.hu/en/place/gapa-terrace-forest-park"
+  },
+  {
+   "name": "Tihany – Bencés Apátság",
+   "km": "kb. 25",
+   "drive": "kb. 30 perc",
+   "tags": "Balaton apátság félsziget levendula",
+   "desc_hu": "I. András alapította 1055-ben; alapítólevele a legrégebbi eredetiben fennmaradt magyarországi oklevél. A félszigeten a Levendula Ház látogatóközpont is található.",
+   "desc_en": "Founded by Andrew I in 1055; its founding charter is the oldest original document surviving in Hungary. The peninsula also has the Lavender House visitor centre.",
+   "url": "https://www.veszpreminfo.hu/en/place/tihany-benedictine-abbey"
+  },
+  {
+   "name": "Herend – Porcelanium",
+   "km": "kb. 15",
+   "drive": "kb. 15 perc",
+   "tags": "porcelán manufaktúra múzeum",
+   "desc_hu": "A Herendi Porcelánmanufaktúrát 1826-ban alapította Stingl Vince; a Porcelanium látogatóközpont 1999 óta működik mai épületeiben.",
+   "desc_en": "The Herend manufactory was founded by Vince Stingl in 1826; the Porcelanium visitor centre has been in its current buildings since 1999.",
+   "url": "https://en.wikipedia.org/wiki/Herend_Porcelain_Manufactory"
+  },
+  {
+   "name": "Zirc – Ciszterci Apátság és Arborétum",
+   "km": "18",
+   "drive": "kb. 20 perc",
+   "tags": "apátság arborétum sör",
+   "desc_hu": "A 20 hektáros angolpark kb. 400 m magasan Magyarország legmagasabban fekvő arborétuma; a barokk bazilikában az ország legnagyobb barokk oltára áll.",
+   "desc_en": "The 20-hectare English-style park at about 400 m is Hungary's highest arboretum; the Baroque basilica has the country's largest Baroque altar.",
+   "url": "https://www.veszpreminfo.hu/en/place/zirc-cistercian-abbey-and-arboretum"
+  },
+  {
+   "name": "Nagyvázsony – Kinizsi-vár",
+   "km": "20",
+   "drive": "kb. 25 perc",
+   "tags": "vár reneszánsz Kinizsi Pál",
+   "desc_hu": "Kinizsi Pál 1472 után kapta meg és bővítette; a dunántúli várak között szokatlanul épen maradt fenn.",
+   "desc_en": "Acquired and expanded by Pál Kinizsi after 1472; it survives unusually intact among Transdanubian castles.",
+   "url": "https://www.veszpreminfo.hu/en/place/kinizsi-castle-nagyvazsony"
+  },
+  {
+   "name": "Csesznek – vár",
+   "km": "26",
+   "drive": "kb. 30 perc",
+   "tags": "várrom Bakony túra",
+   "desc_hu": "Sziklacsúcsról kiemelkedő bakonyi várrom népszerű túraterületen.",
+   "desc_en": "A Bakony castle ruin rising from a rocky outcrop in a popular hiking area.",
+   "hours_note_hu": "Nov–febr. 9–16, márc. és okt. 9–17, ápr.–szept. 10–18; hétfőn zárva.",
+   "url": "https://www.veszpreminfo.hu/en/place/csesznek-castle"
+  },
+  {
+   "name": "Bakonybél – Szent Mauríciusz Monostor",
+   "km": "kb. 35",
+   "drive": "kb. 40 perc",
+   "tags": "monostor bencés gyógynövény",
+   "desc_hu": "Szent István 1018-ban alapított itt szerzetesi közösséget; 1998 óta újra bencések élnek itt, látható a felújított barokk templom és a gyógynövénykert.",
+   "desc_en": "St Stephen founded a monastic community here in 1018; Benedictines have lived here again since 1998, with a restored Baroque church and herb garden.",
+   "url": "https://www.veszpreminfo.hu/en/place/saint-maurice-monastery-bakonybel"
+  },
+  {
+   "name": "Bakonybél – Pannon Csillagda",
+   "km": "35",
+   "drive": "kb. 40 perc",
+   "tags": "csillagvizsgáló planetárium esőnap",
+   "desc_hu": "400 m²-es csillagászati kiállítás és 8 méteres kupolájú digitális planetárium 3D filmekkel.",
+   "desc_en": "A 400 m² astronomy exhibition and a digital planetarium with an 8 m dome showing 3D films.",
+   "url": "https://www.veszpreminfo.hu/en/place/pannon-observatory-bakonybel"
+  },
+  {
+   "name": "Balatonfűzfő – Balatoni Csillagvizsgáló",
+   "km": "kb. 15",
+   "drive": "kb. 20 perc",
+   "tags": "csillagvizsgáló család",
+   "desc_hu": "Esti távcsöves bemutatók, holdfotózás mobillal és interaktív „Kozmikus utazás” családi program.",
+   "desc_en": "Evening telescope sessions, smartphone moon photography and an interactive 'Cosmic Journey' family attraction.",
+   "url": "https://www.veszpreminfo.hu/en/place/balaton-observatory-balatonfuzfo"
+  },
+  {
+   "name": "Balatonalmádi",
+   "km": "kb. 15",
+   "drive": "kb. 20 perc",
+   "tags": "Balaton kilátó kápolna",
+   "desc_hu": "Látnivaló az 1956-ban a budai Várból ideszállított Szent Jobb-kápolna, valamint az Óvári-kilátó a vörös homokkő tanösvény mentén.",
+   "desc_en": "Sights include the Szent Jobb chapel moved here from Buda Castle in 1956 and the Óvári lookout on the red sandstone nature trail.",
+   "url": "https://welovebalaton.hu/en/venue/balatonalmadi-szent-jobb-chapel"
+  },
+  {
+   "name": "Csopak – borfalu",
+   "km": "kb. 13",
+   "drive": "kb. 15 perc",
+   "tags": "bor olaszrizling Balaton",
+   "desc_hu": "A Balatonfüred-Csopaki borvidék része, vöröses homokkő talajjal; a legjobb olaszrizlingeket a 2012-ben létrehozott Csopaki Kódex védjegy jelöli.",
+   "desc_en": "Part of the Balatonfüred-Csopak wine district with reddish sandstone soils; top Olaszrizlings carry the Csopak Codex mark created in 2012.",
+   "url": "https://winesofhungary.hu/wine-regions/balatonfured-csopak-wine-district"
+  },
+  {
+   "name": "Szentgáli Tiszafás tanösvény",
+   "km": "kb. 15",
+   "drive": "kb. 20 perc",
+   "tags": "erdő tanösvény természetvédelem",
+   "desc_hu": "3,9 km-es tanösvény a Miklós-pál-hegy oldalában, Bánd közelében, a tájvédelmi körzetben.",
+   "desc_en": "A 3.9 km nature trail on Miklós-pál Hill near Bánd inside the protected landscape area.",
+   "url": "https://www.programturizmus.hu/partner-tiszafas-tanosveny-szentgal.html"
+  },
+  {
+   "name": "Úrkúti Őskarszt",
+   "km": "kb. 30",
+   "drive": "kb. 35 perc",
+   "tags": "geológia tanösvény Kéktúra",
+   "desc_hu": "A mangánbányászat által feltárt, kb. 100 millió éves karsztforma; 1951 óta védett, 2013 óta tanösvény vezet le a mélyedésbe.",
+   "desc_en": "A roughly 100-million-year-old karst exposed by manganese mining; protected since 1951, with a nature trail since 2013.",
+   "url": "https://welovebudapest.com/cikk/2025/05/14/kirandulas-bakony-urkuti-oskarszt-herendi-porcelanmanufaktura/"
+  },
+  {
+   "name": "Városlőd",
+   "km": "kb. 30",
+   "drive": "kb. 30 perc",
+   "tags": "kerámia barokk templom Bakony",
+   "desc_hu": "A Stingl testvérek itt alapított fazekasműhelye volt a herendi porcelán előzménye; barokk temploma egy gótikus kolostor alapjain áll.",
+   "desc_en": "The Stingl brothers' pottery here preceded Herend porcelain; its Baroque church stands on the foundations of a Gothic monastery.",
+   "url": "https://en.wikipedia.org/wiki/V%C3%A1rosl%C5%91d"
+  },
+  {
+   "name": "Kab-hegy – Kinizsi-kilátó",
+   "km": "kb. 35",
+   "drive": "kb. 40 perc",
+   "tags": "kilátó Bakony Kéktúra",
+   "desc_hu": "A 599 m-es Kab-hegy a Déli-Bakony legmagasabb pontja; 10,6 m-es fakilátóról a Balatonra is látni.",
+   "desc_en": "The 599 m Kab Hill is the Southern Bakony's highest point; its 10.6 m wooden lookout views Lake Balaton.",
+   "url": "https://www.programturizmus.hu/partner-kinizsi-kilato-kab-hegy.html"
+  },
+  {
+   "name": "Kőris-hegy – Vajda Péter kilátó",
+   "km": "kb. 40",
+   "drive": "kb. 50 perc",
+   "tags": "Bakony legmagasabb pont túra",
+   "desc_hu": "A Bakony legmagasabb csúcsa; a háromszintes kilátó talppontja 709 m-en van, a Kéktúra is érinti.",
+   "desc_en": "The Bakony's highest peak; the three-level lookout's base is at 709 m, on the National Blue Trail.",
+   "url": "https://www.programturizmus.hu/ajanlat-koris-hegyi-kilato.html"
+  },
+  {
+   "name": "Római fürdő (Bakonynána)",
+   "km": "kb. 30",
+   "drive": "kb. 35 perc",
+   "tags": "vízesés szurdok Kéktúra",
+   "desc_hu": "A Gaja-patak kb. 2 km hosszú szurdokában mészkőfalak közt lezúduló vízesés a Kéktúra mentén.",
+   "desc_en": "A waterfall between limestone walls in the roughly 2 km Gaja gorge on the National Blue Trail.",
+   "url": "https://turizmus.zirc.hu/en/list-page/323-natural-assets-of-zirc-area/1831-roman-bath"
+  },
+  {
+   "name": "Sümeg – vár",
+   "km": "kb. 50–60",
+   "drive": "kb. 55 perc",
+   "tags": "vár lovagi torna",
+   "desc_hu": "Belső várból, külső várból és fellegvárból álló erősség; lovagi tornák és középkori lakomák helyszíne, egész évben nyitva.",
+   "desc_en": "A castle of inner castle, outer castle and citadel; hosts knights' tournaments and medieval feasts, open year-round.",
+   "url": "https://www.veszpreminfo.hu/en/place/sumeg-castle"
+  },
+  {
+   "name": "Somló-hegy",
+   "km": "kb. 50",
+   "drive": "kb. 50 perc",
+   "tags": "bor juhfark várrom kilátó",
+   "desc_hu": "431 m-es tanúhegy várrommal, Medgyaszay István tervezte 1938-as kilátóval és bazaltorgonákkal; jellegzetes bora a juhfark.",
+   "desc_en": "A 431 m butte with a castle ruin, a 1938 lookout designed by István Medgyaszay and basalt columns; known for Juhfark wine.",
+   "url": "https://telex.hu/szepkilatas/2023/11/25/somlo-hegy-tura-kilato-bazaltorgonak-varrom-somloi-juhfark"
+  },
+  {
+   "name": "Balaton Park Circuit (Balatonfőkajár)",
+   "km": "kb. 35",
+   "drive": "kb. 30 perc",
+   "tags": "motorsport MotoGP WorldSBK",
+   "desc_hu": "2023 májusában nyílt versenypálya; 2025-ben és 2026-ban itt rendezték a MotoGP Magyar Nagydíjat, a WorldSBK futam májusban van.",
+   "desc_en": "Race circuit opened in May 2023; it hosted the MotoGP Hungarian GP in 2025 and 2026, and the WorldSBK round runs in May.",
+   "url": "https://en.wikipedia.org/wiki/Balaton_Park_Circuit"
+  },
+  {
+   "name": "Pannonhalmi Főapátság",
+   "km": "kb. 60",
+   "drive": "kb. 55 perc",
+   "tags": "világörökség apátság",
+   "desc_hu": "Géza fejedelem alapította 996-ban, az első magyar bencés monostor; 1996 óta UNESCO világörökség.",
+   "desc_en": "Founded by Prince Géza in 996 as the first Hungarian Benedictine monastery; UNESCO World Heritage since 1996.",
+   "url": "https://en.wikipedia.org/wiki/Pannonhalma_Archabbey"
+  },
+  {
+   "name": "Keszthely – Festetics-kastély",
+   "km": "kb. 80",
+   "drive": "kb. 1 óra 10 perc",
+   "tags": "kastély könyvtár Balaton",
+   "desc_hu": "A Festetics család két évszázadon át lakott itt; a Helikon Könyvtár az ország egyetlen épen maradt főúri magánkönyvtára, több mint 80 ezer kötettel.",
+   "desc_en": "Home of the Festetics family for 200 years; the Helikon Library is Hungary's only intact aristocratic private library with over 80,000 volumes.",
+   "url": "https://keszthely.hu/en/szabadido/festetics-kastely/?vakbarat=1"
+  },
+  {
+   "name": "Hévíz – gyógytó",
+   "km": "kb. 80",
+   "drive": "kb. 1 óra 10 perc",
+   "tags": "termál fürdő esőnap",
+   "desc_hu": "Európa legnagyobb fürdésre alkalmas termáltava (kb. 4,75 ha); a víz nyáron 33–35, télen kb. 22 °C.",
+   "desc_en": "Europe's largest swimmable thermal lake (about 4.75 ha); water is 33–35 °C in summer and about 22 °C in winter.",
+   "url": "https://en.wikipedia.org/wiki/Lake_H%C3%A9v%C3%ADz"
+  },
+  {
+   "name": "Cuha-völgy túra",
+   "km": 25,
+   "drive": "~30 perc",
+   "tags": "cuha túra hiking wandern bakony vasút erdő forest",
+   "desc_hu": "A Bakony egyik leglátványosabb túraútja vasúti alagutak és sziklafalak között (Vinye–Porva-Csesznek).",
+   "desc_en": "One of the Bakony's most spectacular hikes past railway tunnels and rock walls (Vinye–Porva-Csesznek)."
+  },
+  {
+   "name": "Badacsony és a Tapolcai-medence",
+   "km": 55,
+   "drive": "~50 perc",
+   "tags": "badacsony bor wine wein tanúhegy szőlő",
+   "desc_hu": "Tanúhegyek, borteraszok, kilátás a Balatonra – egész napos borvidéki kirándulás.",
+   "desc_en": "Volcanic buttes, wine terraces and lake views – a full-day wine-region trip."
+  },
+  {
+   "name": "Tapolca – Tavasbarlang",
+   "km": 50,
+   "drive": "~45 perc",
+   "tags": "tapolca barlang cave höhle csónak",
+   "desc_hu": "Csónakázás a barlang föld alatti tavában – gyerekekkel is élmény.",
+   "desc_en": "Boating on an underground cave lake – fun with kids too."
+  }
+ ],
+ "food": [
+  {
+   "name": "Elefánt Étterem & Kávézó",
+   "type": "restaurant",
+   "address": "Óváros tér 6, 8200 Veszprém",
+   "tags": "Óváros tér terasz napi menü",
+   "desc_hu": "Régóta működő étterem az óvárosi tér történelmi épületében, nyári terasszal és szezonális, hétköznapi ajánlatokkal.",
+   "desc_en": "A long-standing restaurant in a historic building on Óváros Square with a summer terrace and seasonal weekday options.",
+   "url": "https://www.veszpreminfo.hu/en/place/elefant-restaurant-cafe"
+  },
+  {
+   "name": "Oliva Étterem",
+   "type": "restaurant",
+   "address": "Buhim utca 14–16, 8200 Veszprém",
+   "tags": "mediterrán kert balatoni borok",
+   "desc_hu": "Mediterrán hangulatú étterem pár percre a vártól, nyári kerttel; borlapján kb. negyven magyar pincészet.",
+   "desc_en": "Mediterranean-style restaurant a few minutes from the castle with a summer garden and wines from about forty Hungarian wineries.",
+   "url": "https://www.veszpreminfo.hu/en/place/oliva-restaurant"
+  },
+  {
+   "name": "Betekints Étterem",
+   "type": "restaurant",
+   "address": "Veszprémvölgyi utca 4, 8200 Veszprém",
+   "tags": "magyar terasz borlap",
+   "desc_hu": "Modernizált magyar konyha helyi alapanyagokból, közel 50 féle borral és tavasztól nyárig terasszal.",
+   "desc_en": "Modernised Hungarian cooking from local produce, nearly 50 wines and a spring–summer terrace.",
+   "url": "https://www.veszpreminfo.hu/en/place/betekints-restaurant"
+  },
+  {
+   "name": "Fejesvölgy Étterem",
+   "type": "restaurant",
+   "address": "Vámosi utca 2, 8200 Veszprém",
+   "tags": "házias kert",
+   "desc_hu": "Házias magyar ételek és helyi specialitások a Jeruzsálem-hegyen, tavasztól őszig nyitott kerttel.",
+   "desc_en": "Home-style Hungarian food and local specialities on Jerusalem Hill with a garden open spring to autumn.",
+   "url": "https://www.veszpreminfo.hu/en/place/fejesvolgy-restaurant"
+  },
+  {
+   "name": "Nosztalgia Garden",
+   "type": "restaurant",
+   "address": "Kittenberger Kálmán utca 11, 8200 Veszprém",
+   "tags": "kert kacsa állatkert közelében",
+   "desc_hu": "Kerti étterem a völgyben, asztalokkal a tó és egy öreg tiszafa mellett; ajánlott a ropogós sült kacsa.",
+   "desc_en": "A garden restaurant in the valley with tables by a pond and an old yew tree; crispy roast duck is a highlight.",
+   "url": "https://www.veszpreminfo.hu/en/place/nostalgia-garden"
+  },
+  {
+   "name": "Kiskúti Csárda",
+   "type": "restaurant",
+   "address": "Veszprémvölgyi utca 63–65, 8200 Veszprém",
+   "tags": "csárda magyar túrázók",
+   "desc_hu": "Közel kétszáz éves múltú csárda, amely 2024-ben nyílt újra; klasszikus magyar ételek nosztalgikus környezetben.",
+   "desc_en": "An inn with nearly two centuries of history that reopened in 2024, serving classic Hungarian dishes.",
+   "url": "https://www.veszpreminfo.hu/en/place/kiskuti-inn"
+  },
+  {
+   "name": "Saiko no Sushi",
+   "type": "restaurant",
+   "address": "Óváros tér 24, 8200 Veszprém",
+   "tags": "japán sushi ramen",
+   "desc_hu": "Japán ihletésű étterem az Óváros téren: sushi, ramen, tempura, japán koktélok és prémium teák.",
+   "desc_en": "Japanese-inspired restaurant on Óváros Square: sushi, ramen, tempura, Japanese-style cocktails and premium teas.",
+   "url": "https://www.veszpreminfo.hu/en/place/saiko-no-sushi"
+  },
+  {
+   "name": "Marica Kávézó és Étterem",
+   "type": "restaurant",
+   "address": "Kossuth Lajos utca 5, 8200 Veszprém",
+   "tags": "sétálóutca olasz terasz",
+   "desc_hu": "Nemzetközi és olasz ételek magyar borokkal a sétálóutcán; tavasztól késő őszig napos terasz.",
+   "desc_en": "International and Italian dishes with Hungarian wines on the pedestrian street; sunny terrace spring to late autumn.",
+   "url": "https://www.veszpreminfo.hu/en/place/marica-cafe-and-restaurant"
+  },
+  {
+   "name": "Chill Bistro",
+   "type": "restaurant",
+   "address": "Óváros tér 4, 8200 Veszprém",
+   "tags": "street food pizza kutyabarát",
+   "desc_hu": "Vintage hangulatú bisztró terasszal az Óváros téren; street food, pizza és frissensültek.",
+   "desc_en": "Vintage-style bistro with a terrace on Óváros Square serving street food, pizza and fried dishes.",
+   "url": "https://www.veszpreminfo.hu/en/place/chill-bistro"
+  },
+  {
+   "name": "Papírkutya",
+   "type": "cafe",
+   "address": "Szabadság tér 9, 8200 Veszprém",
+   "tags": "reggeli bisztró kulturális gluténmentes",
+   "desc_hu": "Bisztró és kulturális tér a Szabadság téren; mindennap reggeli, vegetáriánus, glutén- és laktózmentes opciókkal.",
+   "desc_en": "Bistro and cultural venue on Szabadság Square serving breakfast daily, with vegetarian, gluten- and lactose-free options.",
+   "url": "https://www.veszpreminfo.hu/en/place/papirkutya"
+  },
+  {
+   "name": "Gusto 13 Bistro & Delicate",
+   "type": "restaurant",
+   "address": "Csermák Antal utca 13, 8200 Veszprém",
+   "tags": "bisztró olasz terasz",
+   "desc_hu": "Kis, laza fine dining hangulatú bisztró a belvároson kívül; a Gusto Delicate termékeiből is lehet vásárolni.",
+   "desc_en": "A small bistro outside the centre with a relaxed fine-dining feel; some Gusto Delicate products are on sale.",
+   "url": "https://www.veszpreminfo.hu/en/place/gusto-13-bistro-delicate"
+  },
+  {
+   "name": "GUSTO Delicate",
+   "type": "cafe",
+   "address": "Bajcsy-Zsilinszky utca 8, 8200 Veszprém",
+   "tags": "csemege szendvics kézműves sör",
+   "desc_hu": "Ínyenc csemegebolt kóstolási lehetőséggel; sajtok, sonkák, kézműves sörök, frissen készült szendvicsek és kávé.",
+   "desc_en": "Gourmet deli where you can taste before buying: cheeses, cured meats, craft beers, fresh sandwiches and coffee.",
+   "url": "https://www.veszpreminfo.hu/en/place/gusto-delicate"
+  },
+  {
+   "name": "Fricska Pop-up Étterem és Fricska Szeparé",
+   "type": "pub",
+   "address": "Miklós utca 10, 8200 Veszprém",
+   "tags": "burger romkocsma kutyabarát Séd",
+   "desc_hu": "Bár és grillétterem egy egykori Séd-parti malomban; hamburgerei az ország legjobb tíz közé kerültek. Mellette romkocsma helyi borokkal és kézműves sörökkel.",
+   "desc_en": "Bar and grill in a former mill on the Séd; its burgers were voted among Hungary's ten best. Next door is a ruin pub with local wines and craft beers.",
+   "url": "https://www.veszpreminfo.hu/en/place/fricska-pop-up-restaurant"
+  },
+  {
+   "name": "Malomkert Sörház",
+   "type": "brewery",
+   "address": "Fenyves utca 15, 8200 Veszprém",
+   "tags": "sörfőzde kert csapolt sör",
+   "desc_hu": "Házi sörfőzdés sörház nagy zöld kertben; saját csapolt és kézműves sörök, újragondolt magyar és nemzetközi ételek.",
+   "desc_en": "Brewpub with an in-house brewery in a large garden, serving house and craft beers with reinvented Hungarian and international dishes.",
+   "url": "https://www.veszpreminfo.hu/en/place/malomkert-beer-house"
+  },
+  {
+   "name": "Bunker Bár",
+   "type": "bar",
+   "address": "Szabadság tér 1, 8200 Veszprém",
+   "tags": "bár Guinness élőzene DJ",
+   "desc_hu": "Pinceklub hangulatú bár csapolt Guinness-szel, tematikus estékkel, élőzenével és DJ-kkel.",
+   "desc_en": "An underground-style bar with draught Guinness, themed nights, live music and DJ sets.",
+   "url": "https://www.veszpreminfo.hu/en/place/bunker-bar"
+  },
+  {
+   "name": "Wine & Vinyl Bar & Store",
+   "type": "winebar",
+   "address": "Szabadság tér 2, 8200 Veszprém",
+   "tags": "borbár natúrbor bakelit",
+   "desc_hu": "Borbár és bolt, ahol mindig szól a zene; natúrborok, prosecco és hazai, külföldi különlegességek, palackos vásárlással.",
+   "desc_en": "Wine bar and shop where music always plays; natural wines, prosecco and specialities, with bottles to take away.",
+   "url": "https://www.veszpreminfo.hu/en/place/wine-vinyl-bar-store"
+  },
+  {
+   "name": "Pekedli bár",
+   "type": "bar",
+   "address": "Rákóczi Ferenc utca 1, 8200 Veszprém",
+   "tags": "csemege helyi termelők kutyabarát",
+   "desc_hu": "Csemege és bár veszprémi környékbeli termelők termékeiből készült tálakkal és hideg italokkal.",
+   "desc_en": "Deli and bar serving platters of products from Veszprém-area producers with cold drinks.",
+   "url": "https://www.veszpreminfo.hu/en/place/pekedli-bar"
+  },
+  {
+   "name": "FOTON Specialty Kávézó & Bár",
+   "type": "cafe",
+   "address": "Vár utca 17, 8200 Veszprém",
+   "tags": "specialty kávé vár esti bár",
+   "desc_hu": "Specialty kávézó a FOTON Audiovizuális Központban, péksüteményekkel és melegszendvicsekkel; este bárként működik.",
+   "desc_en": "Specialty café in the FOTON Audiovisual Centre with pastries and toasties; it turns into a bar in the evening.",
+   "url": "https://www.veszpreminfo.hu/en/place/foton-specialty-cafe-bar"
+  },
+  {
+   "name": "KUNSZT",
+   "type": "cafe",
+   "address": "Óváros tér 1, 8200 Veszprém",
+   "tags": "brunch design bolt egész napos reggeli",
+   "desc_hu": "Design bolt, brunch-bisztró és közösségi tér helyi alkotók termékeivel; egész nap reggelit szolgálnak fel.",
+   "desc_en": "Design shop, brunch bistro and community space with local makers' products; breakfast served all day.",
+   "url": "https://www.veszpreminfo.hu/en/place/kunszt"
+  },
+  {
+   "name": "Tizen1",
+   "type": "cafe",
+   "address": "Kossuth Lajos utca 6, 8200 Veszprém",
+   "tags": "kávézó sajttorta reggeli",
+   "desc_hu": "Hangulatos kávézó a sétálóutcán terasszal; házi sajttorta, reggelente házi keksz és szendvicsek.",
+   "desc_en": "Cosy café on the pedestrian street with a terrace; homemade cheesecake, biscuits and morning sandwiches.",
+   "url": "https://www.veszpreminfo.hu/en/place/tizen1"
+  },
+  {
+   "name": "Mackó Cukrászda",
+   "type": "pastry",
+   "address": "Megyeház tér 2, 8200 Veszprém",
+   "tags": "cukrászda xilites belváros",
+   "desc_hu": "Több mint 20 éve mindennap nyitva tartó cukrászda és kávézó; nyírfacukros és mandulalisztes termékek is.",
+   "desc_en": "Patisserie and café open daily for over 20 years; also offers xylitol and almond-flour products.",
+   "url": "https://www.veszpreminfo.hu/en/place/macko-confectionery"
+  },
+  {
+   "name": "Kokó Cukrászda",
+   "type": "pastry",
+   "address": "Kossuth Lajos utca 8, 8200 Veszprém",
+   "tags": "cukrászda családi terasz",
+   "desc_hu": "1984-ben alapított családi cukrászda a sétálóutcán; házi sütemények, kávé, limonádé és szendvicsek.",
+   "desc_en": "Family confectionery founded in 1984 on the pedestrian street; homemade cakes, coffee, lemonade and sandwiches.",
+   "url": "https://www.veszpreminfo.hu/en/place/koko-confectionery"
+  },
+  {
+   "name": "Füge Fagyiudvar & Kávézó",
+   "type": "cafe",
+   "address": "Rákóczi Ferenc utca 3, 8200 Veszprém",
+   "tags": "fagylalt reggeli gyerekbarát",
+   "desc_hu": "Családi fagyizó és kávézó kézműves fagylalttal, süteményekkel és reggelire alkalmas szendvicsekkel.",
+   "desc_en": "Family ice-cream parlour and café with handmade ice cream, cakes and breakfast sandwiches.",
+   "url": "https://www.veszpreminfo.hu/en/place/fuge-ice-cream-yard-cafe"
+  },
+  {
+   "name": "Völgy Kávézó és Fagyizó",
+   "type": "cafe",
+   "address": "Patak tér 1, 8200 Veszprém",
+   "tags": "fagylalt vár alatt",
+   "desc_hu": "Családi kávézó és fagyizó a vár lábánál; sütőtökös-sós vaníliás fagyija 2020-ban különdíjat nyert.",
+   "desc_en": "Family café and ice-cream shop below the castle; its pumpkin–salted vanilla flavour won a special prize in 2020.",
+   "url": "https://www.veszpreminfo.hu/en/place/valley-cafe-and-ice-cream-shop"
+  },
+  {
+   "name": "Makmoiselle Pékség",
+   "type": "bakery",
+   "address": "Megyeház tér 2, 8200 Veszprém",
+   "tags": "kovászos bio reggeli",
+   "desc_hu": "Kovászos pékség és kávézó bio lisztből, adalékanyagok nélkül, nyitott konyhával.",
+   "desc_en": "Sourdough bakery-café using organic flour with no additives and an open kitchen.",
+   "url": "https://www.veszpreminfo.hu/en/place/makmoiselle-bakery"
+  },
+  {
+   "name": "Derce Pékség Bisztró",
+   "type": "bakery",
+   "address": "Deák Ferenc utca 13, 8200 Veszprém",
+   "tags": "kovászos specialty kávé workshop",
+   "desc_hu": "2023 óta a Deák Ferenc utcai rendezvényközpontban működő pékség-bisztró naponta sült kovászos kenyérrel és specialty kávéval.",
+   "desc_en": "Bakery-bistro in the Deák Ferenc Street event centre since 2023 with daily sourdough and specialty coffee.",
+   "url": "https://www.veszpreminfo.hu/en/place/derce-bakery-bistro"
+  },
+  {
+   "name": "ABLAK a bablak – vegán étterem",
+   "type": "restaurant",
+   "address": "Rákóczi utca 4, 8200 Veszprém",
+   "tags": "vegán gluténmentes napi menü",
+   "desc_hu": "2023 júliusában nyílt vegán étterem és közösségi tér; gluténmentes sütik és naponta változó ebédmenü.",
+   "desc_en": "Vegan restaurant and community space opened in July 2023 with gluten-free cakes and a daily lunch menu.",
+   "url": "https://www.veszpreminfo.hu/en/place/ablak-a-bablak-the-vegan-restaurant"
+  },
+  {
+   "name": "Pizza Rosa Veszprém",
+   "type": "restaurant",
+   "address": "Rákóczi utca 5, 8200 Veszprém",
+   "tags": "pizza elvitel",
+   "desc_hu": "Olasz pizzéria helyben fogyasztásra és elvitelre, a klasszikus margheritától különleges feltétekig.",
+   "desc_en": "Italian pizzeria for dine-in and takeaway, from classic Margherita to special toppings.",
+   "url": "https://www.veszpreminfo.hu/en/place/pizza-rosa-veszprem"
+  },
+  {
+   "name": "Nyomda Pizzát!",
+   "type": "restaurant",
+   "address": "Miklós utca 6, 8200 Veszprém",
+   "tags": "pizza retró pingpong",
+   "desc_hu": "Egykori nyomdában működő retró hangulatú pizzéria tematikus szobákkal (80-as évek, pingpong, „balatoni strand”).",
+   "desc_en": "Retro pizzeria in a former printing house with themed rooms (1980s party, ping-pong, 'Balaton beach').",
+   "url": "https://www.veszpreminfo.hu/en/place/nyomda-pizzat"
+  },
+  {
+   "name": "Patent. Grill & Chill",
+   "type": "street_food",
+   "address": "Veszprémvölgyi utca, 8200 Veszprém",
+   "tags": "burger Séd Kolostorok és Kertek",
+   "desc_hu": "Laza grillhely a Séd mellett a jezsuita templomnál; friss helyi alapanyagok, házi szószok, Patent burger.",
+   "desc_en": "Laid-back grill by the Séd near the Jesuit church with local ingredients, house sauces and the Patent Burger.",
+   "url": "https://www.veszpreminfo.hu/en/place/patent-grill-chill"
+  },
+  {
+   "name": "Bivaly Bisztró (Bivstro)",
+   "type": "restaurant",
+   "address": "Kistó utca 27, 8200 Veszprém",
+   "tags": "bivaly burger napi menü",
+   "desc_hu": "Kreatív magyar-nemzetközi ételek ázsiai hatással; a hús és a sajt helyi bivalyfarmról érkezik.",
+   "desc_en": "Creative Hungarian-international dishes with Asian touches; meat and cheese come from a local buffalo farm.",
+   "url": "https://www.veszpreminfo.hu/en/place/bivaly-bistro-bivstro"
+  },
+  {
+   "name": "Historia Hangvilla Étterem és Kávézó",
+   "type": "restaurant",
+   "address": "Brusznyai Árpád u. 2, 8200 Veszprém",
+   "tags": "napi menü panoráma kávézó",
+   "desc_hu": "A Hangvilla épületében: kedvező hétköznapi ebédmenük és panorámás kávézó házi süteményekkel.",
+   "desc_en": "In the Hangvilla building: budget weekday lunch menus and a panoramic café with homemade cakes.",
+   "url": "https://www.veszpreminfo.hu/en/place/historia-hangvilla-restaurant"
+  },
+  {
+   "name": "Allegro Café & Restaurant",
+   "type": "restaurant",
+   "address": "Külső-Kádártai út 3, 8200 Veszprém",
+   "tags": "gyorsétterem győri út terasz",
+   "desc_hu": "A győri kivezető út melletti étterem friss sültekkel és házi desszertekkel, nyári terasszal.",
+   "desc_en": "Restaurant by the bypass towards Győr with fresh fried dishes, homemade desserts and a summer terrace.",
+   "url": "https://www.veszpreminfo.hu/en/place/allegro-cafe-restaurant"
+  },
+  {
+   "name": "Expresszó",
+   "type": "bar",
+   "address": "Brusznyai Árpád utca 2, 8200 Veszprém",
+   "tags": "klub buli hétvége",
+   "desc_hu": "Veszprém legismertebb és legnagyobb szórakozóhelye a Hangvilla alsó szintjén; pop és elektronikus zenei estek.",
+   "desc_en": "Veszprém's best-known and largest nightclub on Hangvilla's lower level with pop and electronic nights.",
+   "url": "https://www.veszpreminfo.hu/en/place/expresszo"
+  },
+  {
+   "name": "Veszprémi Piac és Vásárcsarnok",
+   "type": "market",
+   "address": "Jutasi u. 2, 8200 Veszprém",
+   "tags": "piac helyi termelők gombavizsgálat",
+   "desc_hu": "Mintegy 63 helyi termelői árus zöldséggel, gyümölccsel, mézzel, tejtermékkel; fő piacnap kedd és péntek, bent lángosos és büfék.",
+   "desc_en": "About 63 local producers sell vegetables, fruit, honey and dairy; main market days are Tuesday and Friday, with lángos and buffets inside.",
+   "url": "https://www.programturizmus.hu/ajanlat-veszpremi-piac-vasarcsarnok.html"
+  },
+  {
+   "name": "Balaton-felvidéki borok",
+   "tags": "bor wine wein olaszrizling csopak somló",
+   "desc_hu": "Kóstolja meg a csopaki olaszrizlinget, a somlói juhfarkot vagy a badacsonyi kéknyelűt – a környék borászatai gyakran fogadnak látogatókat.",
+   "desc_en": "Try Csopak Olaszrizling, Somló Juhfark or Badacsony Kéknyelű – many local wineries welcome visitors."
+  },
+  {
+   "name": "Bakonyi ételek",
+   "tags": "bakonyi gomba étel food essen magyaros hungarian",
+   "desc_hu": "Helyi specialitás a gombás-tejfölös bakonyi sertésszelet és a betyárleves.",
+   "desc_en": "Local specialities include Bakony-style pork with mushroom-sour cream sauce and outlaw ('betyár') soup."
+  },
+  {
+   "name": "Vámosi Csárda (Nemesvámos)",
+   "km": 7,
+   "tags": "csárda vámosi nemesvámos étterem restaurant",
+   "desc_hu": "Történelmi, 18. századi csárda pár percre Veszprémtől, hagyományos magyar konyhával.",
+   "desc_en": "Historic 18th-century inn a few minutes from Veszprém serving traditional Hungarian food."
+  },
+  {
+   "name": "Kávézók az Óváros téren és a Várnegyedben",
+   "tags": "kávé coffee kaffee cukrászda sütemény cake",
+   "desc_hu": "Reggelihez, süteményhez és esti borozáshoz is a belvárosi kávézók, teraszok a legjobbak.",
+   "desc_en": "For breakfast, cake or an evening glass of wine, head to the cafés and terraces of the old town."
+  },
+  {
+   "name": "Lángos a Balatonon",
+   "tags": "lángos balaton strand street food",
+   "desc_hu": "Nyáron a strandon kötelező: frissen sült lángos tejföllel, sajttal.",
+   "desc_en": "A must at the beach in summer: freshly fried lángos with sour cream and cheese."
+  }
+ ],
+ "shops_services": [
+  {
+   "name": "Tourinform Veszprém",
+   "type": "tourinform",
+   "address": "Óváros tér 2, 8200 Veszprém",
+   "tags": "információ jegyiroda csomagmegőrző audioguide",
+   "desc_hu": "Turisztikai iroda a vár lábánál: jegyárusítás, ajándékbolt, csomagmegőrző, idegenvezetés, audioguide, ingyenes wifi. Tel.: +36 88 404 548.",
+   "desc_en": "Tourist office below the castle: tickets, gift shop, luggage lockers, guided tours, audioguides and free Wi-Fi. Tel.: +36 88 404 548.",
+   "hours_note_hu": "Okt.–dec. és jan.–ápr.: H–P 9–17, Szo 9–15, V zárva.",
+   "url": "https://www.veszpreminfo.hu/en/tourist-information-office"
+  },
+  {
+   "name": "Turisztikai Információs Pont",
+   "type": "tourinform",
+   "address": "Kossuth Lajos sétálóutca, 8200 Veszprém",
+   "tags": "információ audioguide ajándék",
+   "desc_hu": "Információs pont a sétálóutcán: programok, szállás, prospektusok, ajándékok és audioguide-kölcsönzés.",
+   "desc_en": "Info point on the pedestrian street: events, accommodation, brochures, souvenirs and audioguide rental.",
+   "hours_note_hu": "H–P 8–16, Szo 9–13, V zárva.",
+   "url": "https://www.veszpreminfo.hu/en/tourist-information-point"
+  },
+  {
+   "name": "Csomagmegőrző (Tourinform)",
+   "type": "tourinform",
+   "address": "Óváros tér 2, 8200 Veszprém",
+   "tags": "csomag bőrönd",
+   "desc_hu": "Kis, közepes és nagy csomagmegőrző szekrények óradíjas áron (400/500/800 Ft/óra), előre foglalhatók.",
+   "desc_en": "Small, medium and large lockers charged hourly (400/500/800 HUF), bookable in advance.",
+   "url": "https://www.veszpreminfo.hu/en/luggage-lockers"
+  },
+  {
+   "name": "Veszprém Vármegyei Csolnoky Ferenc Kórház",
+   "type": "hospital",
+   "address": "Kórház u. 1, 8200 Veszprém",
+   "tags": "kórház sürgősségi stroke-központ",
+   "desc_hu": "A vármegye központi kórháza; az Angels stroke-hálózat része.",
+   "desc_en": "The county's main hospital, part of the Angels stroke network.",
+   "url": "https://angels-initiative.com/content/csolnoky-ferenc-korhaz"
+  },
+  {
+   "name": "Alapellátási ügyelet – 1830",
+   "type": "hospital",
+   "address": "Telefonos: 1830",
+   "tags": "orvosi ügyelet éjszaka hétvége",
+   "desc_hu": "Felnőtt és gyermek orvosi ügyelet egységes száma: 1830; hétköznap 16–8 óra, hétvégén és ünnepnap egész nap.",
+   "desc_en": "Unified out-of-hours GP line for adults and children: 1830; weekdays 16:00–08:00, all day at weekends and holidays.",
+   "url": "https://www.mentok.hu/ugyelet"
+  },
+  {
+   "name": "Arany Oroszlán Gyógyszertár",
+   "type": "pharmacy",
+   "address": "Kossuth u. 9, 8200 Veszprém",
+   "tags": "patika belváros",
+   "desc_hu": "Belvárosi gyógyszertár a Kossuth utcán.",
+   "desc_en": "City-centre pharmacy on Kossuth Street.",
+   "url": "https://www.patikaradar.hu/patikak/telepulesek/veszprem/"
+  },
+  {
+   "name": "BENU Gyógyszertár Veszprém Bástya",
+   "type": "pharmacy",
+   "address": "Kossuth Lajos utca 8, 8200 Veszprém",
+   "tags": "patika belváros",
+   "desc_hu": "Belvárosi BENU patika a Kossuth utcán.",
+   "desc_en": "City-centre BENU pharmacy on Kossuth Street.",
+   "url": "https://www.patikaradar.hu/patikak/telepulesek/veszprem/"
+  },
+  {
+   "name": "Pláza Patika",
+   "type": "pharmacy",
+   "address": "Budapest út 20–28 (Balaton Plaza), 8200 Veszprém",
+   "tags": "patika pláza ügyeleti rend",
+   "desc_hu": "Gyógyszertár a Balaton Plazában; beosztás szerint éjszakai ügyeletet is ellát.",
+   "desc_en": "Pharmacy in Balaton Plaza; covers night duty on a rota.",
+   "url": "https://www.patikaradar.hu/patikak/telepulesek/veszprem/"
+  },
+  {
+   "name": "Buszpályaudvar Patika",
+   "type": "pharmacy",
+   "address": "Jutasi út 5, 8200 Veszprém",
+   "tags": "patika buszállomás",
+   "desc_hu": "Gyógyszertár az autóbusz-állomás mellett.",
+   "desc_en": "Pharmacy next to the bus station.",
+   "url": "https://www.patikaradar.hu/patikak/telepulesek/veszprem/"
+  },
+  {
+   "name": "Balaton Plaza",
+   "type": "mall",
+   "address": "Budapest út 20–28, 8200 Veszprém",
+   "tags": "bevásárlóközpont mozi food court",
+   "desc_hu": "Több mint 50 üzlet, food court és multiplex mozi a város bejáratánál; 400 parkolóhely.",
+   "desc_en": "Over 50 shops, a food court and a multiplex cinema at the city entrance; 400 parking spaces.",
+   "url": "https://www.programturizmus.hu/partner-balaton-plaza-veszprem.html"
+  },
+  {
+   "name": "Tesco Hipermarket Veszprém",
+   "type": "supermarket",
+   "address": "Külső-Kádártai utca 3, 8200 Veszprém",
+   "tags": "hipermarket",
+   "desc_hu": "Hipermarket a város északi részén.",
+   "desc_en": "Hypermarket in the north of the city.",
+   "hours_note_hu": "A Tesco oldala szerint jellemzően 6–22, egy napon 6–21.",
+   "url": "https://www.tesco.hu/aruhazak/veszprem"
+  },
+  {
+   "name": "Tesco Szupermarket Veszprém",
+   "type": "supermarket",
+   "address": "Mártírok útja 13, 8200 Veszprém",
+   "tags": "szupermarket",
+   "desc_hu": "Kisebb Tesco szupermarket.",
+   "desc_en": "Smaller Tesco supermarket.",
+   "url": "https://www.tesco.hu/aruhazak/veszprem"
+  },
+  {
+   "name": "INTERSPAR Hipermarket Veszprém",
+   "type": "supermarket",
+   "address": "Dornyai Béla utca 4, 8200 Veszprém",
+   "tags": "hipermarket",
+   "desc_hu": "INTERSPAR hipermarket; tel.: +36 20 823 8167.",
+   "desc_en": "INTERSPAR hypermarket; tel.: +36 20 823 8167.",
+   "url": "https://www.spar.hu/uzletek/interspar-hipermarket-veszprem-8200-dornyai-bela-utca-4-"
+  },
+  {
+   "name": "Lidl Veszprém (3 üzlet)",
+   "type": "supermarket",
+   "address": "Pápai út 43; Cholnoky utca; Északkeleti útgyűrű 2 – 8200 Veszprém",
+   "tags": "diszkont",
+   "desc_hu": "Veszprémben három Lidl működik; a Pápai úti üzlet 2026. szeptember 24-én nyílt.",
+   "desc_en": "Veszprém has three Lidl stores; the Pápai út store opened on 24 September 2026.",
+   "url": "https://www.veol.hu/helyi-gazdasag/2026/09/lidl-uj-uzletet-nyitott-veszpremben-papai-uton-fotok"
+  },
+  {
+   "name": "ALDI Veszprém (4 üzlet)",
+   "type": "supermarket",
+   "address": "Budapest út 20–28; Dornyai Béla u. 5; Kistó u. 2; Északkeleti útgyűrű 6 – 8200 Veszprém",
+   "tags": "diszkont",
+   "desc_hu": "Négy ALDI üzlet a városban (harmadik féltől származó lista).",
+   "desc_en": "Four ALDI stores in the city (third-party listing).",
+   "url": "https://nyitva.hu/b/aldi/veszpr%C3%A9m"
+  },
+  {
+   "name": "Veszprém autóbusz-állomás",
+   "type": "transport",
+   "address": "Jutasi út 4, 8200 Veszprém",
+   "tags": "helyközi busz Volánbusz jegypénztár",
+   "desc_hu": "Helyközi buszállomás; jegypénztár hétköznap 6–12 és 12:20–17, hétvégén zárva; váróterem naponta 4–23.",
+   "desc_en": "Intercity bus station; ticket office weekdays 06:00–12:00 and 12:20–17:00, closed weekends; waiting room 04:00–23:00 daily.",
+   "url": "https://www.mavcsoport.hu/node/122419"
+  },
+  {
+   "name": "Veszprém vasútállomás",
+   "type": "transport",
+   "address": "Jutasi út 34, 8200 Veszprém",
+   "tags": "vonat MÁV jegypénztár",
+   "desc_hu": "Belföldi pénztár naponta 3:40–22:40, nemzetközi 8–17:30; a belvárosba az 1, 2, 4–4A, 5 és 10-es helyi busz visz.",
+   "desc_en": "Domestic ticket office daily 03:40–22:40, international 08:00–17:30; local buses 1, 2, 4–4A, 5 and 10 go to the centre.",
+   "url": "https://www.mavcsoport.hu/node/2078"
+  },
+  {
+   "name": "V-Busz (helyi közlekedés)",
+   "type": "transport",
+   "address": "Veszprém",
+   "tags": "helyi busz",
+   "desc_hu": "2019. január 1. óta a V-BUSZ Kft. üzemelteti Veszprém helyi autóbusz-közlekedését.",
+   "desc_en": "V-BUSZ Kft. has operated Veszprém's local buses since 1 January 2019.",
+   "url": "https://www.mavcsoport.hu/node/147019"
+  },
+  {
+   "name": "Bakony Taxi",
+   "type": "taxi",
+   "address": "Taxiállomás a buszpályaudvar mellett",
+   "tags": "taxi angolul beszélő diszpécser",
+   "desc_hu": "Helyi taxitársaság angolul beszélő diszpécserekkel; tel.: +36 88 444 444.",
+   "desc_en": "Local taxi company with English-speaking dispatchers; tel.: +36 88 444 444.",
+   "url": "https://uneecc.uni-pannon.hu/participants/arrival"
+  },
+  {
+   "name": "V-Bike közbringa",
+   "type": "bike",
+   "address": "19 dokkolóállomás a városban",
+   "tags": "e-bike közbringa app",
+   "desc_hu": "Elektromos közbringarendszer 19 állomással; regisztráció weben, appban vagy állomáson; napi, 3 napos és heti bérlet.",
+   "desc_en": "Public e-bike scheme with 19 stations; register online, in the app or at a station; daily, 3-day and weekly passes.",
+   "url": "https://www.veszpreminfo.hu/en/place/v-bike"
+  },
+  {
+   "name": "Balaton Bike Tour – kerékpárkölcsönző",
+   "type": "bike",
+   "address": "Budapest út 89/A (Sítanoda), 8200 Veszprém",
+   "tags": "kerékpár e-bike túra",
+   "desc_hu": "Kerékpár- és e-bike-kölcsönzés, túrák; tel.: +36 70 339 5018.",
+   "desc_en": "Bike and e-bike rental and tours; tel.: +36 70 339 5018.",
+   "url": "https://www.veszpreminfo.hu/en/place/e-bike-and-bike-rentals-tours"
+  },
+  {
+   "name": "Elektromos töltőállomások",
+   "type": "charging",
+   "address": "Köd u.; Bagolyvári parkolóház; Óváros tér 20; Jutasi út 1 (SZMT); ActiCity, Hóvirág u. 1",
+   "tags": "EV töltő",
+   "desc_hu": "Városi töltők 22 kW AC-től 50 kW DC-ig (Jutasi út 1, 0–24); az Óváros tér 20-on 120 Ft/kWh.",
+   "desc_en": "City chargers from 22 kW AC to 50 kW DC (Jutasi út 1, 24/7); Óváros tér 20 costs 120 HUF/kWh.",
+   "url": "https://www.veszpreminfo.hu/en/parking-public-transportation"
+  },
+  {
+   "name": "Bagolyvári parkolóház",
+   "type": "transport",
+   "address": "Bagolyvári út, 8200 Veszprém",
+   "tags": "parkolás belváros",
+   "desc_hu": "190 férőhelyes belvárosi parkolóház, érmés fizetés; 16 órától a bejáratok ráccsal zárnak, utána jeggyel lehet ki-be járni.",
+   "desc_en": "190-space central car park, coin payment; entrances close with a grille from 16:00, after which a ticket is needed.",
+   "url": "https://www.veszpreminfo.hu/en/parking"
+  },
+  {
+   "name": "Szeglethy utcai mélygarázs",
+   "type": "transport",
+   "address": "Óvári Ferenc utca felől, 8200 Veszprém",
+   "tags": "parkolás belváros",
+   "desc_hu": "117 férőhelyes mélygarázs rendszámfelismeréssel; fizetés után 10 percen belül kell kihajtani.",
+   "desc_en": "117-space underground car park with plate recognition; exit within 10 minutes of paying.",
+   "url": "https://www.veszpreminfo.hu/en/parking"
+  },
+  {
+   "name": "ActiCity parkoló (P+R)",
+   "type": "transport",
+   "address": "Hóvirág utca 1, 8200 Veszprém",
+   "tags": "parkolás 0–24 P+R EV",
+   "desc_hu": "154 fedett hely, 0–24 nyitva; 8 órás ciklusonként csak az első 3 óra fizetős; 4 db 11 kW-os töltő.",
+   "desc_en": "154 covered spaces open 24/7; only the first 3 hours of each 8-hour cycle are charged; four 11 kW chargers.",
+   "url": "https://www.veszpreminfo.hu/en/parking"
+  }
+ ],
+ "sports": [
+  {
+   "name": "One Veszprém HC",
+   "when": "NB I és EHF Bajnokok Ligája, szezon szeptembertől júniusig",
+   "venue": "One Veszprém Aréna",
+   "tags": "kézilabda BL",
+   "desc_hu": "1977-ben alapított férfi kézilabdacsapat, rekordszámú magyar bajnoki címmel és négy BL-döntővel. A 2026/27-es BL csoportkörben a Füchse Berlin, az FC Porto és a Partizan ellen játszik.",
+   "desc_en": "Men's handball club founded in 1977 with a record number of Hungarian titles and four Champions League finals. In the 2026/27 CL group it faces Füchse Berlin, FC Porto and Partizan.",
+   "url": "https://en.wikipedia.org/wiki/Veszpr%C3%A9m_KC"
+  },
+  {
+   "name": "One Veszprém Aréna",
+   "when": "Egész évben",
+   "venue": "Külső-Kádártai út 5, 8200 Veszprém",
+   "tags": "aréna koncert sport",
+   "desc_hu": "Akár 5500 fős multifunkciós aréna kézilabdához, koncertekhez és vásárokhoz.",
+   "desc_en": "Multi-purpose arena for up to 5,500 people for handball, concerts and fairs.",
+   "url": "https://www.veszpreminfo.hu/en/place/one-veszprem-arena"
+  },
+  {
+   "name": "Veszprém Sportuszoda",
+   "when": "Egész évben",
+   "venue": "Külső-Kádártai út 1/1, 8200 Veszprém",
+   "tags": "uszoda szauna esőnap",
+   "desc_hu": "Versenyuszoda 50 m-es és 25 m-es medencével, tanmedencével, gyermekmedencével, jakuzzival és szaunavilággal.",
+   "desc_en": "Competition pool complex with 50 m and 25 m pools, teaching and children's pools, jacuzzi and sauna world.",
+   "url": "https://www.veszpreminfo.hu/en/place/sport-swimming-pool"
+  },
+  {
+   "name": "Veszprémi Jégcsarnok",
+   "when": "Télen korcsolya, nyáron görkorcsolya",
+   "venue": "Tüzér utca, 8200 Veszprém",
+   "tags": "korcsolya jégdisco család",
+   "desc_hu": "Fedett, 56 × 27 m-es jégpálya; jégdisco és közönségkorcsolyázás.",
+   "desc_en": "Covered 56 × 27 m rink with ice discos and public skating.",
+   "url": "https://www.veszpreminfo.hu/en/place/veszprem-ice-rink"
+  },
+  {
+   "name": "Balaton Karting Veszprém",
+   "when": "Egész évben",
+   "venue": "Házgyári út 5, 8200 Veszprém",
+   "tags": "gokart",
+   "desc_hu": "Modern gokartpálya valós idejű köridőkijelzéssel a kormányon.",
+   "desc_en": "Modern karting track with real-time lap times on the steering wheel.",
+   "url": "https://www.veszpreminfo.hu/en/place/balaton-karting-veszprem"
+  },
+  {
+   "name": "Kerékpárút Veszprém–Bánd",
+   "when": "Egész évben",
+   "venue": "Indulás: Laczkó-forrás, Veszprémvölgyi utca",
+   "tags": "kerékpár Séd",
+   "desc_hu": "Több mint 6 km-es kerékpárút a Séd mentén Márkótól Bándig; veszprémi szakasza 4464 m.",
+   "desc_en": "A 6+ km cycle path along the Séd from Márkó to Bánd; the Veszprém section is 4,464 m.",
+   "url": "https://www.veszpreminfo.hu/en/place/cycle-path-connecting-veszprem-with-band"
+  },
+  {
+   "name": "MotoGP Magyar Nagydíj – Balaton Park",
+   "when": "2026. június 5–7. (lezajlott)",
+   "venue": "Balaton Park Circuit, Balatonfőkajár",
+   "tags": "MotoGP motorsport",
+   "desc_hu": "A 4,08 km-es, 17 kanyaros pályán rendezett nagydíj; egy független rajongói oldal szerint 2027-ben nem szerepel a MotoGP-naptárban.",
+   "desc_en": "Grand Prix on the 4.08 km, 17-turn track; an independent fan site says Hungary is not on the 2027 MotoGP calendar.",
+   "url": "https://www.michelin.co.uk/blog/articles/motogp-2026-complete-guide-to-the-grand-prix-of-hungary-at-balaton-park"
+  },
+  {
+   "name": "WorldSBK – Balaton Park",
+   "when": "Május",
+   "venue": "Balaton Park Circuit, Balatonfőkajár",
+   "tags": "superbike motorsport",
+   "desc_hu": "A Superbike-világbajnokság magyar futama 2025 óta, jellemzően májusban.",
+   "desc_en": "The Superbike World Championship's Hungarian round since 2025, usually in May.",
+   "url": "https://en.wikipedia.org/wiki/Balaton_Park_Circuit"
+  }
+ ],
+ "events": [
+  {
+   "name": "One Veszprém HC – Füchse Berlin (EHF Bajnokok Ligája)",
+   "when": "2026-10-21 18:45",
+   "venue": "One Veszprém Aréna",
+   "tags": "kézilabda BL",
+   "desc_hu": "Bajnokok Ligája csoportmérkőzés hazai pályán.",
+   "desc_en": "Champions League group match at home.",
+   "url": "https://handballveszprem.hu/"
+  },
+  {
+   "name": "56 26, avagy a vak csillag",
+   "when": "2026-10-23 19:30; 2026-10-29 és 10-30 19:00",
+   "venue": "Hangvilla, Nagyterem",
+   "tags": "bábszínház október 23.",
+   "desc_hu": "Bábszínházi előadás a forradalom évfordulója körül.",
+   "desc_en": "Puppet theatre performance around the revolution anniversary.",
+   "url": "https://www.hangvilla.com/programjaink"
+  },
+  {
+   "name": "Harlem Globetrotters",
+   "when": "2026-10-29 19:00",
+   "venue": "One Veszprém Aréna",
+   "tags": "show család",
+   "desc_hu": "A világhírű kosárlabda-show 2026-os turnéja.",
+   "desc_en": "The famous basketball show's 2026 world tour.",
+   "url": "https://www.veszpreminfo.hu/en/events/harlem-globetrotters"
+  },
+  {
+   "name": "Abigél (musical)",
+   "when": "2026-10-24, 29, 30, 31 19:00",
+   "venue": "Petőfi Színház, Nagyszínház",
+   "tags": "színház musical",
+   "desc_hu": "Az évad nyitó musicalje, októberben több előadással.",
+   "desc_en": "The season's opening musical with several October performances.",
+   "url": "https://www.petofiszinhaz.hu/hu/havi-musor"
+  },
+  {
+   "name": "One Veszprém HC – HE-DO B Braun Gyöngyös",
+   "when": "2026-10-31",
+   "venue": "One Veszprém Aréna",
+   "tags": "kézilabda NB I",
+   "desc_hu": "Hazai bajnoki mérkőzés.",
+   "desc_en": "Home league match.",
+   "url": "https://oneveszpremarena.hu/rendezvenyek/sport"
+  },
+  {
+   "name": "Back to 2000s",
+   "when": "2026-10-31",
+   "venue": "Expresszó",
+   "tags": "buli",
+   "desc_hu": "2000-es évek zenei buli.",
+   "desc_en": "2000s music party.",
+   "url": "https://www.veszpreminfo.hu/en/events/back-to-2000s-expresszo"
+  },
+  {
+   "name": "Bakony Expo 2026",
+   "when": "2026-11-06 – 2026-11-08",
+   "venue": "One Veszprém Aréna és előtte lévő park",
+   "tags": "gasztro helyi termelők vásár",
+   "desc_hu": "Bakonyi ízek vására helyi termelőkkel, főzőbemutatókkal és gyerekprogramokkal; minden novemberben.",
+   "desc_en": "Bakony flavours fair with local producers, cooking demos and kids' activities; held every November.",
+   "url": "https://www.veszpreminfo.hu/en/events/bakony-expo-2026"
+  },
+  {
+   "name": "Baráti Kristóf és a Camerata Pelsonore",
+   "when": "2026-11-13 19:00",
+   "venue": "Hangvilla",
+   "tags": "komolyzene",
+   "desc_hu": "Hegedűest kamarazenekarral.",
+   "desc_en": "Violin concert with chamber orchestra.",
+   "url": "https://www.hangvilla.com/programjaink/barati-kristof-es-a-camerata-pelsonore"
+  },
+  {
+   "name": "Pannonfíling Mozgóképes Találkozó",
+   "when": "2026-11-14",
+   "venue": "FOTON Audiovizuális Centrum",
+   "tags": "film rövidfilm",
+   "desc_hu": "A 22. rövidfilmes találkozó.",
+   "desc_en": "The 22nd short-film gathering.",
+   "url": "https://www.programturizmus.hu/ajanlat-pannonfiling-mozgokepes-talalkozo.html"
+  },
+  {
+   "name": "Négy évszak, két világ – Kovács Gergely zongoraestje",
+   "when": "2026-11-15 17:00",
+   "venue": "Hangvilla",
+   "tags": "komolyzene zongora",
+   "desc_hu": "Zongoraest.",
+   "desc_en": "Piano recital.",
+   "url": "https://www.veszpreminfo.hu/en/events/four-seasons-two-worlds-a-piano-recital-by-gergely-kovacs"
+  },
+  {
+   "name": "Veszprém Szlalom",
+   "when": "2026-11-15",
+   "venue": "One Veszprém Aréna",
+   "tags": "autósport",
+   "desc_hu": "Veszprémi Szlalom Bajnokság.",
+   "desc_en": "Veszprém Slalom Championship.",
+   "url": "https://oneveszpremarena.hu/rendezvenyek/sport"
+  },
+  {
+   "name": "One Veszprém HC – MOL Tatabánya KC",
+   "when": "2026-11-21",
+   "venue": "One Veszprém Aréna",
+   "tags": "kézilabda NB I",
+   "desc_hu": "Hazai bajnoki mérkőzés.",
+   "desc_en": "Home league match.",
+   "url": "https://oneveszpremarena.hu/rendezvenyek/sport"
+  },
+  {
+   "name": "Necc Party",
+   "when": "2026-11-28",
+   "venue": "Expresszó",
+   "tags": "buli",
+   "desc_hu": "Klubest.",
+   "desc_en": "Club night.",
+   "url": "https://www.veszpreminfo.hu/en/events/necc-party-expresszo"
+  },
+  {
+   "name": "QUEEN Symphonic Live",
+   "when": "2026-12-04",
+   "venue": "One Veszprém Aréna",
+   "tags": "koncert",
+   "desc_hu": "Szimfonikus Queen-koncert.",
+   "desc_en": "Symphonic Queen concert.",
+   "url": "https://oneveszpremarena.hu/"
+  },
+  {
+   "name": "Luxemburg grófja – bemutató",
+   "when": "2026-12-04",
+   "venue": "Petőfi Színház",
+   "tags": "operett bemutató",
+   "desc_hu": "Lehár Ferenc operettje Peller Károly rendezésében.",
+   "desc_en": "Franz Lehár's operetta directed by Károly Peller.",
+   "url": "https://www.petofiszinhaz.hu/hu/hirek/a-veszpremi-petofi-szinhaz-meghirdette-uj-2026-2027-es-evadat-2026-05-12"
+  },
+  {
+   "name": "Retro Queens & Kings",
+   "when": "2026-12-05",
+   "venue": "One Veszprém Aréna",
+   "tags": "koncert retró",
+   "desc_hu": "Retró koncert.",
+   "desc_en": "Retro concert.",
+   "url": "https://oneveszpremarena.hu/"
+  },
+  {
+   "name": "Szűcs Krisztián (HS7) – Utazás a kegyetlenbe",
+   "when": "2026-12-11 19:00",
+   "venue": "Hangvilla",
+   "tags": "koncert",
+   "desc_hu": "Koncert.",
+   "desc_en": "Concert.",
+   "url": "https://www.hangvilla.com/programjaink/szucs-krisztian-hs7-utazas-a-kegyetlenbe"
+  },
+  {
+   "name": "One Veszprém HC – Szigetszentmiklós KSK",
+   "when": "2026-12-12",
+   "venue": "One Veszprém Aréna",
+   "tags": "kézilabda NB I",
+   "desc_hu": "Hazai bajnoki mérkőzés.",
+   "desc_en": "Home league match.",
+   "url": "https://oneveszpremarena.hu/rendezvenyek/sport"
+  },
+  {
+   "name": "Rákász Gergely – Mozart",
+   "when": "2026-12-18 19:00",
+   "venue": "Hangvilla",
+   "tags": "orgona komolyzene",
+   "desc_hu": "Rákász Gergely Mozart-estje.",
+   "desc_en": "Gergely Rákász's Mozart evening.",
+   "url": "https://www.hangvilla.com/programjaink/rakasz-gergely-mozart"
+  },
+  {
+   "name": "Veszprémi (Illatos) Advent",
+   "when": "Jellemzően november vége – december 23. (2025: nov. 28 – dec. 23.); a 2026-os dátum még nem publikált",
+   "venue": "Kossuth Lajos utca",
+   "tags": "advent vásár koncert ingyenes",
+   "desc_hu": "Adventi vásár a sétálóutcán koncertekkel, gyertyagyújtással, adventi iglukkal és december 6-án Mikulással.",
+   "desc_en": "Advent market on the pedestrian street with concerts, candle lighting, Advent igloos and St Nicholas on 6 December.",
+   "url": "https://veszprem.hu/hirek/program/advent25/"
+  },
+  {
+   "name": "Irigy Hónaljmirigy 35 – évzáró jubileumi nagykoncert",
+   "when": "2026-12-27",
+   "venue": "One Veszprém Aréna",
+   "tags": "koncert humor",
+   "desc_hu": "Jubileumi évzáró koncert.",
+   "desc_en": "Year-end anniversary concert.",
+   "url": "https://oneveszpremarena.hu/"
+  },
+  {
+   "name": "A Dzsungel könyve (musical)",
+   "when": "2026-12-30",
+   "venue": "One Veszprém Aréna",
+   "tags": "musical család",
+   "desc_hu": "Musical.",
+   "desc_en": "Musical.",
+   "url": "https://oneveszpremarena.hu/"
+  },
+  {
+   "name": "Csak egy tánc volt – Szécsi Pál legszebb dalai",
+   "when": "2027-01-02",
+   "venue": "One Veszprém Aréna",
+   "tags": "koncert",
+   "desc_hu": "Emlékkoncert.",
+   "desc_en": "Tribute concert.",
+   "url": "https://oneveszpremarena.hu/"
+  },
+  {
+   "name": "A diótörő (balett)",
+   "when": "2027-01-05",
+   "venue": "One Veszprém Aréna",
+   "tags": "balett család",
+   "desc_hu": "Csajkovszkij balettje.",
+   "desc_en": "Tchaikovsky's ballet.",
+   "url": "https://oneveszpremarena.hu/"
+  },
+  {
+   "name": "Az Igazi Filmzene Koncert – 2027 Edition",
+   "when": "2027-02-13",
+   "venue": "One Veszprém Aréna",
+   "tags": "koncert filmzene",
+   "desc_hu": "Filmzenei koncert.",
+   "desc_en": "Film music concert.",
+   "url": "https://www.veszpreminfo.hu/en/events/film-music-concert-2027-edition"
+  },
+  {
+   "name": "Szerelmes Shakespeare – bemutató",
+   "when": "2027-02-12",
+   "venue": "Petőfi Színház",
+   "tags": "színház bemutató",
+   "desc_hu": "Bemutató Oberfrank Pál rendezésében.",
+   "desc_en": "Premiere directed by Pál Oberfrank.",
+   "url": "https://www.petofiszinhaz.hu/hu/hirek/a-veszpremi-petofi-szinhaz-meghirdette-uj-2026-2027-es-evadat-2026-05-12"
+  },
+  {
+   "name": "One Veszprém HC – Ferencvárosi TC",
+   "when": "2027-02-20",
+   "venue": "One Veszprém Aréna",
+   "tags": "kézilabda NB I",
+   "desc_hu": "Hazai bajnoki mérkőzés.",
+   "desc_en": "Home league match.",
+   "url": "https://oneveszpremarena.hu/rendezvenyek/sport"
+  },
+  {
+   "name": "One Veszprém HC – PLER-Budapest",
+   "when": "2027-03-18",
+   "venue": "One Veszprém Aréna",
+   "tags": "kézilabda NB I",
+   "desc_hu": "Hazai bajnoki mérkőzés.",
+   "desc_en": "Home league match.",
+   "url": "https://oneveszpremarena.hu/rendezvenyek/sport"
+  },
+  {
+   "name": "SOUL LEGACY – A Celebration of Soul & R&B",
+   "when": "2027-03-19",
+   "venue": "One Veszprém Aréna",
+   "tags": "koncert soul",
+   "desc_hu": "Soul és R&B koncert.",
+   "desc_en": "Soul and R&B concert.",
+   "url": "https://www.veszpreminfo.hu/en/events/soul-legacy-a-celebration-of-soul-rb"
+  },
+  {
+   "name": "A két pápa – bemutató",
+   "when": "2027-04-02 (várható)",
+   "venue": "Petőfi Színház, Nagyszínház",
+   "tags": "színház bemutató",
+   "desc_hu": "Anthony McCarten darabja Józan László rendezésében.",
+   "desc_en": "Anthony McCarten's play directed by László Józan.",
+   "url": "https://www.petofiszinhaz.hu/hu/hirek/a-veszpremi-petofi-szinhaz-meghirdette-uj-2026-2027-es-evadat-2026-05-12"
+  },
+  {
+   "name": "Jane Eyre (táncjáték) – bemutató",
+   "when": "2027-04-12",
+   "venue": "Petőfi Színház",
+   "tags": "tánc bemutató",
+   "desc_hu": "Horváth Renátó Production táncelőadása.",
+   "desc_en": "Dance production by Horváth Renátó Production.",
+   "url": "https://www.petofiszinhaz.hu/hu/hirek/a-veszpremi-petofi-szinhaz-meghirdette-uj-2026-2027-es-evadat-2026-05-12"
+  },
+  {
+   "name": "One Veszprém HC – OTP Bank-PICK Szeged",
+   "when": "2027-04-17",
+   "venue": "One Veszprém Aréna",
+   "tags": "kézilabda NB I rangadó",
+   "desc_hu": "Hazai bajnoki rangadó.",
+   "desc_en": "Home league derby.",
+   "url": "https://oneveszpremarena.hu/rendezvenyek/sport"
+  },
+  {
+   "name": "MICHAEL – The Michael Jackson Show from London West End",
+   "when": "2027-04-22",
+   "venue": "One Veszprém Aréna",
+   "tags": "show koncert",
+   "desc_hu": "Michael Jackson-show.",
+   "desc_en": "Michael Jackson tribute show.",
+   "url": "https://www.veszpreminfo.hu/en/events/michael-the-michael-jackson-show-from-london-west-end"
+  },
+  {
+   "name": "One Veszprém HC – Balatonfüredi KSE / Budai Farkasok-Rév / Csurgói KK",
+   "when": "2027-05-01; 2027-05-12; 2027-05-23",
+   "venue": "One Veszprém Aréna",
+   "tags": "kézilabda NB I",
+   "desc_hu": "Tavaszi hazai bajnoki mérkőzések.",
+   "desc_en": "Spring home league matches.",
+   "url": "https://oneveszpremarena.hu/rendezvenyek/sport"
+  },
+  {
+   "name": "Gizella Napok Művészeti Fesztivál",
+   "when": "Minden év májusában (2026: május 4–10.)",
+   "venue": "Óváros tér, Szentháromság tér, Hangvilla, Szent Mihály-székesegyház és más helyszínek",
+   "tags": "fesztivál ingyenes történelmi felvonulás",
+   "desc_hu": "Egyhetes, többnyire ingyenes városi művészeti fesztivál koncertekkel, kiállításokkal és történelmi felvonulással.",
+   "desc_en": "A week-long, mostly free arts festival with concerts, exhibitions and a historical parade.",
+   "url": "https://www.programturizmus.hu/ajanlat-gizella-napok-muveszeti-fesztival-veszprem-info.html"
+  },
+  {
+   "name": "Rátonyi Róbert Operettfesztivál",
+   "when": "Minden év júniusában",
+   "venue": "Petőfi Színház és más helyszínek",
+   "tags": "operett fesztivál",
+   "desc_hu": "A Petőfi Színház évente júniusban rendezett operettfesztiválja.",
+   "desc_en": "The Petőfi Theatre's annual June operetta festival.",
+   "url": "https://www.veszpreminfo.hu/en/top-events-festivals/robert-ratonyi-operetta-festival-317"
+  },
+  {
+   "name": "Rozé, Rizling és Jazz Napok",
+   "when": "Július (2026: júl. 10–19.)",
+   "venue": "Óváros tér",
+   "tags": "bor jazz ingyenes",
+   "desc_hu": "Tíznapos ingyenes bor- és zenei fesztivál kb. 30 Balaton-felvidéki borásszal, napi három koncerttel; a VeszprémFest kísérőrendezvénye.",
+   "desc_en": "A free ten-day wine and music festival with about 30 Balaton Uplands winemakers and three concerts a day; a VeszprémFest side event.",
+   "url": "https://www.veszpreminfo.hu/en/events/rose-riesling-and-jazz-days-2026"
+  },
+  {
+   "name": "VeszprémFest",
+   "when": "2027. július 14–17. (2026: júl. 15–18.)",
+   "venue": "História Kert / Jezsuita templomkert",
+   "tags": "fesztivál koncert nemzetközi sztárok",
+   "desc_hu": "Nagy múltú nyári zenei fesztivál; 2026-ban Juanes, Beth Hart, Kraftwerk és Pink Martini lépett fel.",
+   "desc_en": "Long-running summer music festival; 2026 headliners were Juanes, Beth Hart, Kraftwerk and Pink Martini.",
+   "url": "https://www.programturizmus.hu/ajanlat-veszpremfest.html"
+  },
+  {
+   "name": "Utcazene Fesztivál",
+   "when": "Július (2026: júl. 23–25.)",
+   "venue": "Belváros",
+   "tags": "utcazene street food ingyenes",
+   "desc_hu": "A város egyik legrégebbi zenei eseménye hazai és külföldi utcazenészekkel és street fooddal.",
+   "desc_en": "One of the city's oldest music events with Hungarian and foreign street musicians and street food.",
+   "url": "https://www.veszpreminfo.hu/en/top-events-festivals/street-music-festival-68"
+  },
+  {
+   "name": "Kabóciádé Családi Fesztivál",
+   "when": "Nyár",
+   "venue": "Kolostorok és Kertek",
+   "tags": "bábszínház család",
+   "desc_hu": "A Kabóca Bábszínház háromnapos nyári családi fesztiválja.",
+   "desc_en": "The Kabóca Puppet Theatre's three-day summer family festival.",
+   "url": "https://www.veszpreminfo.hu/en/place/kaboca-puppet-theatre"
+  },
+  {
+   "name": "Veszprém–Balaton Filmpiknik",
+   "when": "Nyár",
+   "venue": "Veszprém és Balatonfüred",
+   "tags": "film fesztivál",
+   "desc_hu": "Magyar filmes fesztivál (korábban MOZ.GO) bemutatókkal, közönségtalálkozókkal és koncertekkel.",
+   "desc_en": "Hungarian film festival (formerly MOZ.GO) with premieres, Q&As and concerts.",
+   "url": "https://www.veszpreminfo.hu/en/top-events-festivals/veszprem-balaton-film-picnic-377"
+  },
+  {
+   "name": "Auer Fesztivál",
+   "when": "Augusztus (2026: aug. 3–9., 12. alkalom)",
+   "venue": "Hangvilla és Kolostorok és Kertek",
+   "tags": "komolyzene hegedű",
+   "desc_hu": "A Veszprémben született Auer Lipót emlékére rendezett fesztivál a Mendelssohn Kamarazenekarral.",
+   "desc_en": "Festival honouring Veszprém-born Leopold Auer with the Mendelssohn Chamber Orchestra.",
+   "url": "https://www.veszpreminfo.hu/en/events/auer-festival-veszprem-2026"
+  },
+  {
+   "name": "Balaton Wine & Gourmet Fesztivál",
+   "when": "Szeptember",
+   "venue": "Veszprém-völgy",
+   "tags": "gasztro bor",
+   "desc_hu": "Balatoni éttermek és pincészetek gasztrofesztiválja.",
+   "desc_en": "Gastronomy festival of Balaton restaurants and wineries.",
+   "url": "https://www.veszpreminfo.hu/en/top-events-festivals/balaton-wine-gourmet-festival-321"
+  },
+  {
+   "name": "Mihály-napi búcsú",
+   "when": "Szeptember vége (2026: szept. 26–27.)",
+   "venue": "Vár, Szent Mihály-bazilika környéke",
+   "tags": "búcsú hagyomány ingyenes",
+   "desc_hu": "A bazilika védőszentjének, Szent Mihálynak tiszteletére rendezett városi búcsú.",
+   "desc_en": "City fair honouring St Michael, patron of the basilica.",
+   "url": "https://veszprem.hu/hirek/program/bucsu-26/"
+  },
+  {
+   "name": "Futó kiállítások 2026 végéig",
+   "when": "2026-12-31-ig",
+   "venue": "CODE; Vass Gyűjtemény; Biró–Giczey-ház; Laczkó Dezső Múzeum",
+   "tags": "kiállítás esőnap",
+   "desc_hu": "Vasarely és Notre-Dame (CODE), Tiszta forma (Vass), Bogáncs és liliom (Biró–Giczey-ház), Emlékgép (LDM).",
+   "desc_en": "Vasarely and Notre-Dame (CODE), Pure Form (Vass), Thistle and Lily (Biró–Giczey House), Memory Machine (LDM).",
+   "url": "https://www.veszpreminfo.hu/en/events/exhibitions"
+  },
+  {
+   "name": "Kézilabda – Telekom Veszprém hazai meccsek",
+   "month": "szeptember–május",
+   "tags": "kézilabda handball meccs match",
+   "desc_hu": "Bajnoki és Bajnokok Ligája meccsek a Veszprém Arénában.",
+   "desc_en": "League and Champions League matches at Veszprém Aréna."
+  },
+  {
+   "name": "Adventi vásár",
+   "month": "december",
+   "tags": "advent karácsony christmas weihnachten vásár market",
+   "desc_hu": "Ünnepi vásár, forralt bor és koncertek a belvárosban.",
+   "desc_en": "Christmas market, mulled wine and concerts in the town centre."
+  }
+ ],
+ "practical": [
+  {
+   "topic": "Segélyhívó számok",
+   "tags": "vészhelyzet 112",
+   "text_hu": "Általános segélyhívó: 112. Mentők: 104, tűzoltóság: 105, rendőrség: 107.",
+   "text_en": "General emergency: 112. Ambulance: 104, fire: 105, police: 107.",
+   "url": "https://help.unhcr.org/hungary/hu/trauma-or-violence/"
+  },
+  {
+   "topic": "Orvosi ügyelet",
+   "tags": "orvos éjszaka 1830",
+   "text_hu": "Rendelési időn kívül az egységes ügyeleti szám felnőttnek és gyereknek is 1830 (hétköznap 16–8, hétvégén egész nap). Életveszélyben 112.",
+   "text_en": "Out of hours, call the unified duty line 1830 for adults and children (weekdays 16:00–08:00, all day weekends). In life-threatening cases call 112.",
+   "url": "https://www.mentok.hu/ugyelet"
+  },
+  {
+   "topic": "Kórház",
+   "tags": "kórház sürgősségi",
+   "text_hu": "Veszprém Vármegyei Csolnoky Ferenc Kórház, Kórház u. 1.",
+   "text_en": "Csolnoky Ferenc County Hospital, Kórház u. 1.",
+   "url": "https://angels-initiative.com/content/csolnoky-ferenc-korhaz"
+  },
+  {
+   "topic": "Ügyeletes gyógyszertár",
+   "tags": "patika éjszaka",
+   "text_hu": "Az éjszakai patikaügyelet napról napra változik (pl. PatikaPlus, Jutasi úti, Pláza Patika); indulás előtt érdemes ellenőrizni és telefonálni.",
+   "text_en": "Night pharmacy duty rotates daily (e.g. PatikaPlus, Jutasi út, Pláza Patika); check online and phone before going.",
+   "url": "https://www.patikaradar.hu/patikak/telepulesek/veszprem/"
+  },
+  {
+   "topic": "Tourinform",
+   "tags": "információ",
+   "text_hu": "Tourinform Veszprém: Óváros tér 2., tel. +36 88 404 548, info@veszpreminfo.hu. Októbertől áprilisig H–P 9–17, Szo 9–15, vasárnap zárva.",
+   "text_en": "Tourinform Veszprém: Óváros tér 2, tel. +36 88 404 548, info@veszpreminfo.hu. October–April Mon–Fri 9–17, Sat 9–15, closed Sunday.",
+   "url": "https://www.veszpreminfo.hu/en/tourist-information-office"
+  },
+  {
+   "topic": "Parkolás",
+   "tags": "parkolás app",
+   "text_hu": "Az utcai parkolás zónakódját a táblán kell nézni; mobilon Simple vagy Parking Hungary apppal fizethető. Parkolóházak: Bagolyvári (190 hely), Szeglethy mélygarázs (117), ActiCity (154, 0–24, P+R kedvezmény).",
+   "text_en": "Check the zone code on street signs; pay by phone with the Simple or Parking Hungary app. Car parks: Bagolyvári (190), Szeglethy underground (117), ActiCity (154, 24/7, P+R discount).",
+   "url": "https://www.veszpreminfo.hu/en/parking"
+  },
+  {
+   "topic": "Behajtás a Várba",
+   "tags": "vár autó",
+   "text_hu": "A Vár utcába autóval hétköznap 17 órától másnap 6-ig, hétvégén és ünnepnapokon egész nap lehet behajtani.",
+   "text_en": "Cars may enter Vár utca weekdays from 17:00 to 06:00 and all day at weekends and holidays.",
+   "url": "https://www.veszpreminfo.hu/en/place/walk-in-the-veszprem-castle"
+  },
+  {
+   "topic": "Helyi közlekedés",
+   "tags": "busz V-Busz",
+   "text_hu": "A helyi buszokat a V-BUSZ Kft. üzemelteti. A vasútállomásról az 1, 2, 4–4A, 5 és 10-es járat visz a belvárosba (leszállás: autóbusz-állomás vagy Hotel megálló).",
+   "text_en": "Local buses are run by V-BUSZ Kft. From the railway station lines 1, 2, 4–4A, 5 and 10 go to the centre (get off at the bus station or Hotel stop).",
+   "url": "https://www.veszpreminfo.hu/en/parking-public-transportation"
+  },
+  {
+   "topic": "Utazás Budapestről",
+   "tags": "vonat busz Budapest",
+   "text_hu": "Vonattal Székesfehérváron át kb. 2 óra, busszal a Népligetből kb. 2 óra (forrás: Pannon Egyetem utazási oldal, becsült idők).",
+   "text_en": "By train via Székesfehérvár about 2 hours, by bus from Népliget about 2 hours (source: University of Pannonia travel page, approximate).",
+   "url": "https://uneecc.uni-pannon.hu/participants/arrival"
+  },
+  {
+   "topic": "Taxi",
+   "tags": "taxi",
+   "text_hu": "Bakony Taxi: +36 88 444 444, angolul beszélő diszpécserek; taxiállomás a buszpályaudvar mellett.",
+   "text_en": "Bakony Taxi: +36 88 444 444 with English-speaking dispatchers; taxi rank next to the bus station.",
+   "url": "https://uneecc.uni-pannon.hu/participants/arrival"
+  },
+  {
+   "topic": "Kerékpár és roller",
+   "tags": "V-Bike Lime kerékpár",
+   "text_hu": "V-Bike elektromos közbringa 19 állomással (napi, 3 napos, heti bérlet), valamint Lime e-roller applikációval.",
+   "text_en": "V-Bike public e-bikes at 19 stations (daily, 3-day, weekly passes) and Lime e-scooters via app.",
+   "url": "https://www.veszpreminfo.hu/en/parking-public-transportation"
+  },
+  {
+   "topic": "Városnéző kisvonat",
+   "tags": "kisvonat család",
+   "text_hu": "Tavasztól őszig általában naponta 10–17 óra között jár; indul az Óváros térről és az állatkerti megállóból félóránként.",
+   "text_en": "Runs spring to autumn, usually daily 10:00–17:00, from Óváros Square and the zoo stop every half hour.",
+   "url": "https://www.veszpreminfo.hu/en/place/veszprem-sightseeing-train"
+  },
+  {
+   "topic": "Csomagmegőrzés",
+   "tags": "csomag",
+   "text_hu": "A Tourinformban kis/közepes/nagy szekrény 400/500/800 Ft óránként; 2026. okt. 1. – 2027. márc. 31. között H–P 9–17, Szo 9–15.",
+   "text_en": "Tourinform lockers 400/500/800 HUF per hour; 1 Oct 2026 – 31 Mar 2027 Mon–Fri 9–17, Sat 9–15.",
+   "url": "https://www.veszpreminfo.hu/en/luggage-lockers"
+  },
+  {
+   "topic": "Legjobb kilátópontok",
+   "tags": "kilátó fotó",
+   "text_hu": "István és Gizella szobra a Vár végén, Tűztorony, Benedek-hegy, Szent István völgyhíd, Harmat utca (vár + viadukt egy képen), Gizella királyné kilátó a Gulya-dombon, Jutas vitéz kilátó.",
+   "text_en": "Stephen and Gisela statues at the castle's end, Fire Tower, Benedict Hill, St Stephen Viaduct, Harmat Street (castle and viaduct together), Queen Gisela lookout on Gulya Hill, Jutas vitéz lookout.",
+   "url": "https://www.veszpreminfo.hu/en/place/lookout-points"
+  },
+  {
+   "topic": "Esős napi programok",
+   "tags": "esőnap múzeum család",
+   "text_hu": "CODE digitális kiállítások, Laczkó Dezső Múzeum, Vár Börtön, Vass Gyűjtemény, Hangvilla és Petőfi Színház előadásai, Sportuszoda, jégcsarnok; kirándulásként Pannon Csillagda (Bakonybél).",
+   "text_en": "CODE digital exhibitions, Laczkó Dezső Museum, Castle Dungeon, Vass Collection, Hangvilla and Petőfi Theatre shows, sports pool, ice rink; or the Pannon Observatory in Bakonybél.",
+   "url": "https://www.veszpreminfo.hu/en/places/worth-seeing/l:museums-galleries"
+  },
+  {
+   "topic": "Ingyenes múzeumi napok",
+   "tags": "múzeum ingyenes",
+   "text_hu": "Március 15-én, augusztus 20-án és október 23-án a Laczkó Dezső Múzeum kiállításai ingyenesek (300 Ft technikai jegy szükséges).",
+   "text_en": "On 15 March, 20 August and 23 October the Laczkó Dezső Museum exhibitions are free (a 300 HUF technical ticket is required).",
+   "url": "https://www.ldm.hu/hu/jegyarak-nyitva-tartas"
+  },
+  {
+   "topic": "Ingyenes látnivalók",
+   "tags": "ingyenes",
+   "text_hu": "Ingyenes a vár bejárása, a Kolostorok és Kertek, a Szerelem-sziget, a Benedek-hegy, a viadukt, a Margit-romok és a Laczkó-forrás.",
+   "text_en": "Free: walking the castle, Cloisters and Gardens, Love Island, Benedict Hill, the viaduct, Margit Ruins and Laczkó Spring.",
+   "url": "https://www.veszpreminfo.hu/en/places/worth-seeing/l:cloisters-and-gardens"
+  },
+  {
+   "topic": "Vásárcsarnok",
+   "tags": "piac",
+   "text_hu": "Jutasi u. 2.: H–P 6–17, Szo 6–13; fő piacnap kedd és péntek, gombavizsgálat is van.",
+   "text_en": "Jutasi u. 2: Mon–Fri 6–17, Sat 6–13; main market days Tuesday and Friday, mushroom inspection available.",
+   "url": "https://www.programturizmus.hu/ajanlat-veszpremi-piac-vasarcsarnok.html"
+  },
+  {
+   "topic": "Vészhelyzet",
+   "tags": "vészhelyzet emergency notfall orvos doctor kórház hospital mentő 112",
+   "text_hu": "Egységes segélyhívó: 112. A városi kórház a Csolnoky Ferenc Kórház.",
+   "text_en": "European emergency number: 112. The town hospital is Csolnoky Ferenc Hospital."
+  },
+  {
+   "topic": "Érkezés vonattal/busszal",
+   "tags": "vonat train zug busz bus érkezés anreise",
+   "text_hu": "Veszprém vasútállomása az északi városrészben van, a helyközi buszpályaudvar a belvárosban. Budapestről autóval kb. 1,5 óra (M7/M8, 8-as főút).",
+   "text_en": "Veszprém railway station is in the north of town; the intercity bus station is central. By car from Budapest about 1.5 hours (M7/8, road 8)."
+  },
+  {
+   "topic": "Bolt, gyógyszertár",
+   "tags": "bolt shop supermarket gyógyszertár pharmacy apotheke",
+   "text_hu": "A szállás környékén és a belvárosban is több élelmiszerbolt és gyógyszertár található; a bevásárlóközpontok hétvégén is nyitva vannak.",
+   "text_en": "Several grocery stores and pharmacies are near the apartments and in the centre; shopping centres open at weekends too."
+  },
+  {
+   "topic": "Európa Kulturális Fővárosa 2023",
+   "tags": "ekf kulturális főváros capital of culture 2023",
+   "text_hu": "Veszprém–Balaton régió 2023-ban Európa Kulturális Fővárosa volt – sok megújult helyszín és program maradt meg utána.",
+   "text_en": "Veszprém–Balaton was European Capital of Culture in 2023 – many renewed venues and programmes remain."
+  }
+ ],
+ "itineraries": [
+  {
+   "title_hu": "Egy nap Veszprémben",
+   "title_en": "One day in Veszprém",
+   "steps_hu": [
+    "Reggeli az Óváros téren",
+    "Tűztorony kilátó",
+    "Várnegyed: Gizella-kápolna, székesegyház, Érseki palota",
+    "Kilátás a Szent István és Gizella szobortól",
+    "Ebéd a belvárosban",
+    "Séta a Séd-völgyben a viaduktig",
+    "Állatkert vagy Modern Képtár",
+    "Vacsora és bor a belvárosban"
+   ],
+   "steps_en": [
+    "Breakfast on Óváros Square",
+    "Fire Tower viewpoint",
+    "Castle District: Gisela Chapel, cathedral, Archbishop's Palace",
+    "View from the St Stephen & Gisela statues",
+    "Lunch in town",
+    "Walk along the Séd valley to the viaduct",
+    "Zoo or Modern Art Gallery",
+    "Dinner and wine in the old town"
+   ]
+  },
+  {
+   "title_hu": "Balaton-nap",
+   "title_en": "Lake Balaton day",
+   "steps_hu": [
+    "Tihany: apátság és levendulás",
+    "Ebéd Tihanyban vagy Balatonfüreden",
+    "Séta a Tagore sétányon",
+    "Fürdés Balatonalmádiban",
+    "Naplemente a vízparton, vissza Veszprémbe (15 perc)"
+   ],
+   "steps_en": [
+    "Tihany: abbey and lavender fields",
+    "Lunch in Tihany or Balatonfüred",
+    "Walk on the Tagore promenade",
+    "Swim at Balatonalmádi",
+    "Sunset by the water, back to Veszprém (15 min)"
+   ]
+  },
+  {
+   "title_hu": "Családi nap",
+   "title_en": "Family day",
+   "steps_hu": [
+    "Kittenberger állatkert",
+    "Piknik a Séd-völgyben",
+    "Tapolcai Tavasbarlang csónakázás",
+    "Lángos és strand a Balatonon"
+   ],
+   "steps_en": [
+    "Kittenberger Zoo",
+    "Picnic in the Séd valley",
+    "Boat ride in Tapolca lake cave",
+    "Lángos and a swim at Lake Balaton"
+   ]
+  },
+  {
+   "title_hu": "Bakonyi aktív nap",
+   "title_en": "Active Bakony day",
+   "steps_hu": [
+    "Zirc: apátság és arborétum",
+    "Cuha-völgy túra",
+    "Csesznek vára",
+    "Vacsora a Vámosi Csárdában"
+   ],
+   "steps_en": [
+    "Zirc: abbey and arboretum",
+    "Cuha valley hike",
+    "Csesznek castle",
+    "Dinner at Vámosi Csárda"
+   ]
+  }
+ ],
+ "event_sources": [
+  {
+   "name": "Agóra Veszprém – események (RSS)",
+   "url": "https://agoraveszprem.hu/programnaptar/",
+   "feed_url": "https://agoraveszprem.hu/tc-events/feed/",
+   "type": "rss"
+  },
+  {
+   "name": "veszprem.hu – Programajánló (WP REST JSON)",
+   "url": "https://veszprem.hu/hirek/program/",
+   "feed_url": "https://veszprem.hu/wp-json/wp/v2/posts?categories=63",
+   "type": "json"
+  },
+  {
+   "name": "veszprem.hu – összes hír (WP REST JSON)",
+   "url": "https://veszprem.hu/",
+   "feed_url": "https://veszprem.hu/wp-json/wp/v2/posts",
+   "type": "json"
+  },
+  {
+   "name": "Tourinform Veszprém – Havi program",
+   "url": "https://www.veszpreminfo.hu/en/monthly-programme",
+   "feed_url": "",
+   "type": "html"
+  },
+  {
+   "name": "Tourinform Veszprém – TOP események és fesztiválok",
+   "url": "https://www.veszpreminfo.hu/en/top-events-festivals",
+   "feed_url": "",
+   "type": "html"
+  },
+  {
+   "name": "Tourinform Veszprém – Kiállítások",
+   "url": "https://www.veszpreminfo.hu/en/events/exhibitions",
+   "feed_url": "",
+   "type": "html"
+  },
+  {
+   "name": "One Veszprém Aréna – rendezvények",
+   "url": "https://oneveszpremarena.hu/rendezvenyek",
+   "feed_url": "",
+   "type": "html"
+  },
+  {
+   "name": "Hangvilla – programjaink",
+   "url": "https://www.hangvilla.com/programjaink",
+   "feed_url": "",
+   "type": "html"
+  },
+  {
+   "name": "Veszprémi Petőfi Színház – havi műsor",
+   "url": "https://www.petofiszinhaz.hu/hu/havi-musor",
+   "feed_url": "",
+   "type": "html"
+  },
+  {
+   "name": "One Veszprém HC (handballveszprem.hu)",
+   "url": "https://handballveszprem.hu/",
+   "feed_url": "",
+   "type": "html"
+  },
+  {
+   "name": "Laczkó Dezső Múzeum",
+   "url": "https://www.ldm.hu/",
+   "feed_url": "",
+   "type": "html"
+  },
+  {
+   "name": "VeszprémFest",
+   "url": "https://www.veszpremfest.hu/",
+   "feed_url": "",
+   "type": "html"
+  },
+  {
+   "name": "Programturizmus – Veszprém",
+   "url": "https://www.programturizmus.hu/telepules-veszprem-varos.html",
+   "feed_url": "",
+   "type": "html"
+  }
+ ]
 }

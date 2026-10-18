@@ -41,21 +41,215 @@
 	var TODAY = ymd(new Date());
 
 	/* ======================================================================
-	 * Kompakt sáv (hero, apartman oldal) – natív dátummezők okosítása
+	 * Elérhetőség – közös tár (sáv, felugró naptár, varázsló)
+	 * ==================================================================== */
+	var AV = { days: {}, events: [], loaded: {}, synced: 0 };
+	function monthStart(off) { var n = new Date(); return new Date(n.getFullYear(), n.getMonth() + off, 1); }
+	function monthsFromNow(s) { var x = parse(s), n = new Date(); return Math.max(0, (x.getFullYear() - n.getFullYear()) * 12 + x.getMonth() - n.getMonth()); }
+	AV.load = function (off, count) {
+		var a = ymd(monthStart(off)), last = monthStart(off + count); last.setDate(0);
+		var b = ymd(last), key = a + '|' + b;
+		if (AV.loaded[key]) { return AV.loaded[key] === 1 ? Promise.resolve(false) : AV.loaded[key]; }
+		var pr = api('availability?from=' + a + '&to=' + b + '&lang=' + C.lang).then(function (j) {
+			if (j && j.days) { Object.keys(j.days).forEach(function (k) { AV.days[k] = j.days[k]; }); AV.events = j.events || AV.events; AV.synced = j.synced; }
+			AV.loaded[key] = 1;
+			return true;
+		}).catch(function () { delete AV.loaded[key]; return false; });
+		AV.loaded[key] = pr;
+		return pr;
+	};
+	AV.reset = function () { AV.days = {}; AV.loaded = {}; };
+	function inEvent(date) { for (var i = 0; i < AV.events.length; i++) { var e = AV.events[i]; if (date >= e.from && date <= e.to) { return e; } } return null; }
+	function aptFree(key, from, to) {
+		for (var x = from; x < to; x = addDays(x, 1)) { var s = AV.days[x]; if (!s || s[key] !== 'free') { return false; } }
+		return true;
+	}
+	function freeApts(from, to) { return C.apartments.filter(function (a) { return aptFree(a.key, from, to); }).map(function (a) { return a.key; }); }
+	function anyFree(from, to) { return freeApts(from, to).length > 0; }
+	function dayState(s, apt) {
+		if (s < TODAY) { return 'closed'; }
+		var info = AV.days[s];
+		if (!info) { return 'loading'; }
+		return apt ? (info[apt] || 'closed') : info.any;
+	}
+	function rangeFree(apt, from, to) { return apt ? aptFree(apt, from, to) : anyFree(from, to); }
+
+	/* ======================================================================
+	 * Felugró, széles üveg naptár (érkezés → távozás)
+	 * ==================================================================== */
+	var DP = (function () {
+		var ov = null, o = {}, sel = { from: null, to: null }, off = 0, err = '', last = null, hover = null;
+		var mq = window.matchMedia('(min-width: 760px)');
+		function close() {
+			if (!ov) { return; }
+			ov.classList.remove('is-open');
+			var x = ov; ov = null;
+			setTimeout(function () { if (x.parentNode) { x.parentNode.removeChild(x); } }, 260);
+			d.documentElement.classList.remove('zcb-dp-lock');
+			d.removeEventListener('keydown', onKey, true);
+			if (last && last.focus) { last.focus({ preventScroll: true }); }
+		}
+		function onKey(e) {
+			if (!ov) { return; }
+			if (e.key === 'Escape') { e.preventDefault(); close(); return; }
+			if (e.key === 'Tab') {
+				var f = Array.prototype.filter.call(ov.querySelectorAll('button:not([disabled]),a[href]'), function (x) { return x.offsetParent !== null; });
+				if (!f.length) { return; }
+				if (e.shiftKey && d.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+				else if (!e.shiftKey && d.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+			}
+			if (/^Arrow/.test(e.key) && d.activeElement && d.activeElement.getAttribute('data-date')) {
+				var step = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 }[e.key], nd = addDays(d.activeElement.getAttribute('data-date'), step);
+				var nb = ov.querySelector('[data-date="' + nd + '"]');
+				if (nb) { e.preventDefault(); nb.focus(); }
+			}
+		}
+		function selectable(s) {
+			var stt = dayState(s, o.apt);
+			if (stt === 'closed' || stt === 'loading') { return false; }
+			if (sel.from && !sel.to && s > sel.from) { return rangeFree(o.apt, sel.from, s); }
+			return stt === 'free';
+		}
+		function pick(s) {
+			err = '';
+			if (!sel.from || sel.to || s <= sel.from || !rangeFree(o.apt, sel.from, s)) { sel = { from: s, to: null }; }
+			else {
+				var n = nights(sel.from, s), min = Math.max(1, C.minNights || 1);
+				if (n < min) { err = t('bk_err_min', { n: min }); }
+				else { sel.to = s; }
+			}
+			hover = null;
+			render(s);
+		}
+		function dayBtn(s, day) {
+			var stt = dayState(s, o.apt), ev = inEvent(s), can = selectable(s);
+			var inRange = sel.from && sel.to && s > sel.from && s < sel.to;
+			var prev = sel.from && !sel.to && hover && s > sel.from && s <= hover;
+			var cls = 'zcb-d zcb-d--' + stt + (s === sel.from ? ' is-start' + (sel.to ? ' is-rs' : '') : '') + (s === sel.to ? ' is-end' : '') + (inRange ? ' is-in' : '') + (prev ? ' is-preview' : '') + (s === hover && prev ? ' is-hover-end' : '') + (s === TODAY ? ' is-today' : '') + (ev ? ' has-event' : '') + (!can ? ' is-off' : '');
+			var label = fmt(s, { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' }) + ' – ' + t(stt === 'free' ? 'bk_legend_free' : stt === 'checkout' ? 'bk_legend_checkout' : stt === 'booked' ? 'bk_legend_booked' : 'bk_legend_closed') + (ev ? ' – ' + ev.name : '');
+			return el('button', { type: 'button', class: cls, 'data-date': s, 'aria-label': label, 'aria-pressed': (s === sel.from || s === sel.to) ? 'true' : 'false', title: ev ? ev.name : null, disabled: can ? null : true, onclick: function () { pick(s); } }, [el('span', { class: 'zcb-d__n', text: String(day) })]);
+		}
+		function month(k) {
+			var first = monthStart(k), y = first.getFullYear(), mo = first.getMonth();
+			var box = el('div', { class: 'zcb-m' }, [el('p', { class: 'zcb-m__t', text: first.toLocaleDateString(C.locale, { month: 'long', year: 'numeric' }) })]);
+			var grid = el('div', { class: 'zcb-m__g' });
+			for (var i = 0; i < 7; i++) { grid.appendChild(el('span', { class: 'zcb-m__wd', 'aria-hidden': 'true', text: new Date(2024, 0, 1 + i).toLocaleDateString(C.locale, { weekday: 'short' }).replace('.', '').slice(0, 2) })); }
+			var lead = (first.getDay() + 6) % 7;
+			for (i = 0; i < lead; i++) { grid.appendChild(el('span', { class: 'zcb-d zcb-d--pad', 'aria-hidden': 'true' })); }
+			var dim = new Date(y, mo + 1, 0).getDate();
+			for (var day = 1; day <= dim; day++) { grid.appendChild(dayBtn(ymd(new Date(y, mo, day)), day)); }
+			box.appendChild(grid);
+			return box;
+		}
+		function tile(key, val, on) {
+			return el('div', { class: 'zcb-dp__tile' + (on ? ' is-on' : '') }, [el('small', { text: t(key) }), el('b', { text: val ? fmt(val, { month: 'short', day: 'numeric', weekday: 'short' }) : '—' })]);
+		}
+		function render(focus) {
+			if (!ov) { return; }
+			var n = sel.from && sel.to ? nights(sel.from, sel.to) : 0;
+			var free = n ? freeApts(sel.from, sel.to).length : 0;
+			var count = 2, maxOff = Math.ceil((C.maxAdvance || 540) / 30);
+			var head = el('header', { class: 'zcb-dp__head' }, [
+				el('div', { class: 'zcb-dp__ttl' }, [el('p', { class: 'zcb-dp__k', text: o.title || t('bk_pick_dates') }), el('p', { class: 'zcb-dp__hint', text: err || (!sel.from || sel.to ? t('bk_choose_arrival') : t('bk_choose_departure')) + (o.apt && APT[o.apt] ? ' · ' + APT[o.apt].name : '') })]),
+				el('button', { type: 'button', class: 'zcb-dp__x', 'aria-label': t('close'), onclick: close }, [el('span', { 'aria-hidden': 'true', html: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>' })])
+			]);
+			var sum = el('div', { class: 'zcb-dp__sum' }, [
+				tile('bk_arrival', sel.from, !sel.from || !sel.to), el('span', { class: 'zcb-dp__arrow', 'aria-hidden': 'true', html: ICON.arrow }), tile('bk_departure', sel.to, sel.from && !sel.to),
+				el('div', { class: 'zcb-dp__n' + (n ? ' is-on' : '') }, [el('b', { text: n ? String(n) : '0' }), el('small', { text: t('bk_nights', { n: '#' }).replace('#', '').replace(/[:\s]+$/, '').trim() })])
+			]);
+			var nav = el('div', { class: 'zcb-dp__nav' }, [
+				el('button', { type: 'button', class: 'zcb-round', 'aria-label': '‹', disabled: off <= 0 ? true : null, onclick: function () { off = Math.max(0, off - 1); render(); } }, [icon('left')]),
+				el('button', { type: 'button', class: 'zcb-round', 'aria-label': '›', disabled: off >= maxOff ? true : null, onclick: function () { off++; render(); } }, [icon('right')])
+			]);
+			var months = el('div', { class: 'zcb-dp__months' }, [month(off), month(off + 1)]);
+			months.addEventListener('mouseover', function (e) {
+				var b = e.target.closest('[data-date]');
+				if (!b || !sel.from || sel.to || b.disabled) { return; }
+				var s = b.getAttribute('data-date');
+				if (s === hover) { return; }
+				hover = s > sel.from ? s : null;
+				Array.prototype.forEach.call(months.querySelectorAll('[data-date]'), function (x) {
+					var v = x.getAttribute('data-date'), p = hover && v > sel.from && v <= hover;
+					x.classList.toggle('is-preview', !!p); x.classList.toggle('is-hover-end', !!p && v === hover);
+					if (v === sel.from) { x.classList.toggle('is-rs', !!hover); }
+				});
+			});
+			var legend = el('ul', { class: 'zcb-dp__legend' }, [['free', 'bk_legend_free'], ['checkout', 'bk_legend_checkout'], ['booked', 'bk_legend_booked'], ['sel', 'bk_legend_selected']].concat(AV.events.length ? [['event', 'bk_legend_event']] : []).map(function (x) {
+				return el('li', {}, [el('i', { class: 'zcb-sw zcb-sw--' + x[0], 'aria-hidden': 'true' }), t(x[1])]);
+			}));
+			var foot = el('footer', { class: 'zcb-dp__foot' }, [
+				el('p', { class: 'zcb-dp__free', text: n ? t('bk_free_count', { n: free }) : t('bk_range_hint') }),
+				el('div', { class: 'zcb-dp__btns' }, [
+					el('button', { type: 'button', class: 'zc-btn zc-btn--ghost zc-btn--sm', disabled: sel.from ? null : true, onclick: function () { sel = { from: null, to: null }; err = ''; render(); } }, [el('span', { text: t('bk_clear') })]),
+					el('button', { type: 'button', class: 'zc-btn zc-btn--sm zcb-dp__ok' + (n ? ' is-ready' : ''), disabled: n ? null : true, onclick: function () { var f = o.onApply; var r = { from: sel.from, to: sel.to }; close(); if (f) { f(r.from, r.to); } } }, [el('span', { text: t('bk_apply') }), icon('check')])
+				])
+			]);
+			var box = ov.querySelector('.zcb-dp__box');
+			box.innerHTML = '';
+			[head, sum, el('div', { class: 'zcb-dp__body' }, [nav, months]), legend, foot].forEach(function (x) { box.appendChild(x); });
+			AV.load(off, count + 1).then(function (fetched) { if (fetched && ov) { render(); } });
+			var fb = focus ? box.querySelector('[data-date="' + focus + '"]') : null;
+			if (fb) { fb.focus({ preventScroll: true }); }
+		}
+		function open(opts) {
+			if (ov) { close(); }
+			o = opts || {};
+			last = d.activeElement;
+			sel = { from: o.from || null, to: (o.from && o.to && o.to > o.from) ? o.to : null };
+			off = sel.from ? monthsFromNow(sel.from) : 0;
+			err = ''; hover = null;
+			ov = el('div', { class: 'zcb-dp', role: 'dialog', 'aria-modal': 'true', 'aria-label': t('bk_pick_dates'), onclick: function (e) { if (e.target === ov) { close(); } } }, [el('div', { class: 'zcb-dp__box' })]);
+			d.body.appendChild(ov);
+			d.documentElement.classList.add('zcb-dp-lock');
+			d.addEventListener('keydown', onKey, true);
+			render();
+			requestAnimationFrame(function () { if (ov) { ov.classList.add('is-open'); var f = ov.querySelector('.zcb-d.is-start') || ov.querySelector('.zcb-d:not([disabled]):not(.zcb-d--pad)'); if (f) { f.focus({ preventScroll: true }); } } });
+		}
+		mq.addEventListener && mq.addEventListener('change', function () { render(); });
+		return { open: open, close: close };
+	})();
+
+	/* ======================================================================
+	 * Foglalósáv / foglalódoboz (hero, apartman oldal) – felugró naptárral
 	 * ==================================================================== */
 	Array.prototype.forEach.call(d.querySelectorAll('[data-zcb-bar]'), function (f) {
-		var a = f.querySelector('input[name="from"]'), b = f.querySelector('input[name="to"]');
+		var a = f.querySelector('input[name="from"]'), b = f.querySelector('input[name="to"]'), hint = f.querySelector('[data-zcb-hint]');
 		if (!a || !b) { return; }
-		a.min = TODAY;
-		a.addEventListener('change', function () {
-			if (!a.value) { return; }
-			var m = addDays(a.value, Math.max(1, C.minNights || 1));
-			b.min = m;
-			if (!b.value || b.value <= a.value) { b.value = m; }
-			try { b.showPicker && b.showPicker(); } catch (e) {}
-		});
+		var apt = f.getAttribute('data-apt') || '';
+		var qa = new URLSearchParams(location.search);
+		a.type = 'hidden'; b.type = 'hidden'; a.required = false; b.required = false;
+		if (/^\d{4}-\d{2}-\d{2}$/.test(qa.get('from') || '') && qa.get('from') >= TODAY) { a.value = qa.get('from'); }
+		if (/^\d{4}-\d{2}-\d{2}$/.test(qa.get('to') || '') && a.value && qa.get('to') > a.value) { b.value = qa.get('to'); }
+		function val(inp) {
+			var fld = inp.closest('.zcb-bar__field');
+			var v = el('span', { class: 'zcb-bar__val' + (inp.value ? '' : ' is-empty') });
+			fld.appendChild(v); fld.classList.add('zcb-bar__field--pick'); fld.setAttribute('role', 'button'); fld.setAttribute('tabindex', '0'); fld.removeAttribute('for');
+			fld.addEventListener('click', function (e) { e.preventDefault(); openDp(); });
+			fld.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDp(); } });
+			return v;
+		}
+		var va = val(a), vb = val(b);
+		function update() {
+			va.textContent = a.value ? fmt(a.value) : t('bk_pick_dates'); va.classList.toggle('is-empty', !a.value);
+			vb.textContent = b.value ? fmt(b.value) : '—'; vb.classList.toggle('is-empty', !b.value);
+			if (!hint) { return; }
+			if (a.value && b.value) {
+				var n = nights(a.value, b.value);
+				hint.textContent = t('bk_nights', { n: n });
+				AV.load(monthsFromNow(a.value), Math.max(1, monthsFromNow(b.value) - monthsFromNow(a.value) + 1)).then(function () {
+					var fr = apt ? (aptFree(apt, a.value, b.value) ? 1 : 0) : freeApts(a.value, b.value).length;
+					hint.textContent = t('bk_nights', { n: n }) + ' · ' + (apt ? (fr ? t('bk_legend_free') : t('bk_unavailable')) : t('bk_free_count', { n: fr }));
+					hint.classList.toggle('is-bad', !fr);
+				});
+			} else { hint.textContent = ''; }
+		}
+		function openDp() { DP.open({ apt: apt, from: a.value, to: b.value, onApply: function (x, y) { a.value = x; b.value = y; update(); var g = f.querySelector('.zcb-bar__go'); if (g) { g.focus({ preventScroll: true }); } } }); }
+		update();
+		// Előtöltés, hogy a naptár azonnal nyíljon.
+		var warm = function () { AV.load(0, 3); };
+		if ('requestIdleCallback' in window) { window.requestIdleCallback(warm, { timeout: 3000 }); } else { setTimeout(warm, 1500); }
 		f.addEventListener('submit', function (e) {
-			if (a.value && b.value && b.value <= a.value) { e.preventDefault(); b.focus(); }
+			if (!a.value || !b.value || b.value <= a.value) { e.preventDefault(); openDp(); }
 		});
 	});
 
@@ -67,7 +261,7 @@
 	var q = new URLSearchParams(location.search);
 	var st = {
 		step: 1, from: null, to: null, adults: 2, children: 0, rooms: [], multi: false,
-		days: {}, events: [], loaded: {}, month: 0,
+		month: 0,
 		guest: { name: '', email: '', phone: '', country: '', arrival_time: '', message: '' },
 		extras: [], payment: (C.payments || ['transfer'])[0], gdpr: false, terms: false, newsletter: false,
 		quote: null, sending: false, error: '', result: null, ts: Date.now()
@@ -78,26 +272,7 @@
 	if (q.get('adults')) { st.adults = Math.min(9, Math.max(1, parseInt(q.get('adults'), 10) || 2)); }
 	if (q.get('children')) { st.children = Math.min(8, Math.max(0, parseInt(q.get('children'), 10) || 0)); }
 	if (q.get('apt') && APT[q.get('apt')]) { st.rooms = [q.get('apt')]; }
-	if (st.from) { var fd = parse(st.from), now = new Date(); st.month = (fd.getFullYear() - now.getFullYear()) * 12 + fd.getMonth() - now.getMonth(); }
-	var wide = window.matchMedia('(min-width: 860px)');
-
-	function monthStart(off) { var n = new Date(); return new Date(n.getFullYear(), n.getMonth() + off, 1); }
-	function loadMonths(off, count) {
-		var a = ymd(monthStart(off)), last = monthStart(off + count); last.setDate(0);
-		var b = ymd(last), key = a + '|' + b;
-		if (st.loaded[key]) { return Promise.resolve(false); }
-		st.loaded[key] = 1;
-		return api('availability?from=' + a + '&to=' + b + '&lang=' + C.lang).then(function (j) {
-			if (j && j.days) { Object.keys(j.days).forEach(function (k) { st.days[k] = j.days[k]; }); st.events = j.events || st.events; st.synced = j.synced; }
-			return true;
-		}).catch(function () { delete st.loaded[key]; return false; });
-	}
-	function inEvent(date) { for (var i = 0; i < st.events.length; i++) { var e = st.events[i]; if (date >= e.from && date <= e.to) { return e; } } return null; }
-	function aptFree(key, from, to) {
-		for (var x = from; x < to; x = addDays(x, 1)) { var s = st.days[x]; if (!s || s[key] !== 'free') { return false; } }
-		return true;
-	}
-	function anyFree(from, to) { return C.apartments.some(function (a) { return aptFree(a.key, from, to); }); }
+	if (st.from) { st.month = monthsFromNow(st.from); }
 
 	/* ---------- Lépésjelző ---------- */
 	var STEPS = ['bk_step_dates', 'bk_step_apartment', 'bk_step_details', 'bk_step_summary', 'bk_step_done'];
@@ -123,69 +298,26 @@
 	}
 	function errBox() { return st.error ? el('p', { class: 'zcb-err', role: 'alert', text: st.error }) : null; }
 
-	/* ---------- 1. Időpont ---------- */
-	function calendar() {
-		var count = wide.matches ? 2 : 1, wrap = el('div', { class: 'zcb-cal' });
-		var nav = el('div', { class: 'zcb-cal__nav' }, [
-			el('button', { type: 'button', class: 'zcb-round', 'aria-label': '‹', disabled: st.month <= 0 ? true : null, onclick: function () { st.month = Math.max(0, st.month - 1); render(); } }, [icon('left')]),
-			el('p', { class: 'zcb-cal__hint', text: !st.from || st.to ? t('bk_choose_arrival') : t('bk_choose_departure') }),
-			el('button', { type: 'button', class: 'zcb-round', 'aria-label': '›', onclick: function () { st.month++; render(); } }, [icon('right')])
+	/* ---------- 1. Időpont – kompakt kártya, a naptár felugró ablakban ---------- */
+	function openDates() {
+		DP.open({ apt: st.rooms.length === 1 && q.get('apt') ? st.rooms[0] : '', from: st.from, to: st.to, onApply: function (a, b) { st.from = a; st.to = b; st.error = ''; render(); } });
+	}
+	function whenCard() {
+		var n = st.from && st.to ? nights(st.from, st.to) : 0;
+		function tl(key, v) { return el('span', { class: 'zcb-when__tile' + (v ? '' : ' is-empty') }, [el('small', { text: t(key) }), el('b', { text: v ? fmt(v, { month: 'long', day: 'numeric', weekday: 'short' }) : t('bk_pick_dates') })]); }
+		var card = el('button', { type: 'button', class: 'zcb-when' + (n ? ' is-set' : ''), onclick: openDates, 'aria-label': t('bk_pick_dates') }, [
+			el('span', { class: 'zcb-when__ico', 'aria-hidden': 'true', html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15.5" rx="4"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>' }),
+			tl('bk_arrival', st.from),
+			el('span', { class: 'zcb-when__arrow', 'aria-hidden': 'true', html: ICON.arrow }),
+			tl('bk_departure', st.to),
+			el('span', { class: 'zcb-when__n' }, [n ? el('b', { text: String(n) }) : null, el('small', { text: n ? t('bk_nights', { n: '#' }).replace('#', '').replace(/[:\s]+$/, '').trim() : t('bk_change') })])
 		]);
-		wrap.appendChild(nav);
-		var months = el('div', { class: 'zcb-cal__months' });
-		for (var m = 0; m < count; m++) { months.appendChild(month(st.month + m)); }
-		wrap.appendChild(months);
-		wrap.appendChild(el('ul', { class: 'zcb-legend' }, [
-			['free', 'bk_legend_free'], ['checkout', 'bk_legend_checkout'], ['closed', 'bk_legend_closed'], ['event', 'bk_legend_event'], ['sel', 'bk_legend_selected']
-		].map(function (x) { return el('li', {}, [el('i', { class: 'zcb-dot zcb-dot--' + x[0] }), t(x[1])]); })));
-		loadMonths(st.month, count).then(function (fetched) { if (fetched && st.step === 1) { render(); } });
-		return wrap;
-	}
-	function month(off) {
-		var first = monthStart(off), y = first.getFullYear(), mo = first.getMonth();
-		var title = first.toLocaleDateString(C.locale, { month: 'long', year: 'numeric' });
-		var box = el('div', { class: 'zcb-month' }, [el('h4', { class: 'zcb-month__t', text: title })]);
-		var grid = el('div', { class: 'zcb-month__grid', role: 'grid' });
-		var wd = []; for (var i = 0; i < 7; i++) { var dd = new Date(2024, 0, 1 + i); wd.push(dd.toLocaleDateString(C.locale, { weekday: 'short' }).slice(0, 2)); }
-		wd.forEach(function (w) { grid.appendChild(el('span', { class: 'zcb-wd', text: w })); });
-		var lead = (first.getDay() + 6) % 7;
-		for (i = 0; i < lead; i++) { grid.appendChild(el('span', { class: 'zcb-day zcb-day--pad' })); }
-		var dim = new Date(y, mo + 1, 0).getDate();
-		for (var day = 1; day <= dim; day++) {
-			var s = ymd(new Date(y, mo, day)), info = st.days[s], state = info ? info.any : 'loading';
-			if (s < TODAY) { state = 'closed'; }
-			var ev = inEvent(s);
-			var sel = st.from && (s === st.from || s === st.to || (st.to && s > st.from && s < st.to));
-			var edge = s === st.from ? ' is-start' : (s === st.to ? ' is-end' : '');
-			// Távozási napnak választható: ha az előző éjszaka szabad volt (checkout is jó).
-			var selectable = state === 'free' || (st.from && !st.to && s > st.from && (state === 'checkout' || state === 'booked') && anyFree(st.from, s));
-			if (st.from && !st.to && s > st.from && !anyFree(st.from, s)) { selectable = false; }
-			var b = el('button', {
-				type: 'button',
-				class: 'zcb-day zcb-day--' + state + (sel ? ' is-sel' : '') + edge + (ev ? ' has-event' : '') + (s === TODAY ? ' is-today' : ''),
-				'data-date': s,
-				'aria-label': fmt(s, { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' }) + (ev ? ' – ' + ev.name : ''),
-				'aria-pressed': sel ? 'true' : 'false',
-				title: ev ? ev.name : null,
-				disabled: selectable ? null : true,
-				onclick: pick
-			}, [el('span', { text: String(day) })]);
-			grid.appendChild(b);
+		var info = null;
+		if (n && Object.keys(AV.days).length) {
+			var fr = freeApts(st.from, st.to).length;
+			info = el('p', { class: 'zcb-when__free' + (fr ? '' : ' is-bad') }, [el('i', { class: 'zcb-sw zcb-sw--' + (fr ? 'free' : 'booked'), 'aria-hidden': 'true' }), fr ? t('bk_free_count', { n: fr }) : t('bk_unavailable')]);
 		}
-		box.appendChild(grid);
-		return box;
-	}
-	function pick(e) {
-		var s = e.currentTarget.getAttribute('data-date');
-		st.error = '';
-		if (!st.from || st.to || s <= st.from) { st.from = s; st.to = null; }
-		else {
-			st.to = s;
-			var n = nights(st.from, st.to);
-			if (n < (C.minNights || 1)) { st.error = t('bk_err_min', { n: C.minNights }); st.to = null; }
-		}
-		render();
-		var nb = root.querySelector('[data-date="' + s + '"]'); if (nb) { nb.focus(); }
+		return el('div', { class: 'zcb-whenwrap' }, [card, info]);
 	}
 	function stepper2(label, val, min, max, note, onch) {
 		return el('div', { class: 'zcb-num' }, [
@@ -200,17 +332,19 @@
 	function step1() {
 		var maxG = C.apartments.reduce(function (s, a) { return s + a.capacity; }, 0) + 1;
 		return el('div', { class: 'zcb-pane' }, [
-			calendar(),
+			whenCard(),
 			el('div', { class: 'zcb-guests' }, [
 				stepper2(t('bk_adults'), st.adults, 1, Math.max(1, maxG - st.children), '', function (v) { st.adults = v; render(); }),
 				stepper2(t('bk_children'), st.children, 0, Math.max(0, maxG - st.adults), t('bk_children_note'), function (v) { st.children = v; render(); })
 			]),
 			errBox(),
 			el('div', { class: 'zcb-actions' }, [
-				el('button', { type: 'button', class: 'zc-btn', disabled: (st.from && st.to) ? null : true, onclick: function () {
-					if (!st.from || !st.to) { st.error = t('bk_err_dates'); render(); return; }
-					st.rooms = st.rooms.filter(function (k) { return aptFree(k, st.from, st.to); });
-					go(2);
+				el('button', { type: 'button', class: 'zc-btn', onclick: function () {
+					if (!st.from || !st.to) { openDates(); return; }
+					AV.load(monthsFromNow(st.from), monthsFromNow(st.to) - monthsFromNow(st.from) + 1).then(function () {
+						st.rooms = st.rooms.filter(function (k) { return aptFree(k, st.from, st.to); });
+						go(2);
+					});
 				} }, [el('span', { text: t('bk_next') }), icon('arrow')])
 			])
 		]);
@@ -390,7 +524,7 @@
 			st.sending = false;
 			if (j && j.ok) { st.result = j; go(5); return; }
 			st.error = (j && j.message) || t('bk_err_generic', { phone: C.phone });
-			if (j && j.error === 'taken') { st.days = {}; st.loaded = {}; st.quote = null; }
+			if (j && j.error === 'taken') { AV.reset(); st.quote = null; }
 			render();
 		}).catch(function () { st.sending = false; st.error = t('bk_err_generic', { phone: C.phone }); render(); });
 	}
@@ -435,12 +569,12 @@
 		root.appendChild(card);
 		root.setAttribute('aria-busy', 'false');
 	}
-	wide.addEventListener ? wide.addEventListener('change', function () { if (st.step === 1) { render(); } }) : null;
 
 	// Előtöltés: ha az URL-ben dátum van, a 2. lépéssel indul.
 	if (st.from && st.to) {
-		loadMonths(st.month, 2).then(function () { st.step = 2; render(); });
+		AV.load(st.month, 2).then(function () { st.step = 2; render(); });
 	} else { render(); }
 	// Másik hónap előtöltése a gyors lapozáshoz.
-	setTimeout(function () { loadMonths(st.month + 2, 2); }, 1200);
+	AV.load(st.month, 3).then(function () { if (st.step === 1) { render(); } });
+	setTimeout(function () { AV.load(st.month + 3, 3); }, 1500);
 })();

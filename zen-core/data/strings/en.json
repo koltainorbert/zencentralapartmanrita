@@ -80,7 +80,6 @@
   "trust_checkin": "Self check-in with key safe",
   "trust_wifi": "Fast WiFi",
   "trust_center": "Old town 400 m",
-
   "bk_title": "Availability & booking",
   "bk_step_dates": "Dates",
   "bk_step_apartment": "Apartment",
@@ -162,7 +161,6 @@
   "bk_mail_checkin": "Check-in from {in}, check-out until {out}. Address: {address}",
   "bk_mail_footer": "If you have any questions, just reply to this e-mail or call us: {phone}",
   "bk_sync_note": "Availability is synchronised with Booking.com and Airbnb calendars.",
-
   "fm_name": "Name",
   "fm_booking_no": "Booking nr.",
   "fm_email": "E-mail",
@@ -202,7 +200,6 @@
   "fm_fb_count": "based on {n} reviews",
   "fm_mail_contact": "New message from the website",
   "fm_mail_auto": "Thank you for contacting us! We have received your message and will reply soon.",
-
   "ai_name": "Zen",
   "ai_role": "Digital concierge",
   "ai_open": "Ask Zen",
@@ -235,5 +232,23 @@
   "ai_help_ph": "E.g. When is check-in? Where can I park?",
   "ai_help_topics": "Popular topics",
   "ai_help_contact": "Prefer talking to a human?",
-  "ai_online": "Online"
+  "ai_online": "Online",
+  "choose_language": "Choose your language",
+  "hero_panel_title": "Book direct",
+  "faq_questions": "{n} questions",
+  "faq_topics": "{n} topics",
+  "faq_help_title": "Can’t find your answer?",
+  "faq_help_text": "Zen, our digital concierge, answers instantly – or simply give us a call.",
+  "bk_dates": "Dates",
+  "bk_pick_dates": "Select dates",
+  "bk_apply": "Done",
+  "bk_clear": "Clear",
+  "bk_legend_booked": "Booked",
+  "bk_change": "Change",
+  "bk_free_count": "{n} apartments free",
+  "bk_range_hint": "Arrival → departure: two taps",
+  "ai_live": "Live city guide",
+  "ai_chip_history": "Veszprém’s history in brief",
+  "ai_chip_tonight": "What’s on in town tonight?",
+  "ai_chip_food": "Where can I eat well nearby?"
 }

@@ -26,6 +26,7 @@ class Zen_Booking {
 		add_action( 'zen_ical_sync', array( __CLASS__, 'sync_all' ) );
 		add_action( 'rest_api_init', array( __CLASS__, 'routes' ) );
 		add_action( 'template_redirect', array( __CLASS__, 'ical_export' ), 0 );
+		add_action( 'template_redirect', array( __CLASS__, 'mail_action' ), 0 );
 
 		if ( is_admin() ) {
 			add_action( 'admin_menu', array( __CLASS__, 'admin_menu' ), 20 );
@@ -471,6 +472,7 @@ class Zen_Booking {
 		update_post_meta( $pid, '_deposit', $q['deposit'] );
 		update_post_meta( $pid, '_quote_mode', $q['quoteMode'] ? 1 : 0 );
 		update_post_meta( $pid, '_source', 'web' );
+		update_post_meta( $pid, '_akey', wp_generate_password( 24, false ) );
 		update_post_meta( $pid, '_created_ip', wp_hash( Zen_Security::ip() ) );
 		self::flush_cache();
 
@@ -782,7 +784,7 @@ class Zen_Booking {
 		return $h . '</table>';
 	}
 
-	public static function mail_guest( $pid, $type = 'received' ) {
+	public static function mail_guest( $pid, $type = 'received', $note = '' ) {
 		$g    = (array) get_post_meta( $pid, '_guest', true );
 		$lang = get_post_meta( $pid, '_lang', true ) ?: Zen_I18n::default_lang();
 		$ref  = get_post_meta( $pid, '_ref', true );
@@ -798,6 +800,9 @@ class Zen_Booking {
 		$subject = zen_t( $subj_k, $lang, array( 'ref' => $ref ) );
 		$body    = '<p>' . esc_html( zen_t( 'bk_mail_hello', $lang, array( 'name' => $g['name'] ?? '' ) ) ) . '</p>';
 		$body   .= '<p>' . esc_html( zen_t( $intro_k, $lang ) ) . '</p>';
+		if ( '' !== trim( (string) $note ) ) {
+			$body .= '<p style="padding:14px 18px;border-radius:16px;background:#f8f4ee;border-left:3px solid #a9844c">' . nl2br( esc_html( $note ) ) . '</p>';
+		}
 		$body   .= '<p style="font-size:13px;color:#6b6358">#' . esc_html( $ref ) . '</p>';
 		$body   .= self::table( self::summary_rows( $pid, $lang ), array( zen_t( 'bk_step_apartment', $lang ), zen_t( 'bk_step_dates', $lang ), zen_t( 'bk_guests', $lang ), zen_t( 'bk_total', $lang ) ) );
 		$total   = (float) get_post_meta( $pid, '_total', true );
@@ -825,18 +830,150 @@ class Zen_Booking {
 		return wp_mail( $g['email'], $subject, self::mail_wrap( $subject, $body ), $headers );
 	}
 
+	/** Pill gomb e-mailbe (Outlook-barát táblázatos gomb). */
+	protected static function mail_btn( $url, $label, $bg, $fg = '#ffffff' ) {
+		return '<a href="' . esc_url( $url ) . '" style="display:inline-block;margin:4px 6px 4px 0;padding:14px 26px;border-radius:999px;background:' . esc_attr( $bg ) . ';color:' . esc_attr( $fg ) . ';text-decoration:none;font-weight:bold;font-size:15px;line-height:1">' . esc_html( $label ) . '</a>';
+	}
+
+	/** Értesítés a tulajdonosnak – egy kattintással elfogadható / lemondható. */
 	public static function mail_admin( $pid ) {
 		$to   = Zen_Settings::get( 'booking.notify_email', get_option( 'admin_email' ) );
 		$g    = (array) get_post_meta( $pid, '_guest', true );
 		$ref  = get_post_meta( $pid, '_ref', true );
 		$st   = get_post_meta( $pid, '_status', true );
-		$subject = '[' . ( 'pending' === $st ? 'Jóváhagyásra vár' : 'Visszaigazolva' ) . '] Új foglalás ' . $ref . ' – ' . ( $g['name'] ?? '' );
-		$body  = '<p><b>Vendég:</b> ' . esc_html( $g['name'] ?? '' ) . ' · ' . esc_html( $g['email'] ?? '' ) . ' · ' . esc_html( $g['phone'] ?? '' ) . ' · ' . esc_html( $g['country'] ?? '' ) . '</p>';
+		$tel  = preg_replace( '/[^+0-9]/', '', (string) ( $g['phone'] ?? '' ) );
+		$subject = ( 'pending' === $st ? '🔔 Jóváhagyásra vár' : '✅ Visszaigazolva' ) . ' – új foglalás ' . $ref . ' – ' . ( $g['name'] ?? '' );
+		$body  = '<p style="margin:0 0 18px;font-size:15px">' . ( 'pending' === $st ? 'Új foglalási kérés érkezett. Egy kattintással elfogadhatod vagy elutasíthatod – a vendég azonnal e-mailt kap.' : 'Új, automatikusan visszaigazolt foglalás érkezett.' ) . '</p>';
+		$body .= '<div style="margin:0 0 22px">';
+		if ( 'confirmed' !== $st ) {
+			$body .= self::mail_btn( self::action_url( $pid, 'confirm' ), '✓ Elfogadom', '#2f8f5b' );
+		}
+		$body .= self::mail_btn( self::action_url( $pid, 'cancel' ), '✕ ' . ( 'pending' === $st ? 'Elutasítom' : 'Lemondom' ), '#c2413a' );
+		$body .= self::mail_btn( self::action_url( $pid, 'view' ), 'Részletek és kezelés', '#efe8dc', '#1f1b16' );
+		$body .= '</div>';
+		$body .= '<p><b>Vendég:</b> ' . esc_html( $g['name'] ?? '' ) . ' · ' . esc_html( $g['country'] ?? '' ) . '<br><a href="mailto:' . esc_attr( $g['email'] ?? '' ) . '">' . esc_html( $g['email'] ?? '' ) . '</a> · <a href="tel:' . esc_attr( $tel ) . '">' . esc_html( $g['phone'] ?? '' ) . '</a></p>';
 		$body .= self::table( self::summary_rows( $pid, 'hu' ), array( 'Apartman', 'Időpont', 'Fő (f+gy)', 'Összeg' ) );
 		$body .= '<p><b>Érkezés:</b> ' . esc_html( $g['arrival_time'] ?? '' ) . '<br><b>Fizetés:</b> ' . esc_html( get_post_meta( $pid, '_payment', true ) ) . '<br><b>Extrák:</b> ' . esc_html( implode( ', ', (array) get_post_meta( $pid, '_extras', true ) ) ) . '<br><b>Megjegyzés:</b> ' . nl2br( esc_html( $g['message'] ?? '' ) ) . '</p>';
-		$body .= '<p style="padding:14px;border-radius:12px;background:#fff7e6">Fontos: ha a foglalást jóváhagyod, a Booking.com és az Airbnb a weboldal iCal-linkjén keresztül automatikusan lezárja ezeket a napokat (a csatornák saját frissítési ütemezése szerint).</p>';
-		$body .= '<p><a href="' . esc_url( admin_url( 'post.php?post=' . (int) $pid . '&action=edit' ) ) . '" style="display:inline-block;padding:12px 22px;border-radius:999px;background:#a9844c;color:#fff;text-decoration:none;font-weight:bold">Foglalás megnyitása</a></p>';
-		return wp_mail( $to, $subject, self::mail_wrap( 'Új foglalás: ' . $ref, $body ), array( 'Content-Type: text/html; charset=UTF-8', 'Reply-To: ' . ( $g['email'] ?? '' ) ) );
+		$body .= '<p style="padding:14px;border-radius:14px;background:#fff7e6;font-size:13px">A függő és a visszaigazolt foglalás azonnal lezárja a napokat a weboldalon, és bekerül a Booking.com / Airbnb felé küldött iCal-ba. Elutasításkor a napok újra szabadok lesznek.</p>';
+		$headers = array( 'Content-Type: text/html; charset=UTF-8', 'Reply-To: ' . ( $g['email'] ?? '' ), 'X-Priority: 1', 'Importance: High' );
+		return wp_mail( $to, $subject, self::mail_wrap( 'Új foglalás: ' . $ref, $body ), $headers );
+	}
+
+	/* ==================================================================
+	 * E-mailes műveletek (elfogadás / lemondás bejelentkezés nélkül)
+	 * A link csak egy megerősítő oldalt nyit (GET), a művelet gombnyomásra (POST) fut –
+	 * így a levelezők linkellenőrzője sem tud véletlenül jóváhagyni.
+	 * ================================================================== */
+
+	protected static function action_sig( $pid, $act ) {
+		$key = (string) get_post_meta( $pid, '_akey', true );
+		if ( '' === $key ) {
+			$key = wp_generate_password( 24, false );
+			update_post_meta( $pid, '_akey', $key );
+		}
+		return hash_hmac( 'sha256', $pid . '|' . $act, $key . wp_salt( 'auth' ) );
+	}
+
+	public static function action_url( $pid, $act ) {
+		return add_query_arg( array( 'zen_bk' => (int) $pid, 'a' => $act, 'k' => self::action_sig( $pid, $act ) ), home_url( '/' ) );
+	}
+
+	public static function mail_action() {
+		if ( empty( $_GET['zen_bk'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+			return;
+		}
+		$pid = (int) $_GET['zen_bk']; // phpcs:ignore
+		$act = isset( $_GET['a'] ) ? sanitize_key( wp_unslash( $_GET['a'] ) ) : 'view'; // phpcs:ignore
+		$sig = isset( $_GET['k'] ) ? sanitize_text_field( wp_unslash( $_GET['k'] ) ) : ''; // phpcs:ignore
+		nocache_headers();
+		header( 'X-Robots-Tag: noindex, nofollow', true );
+		if ( ! in_array( $act, array( 'view', 'confirm', 'cancel' ), true ) || self::CPT !== get_post_type( $pid ) || ! hash_equals( self::action_sig( $pid, $act ), $sig ) ) {
+			self::action_page( 0, 'Érvénytelen vagy lejárt link', '<p>A link nem érvényes. Nyisd meg a foglalást a WordPress adminban.</p>' );
+		}
+		$msg = '';
+		if ( 'POST' === ( $_SERVER['REQUEST_METHOD'] ?? '' ) && in_array( $act, array( 'confirm', 'cancel' ), true ) ) { // phpcs:ignore
+			$note = isset( $_POST['note'] ) ? sanitize_textarea_field( wp_unslash( $_POST['note'] ) ) : ''; // phpcs:ignore
+			$res  = self::set_status( $pid, 'confirm' === $act ? 'confirmed' : 'cancelled', $note, 'email' );
+			$msg  = is_wp_error( $res ) ? '<p class="err">' . esc_html( $res->get_error_message() ) . '</p>' : '<p class="ok">' . ( 'confirm' === $act ? '✓ Elfogadva – a vendég visszaigazoló e-mailt kapott.' : '✓ ' . ( 'cancelled' === $res ? 'Lemondva' : 'Kész' ) . ' – a vendég értesítést kapott, a napok felszabadultak.' ) . '</p>';
+		}
+		self::action_page( $pid, '', $msg, $act );
+	}
+
+	/** Állapotváltás + vendég e-mail (admin, e-mail link és REST közös útja). */
+	public static function set_status( $pid, $status, $note = '', $via = 'admin' ) {
+		$old = get_post_meta( $pid, '_status', true );
+		if ( $old === $status ) {
+			return new WP_Error( 'same', 'cancelled' === $status ? 'Ez a foglalás már le van mondva.' : 'Ez a foglalás már vissza van igazolva.' );
+		}
+		if ( 'confirmed' === $status ) {
+			self::flush_cache();
+			foreach ( (array) get_post_meta( $pid, '_items', true ) as $it ) {
+				if ( ! self::is_free( $it['apt'], $it['from'], $it['to'], $pid ) ) {
+					return new WP_Error( 'taken', 'Ütközés: ' . zen_apt_name( $it['apt'], 'hu' ) . ' ' . $it['from'] . ' → ' . $it['to'] . ' időközben foglalt lett (pl. Booking.com / Airbnb). Egyeztess a vendéggel.' );
+				}
+			}
+		}
+		update_post_meta( $pid, '_status', $status );
+		if ( '' !== $note ) {
+			update_post_meta( $pid, '_guest_note', $note );
+		}
+		$log   = (array) get_post_meta( $pid, '_log', true );
+		$log[] = array( 'ts' => time(), 's' => $status, 'via' => $via );
+		update_post_meta( $pid, '_log', array_slice( $log, -30 ) );
+		self::flush_cache();
+		self::mail_guest( $pid, 'confirmed' === $status ? 'confirm' : 'cancel', $note );
+		do_action( 'zen_booking_status', $pid, $status, $old );
+		return $status;
+	}
+
+	/** Önálló, mobilbarát kezelőoldal (üveg kártya, pill gombok). */
+	protected static function action_page( $pid, $title = '', $msg = '', $act = 'view' ) {
+		$name = Zen_Settings::get( 'general.site_name', '' );
+		$h    = '';
+		if ( $pid ) {
+			$g     = (array) get_post_meta( $pid, '_guest', true );
+			$st    = get_post_meta( $pid, '_status', true );
+			$ref   = get_post_meta( $pid, '_ref', true );
+			$tel   = preg_replace( '/[^+0-9]/', '', (string) ( $g['phone'] ?? '' ) );
+			$title = 'Foglalás ' . $ref;
+			$h    .= '<p class="badge b-' . esc_attr( $st ) . '">' . esc_html( self::status_label( $st ) ) . '</p>' . $msg;
+			$h    .= '<div class="guest"><b>' . esc_html( $g['name'] ?? '' ) . '</b><span>' . esc_html( $g['country'] ?? '' ) . '</span><div class="row"><a class="pill ghost" href="tel:' . esc_attr( $tel ) . '">☎ ' . esc_html( $g['phone'] ?? '' ) . '</a><a class="pill ghost" href="mailto:' . esc_attr( $g['email'] ?? '' ) . '?subject=' . rawurlencode( $ref ) . '">✉ ' . esc_html( $g['email'] ?? '' ) . '</a></div></div>';
+			$h    .= '<ul class="items">';
+			foreach ( self::summary_rows( $pid, 'hu' ) as $r ) {
+				$h .= '<li><b>' . esc_html( $r[0] ) . '</b><span>' . esc_html( $r[1] ) . ' · ' . esc_html( $r[2] ) . ' fő</span><em>' . esc_html( $r[3] ) . '</em></li>';
+			}
+			$h .= '</ul>';
+			if ( ! empty( $g['message'] ) ) {
+				$h .= '<p class="note">„' . esc_html( $g['message'] ) . '”</p>';
+			}
+			$h .= '<form method="post" class="acts"><label for="zn">Üzenet a vendégnek (opcionális, bekerül az e-mailbe)</label><textarea id="zn" name="note" rows="3" placeholder="Pl. érkezéskor hívjon, szívesen segítünk a parkolásban."></textarea><div class="row">';
+			if ( 'confirmed' !== $st ) {
+				$h .= '<button class="pill ok" formaction="' . esc_url( self::action_url( $pid, 'confirm' ) ) . '">✓ Elfogadom és értesítem a vendéget</button>';
+			}
+			if ( 'cancelled' !== $st ) {
+				$h .= '<button class="pill bad" formaction="' . esc_url( self::action_url( $pid, 'cancel' ) ) . '" onclick="return confirm(\'Biztosan ' . ( 'pending' === $st ? 'elutasítod' : 'lemondod' ) . '? A vendég e-mailt kap.\')">✕ ' . ( 'pending' === $st ? 'Elutasítom' : 'Lemondom' ) . '</button>';
+			}
+			$h .= '</div></form><p class="foot"><a href="' . esc_url( admin_url( 'post.php?post=' . (int) $pid . '&action=edit' ) ) . '">Szerkesztés az adminban (dátum, összeg, jegyzet) ↗</a></p>';
+		} else {
+			$h = $msg;
+		}
+		status_header( 200 );
+		header( 'Content-Type: text/html; charset=utf-8' );
+		echo '<!doctype html><html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>' . esc_html( $title . ' · ' . $name ) . '</title><style>'
+			. ':root{color-scheme:light dark;--bg:#f4efe7;--card:rgba(255,255,255,.78);--tx:#1f1b16;--mu:#6b6358;--ln:rgba(31,27,22,.12);--ok:#2f8f5b;--bad:#c2413a;--ac:#a9844c}'
+			. '@media(prefers-color-scheme:dark){:root{--bg:#110f0c;--card:rgba(30,27,22,.72);--tx:#f3ede3;--mu:#a79e90;--ln:rgba(255,255,255,.12)}}'
+			. '*{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;padding:18px;font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--tx);background:radial-gradient(60% 50% at 10% 0%,rgba(169,132,76,.35),transparent),radial-gradient(50% 50% at 100% 100%,rgba(110,139,116,.3),transparent),var(--bg)}'
+			. '.card{width:min(620px,100%);padding:clamp(20px,5vw,36px);border-radius:28px;background:var(--card);border:1px solid var(--ln);backdrop-filter:blur(24px) saturate(1.3);-webkit-backdrop-filter:blur(24px) saturate(1.3);box-shadow:0 30px 80px -30px rgba(0,0,0,.45)}'
+			. 'h1{margin:0 0 10px;font:500 clamp(24px,5vw,32px)/1.15 Georgia,serif}.k{margin:0 0 6px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ac);font-weight:700}'
+			. '.badge{display:inline-block;margin:0 0 14px;padding:7px 14px;border-radius:999px;font-weight:700;font-size:13px;background:rgba(183,121,31,.15);color:#b7791f}.b-confirmed{background:rgba(47,143,91,.15);color:var(--ok)}.b-cancelled{background:rgba(194,65,58,.14);color:var(--bad)}'
+			. '.ok{color:var(--ok);font-weight:700}.err{color:var(--bad);font-weight:700}.guest{display:grid;gap:4px;padding:14px 16px;border-radius:20px;border:1px solid var(--ln);margin:0 0 12px}.guest span{color:var(--mu)}'
+			. '.items{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:8px}.items li{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:12px 16px;border-radius:18px;border:1px solid var(--ln)}.items span{color:var(--mu);font-size:13.5px}.items em{grid-row:1/3;grid-column:2;align-self:center;font-style:normal;font-weight:700}'
+			. '.note{padding:12px 16px;border-radius:18px;background:rgba(169,132,76,.1);font-style:italic}label{display:block;font-weight:700;font-size:13px;margin:14px 0 6px}'
+			. 'textarea{width:100%;padding:12px 16px;border-radius:18px;border:1px solid var(--ln);background:transparent;color:var(--tx);font:inherit;resize:vertical}'
+			. '.row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;border:0;font-family:inherit;font-weight:700;font-size:14.5px;line-height:1;cursor:pointer;text-decoration:none;color:#fff;flex:1 1 auto}'
+			. '.pill.ok{background:var(--ok);color:#fff}.pill.bad{background:var(--bad)}.pill.ghost{background:transparent;color:var(--tx);border:1px solid var(--ln);min-height:40px;font-weight:600;flex:0 1 auto}.foot{margin:18px 0 0;font-size:13px}.foot a{color:var(--mu)}'
+			. '</style></head><body><main class="card"><p class="k">' . esc_html( $name ) . '</p><h1>' . esc_html( $title ) . '</h1>' . $h . '</main></body></html>'; // phpcs:ignore WordPress.Security.EscapeOutput
+		exit;
 	}
 
 	/* ==================================================================
@@ -871,7 +1008,7 @@ class Zen_Booking {
 		foreach ( (array) Zen_Settings::get( 'booking.extras', array() ) as $e ) {
 			$extras[] = array( 'key' => $e['key'], 'label' => Zen_I18n::pick( $e['label'] ?? array(), $lang ), 'price' => (float) ( $e['price'] ?? 0 ), 'per' => $e['per'] ?? 'stay' );
 		}
-		$keys = array( 'bk_title', 'bk_step_dates', 'bk_step_apartment', 'bk_step_details', 'bk_step_summary', 'bk_step_done', 'bk_choose_arrival', 'bk_choose_departure', 'bk_arrival', 'bk_departure', 'bk_guests', 'bk_adults', 'bk_children', 'bk_children_note', 'bk_nights', 'bk_legend_free', 'bk_legend_checkout', 'bk_legend_closed', 'bk_legend_event', 'bk_legend_selected', 'bk_add_room', 'bk_remove_room', 'bk_room', 'bk_help', 'bk_search', 'bk_next', 'bk_back', 'bk_select', 'bk_selected', 'bk_unavailable', 'bk_too_small', 'bk_per_night', 'bk_total', 'bk_quote', 'bk_quote_note', 'bk_deposit', 'bk_tax_note', 'bk_cleaning', 'bk_extras', 'bk_name', 'bk_email', 'bk_phone', 'bk_country', 'bk_arrival_time', 'bk_message', 'bk_payment', 'bk_pay_transfer', 'bk_pay_cash', 'bk_pay_card', 'bk_gdpr', 'bk_terms', 'bk_newsletter', 'bk_cancel_policy', 'bk_submit', 'bk_submit_instant', 'bk_sending', 'bk_done_title', 'bk_done_text', 'bk_done_instant', 'bk_add_calendar', 'bk_new', 'bk_err_dates', 'bk_err_min', 'bk_err_room', 'bk_err_required', 'bk_err_email', 'bk_err_gdpr', 'bk_err_taken', 'bk_err_generic', 'bk_sync_note', 'privacy', 'capacity', 'size', 'bedrooms', 'studio', 'details', 'close', 'best_price' );
+		$keys = array( 'bk_title', 'bk_step_dates', 'bk_step_apartment', 'bk_step_details', 'bk_step_summary', 'bk_step_done', 'bk_choose_arrival', 'bk_choose_departure', 'bk_arrival', 'bk_departure', 'bk_guests', 'bk_adults', 'bk_children', 'bk_children_note', 'bk_nights', 'bk_legend_free', 'bk_legend_checkout', 'bk_legend_closed', 'bk_legend_event', 'bk_legend_selected', 'bk_add_room', 'bk_remove_room', 'bk_room', 'bk_help', 'bk_search', 'bk_next', 'bk_back', 'bk_select', 'bk_selected', 'bk_unavailable', 'bk_too_small', 'bk_per_night', 'bk_total', 'bk_quote', 'bk_quote_note', 'bk_deposit', 'bk_tax_note', 'bk_cleaning', 'bk_extras', 'bk_name', 'bk_email', 'bk_phone', 'bk_country', 'bk_arrival_time', 'bk_message', 'bk_payment', 'bk_pay_transfer', 'bk_pay_cash', 'bk_pay_card', 'bk_gdpr', 'bk_terms', 'bk_newsletter', 'bk_cancel_policy', 'bk_submit', 'bk_submit_instant', 'bk_sending', 'bk_done_title', 'bk_done_text', 'bk_done_instant', 'bk_add_calendar', 'bk_new', 'bk_err_dates', 'bk_err_min', 'bk_err_room', 'bk_err_required', 'bk_err_email', 'bk_err_gdpr', 'bk_err_taken', 'bk_err_generic', 'bk_sync_note', 'bk_dates', 'bk_pick_dates', 'bk_apply', 'bk_clear', 'bk_legend_booked', 'bk_change', 'bk_free_count', 'bk_range_hint', 'privacy', 'capacity', 'size', 'bedrooms', 'studio', 'details', 'close', 'best_price' );
 		$str  = array();
 		foreach ( $keys as $k ) {
 			$str[ $k ] = zen_t( $k, $lang );
@@ -935,11 +1072,13 @@ class Zen_Booking {
 		self::enqueue();
 		$apt     = sanitize_key( $args['apt'] ?? '' );
 		$compact = ! empty( $args['compact'] );
+		$variant = in_array( $args['variant'] ?? '', array( 'panel' ), true ) ? $args['variant'] : '';
 		$today   = self::today();
 		$id      = 'zcb' . wp_rand( 100, 999 );
+		$cls     = 'zcb-bar' . ( $compact ? ' zcb-bar--compact' : '' ) . ( $variant ? ' zcb-bar--' . $variant : '' );
 		ob_start();
 		?>
-		<form class="zcb-bar<?php echo $compact ? ' zcb-bar--compact' : ''; ?>" action="<?php echo esc_url( zen_page_url( 'booking' ) ); ?>" method="get" data-zcb-bar>
+		<form class="<?php echo esc_attr( $cls ); ?>" action="<?php echo esc_url( zen_page_url( 'booking' ) ); ?>" method="get" data-zcb-bar data-apt="<?php echo esc_attr( $apt ); ?>">
 			<?php if ( $apt ) : ?><input type="hidden" name="apt" value="<?php echo esc_attr( $apt ); ?>"><?php endif; ?>
 			<label class="zcb-bar__field" for="<?php echo esc_attr( $id ); ?>f">
 				<span><?php echo esc_html( zen_t( 'bk_arrival' ) ); ?></span>
@@ -957,6 +1096,7 @@ class Zen_Booking {
 					<?php endfor; ?>
 				</select>
 			</label>
+			<p class="zcb-bar__hint" data-zcb-hint aria-live="polite"></p>
 			<button type="submit" class="zc-btn zcb-bar__go"><span><?php echo esc_html( zen_t( 'bk_search' ) ); ?></span><?php echo Zen_Media::icon( 'arrow', 18 ); // phpcs:ignore ?></button>
 		</form>
 		<?php
@@ -1157,10 +1297,8 @@ class Zen_Booking {
 		if ( ! current_user_can( 'edit_post', $id ) || ! in_array( $s, array( 'confirmed', 'cancelled' ), true ) ) {
 			wp_die( 'Nincs jogosultság.' );
 		}
-		update_post_meta( $id, '_status', $s );
-		self::mail_guest( $id, 'confirmed' === $s ? 'confirm' : 'cancel' );
-		self::flush_cache();
-		wp_safe_redirect( admin_url( 'post.php?post=' . $id . '&action=edit&zen_msg=' . $s ) );
+		$r = self::set_status( $id, $s, '', 'admin' );
+		wp_safe_redirect( admin_url( 'post.php?post=' . $id . '&action=edit&zen_msg=' . ( is_wp_error( $r ) ? $r->get_error_code() : $s ) ) );
 		exit;
 	}
 

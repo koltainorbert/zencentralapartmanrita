@@ -92,6 +92,38 @@
 		if (!e.target.closest('[data-lang]')) { closeLangs(); }
 	});
 
+	/* ---------- Felugró nyelvválasztó (középre zárt üveg ablak) ---------- */
+	var lm = $('[data-langmodal]'), lmLast = null;
+	function openLm(trigger) {
+		if (!lm) { return; }
+		lmLast = trigger || d.activeElement;
+		closeDrawer();
+		lm.hidden = false;
+		d.documentElement.classList.add('zc-lock');
+		w.requestAnimationFrame(function () { lm.classList.add('is-open'); var c = $('[aria-current="true"]', lm) || $('a', lm); if (c) { c.focus({ preventScroll: true }); } });
+	}
+	function closeLm() {
+		if (!lm || lm.hidden) { return; }
+		lm.classList.remove('is-open');
+		d.documentElement.classList.remove('zc-lock');
+		setTimeout(function () { lm.hidden = true; }, reduce ? 0 : 220);
+		if (lmLast && lmLast.focus) { lmLast.focus({ preventScroll: true }); }
+	}
+	d.addEventListener('click', function (e) {
+		var o = e.target.closest('[data-lang-open]');
+		if (o) { e.preventDefault(); openLm(o); return; }
+		if (lm && !lm.hidden && (e.target.closest('[data-lang-close]') || e.target === lm)) { closeLm(); }
+	});
+	d.addEventListener('keydown', function (e) {
+		if (!lm || lm.hidden) { return; }
+		if (e.key === 'Escape') { closeLm(); return; }
+		if (e.key === 'Tab') {
+			var f = $$('a[href],button', lm);
+			if (e.shiftKey && d.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+			else if (!e.shiftKey && d.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+		}
+	});
+
 	/* ---------- Megjelenési animációk ---------- */
 	if (cfg.anim && !reduce && 'IntersectionObserver' in w) {
 		de.classList.add('zc-anim');

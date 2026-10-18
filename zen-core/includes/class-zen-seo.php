@@ -465,12 +465,27 @@ class Zen_SEO {
 				'dateModified'  => get_the_modified_date( 'c', $pid ),
 				'image'         => self::og_image(),
 				'inLanguage'    => 'hu',
-				'author'        => array( '@id' => self::lodging_id() ),
+				'author'        => self::post_author( $pid ),
 				'publisher'     => array( '@id' => self::lodging_id() ),
 				'mainEntityOfPage' => get_permalink( $pid ),
 			);
 		}
 		return $nodes;
+	}
+
+	/** A bejegyzés valódi (aktuális) WordPress szerzője – ha a szerkesztőben átírod, itt is azonnal változik. */
+	public static function post_author( $pid ) {
+		$uid  = (int) get_post_field( 'post_author', $pid );
+		$name = $uid ? get_the_author_meta( 'display_name', $uid ) : '';
+		if ( '' === trim( (string) $name ) ) {
+			return array( '@id' => self::lodging_id() );
+		}
+		$a   = array( '@type' => 'Person', 'name' => $name );
+		$url = get_the_author_meta( 'user_url', $uid );
+		if ( $url ) {
+			$a['url'] = $url;
+		}
+		return $a;
 	}
 
 	/* ------------------------------------------------------------------
