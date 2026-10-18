@@ -47,6 +47,7 @@ class Zen_Settings {
 				'instagram'      => '',
 				'google_maps'    => 'https://maps.google.com/?q=ZEN+Central+Apartments+Veszpr%C3%A9m',
 				'map_query'      => 'ZEN Central Apartments Veszprém',
+				'map_provider'   => 'osm',   // osm (sütimentes, magától betölt) | google (kattintásra)
 				'logo'           => array( 'type' => 'image', 'url' => 'https://zencentralapartments.com/wp-content/uploads/ZenCentralApartments_logo.webp', 'id' => 0, 'poster' => '', 'alt' => 'ZEN Central Apartments' ),
 				'logo_dark'      => array( 'type' => 'image', 'url' => '', 'id' => 0, 'poster' => '', 'alt' => 'ZEN Central Apartments' ),
 				'side_badge'     => array( 'type' => 'image', 'url' => 'https://zencentralapartments.com/wp-content/uploads/Hotel_Szarvaskut_Lepjen_velunk_kapcsolatba.svg', 'id' => 0, 'poster' => '', 'alt' => '' ),

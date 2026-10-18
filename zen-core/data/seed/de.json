@@ -69,7 +69,7 @@
           "html": "<p>Die Apartments von ZEN Central Apartments erwarten Gäste im Bakony-Balaton-Gebiet, im Stadtzentrum von Veszprém, in einer ruhigen Straße. Eine ideale Wahl für eine moderne und beliebte Umgebung.</p>",
           "buttons": [{ "label": "Verfügbarkeit prüfen & jetzt buchen", "url": "{page:booking}", "style": "primary" }],
           "media": "U/ZEN_Central_Veszprem_7.webp", "layout": "right" } },
-        { "type": "cards", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": {
+        { "type": "cards", "style": { "tone": "alt", "pad": "l" }, "data": {
           "kicker": "MODERN UND GEMÜTLICH", "title": "ZEN Central Apartments", "source": "manual",
           "items": [
             { "title": "RELAX Apartment", "apt": "relax", "url": "{page:apt_relax}", "media": "U/Zen_Central_Relax.webp" },
@@ -99,7 +99,7 @@
       "og": "U/Zen_Central_Relax.webp",
       "sections": [
         { "type": "hero", "data": { "title": "Apartments", "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp", "height": "small", "breadcrumbs": true, "side_logo": true, "side_badge": "U/ZEN_Central_Kontaktiere-uns1.svg" } },
-        { "type": "cards", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": {
+        { "type": "cards", "style": { "tone": "alt", "pad": "l" }, "data": {
           "kicker": "MODERN UND GEMÜTLICH", "title": "ZEN Central Apartments", "source": "manual",
           "html": "<p>Unsere neu erbaute, moderne Unterkunft, die ZEN Central Apartments, befindet sich im Obergeschoss eines Gartenhauses im Herzen der Innenstadt von Veszprém. Sie besteht aus 3 Apartments: dem RELAX Apartment für 2 Gäste, dem LOTUS Apartment für 3 Gäste und dem JIN-JANG, einem Apartment mit 2 Schlafzimmern für bis zu 4 Gäste. Jedes Apartment ist klimatisiert und mit einer gut ausgestatteten Küche, einem Duschbad und kostenfreien Parkplätzen im abgeschlossenen Innenhof ausgestattet.</p>",
           "items": [
@@ -129,7 +129,7 @@
           "@aside": true,
           "gallery": ["U/Zen_Central_Relax_apartman_8.webp", "U/Zen_Central_Relax_apartman_6.webp", "U/Zen_Central_Relax_apartman_1.webp", "U/Zen_Central_Relax_apartman_3.webp", "U/Zen_Central_Relax_apartman_4.webp", "U/Zen_Central_Relax_apartman_5.webp", "U/Zen_Central_Relax_apartman_7.webp", "U/Zen_Central_Relax_apartman_9.webp"] } },
         { "ref": "cta" },
-        { "type": "cards", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": {
+        { "type": "cards", "style": { "tone": "alt", "pad": "l" }, "data": {
           "kicker": "MODERN UND GEMÜTLICH", "title": "Weitere Apartments", "source": "manual",
           "items": [
             { "title": "JIN-JANG Apartment", "apt": "jinjang", "url": "{page:apt_jinjang}", "media": "U/Zen_Central_Jin_Jang.webp" },
@@ -156,7 +156,7 @@
           "@aside": true,
           "gallery": ["U/Zen_Central_Jin_Jang_1.webp", "U/Zen_Central_Jin_Jang_2.webp", "U/Zen_Central_Jin_Jang_4.webp", "U/Zen_Central_Jin_Jang_7.webp", "U/Zen_Central_Jin_Jang_6.webp", "U/Zen_Central_Jin_Jang_5.webp", "U/Zen_Central_Jin_Jang_3.webp", "U/Zen_Central_apartman_5.webp"] } },
         { "ref": "cta" },
-        { "type": "cards", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": {
+        { "type": "cards", "style": { "tone": "alt", "pad": "l" }, "data": {
           "kicker": "MODERN UND GEMÜTLICH", "title": "Weitere Apartments", "source": "manual",
           "items": [
             { "title": "RELAX Apartment", "apt": "relax", "url": "{page:apt_relax}", "media": "U/Zen_Central_Relax.webp" },
@@ -183,7 +183,7 @@
           "@aside": true,
           "gallery": ["U/Zen_Central_Lotus_apartman_8.webp", "U/Zen_Central_Lotus_apartman_9.webp", "U/Zen_Central_Lotus_apartman_7.webp", "U/Zen_Central_Lotus_apartman_3.webp", "U/Zen_Central_Lotus_apartman_2.webp", "U/Zen_Central_Lotus_apartman_6.webp", "U/Zen_Central_Lotus_apartman_11.webp", "U/Zen_Central_Lotus_apartman_12.webp", "U/Zen_Central_Lotus_apartman_5.webp", "U/Zen_Central_Lotus_apartman_4.webp", "U/Zen_Central_Lotus_apartman_1jpg.webp", "U/Zen_Central_Lotus_apartman_10.webp", "U/Zen_Central_apartman_6.webp"] } },
         { "ref": "cta" },
-        { "type": "cards", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": {
+        { "type": "cards", "style": { "tone": "alt", "pad": "l" }, "data": {
           "kicker": "MODERN UND GEMÜTLICH", "title": "Weitere Apartments", "source": "manual",
           "items": [
             { "title": "RELAX Apartment", "apt": "relax", "url": "{page:apt_relax}", "media": "U/Zen_Central_Relax.webp" },

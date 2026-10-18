@@ -1,0 +1,74 @@
+/* Zen AI indító – élő, virágzó lótusz (felirat nélkül). A launcher() inline tölti be, a chat CSS-től függetlenül. */
+.zca-launcher { position: fixed; z-index: 80; bottom: max(18px, env(safe-area-inset-bottom)); right: 18px; display: grid; place-items: center; padding: 0; border: 0; background: none; cursor: pointer; -webkit-tap-highlight-color: transparent; transition: transform .5s cubic-bezier(.34,1.56,.64,1), opacity .3s; }
+.zca-launcher--left { right: auto; left: 18px; }
+.zca-launcher__orb { position: relative; display: grid; place-items: center; width: 78px; height: 78px; border-radius: 999px; isolation: isolate; box-shadow: 0 22px 44px -16px rgba(6, 20, 32, .7), 0 0 0 1px rgba(255, 255, 255, .14), inset 0 1px 0 rgba(255, 255, 255, .18); }
+.zca-launcher__orb::before { content: ""; position: absolute; inset: -9px; z-index: -1; border-radius: inherit; background: radial-gradient(closest-side, rgba(255, 122, 170, .42), rgba(255, 122, 170, .12) 62%, transparent 74%); animation: zlHalo 4.6s ease-in-out infinite; }
+.zca-launcher__orb > svg, .zca-launcher__orb > img { display: block; width: 100%; height: 100%; border-radius: inherit; }
+.zca-launcher__orb > img { object-fit: cover; }
+.zca-launcher:hover { transform: translateY(-4px) scale(1.04); }
+.zca-launcher:focus-visible { outline: none; }
+.zca-launcher:focus-visible .zca-launcher__orb { box-shadow: 0 0 0 3px #ff9cc4, 0 22px 44px -16px rgba(6, 20, 32, .7); }
+.zca-launcher.is-hidden { opacity: 0; transform: translateY(20px) scale(.9); pointer-events: none; }
+@keyframes zlHalo { 0%, 100% { opacity: .55; transform: scale(.94); } 50% { opacity: 1; transform: scale(1.08); } }
+
+/* --- a virág élete --- */
+.zl * { transform-box: view-box; }
+.zl-flower { transform-origin: 50px 73px; animation: zlSway 7.5s ease-in-out infinite; }
+.zl-p { transform-origin: 50px 62px; transform: rotate(calc(var(--a) * 1deg)); animation: zlBloom 2.8s cubic-bezier(.22, .8, .26, 1) both, zlBreath 6.5s ease-in-out infinite; animation-delay: calc(var(--i) * .09s), calc(2.8s + var(--i) * .17s); }
+.zl-petals { transition: filter 1.6s ease; }
+.zl-pod { transform-origin: 50px 53px; animation: zlPod 2.8s 1.2s cubic-bezier(.34, 1.56, .64, 1) both; }
+.zl-glow { transform-origin: 50px 50px; animation: zlGlow 4.6s ease-in-out infinite; }
+.zl-wave { animation: zlWave 7s linear infinite; }
+.zl-wave--b { animation-duration: 11s; animation-direction: reverse; }
+.zl-rip { transform-origin: 50px 72.6px; animation: zlRip 4.4s ease-out infinite; }
+.zl-rip--b { animation-delay: 2.2s; }
+.zl-root { stroke-dasharray: 32; stroke-dashoffset: 32; transform-origin: 50px 74px; animation: zlRoot 4.5s 1.4s ease-out forwards, zlRootSway 7s 6s ease-in-out infinite; }
+.zl-root:nth-child(2) { animation-delay: 1.9s, 6.4s; }
+.zl-root:nth-child(3) { animation-delay: 2.3s, 6.8s; }
+.zl-root:nth-child(4) { animation-delay: 2.7s, 7.2s; }
+.zl-root:nth-child(5) { animation-delay: 3.1s, 7.6s; }
+.zl-leaf { transform-origin: 50px 73px; animation: zlLeaf 9s ease-in-out infinite; }
+.zl-leaf--r { animation-delay: -4.5s; }
+.zl-star { animation: zlTw 3.4s ease-in-out infinite; }
+.zl-star:nth-child(2) { animation-delay: 1.1s; } .zl-star:nth-child(3) { animation-delay: 2.2s; }
+.zl-ask, .zl-drop, .zl-spark { opacity: 0; }
+.zl-ask { transform-origin: 77px 22px; }
+
+/* szomjas: a szirmok lekonyulnak, fakulnak, és egy vízcsepp-buborékban vizet kér */
+.is-thirsty .zl-p { animation: zlDroop 2s ease forwards; animation-delay: calc(var(--i) * .05s); }
+.is-thirsty .zl-petals { filter: saturate(.5) brightness(.9); }
+.is-thirsty .zl-ask { opacity: 1; animation: zlAsk 1.6s ease-in-out infinite; transition: opacity .4s; }
+.is-thirsty .zl-flower { animation-duration: 12s; }
+
+/* öntözés: cseppek hullanak, a víz gyűrűzik, a virág újra kinyílik és csillog */
+.is-watering .zl-drop { animation: zlFall 1.05s ease-in forwards; animation-delay: var(--d); }
+.is-watering .zl-p { animation: zlRevive 1.7s .75s cubic-bezier(.34, 1.56, .64, 1) both, zlBreath 6.5s ease-in-out infinite; animation-delay: calc(.75s + var(--i) * .06s), calc(2.6s + var(--i) * .17s); }
+.is-watering .zl-rip { animation-duration: 1.6s; }
+.is-watering .zl-spark { animation: zlSpark 1.5s 1.15s ease-out both; }
+.is-watering .zl-spark:nth-child(2) { animation-delay: 1.35s; } .is-watering .zl-spark:nth-child(3) { animation-delay: 1.55s; }
+
+@keyframes zlSway { 0%, 100% { transform: rotate(-2.6deg); } 50% { transform: rotate(2.6deg); } }
+@keyframes zlBloom { 0% { transform: rotate(calc(var(--a) * .06deg)) scale(.5, .72); opacity: 0; } 22% { opacity: 1; } 100% { transform: rotate(calc(var(--a) * 1deg)) scale(1); opacity: 1; } }
+@keyframes zlBreath { 0%, 100% { transform: rotate(calc(var(--a) * 1deg)) scale(1); } 50% { transform: rotate(calc(var(--a) * 1.09deg)) scale(1.035); } }
+@keyframes zlDroop { to { transform: rotate(calc(var(--a) * 1.32deg)) translateY(2.6px) scale(.93); } }
+@keyframes zlRevive { from { transform: rotate(calc(var(--a) * 1.32deg)) translateY(2.6px) scale(.93); } to { transform: rotate(calc(var(--a) * 1deg)) scale(1); } }
+@keyframes zlPod { from { transform: scale(0); } to { transform: scale(1); } }
+@keyframes zlGlow { 0%, 100% { opacity: .55; transform: scale(.92); } 50% { opacity: 1; transform: scale(1.06); } }
+@keyframes zlWave { to { transform: translateX(-50px); } }
+@keyframes zlRip { 0% { transform: scale(.35); opacity: .75; } 100% { transform: scale(3.3); opacity: 0; } }
+@keyframes zlRoot { to { stroke-dashoffset: 0; } }
+@keyframes zlRootSway { 0%, 100% { transform: skewX(-4deg); } 50% { transform: skewX(4deg); } }
+@keyframes zlLeaf { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(.6px) rotate(.8deg); } }
+@keyframes zlTw { 0%, 100% { opacity: .15; } 50% { opacity: .95; } }
+@keyframes zlAsk { 0%, 100% { opacity: 1; transform: translateY(0) scale(1); } 50% { transform: translateY(-2px) scale(1.08); } }
+@keyframes zlFall { 0% { opacity: 0; transform: translateY(0); } 12% { opacity: 1; } 82% { opacity: 1; } 100% { opacity: 0; transform: translateY(56px); } }
+@keyframes zlSpark { 0% { opacity: 0; transform: scale(.2); } 40% { opacity: 1; transform: scale(1.1); } 100% { opacity: 0; transform: scale(.6) translateY(-4px); } }
+
+/* statikus (chat fejléc): nyitott virág, mozgás nélkül */
+.zl--static *, .zl--static { animation: none !important; }
+.zl--static .zl-root { stroke-dashoffset: 0; }
+
+@media (max-width: 1024px) { .zca-launcher { bottom: max(84px, calc(env(safe-area-inset-bottom) + 72px)); } .zca-launcher__orb { width: 66px; height: 66px; } }
+@media (max-width: 380px) { .zca-launcher { right: 12px; } .zca-launcher--left { left: 12px; } .zca-launcher__orb { width: 58px; height: 58px; } }
+@media (prefers-reduced-motion: reduce) { .zca-launcher, .zca-launcher * { animation: none !important; transition: none !important; } .zl-root { stroke-dashoffset: 0; } }
+@media print { .zca-launcher { display: none !important; } }

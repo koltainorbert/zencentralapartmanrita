@@ -114,7 +114,7 @@
 				{ k: 'general.address_line', l: 'Teljes cím (megjelenő)' }, { k: 'general.street', l: 'Utca, házszám' },
 				{ k: 'general.zip', l: 'Irányítószám' }, { k: 'general.city', l: 'Település' },
 				{ k: 'general.lat', l: 'Szélesség (GPS)' }, { k: 'general.lng', l: 'Hosszúság (GPS)' },
-				{ k: 'general.map_query', l: 'Google térkép keresőkifejezés' }, { k: 'general.google_maps', l: 'Google Maps link', t: 'url' },
+				{ k: 'general.map_provider', l: 'Térkép', t: 'select', opts: [['osm', 'OpenStreetMap – sütimentes, azonnal betölt (ajánlott)'], ['google', 'Google Térkép – kattintásra (süti-hozzájárulás)']] }, { k: 'general.map_query', l: 'Google térkép keresőkifejezés' }, { k: 'general.google_maps', l: 'Google Maps link', t: 'url' },
 				{ k: 'general.facebook', l: 'Facebook', t: 'url' }, { k: 'general.instagram', l: 'Instagram', t: 'url' },
 				{ k: 'general.ntak', l: 'NTAK szám' }, { k: 'general.tax_number', l: 'Adószám' }, { k: 'general.owner', l: 'Üzemeltető' }
 			]))]),

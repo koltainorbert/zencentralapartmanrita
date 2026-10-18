@@ -50,8 +50,4 @@ $zc_split = ! empty( $d['booking_bar'] ) && class_exists( 'Zen_Booking' );
 			</aside>
 		<?php endif; ?>
 	</div>
-	<?php if ( 'full' === $zc_h ) : ?>
-		<a class="zc-hero__scroll" href="#zc-after-hero" aria-label="<?php echo esc_attr( zc_t( 'scroll' ) ); ?>"><span></span></a>
-		<span id="zc-after-hero" class="zc-anchor"></span>
-	<?php endif; ?>
 </section>

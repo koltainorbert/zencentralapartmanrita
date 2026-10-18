@@ -169,19 +169,29 @@
 		l.appendChild(f);
 	});
 
-	/* ---------- Térkép kattintásra ---------- */
-	d.addEventListener('click', function (e) {
-		var b = e.target.closest('[data-map-load]');
-		if (!b) { return; }
-		var m = b.closest('[data-map]');
+	/* ---------- Térkép: OSM görgetéskor magától, Google kattintásra ---------- */
+	function loadMap(m) {
+		if (!m || m.classList.contains('is-loaded')) { return; }
 		var f = d.createElement('iframe');
 		f.src = m.getAttribute('data-map');
 		f.loading = 'lazy';
-		f.title = 'Google Maps';
+		f.title = m.classList.contains('zc-map--osm') ? 'OpenStreetMap' : 'Google Maps';
 		f.referrerPolicy = 'no-referrer-when-downgrade';
-		m.appendChild(f);
+		f.setAttribute('allowfullscreen', '');
+		m.insertBefore(f, m.firstChild);
 		m.classList.add('is-loaded');
+	}
+	d.addEventListener('click', function (e) {
+		var b = e.target.closest('[data-map-load]');
+		if (b) { loadMap(b.closest('[data-map]')); }
 	});
+	var autoMaps = $$('[data-map-auto]');
+	if (autoMaps.length) {
+		if ('IntersectionObserver' in w) {
+			var mo = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { loadMap(x.target); mo.unobserve(x.target); } }); }, { rootMargin: '300px 0px' });
+			autoMaps.forEach(function (m) { mo.observe(m); });
+		} else { autoMaps.forEach(loadMap); }
+	}
 
 	/* ---------- Fülek (GYIK) ---------- */
 	d.addEventListener('click', function (e) {

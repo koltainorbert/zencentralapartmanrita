@@ -72,7 +72,7 @@
           "html": "<p>A ZEN CENTRAL APARTMENTS szálláshely apartmanjai a Bakony-Balaton térségben, Veszprém belvárosában, mégis csendes, kertvárosi utcában várják a vendégeket. Ha fontos a modern és otthonos környezet, ideális választás.</p>",
           "buttons": [{ "label": "Szabad időpontok és foglalás", "url": "{page:booking}", "style": "primary" }],
           "media": "U/ZEN_Central_Veszprem_7.webp", "layout": "right" } },
-        { "type": "cards", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": {
+        { "type": "cards", "style": { "tone": "alt", "pad": "l" }, "data": {
           "kicker": "Modern és otthonos", "title": "ZEN Central Apartments", "source": "manual",
           "items": [
             { "title": "JIN-JANG Apartman", "apt": "jinjang", "url": "{page:apt_jinjang}", "media": "U/Zen_Central_Jin_Jang.webp" },
@@ -102,7 +102,7 @@
       "og": "U/Zen_Central_Jin_Jang-1.webp",
       "sections": [
         { "type": "hero", "data": { "title": "Apartmanok", "media": "U/ZEN_Central_Veszprem_2a-e1707487997322.webp", "height": "small", "breadcrumbs": true, "side_logo": true } },
-        { "type": "cards", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": {
+        { "type": "cards", "style": { "tone": "alt", "pad": "l" }, "data": {
           "kicker": "Modern és otthonos", "title": "ZEN Central apartmanok", "source": "manual",
           "html": "<p>Veszprém belvárosában egy kertes családi ház emeletén található új építésű, modern szálláshelyünk a ZEN Central Apartments, mely 3 apartmanból áll: RELAX Studio 2 fő, LOTUS Studio 3 fő, JIN JANG 2 hálószobás 4 fő részére lett kialakítva. Mindegyik apartman klimatizált. jól felszerelt konyhával, zuhanyzós fürdőszobával ingyenes zárt udvari parkolóval várja vendégeit.</p>",
           "items": [
@@ -132,7 +132,7 @@
           "@aside": true,
           "gallery": ["U/Zen_Central_Relax_apartman_8.webp", "U/Zen_Central_Relax_apartman_6.webp", "U/Zen_Central_Relax_apartman_1.webp", "U/Zen_Central_Relax_apartman_3.webp", "U/Zen_Central_Relax_apartman_4.webp", "U/Zen_Central_Relax_apartman_5.webp", "U/Zen_Central_Relax_apartman_7.webp", "U/Zen_Central_Relax_apartman_9.webp"] } },
         { "ref": "cta" },
-        { "type": "cards", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": {
+        { "type": "cards", "style": { "tone": "alt", "pad": "l" }, "data": {
           "kicker": "Modern és otthonos", "title": "További apartmanok", "source": "manual",
           "items": [
             { "title": "JIN-JANG Apartman", "apt": "jinjang", "url": "{page:apt_jinjang}", "media": "U/Zen_Central_Jin_Jang.webp" },
@@ -159,7 +159,7 @@
           "@aside": true,
           "gallery": ["U/Zen_Central_Jin_Jang_1.webp", "U/Zen_Central_Jin_Jang_2.webp", "U/Zen_Central_Jin_Jang_4.webp", "U/Zen_Central_Jin_Jang_7.webp", "U/Zen_Central_Jin_Jang_6.webp", "U/Zen_Central_Jin_Jang_5.webp", "U/Zen_Central_Jin_Jang_3.webp", "U/Zen_Central_apartman_5.webp"] } },
         { "ref": "cta" },
-        { "type": "cards", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": {
+        { "type": "cards", "style": { "tone": "alt", "pad": "l" }, "data": {
           "kicker": "Modern és otthonos", "title": "További apartmanok", "source": "manual",
           "items": [
             { "title": "LOTUS Apartman", "apt": "lotus", "url": "{page:apt_lotus}", "media": "U/Zen_Central_Lotus.webp" },
@@ -186,7 +186,7 @@
           "@aside": true,
           "gallery": ["U/Zen_Central_Lotus_apartman_8.webp", "U/Zen_Central_Lotus_apartman_9.webp", "U/Zen_Central_Lotus_apartman_7.webp", "U/Zen_Central_Lotus_apartman_3.webp", "U/Zen_Central_Lotus_apartman_2.webp", "U/Zen_Central_Lotus_apartman_6.webp", "U/Zen_Central_Lotus_apartman_11.webp", "U/Zen_Central_Lotus_apartman_12.webp", "U/Zen_Central_Lotus_apartman_5.webp", "U/Zen_Central_Lotus_apartman_4.webp", "U/Zen_Central_Lotus_apartman_1jpg.webp", "U/Zen_Central_Lotus_apartman_10.webp", "U/Zen_Central_apartman_6.webp"] } },
         { "ref": "cta" },
-        { "type": "cards", "style": { "bg": "U/ZEN_Central_YinYang_feher-e1707484502231.webp", "tone": "alt", "pad": "l" }, "data": {
+        { "type": "cards", "style": { "tone": "alt", "pad": "l" }, "data": {
           "kicker": "Modern és otthonos", "title": "További apartmanok", "source": "manual",
           "items": [
             { "title": "JIN-JANG Apartman", "apt": "jinjang", "url": "{page:apt_jinjang}", "media": "U/Zen_Central_Jin_Jang.webp" },

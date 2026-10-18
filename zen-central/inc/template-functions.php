@@ -109,6 +109,25 @@ function zc_render_sections( $post_id ) {
 	if ( ! $sections ) {
 		return false;
 	}
+	// Az oldal összes galéria szekciója egy galériává (egy szűrősor: mind a 3 apartman + ház);
+	// az így egymás mellé kerülő azonos CTA-k közül csak egy marad.
+	$merged = array();
+	$gal    = null;
+	foreach ( $sections as $s ) {
+		if ( 'gallery' === ( $s['type'] ?? '' ) && ! empty( $s['enabled'] ) ) {
+			if ( null !== $gal ) {
+				$merged[ $gal ]['data']['groups'] = array_merge( (array) ( $merged[ $gal ]['data']['groups'] ?? array() ), (array) ( $s['data']['groups'] ?? array() ) );
+				continue;
+			}
+			$gal = count( $merged );
+		}
+		$last = count( $merged ) - 1;
+		if ( $last >= 0 && 'cta' === ( $s['type'] ?? '' ) && 'cta' === $merged[ $last ]['type'] && ! empty( $s['enabled'] ) ) {
+			continue;
+		}
+		$merged[] = $s;
+	}
+	$sections = $merged;
 	$i = 0;
 	foreach ( $sections as $s ) {
 		if ( empty( $s['enabled'] ) ) {
@@ -411,7 +430,7 @@ function zc_theme_toggle() {
 	if ( ! zc_opt( 'design.mode_toggle', true ) ) {
 		return '';
 	}
-	return '<button type="button" class="zc-switch zc-mode" role="switch" aria-checked="false" aria-label="' . esc_attr( zc_t( 'theme_dark' ) ) . '" data-mode-toggle><span class="zc-switch__track"><span class="zc-switch__thumb">' . zc_icon( 'sun', 14 ) . zc_icon( 'moon', 14 ) . '</span></span></button>';
+	return '<button type="button" class="zc-switch zc-mode" role="switch" aria-checked="false" aria-label="' . esc_attr( zc_t( 'theme_dark' ) ) . '" data-mode-toggle><span class="zc-switch__track"><span class="zc-switch__side zc-switch__side--sun" aria-hidden="true">' . zc_icon( 'sun', 13 ) . '</span><span class="zc-switch__side zc-switch__side--moon" aria-hidden="true">' . zc_icon( 'moon', 13 ) . '</span><span class="zc-switch__thumb">' . zc_icon( 'sun', 14 ) . zc_icon( 'moon', 14 ) . '</span></span></button>';
 }
 
 /** Logó (világos/sötét változat). */
@@ -451,11 +470,22 @@ function zc_apt_meta( $key ) {
 	return $o . '</ul>';
 }
 
-/** Google térkép – kattintásra töltődik (GDPR + sebesség). */
+/**
+ * Térkép. Alapból OpenStreetMap (sütimentes → azonnal, görgetéskor betöltődik, jelölővel),
+ * opcionálisan Google Térkép kattintásra (GDPR). Beállítás: general.map_provider = osm|google.
+ */
 function zc_map( $query, $class = '' ) {
-	$q   = rawurlencode( (string) $query );
+	$q    = rawurlencode( (string) $query );
+	$lnk  = zc_opt( 'general.google_maps', 'https://maps.google.com/?q=' . $q );
+	$prov = zc_opt( 'general.map_provider', 'osm' );
+	$lat  = (float) zc_opt( 'general.lat', 0 );
+	$lng  = (float) zc_opt( 'general.lng', 0 );
+	if ( 'google' !== $prov && $lat && $lng ) {
+		$d   = 0.0065;
+		$src = 'https://www.openstreetmap.org/export/embed.html?bbox=' . rawurlencode( sprintf( '%.5f,%.5f,%.5f,%.5f', $lng - $d * 1.6, $lat - $d, $lng + $d * 1.6, $lat + $d ) ) . '&layer=mapnik&marker=' . rawurlencode( sprintf( '%.5f,%.5f', $lat, $lng ) );
+		return '<div class="zc-map zc-map--osm ' . esc_attr( $class ) . '" data-map="' . esc_url( $src ) . '" data-map-auto><div class="zc-map__ph">' . zc_icon( 'map', 34 ) . '<button type="button" class="zc-btn zc-btn--sm" data-map-load>' . esc_html( zc_t( 'map_load' ) ) . '</button></div><a class="zc-map__open" href="' . esc_url( $lnk ) . '" target="_blank" rel="noopener">' . zc_icon( 'pin', 16 ) . '<span>' . esc_html( zc_t( 'open_maps' ) ) . '</span>' . zc_icon( 'external', 14 ) . '</a></div>';
+	}
 	$src = 'https://maps.google.com/maps?q=' . $q . '&t=m&z=16&output=embed&iwloc=near';
-	$lnk = zc_opt( 'general.google_maps', 'https://maps.google.com/?q=' . $q );
 	return '<div class="zc-map ' . esc_attr( $class ) . '" data-map="' . esc_url( $src ) . '"><div class="zc-map__ph">' . zc_icon( 'map', 34 ) . '<button type="button" class="zc-btn zc-btn--sm" data-map-load>' . esc_html( zc_t( 'map_load' ) ) . '</button><small>' . esc_html( zc_t( 'map_note' ) ) . '</small><a href="' . esc_url( $lnk ) . '" target="_blank" rel="noopener">' . esc_html( zc_t( 'open_maps' ) ) . ' ' . zc_icon( 'external', 14 ) . '</a></div></div>';
 }
 

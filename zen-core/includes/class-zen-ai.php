@@ -864,42 +864,88 @@ TXT;
 			'js'     => ZEN_CORE_URL . 'assets/zen-ai.js?v=' . ZEN_CORE_VER . '.' . ( file_exists( ZEN_CORE_DIR . 'assets/zen-ai.js' ) ? filemtime( ZEN_CORE_DIR . 'assets/zen-ai.js' ) : 0 ),
 			'pos'    => Zen_Settings::get( 'ai.position', 'right' ),
 		);
-		$cfg['mark'] = self::mark_svg( 44 );
-		$mark        = $ava ? '<img src="' . esc_url( $ava ) . '" alt="" width="44" height="44">' : self::mark_svg( 44 );
+		$cfg['mark'] = self::lotus_svg( false );
 		$side        = 'left' === $cfg['pos'] ? 'left' : 'right';
+		$label       = zen_t( 'ai_open', $lang );
+		$inner       = $ava ? '<img src="' . esc_url( $ava ) . '" alt="" width="78" height="78">' : self::lotus_svg( true );
 		echo '<script type="application/json" id="zca-config">' . wp_json_encode( $cfg ) . '</script>'; // phpcs:ignore
-		// Az indító saját, apró CSS-sel jelenik meg (a chat CSS csak megnyitáskor töltődik).
-		echo '<style id="zca-launcher-css">'
-			. '.zca-launcher{position:fixed;z-index:80;bottom:max(18px,env(safe-area-inset-bottom));' . $side . ':18px;display:inline-flex;align-items:center;gap:0;padding:0;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent;font:600 14px/1 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#f3ede3;flex-direction:' . ( 'left' === $side ? 'row-reverse' : 'row' ) . ';transition:transform .45s cubic-bezier(.34,1.56,.64,1),opacity .3s}'
-			. '.zca-launcher__orb{position:relative;display:grid;place-items:center;width:64px;height:64px;border-radius:999px;background:radial-gradient(120% 120% at 30% 20%,#2a241c,#0d0b09 70%);color:#f3d38a;box-shadow:0 18px 40px -14px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(243,211,138,.22);isolation:isolate}'
-			. '.zca-launcher__orb::after{content:"";position:absolute;inset:-6px;border-radius:inherit;z-index:-1;background:radial-gradient(closest-side,rgba(214,180,124,.38),transparent 72%);animation:zcaBreath 4.2s ease-in-out infinite}'
-			. '.zca-launcher__orb img{width:52px;height:52px;border-radius:999px;object-fit:cover}'
-			. '.zca-launcher__orb svg{display:block;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}'
-			. '.zca-launcher__t{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;' . ( 'left' === $side ? 'margin-left:-14px;padding-left:28px' : 'margin-right:-14px;padding-right:28px' ) . ';border-radius:999px;background:rgba(15,13,11,.78);border:1px solid rgba(243,211,138,.2);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 14px 30px -16px rgba(0,0,0,.6);white-space:nowrap;letter-spacing:.01em;transform-origin:' . ( 'left' === $side ? 'left' : 'right' ) . ';transition:opacity .3s,transform .45s cubic-bezier(.34,1.56,.64,1)}'
-			. '.zca-launcher__dot{width:8px;height:8px;border-radius:9px;background:#36c27a;box-shadow:0 0 0 3px rgba(54,194,122,.2)}'
-			. '.zca-launcher:hover{transform:translateY(-3px)}.zca-launcher:hover .zca-launcher__orb svg{transform:scale(1.07)}.zca-launcher:hover .zca-launcher__orb::after{animation-duration:1.6s}'
-			. '.zca-launcher:focus-visible{outline:none}.zca-launcher:focus-visible .zca-launcher__orb{box-shadow:0 0 0 3px #f3d38a,0 18px 40px -14px rgba(0,0,0,.6)}'
-			. '.zca-launcher.is-hidden{opacity:0;transform:translateY(20px) scale(.9);pointer-events:none}'
-			. '@keyframes zcaBreath{0%,100%{opacity:.55;transform:scale(.94)}50%{opacity:1;transform:scale(1.08)}}'
-			. '@media (max-width:1024px){.zca-launcher{bottom:max(84px,calc(env(safe-area-inset-bottom) + 72px))}.zca-launcher__t{display:none}.zca-launcher__orb{width:58px;height:58px}}'
-			. '@media (max-width:380px){.zca-launcher{' . $side . ':12px}.zca-launcher__orb{width:52px;height:52px}.zca-launcher__orb svg{width:38px;height:38px}}'
-			. '@media (prefers-reduced-motion:reduce){.zca-launcher,.zca-launcher *{animation:none!important;transition:none!important}}'
-			. '@media print{.zca-launcher{display:none!important}}'
-			. '</style>';
-		echo '<button type="button" class="zca-launcher zca-launcher--' . esc_attr( $side ) . '" data-zen-ai-open aria-label="' . esc_attr( zen_t( 'ai_open', $lang ) ) . '"><span class="zca-launcher__t"><span class="zca-launcher__dot" aria-hidden="true"></span>' . esc_html( zen_t( 'ai_open', $lang ) ) . '</span><span class="zca-launcher__orb" aria-hidden="true">' . $mark . '</span></button>'; // phpcs:ignore
+		// Az indító saját, apró CSS-sel és JS-sel él (a chat CSS/JS csak megnyitáskor töltődik).
+		$css = file_exists( ZEN_CORE_DIR . 'assets/zen-lotus.css' ) ? (string) file_get_contents( ZEN_CORE_DIR . 'assets/zen-lotus.css' ) : ''; // phpcs:ignore
+		echo '<style id="zca-launcher-css">' . preg_replace( '/\s+/', ' ', $css ) . '</style>'; // phpcs:ignore
+		echo '<button type="button" class="zca-launcher zca-launcher--' . esc_attr( $side ) . '" data-zen-ai-open aria-label="' . esc_attr( $label ) . '" title="' . esc_attr( $label ) . '"><span class="zca-launcher__orb" aria-hidden="true">' . $inner . '</span></button>'; // phpcs:ignore
+		if ( ! $ava && file_exists( ZEN_CORE_DIR . 'assets/zen-lotus.js' ) ) {
+			echo '<script>' . file_get_contents( ZEN_CORE_DIR . 'assets/zen-lotus.js' ) . '</script>'; // phpcs:ignore
+		}
 		// Apró betöltő: az első kattintásra tölti be a chat CSS+JS-t.
 		echo "<script>(function(){var c=JSON.parse(document.getElementById('zca-config').textContent),L=false,Q=null;function load(cb){if(L){cb&&cb();return;}L=true;var l=document.createElement('link');l.rel='stylesheet';l.href=c.css;document.head.appendChild(l);var s=document.createElement('script');s.src=c.js;s.defer=true;s.onload=function(){cb&&cb();};document.body.appendChild(s);}window.ZenAI=window.ZenAI||{open:function(p){Q=p||null;load(function(){window.ZenAI.open(Q);});},ask:function(t){load(function(){window.ZenAI.ask(t);});}};document.addEventListener('click',function(e){var b=e.target.closest('[data-zen-ai-open]');if(!b)return;e.preventDefault();window.ZenAI.open(b.getAttribute('data-zen-ai-prompt'));});})();</script>\n";
 	}
 
-	/** ZEN jel: ecsettel húzott ensō-kör, benne a „ZEN” betűk – a forma maga is ZEN. */
-	public static function mark_svg( $size = 44 ) {
-		$enso = 'M44.4 8.6L47.2 9.9L49.8 11.7L52.1 13.8L54.2 16.2L56 18.8L57.4 21.6L58.5 24.6L59.3 27.7L59.7 30.9L59.7 34.1L59.3 37.2L58.5 40.4L57.4 43.4L56 46.3L54.2 49L52.1 51.4L49.7 53.6L47.1 55.5L44.3 57.1L41.3 58.4L38.2 59.3L35 59.8L31.8 59.9L28.6 59.7L25.4 59.1L22.4 58.2L19.4 56.8L16.7 55.2L14.1 53.2L11.8 51L9.8 48.5L8.1 45.8L6.7 42.9L5.7 39.9L5 36.8L4.7 33.7L4.7 30.5L5.1 27.4L5.9 24.3L7.1 21.4L8.5 18.7L10.3 16.1L12.4 13.8L14.7 11.8L17.3 10L19.9 8.5L22.7 7.2L25.6 6.3L25.8 7.2L23 8.1L20.3 9.3L17.8 10.8L15.5 12.7L13.5 14.8L11.7 17.1L10.3 19.6L9.1 22.3L8.2 25L7.6 27.8L7.4 30.7L7.4 33.5L7.8 36.3L8.6 39.1L9.6 41.7L10.9 44.2L12.5 46.5L14.3 48.6L16.4 50.5L18.6 52.2L21.1 53.5L23.7 54.6L26.3 55.4L29.1 55.9L31.8 56.1L34.6 55.9L37.4 55.4L40 54.6L42.6 53.6L45 52.2L47.2 50.6L49.3 48.7L51.1 46.6L52.7 44.3L54 41.9L55 39.3L55.8 36.6L56.2 33.8L56.3 31L56.1 28.2L55.6 25.4L54.7 22.7L53.6 20.1L52.1 17.6L50.4 15.3L48.5 13.2L46.3 11.3L44 9.4Z';
-		$s    = (int) $size;
-		return '<svg class="zca-mark" width="' . $s . '" height="' . $s . '" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">'
-			. '<defs><linearGradient id="zcaG" x1="8" y1="6" x2="58" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#f6dfa4"/><stop offset=".55" stop-color="#d6b47c"/><stop offset="1" stop-color="#9fbf9f"/></linearGradient></defs>'
-			. '<path d="' . $enso . '" fill="url(#zcaG)" opacity=".95"/>'
-			. '<path d="M18.7 26.5H26.2L18.7 37.5H26.2M35.7 26.5H29.7V37.5H35.7M29.7 32H34.4M38.7 37.5V26.5L45.2 37.5V26.5" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>'
-			. '</svg>';
+	/**
+	 * Élő lótusz (SVG): éjszakai tó, tavirózsa-levelek, gyökerek a vízben, három sor rózsaszín szirom, arany magház.
+	 * $live = false: statikus, nyitott virág (chat fejléc). Egyedi azonosítók, így többször is lehet az oldalon.
+	 */
+	public static function lotus_svg( $live = true ) {
+		static $n = 0;
+		$n++;
+		$u   = 'zl' . $n;
+		$pet = function ( $tip, $w ) {
+			$c1 = 62 - ( 62 - $tip ) * 0.28;
+			$c2 = 62 - ( 62 - $tip ) * 0.7;
+			return sprintf( 'M50 62C%1$.1f %2$.1f %1$.1f %3$.1f 50 %4$sC%5$.1f %3$.1f %5$.1f %2$.1f 50 62Z', 50 - $w, $c1, $c2, $tip, 50 + $w );
+		};
+		$rows = array(
+			array( 'a', $pet( 26, 10.5 ), array( -66, -33, 0, 33, 66 ) ),
+			array( 'b', $pet( 32, 8.6 ), array( -48, -17, 17, 48 ) ),
+			array( 'c', $pet( 39, 6.6 ), array( -27, 0, 27 ) ),
+		);
+		$petals = '';
+		$i      = 0;
+		foreach ( $rows as $ri => $r ) {
+			if ( 2 === $ri ) {
+				// magház a középső és az első sor között
+				$petals .= '<g class="zl-pod"><ellipse cx="50" cy="53.5" rx="6" ry="3" fill="url(#' . $u . 'pod)"/>'
+					. '<g fill="#7a4b10" opacity=".55"><circle cx="47.6" cy="53.2" r=".55"/><circle cx="50" cy="52.6" r=".55"/><circle cx="52.4" cy="53.2" r=".55"/><circle cx="48.8" cy="54.4" r=".5"/><circle cx="51.2" cy="54.4" r=".5"/></g>'
+					. '<g fill="#ffd54f"><circle cx="43.6" cy="52.2" r=".8"/><circle cx="45" cy="50.4" r=".8"/><circle cx="47.2" cy="49.4" r=".8"/><circle cx="50" cy="49" r=".8"/><circle cx="52.8" cy="49.4" r=".8"/><circle cx="55" cy="50.4" r=".8"/><circle cx="56.4" cy="52.2" r=".8"/></g></g>';
+			}
+			foreach ( $r[2] as $a ) {
+				$petals .= '<path class="zl-p" style="--a:' . $a . ';--i:' . $i . '" d="' . $r[1] . '" fill="url(#' . $u . 'p' . $r[0] . ')" stroke="rgba(255,255,255,.55)" stroke-width=".35"/>';
+				$i++;
+			}
+		}
+		$o  = '<svg class="zl' . ( $live ? '' : ' zl--static' ) . '" viewBox="0 0 100 100" fill="none" aria-hidden="true" focusable="false">';
+		$o .= '<defs>'
+			. '<radialGradient id="' . $u . 'sky" cx="50" cy="34" r="62" gradientUnits="userSpaceOnUse"><stop stop-color="#27506b"/><stop offset=".6" stop-color="#12304a"/><stop offset="1" stop-color="#081624"/></radialGradient>'
+			. '<linearGradient id="' . $u . 'water" x1="0" y1="70" x2="0" y2="100" gradientUnits="userSpaceOnUse"><stop stop-color="#3fb5c4" stop-opacity=".95"/><stop offset=".45" stop-color="#1f7f9a"/><stop offset="1" stop-color="#0b3550"/></linearGradient>'
+			. '<linearGradient id="' . $u . 'pa" x1="0" y1="62" x2="0" y2="26" gradientUnits="userSpaceOnUse"><stop stop-color="#ff4f93"/><stop offset=".5" stop-color="#ff9cc6"/><stop offset="1" stop-color="#fff4f9"/></linearGradient>'
+			. '<linearGradient id="' . $u . 'pb" x1="0" y1="62" x2="0" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#e83a7c"/><stop offset=".55" stop-color="#ff86b5"/><stop offset="1" stop-color="#ffe3f0"/></linearGradient>'
+			. '<linearGradient id="' . $u . 'pc" x1="0" y1="62" x2="0" y2="39" gradientUnits="userSpaceOnUse"><stop stop-color="#ff6ea6"/><stop offset=".6" stop-color="#ffb3d1"/><stop offset="1" stop-color="#fff7fb"/></linearGradient>'
+			. '<radialGradient id="' . $u . 'pod" cx="50" cy="52.5" r="6.5" gradientUnits="userSpaceOnUse"><stop stop-color="#fff0a6"/><stop offset=".55" stop-color="#ffcc3d"/><stop offset="1" stop-color="#e3931c"/></radialGradient>'
+			. '<linearGradient id="' . $u . 'leaf" x1="0" y1="68" x2="0" y2="77" gradientUnits="userSpaceOnUse"><stop stop-color="#8fe08a"/><stop offset="1" stop-color="#2c8a4c"/></linearGradient>'
+			. '<radialGradient id="' . $u . 'glow" cx="50" cy="48" r="30" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8fc0" stop-opacity=".55"/><stop offset="1" stop-color="#ff8fc0" stop-opacity="0"/></radialGradient>'
+			. '<clipPath id="' . $u . 'clip"><circle cx="50" cy="50" r="50"/></clipPath>'
+			. '</defs>';
+		$o .= '<g clip-path="url(#' . $u . 'clip)">';
+		$o .= '<rect width="100" height="100" fill="url(#' . $u . 'sky)"/>';
+		$o .= '<g fill="#fff"><circle class="zl-star" cx="22" cy="20" r=".7"/><circle class="zl-star" cx="78" cy="14" r=".6"/><circle class="zl-star" cx="16" cy="44" r=".5"/></g>';
+		$o .= '<circle class="zl-glow" cx="50" cy="48" r="30" fill="url(#' . $u . 'glow)"/>';
+		// víz két hullámréteggel
+		$o .= '<path class="zl-wave" d="M0 72.4q12.5-1.6 25 0t25 0t25 0t25 0t25 0t25 0t25 0t25 0V100H0Z" fill="url(#' . $u . 'water)"/>';
+		$o .= '<path class="zl-wave zl-wave--b" d="M-60 74.4q12.5-1.2 25 0t25 0t25 0t25 0t25 0t25 0t25 0t25 0t25 0V100H-60Z" fill="#0d4a66" opacity=".45"/>';
+		// gyökerek a vízben
+		$o .= '<g stroke="#f1cf94" stroke-width=".9" stroke-linecap="round" opacity=".8"><path class="zl-root" d="M50 74C49 80 45 85 42 93"/><path class="zl-root" d="M50 74C51 82 55 87 58 96"/><path class="zl-root" d="M50 74C50 82 49 89 50 98"/><path class="zl-root" d="M50 75C46 78 40 80 35 87"/><path class="zl-root" d="M50 75C54 79 61 81 66 88"/></g>';
+		// gyűrűk a vízen
+		$o .= '<ellipse class="zl-rip" cx="50" cy="72.6" rx="7" ry="1.4" stroke="rgba(255,255,255,.55)" stroke-width=".5"/><ellipse class="zl-rip zl-rip--b" cx="50" cy="72.6" rx="7" ry="1.4" stroke="rgba(255,255,255,.45)" stroke-width=".5"/>';
+		// tavirózsa-levelek
+		$o .= '<path class="zl-leaf" d="M29 72.6m-15 0a15 3.9 0 1 0 30 0a15 3.9 0 1 0 -30 0Z" fill="url(#' . $u . 'leaf)"/><path d="M29 72.6L43.2 71.4L42.6 74Z" fill="#1f7f9a" opacity=".9"/>';
+		$o .= '<path class="zl-leaf zl-leaf--r" d="M73 73.2m-12 0a12 3.2 0 1 0 24 0a12 3.2 0 1 0 -24 0Z" fill="url(#' . $u . 'leaf)" opacity=".92"/><path d="M73 73.2L61.6 72.2L62 74.4Z" fill="#1f7f9a" opacity=".9"/>';
+		// szár + virág
+		$o .= '<g class="zl-flower"><path d="M50 73.5C50 69 50 66 50 61" stroke="#3f9a5a" stroke-width="2.2" stroke-linecap="round"/><g class="zl-petals">' . $petals . '</g></g>';
+		// vízkérő buborék, hulló cseppek, csillogás
+		$o .= '<g class="zl-ask"><circle cx="77" cy="22" r="9" fill="rgba(255,255,255,.94)"/><path d="M77 15.6C74.4 19.4 73.2 21.4 73.2 23.4a3.8 3.8 0 0 0 7.6 0C80.8 21.4 79.6 19.4 77 15.6Z" fill="#35a7dc"/><circle cx="75.6" cy="22.8" r=".9" fill="#d7f3ff"/></g>';
+		$o .= '<g fill="#a8e6ff"><path class="zl-drop" style="--d:0s" d="M42 8C40.6 10.2 40 11.4 40 12.4a2 2 0 0 0 4 0C44 11.4 43.4 10.2 42 8Z"/><path class="zl-drop" style="--d:.18s" d="M51 4C49.6 6.2 49 7.4 49 8.4a2 2 0 0 0 4 0C53 7.4 52.4 6.2 51 4Z"/><path class="zl-drop" style="--d:.34s" d="M59 9C57.6 11.2 57 12.4 57 13.4a2 2 0 0 0 4 0C61 12.4 60.4 11.2 59 9Z"/></g>';
+		$o .= '<g fill="#fff6c9"><path class="zl-spark" style="transform-origin:30px 36px" d="M30 32l1 3 3 1-3 1-1 3-1-3-3-1 3-1Z"/><path class="zl-spark" style="transform-origin:71px 38px" d="M71 35l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8Z"/><path class="zl-spark" style="transform-origin:50px 22px" d="M50 19l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8Z"/></g>';
+		$o .= '</g><circle cx="50" cy="50" r="49.4" stroke="rgba(255,255,255,.2)" stroke-width="1"/></svg>';
+		return $o;
 	}
 
 	public static function sc_help() {
