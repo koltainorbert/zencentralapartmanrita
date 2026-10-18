@@ -280,7 +280,7 @@ add_action(
 	}
 );
 
-/* Frissítés 1.1.0: GYIK telefonszám egységesítése (+36 30 116 9431) és az apartman-leírások
+/* Frissítés 1.1.0: telefonszám egységesítése mindenhol (+36 30 116 9431) és az apartman-leírások
  * magyar eredetihez igazított változatának betöltése a többi nyelven. Egyszer fut, adminban. */
 add_action(
 	'admin_init',
@@ -292,7 +292,7 @@ add_action(
 		// 1) Telefonszám minden oldal szekcióiban (GYIK válasz).
 		foreach ( Zen_Content::pages() as $p ) {
 			$raw = (string) get_post_meta( $p['id'], '_zen_sections', true );
-			if ( '' === $raw || false === strpos( $raw, '971 7556' ) ) {
+			if ( '' === $raw || ( false === strpos( $raw, '971 7556' ) && false === strpos( $raw, '9717556' ) ) ) {
 				continue;
 			}
 			$secs = Zen_Content::get_sections( $p['id'] );
@@ -300,11 +300,16 @@ add_action(
 				$secs,
 				function ( &$v ) {
 					if ( is_string( $v ) ) {
-						$v = str_replace( array( '+36 20 971 7556', '06/20 971 7556' ), '+36 30 116 9431', $v );
+						$v = str_replace( array( '+36 20 971 7556', '06/20 971 7556', '+36 20 9717556', '06 20 971 7556' ), '+36 30 116 9431', $v );
 					}
 				}
 			);
 			Zen_Content::save_sections( $p['id'], $secs );
+		}
+		// 1/b) Foglalási telefonszám a beállításokban (foglalási súgó, Zen AI, e-mailek).
+		$pb = preg_replace( '/[^0-9]/', '', (string) Zen_Settings::get( 'general.phone_booking', '' ) );
+		if ( in_array( $pb, array( '06209717556', '36209717556' ), true ) ) {
+			Zen_Settings::update( array( 'general' => array( 'phone_booking' => '+36 30 116 9431' ) ) );
 		}
 		// 2) Apartman oldalak újratöltése a javított szövegekkel (URL-ek változatlanok).
 		if ( class_exists( 'Zen_Importer' ) ) {

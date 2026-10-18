@@ -24,7 +24,7 @@ class Zen_Settings {
 				'site_name'      => 'ZEN Central Apartments',
 				'tagline'        => 'Szálláshely Veszprém szívében',
 				'phone'          => '+36 30 116 9431',
-				'phone_booking'  => '06/20 971 7556',
+				'phone_booking'  => '+36 30 116 9431',
 				'email'          => 'info@zencentralapartments.com',
 				'email_cancel'   => 'zencentralapartments@gmail.com',
 				'address_line'   => 'H-8200 Veszprém, Festő utca 6.',
