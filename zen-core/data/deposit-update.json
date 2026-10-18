@@ -1,0 +1,106 @@
+[
+ {
+  "old": "<p>Igen, az előleg mértéke a teljes összeg 50%-a. Bizonyos partneroldalakon keresztül történő foglalás esetén a teljes összeg előre fizetendő.</p>",
+  "new": "<p>Igen, az előleg mértéke a teljes összeg 100%-a, vagyis a foglalás teljes összegét előre kell fizetni.</p>"
+ },
+ {
+  "old": "<p>Az előleg után fennmaradó összeget érkezéskor kell rendezni.</p>",
+  "new": "<p>A teljes összeget előre kell kifizetni, így érkezéskor csak az idegenforgalmi adót kell helyben megfizetni.</p>"
+ },
+ {
+  "old": "<p>Yes, the deposit is 50% of the total amount. For bookings made through certain partner sites the full amount is payable in advance.</p>",
+  "new": "<p>Yes, the deposit is 100% of the total amount, i.e. the full amount is payable in advance.</p>"
+ },
+ {
+  "old": "<p>The remaining amount after the deposit is payable on arrival.</p>",
+  "new": "<p>The full amount is paid in advance, so on arrival only the tourist tax has to be paid on site.</p>"
+ },
+ {
+  "old": "<p>Ja, die Anzahlung beträgt 50 % des Gesamtbetrags. Bei Buchungen über bestimmte Partnerseiten ist der gesamte Betrag im Voraus zu zahlen.</p>",
+  "new": "<p>Ja, die Anzahlung beträgt 100 % des Gesamtbetrags, d. h. der gesamte Betrag ist im Voraus zu zahlen.</p>"
+ },
+ {
+  "old": "<p>Der Restbetrag nach der Anzahlung ist bei Anreise zu begleichen.</p>",
+  "new": "<p>Der gesamte Betrag wird im Voraus bezahlt, bei der Anreise ist vor Ort nur noch die Ortstaxe zu entrichten.</p>"
+ },
+ {
+  "old": "<p>Oui, l’acompte s’élève à 50 % du montant total. Pour les réservations effectuées via certains sites partenaires, la totalité du montant est à régler à l’avance.</p>",
+  "new": "<p>Oui, l’acompte s’élève à 100 % du montant total, c’est-à-dire que la totalité du montant est à régler à l’avance.</p>"
+ },
+ {
+  "old": "<p>Le solde restant après l’acompte est à régler à l’arrivée.</p>",
+  "new": "<p>La totalité du montant étant réglée à l’avance, seule la taxe de séjour est à payer sur place à l’arrivée.</p>"
+ },
+ {
+  "old": "<p>Sì, l'acconto è pari al 50% dell'importo totale. Per le prenotazioni effettuate tramite alcuni siti partner, l'intero importo va pagato in anticipo.</p>",
+  "new": "<p>Sì, l'acconto è pari al 100% dell'importo totale, cioè l'intero importo va pagato in anticipo.</p>"
+ },
+ {
+  "old": "<p>L'importo restante dopo l'acconto si paga all'arrivo.</p>",
+  "new": "<p>L'intero importo si paga in anticipo, quindi all'arrivo resta da pagare in loco solo la tassa di soggiorno.</p>"
+ },
+ {
+  "old": "<p>Sí, el depósito es del 50 % del importe total. En las reservas realizadas a través de algunos sitios asociados, el importe íntegro se paga por adelantado.</p>",
+  "new": "<p>Sí, el depósito es del 100 % del importe total, es decir, el importe íntegro se paga por adelantado.</p>"
+ },
+ {
+  "old": "<p>El importe restante tras el depósito se abona a la llegada.</p>",
+  "new": "<p>El importe íntegro se paga por adelantado, por lo que a la llegada solo hay que abonar en el alojamiento la tasa turística.</p>"
+ },
+ {
+  "old": "<p>Tak, zaliczka wynosi 50% całkowitej kwoty. W przypadku rezerwacji przez niektóre serwisy partnerskie cała kwota jest płatna z góry.</p>",
+  "new": "<p>Tak, zaliczka wynosi 100% całkowitej kwoty, czyli cała kwota jest płatna z góry.</p>"
+ },
+ {
+  "old": "<p>Pozostała kwota po wpłacie zaliczki jest płatna przy przyjeździe.</p>",
+  "new": "<p>Cała kwota jest płatna z góry, więc na miejscu przy przyjeździe należy zapłacić tylko opłatę turystyczną.</p>"
+ },
+ {
+  "old": "<p>Ano, záloha činí 50 % celkové částky. U rezervací přes některé partnerské weby se celá částka platí předem.</p>",
+  "new": "<p>Ano, záloha činí 100 % celkové částky, tedy celá částka se platí předem.</p>"
+ },
+ {
+  "old": "<p>Zbývající částka po záloze se platí při příjezdu.</p>",
+  "new": "<p>Celá částka se platí předem, takže při příjezdu se na místě platí pouze turistický poplatek.</p>"
+ },
+ {
+  "old": "<p>Áno, záloha predstavuje 50 % z celkovej sumy. Pri rezerváciách cez niektoré partnerské portály sa celá suma platí vopred.</p>",
+  "new": "<p>Áno, záloha predstavuje 100 % z celkovej sumy, teda celá suma sa platí vopred.</p>"
+ },
+ {
+  "old": "<p>Zvyšnú sumu po odpočítaní zálohy uhradíte pri príchode.</p>",
+  "new": "<p>Celá suma sa platí vopred, takže pri príchode sa na mieste platí iba miestny poplatok.</p>"
+ },
+ {
+  "old": "<p>Da, avansul reprezintă 50% din suma totală. Pentru rezervările făcute prin anumite site-uri partenere, suma integrală se plătește în avans.</p>",
+  "new": "<p>Da, avansul reprezintă 100% din suma totală, adică suma integrală se plătește în avans.</p>"
+ },
+ {
+  "old": "<p>Suma rămasă după avans se achită la sosire.</p>",
+  "new": "<p>Suma integrală se plătește în avans, așa că la sosire se achită la fața locului doar taxa turistică.</p>"
+ },
+ {
+  "old": "<p>Da, predujam iznosi 50 % ukupnog iznosa. Za rezervacije putem nekih partnerskih portala cijeli se iznos plaća unaprijed.</p>",
+  "new": "<p>Da, predujam iznosi 100 % ukupnog iznosa, odnosno cijeli se iznos plaća unaprijed.</p>"
+ },
+ {
+  "old": "<p>Preostali iznos nakon predujma plaća se pri dolasku.</p>",
+  "new": "<p>Cijeli se iznos plaća unaprijed, pa se po dolasku na licu mjesta plaća samo turistička pristojba.</p>"
+ },
+ {
+  "old": "<p>Da, predplačilo znaša 50 % skupnega zneska. Pri rezervacijah prek nekaterih partnerskih portalov se celoten znesek plača vnaprej.</p>",
+  "new": "<p>Da, predplačilo znaša 100 % skupnega zneska, torej se celoten znesek plača vnaprej.</p>"
+ },
+ {
+  "old": "<p>Preostanek zneska po predplačilu poravnate ob prihodu.</p>",
+  "new": "<p>Celoten znesek se plača vnaprej, zato je ob prihodu treba na kraju plačati le turistično takso.</p>"
+ },
+ {
+  "old": "<p>Ja, de aanbetaling bedraagt 50% van het totaalbedrag. Bij boekingen via bepaalde partnersites betaalt u het volledige bedrag vooraf.</p>",
+  "new": "<p>Ja, de aanbetaling bedraagt 100% van het totaalbedrag, dus het volledige bedrag wordt vooraf betaald.</p>"
+ },
+ {
+  "old": "<p>Het restbedrag na aftrek van de aanbetaling voldoet u bij aankomst.</p>",
+  "new": "<p>Het volledige bedrag wordt vooraf betaald, dus bij aankomst hoeft u alleen de toeristenbelasting ter plaatse te voldoen.</p>"
+ }
+]

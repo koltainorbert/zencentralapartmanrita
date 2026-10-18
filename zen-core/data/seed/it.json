@@ -58,11 +58,11 @@
             "items": [
               {
                 "q": "Come posso prenotare un appartamento?",
-                "a": "<p>Puoi prenotare su <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> oppure telefonicamente al numero <b>+36 30 116 9431</b>.</p>"
+                "a": "<p>Puoi prenotare su <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> oppure telefonicamente al numero <b>+36 20 971 7556</b>.</p>"
               },
               {
                 "q": "È necessario versare un acconto?",
-                "a": "<p>Sì, l'acconto è pari al 50% dell'importo totale. Per le prenotazioni effettuate tramite alcuni siti partner, l'intero importo va pagato in anticipo.</p>"
+                "a": "<p>Sì, l'acconto è pari al 100% dell'importo totale, cioè l'intero importo va pagato in anticipo.</p>"
               },
               {
                 "q": "Come posso cancellare la mia prenotazione?",
@@ -88,7 +88,7 @@
             "items": [
               {
                 "q": "Quando devo pagare?",
-                "a": "<p>L'importo restante dopo l'acconto si paga all'arrivo.</p>"
+                "a": "<p>L'intero importo si paga in anticipo, quindi all'arrivo resta da pagare in loco solo la tassa di soggiorno.</p>"
               },
               {
                 "q": "Quali metodi di pagamento accettate?",
@@ -832,8 +832,8 @@
             "info_title": "Informazioni generali:",
             "info": [
               {
-                "label": "+36 30 116 9431",
-                "url": "tel:+36301169431",
+                "label": "+36 20 971 7556",
+                "url": "tel:+36209717556",
                 "icon": "phone"
               },
               {

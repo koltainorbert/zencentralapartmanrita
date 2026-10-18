@@ -58,11 +58,11 @@
             "items": [
               {
                 "q": "¿Cómo puedo reservar un apartamento?",
-                "a": "<p>Puede reservar en <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> o por teléfono en el <b>+36 30 116 9431</b>.</p>"
+                "a": "<p>Puede reservar en <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> o por teléfono en el <b>+36 20 971 7556</b>.</p>"
               },
               {
                 "q": "¿Es necesario pagar un depósito?",
-                "a": "<p>Sí, el depósito es del 50 % del importe total. En las reservas realizadas a través de algunos sitios asociados, el importe íntegro se paga por adelantado.</p>"
+                "a": "<p>Sí, el depósito es del 100 % del importe total, es decir, el importe íntegro se paga por adelantado.</p>"
               },
               {
                 "q": "¿Cómo puedo cancelar mi reserva?",
@@ -88,7 +88,7 @@
             "items": [
               {
                 "q": "¿Cuándo tengo que pagar?",
-                "a": "<p>El importe restante tras el depósito se abona a la llegada.</p>"
+                "a": "<p>El importe íntegro se paga por adelantado, por lo que a la llegada solo hay que abonar en el alojamiento la tasa turística.</p>"
               },
               {
                 "q": "¿Qué formas de pago aceptan?",
@@ -832,8 +832,8 @@
             "info_title": "Información general:",
             "info": [
               {
-                "label": "+36 30 116 9431",
-                "url": "tel:+36301169431",
+                "label": "+36 20 971 7556",
+                "url": "tel:+36209717556",
                 "icon": "phone"
               },
               {

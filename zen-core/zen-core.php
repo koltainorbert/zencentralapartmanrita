@@ -3,7 +3,7 @@
  * Plugin Name:       ZEN Core – Apartman motor
  * Plugin URI:        https://zencentralapartments.com/
  * Description:       ZEN Central Apartments: Zen Studio admin (minden szöveg, kép, videó, design), többnyelvűség, foglalómotor, Zen AI concierge, űrlapok, elégedettségi portál, SEO + AI SEO (Rank Math és Site Kit kompatibilis), Cloudflare.
- * Version:           1.1.4
+ * Version:           1.2.0
  * Requires at least: 6.4
  * Requires PHP:      8.0
  * Author:            InfoStudio Hungary
@@ -16,7 +16,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'ZEN_CORE_VER', '1.1.4' );
+define( 'ZEN_CORE_VER', '1.2.0' );
 define( 'ZEN_CORE_FILE', __FILE__ );
 define( 'ZEN_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ZEN_CORE_URL', plugin_dir_url( __FILE__ ) );
@@ -31,6 +31,7 @@ $zen_includes = array(
 	'class-zen-performance.php',
 	'class-zen-security.php',
 	'class-zen-booking.php',
+	'class-zen-extras.php',
 	'class-zen-ai.php',
 	'class-zen-forms.php',
 	'class-zen-admin.php',
@@ -135,6 +136,16 @@ function zen_apt_name( $key, $lang = null ) {
 /** Skin lista. */
 function zen_skins() {
 	return Zen_Settings::skins();
+}
+
+/** SZÉP-kártya jelvény (üres, ha ki van kapcsolva vagy az ügyfél nem fogad SZÉP-kártyát). $place: footer|booking */
+function zen_szep_badge( $place = '' ) {
+	return class_exists( 'Zen_Extras' ) ? Zen_Extras::szep_html( $place ) : '';
+}
+
+/** Akciós / last minute doboz (üres, ha ki van kapcsolva vagy lejárt). */
+function zen_promo_box() {
+	return class_exists( 'Zen_Extras' ) ? Zen_Extras::promo_html() : '';
 }
 
 /** Foglaló widget HTML. */
@@ -408,5 +419,83 @@ add_action(
 		}
 		update_option( 'zen_fix4_v', '1.1.4', false );
 		Zen_Settings::update( array( 'general' => array( 'map_autoload' => 'always', 'map_provider' => 'google' ) ) );
+	}
+);
+
+/* Frissítés 1.2.0: az ügyfél kérdőív-válaszai (telefon, előleg, értesítési e-mail, fizetési módok, apartman-árak,
+ * kézi jóváhagyás) + az új funkciók (vendégkalauz, SZÉP-jelzés, akciós doboz) alapbeállításai. Egyszer fut, adminban. */
+add_action(
+	'admin_init',
+	function () {
+		if ( '1.2.0' === get_option( 'zen_fix6_v' ) || ! class_exists( 'Zen_Settings' ) || ! class_exists( 'Zen_Content' ) || ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+		update_option( 'zen_fix6_v', '1.2.0', false );
+		$new_phone = '+36 20 971 7556';
+		$old       = array( '+36 30 116 9431', '+36 30 1169431', '+36301169431', '06 30 116 9431', '06/30 116 9431', '06301169431' );
+		// Előleg-szövegek (GYIK) 50% -> 100%: a magyar és idegen nyelvű magtartalom cseréje.
+		$dep_map = array();
+		$dep_file = ZEN_CORE_DIR . 'data/deposit-update.json';
+		if ( is_readable( $dep_file ) ) {
+			$sw = json_decode( (string) file_get_contents( $dep_file ), true );
+			foreach ( (array) $sw as $x ) {
+				if ( ! empty( $x['old'] ) && isset( $x['new'] ) ) {
+					$dep_map[ $x['old'] ] = $x['new'];
+				}
+			}
+		}
+		// 1) Telefonszám az oldal-szekciókban és a beállításokban.
+		foreach ( Zen_Content::pages() as $p ) {
+			$raw = (string) get_post_meta( $p['id'], '_zen_sections', true );
+			if ( '' === $raw ) {
+				continue;
+			}
+			$secs = Zen_Content::get_sections( $p['id'] );
+			array_walk_recursive(
+				$secs,
+				function ( &$v ) use ( $old, $new_phone, $dep_map ) {
+					if ( is_string( $v ) ) {
+						$v = str_replace( $old, $new_phone, $v );
+						$v = strtr( $v, $dep_map );
+					}
+				}
+			);
+			Zen_Content::save_sections( $p['id'], $secs );
+		}
+		$upd = array();
+		foreach ( array( 'phone', 'phone_booking' ) as $k ) {
+			$digits = preg_replace( '/[^0-9]/', '', (string) Zen_Settings::get( 'general.' . $k, '' ) );
+			if ( '' === $digits || in_array( $digits, array( '06301169431', '36301169431' ), true ) ) {
+				$upd['general'][ $k ] = $new_phone;
+			}
+		}
+		// 2) Előleg 100%, értesítések a Gmail-címre, fizetés: online kártya + átutalás, kézi jóváhagyás.
+		if ( 50 === (int) Zen_Settings::get( 'general.deposit_pct', 50 ) ) {
+			$upd['general']['deposit_pct'] = 100;
+		}
+		if ( 'info@zencentralapartments.com' === Zen_Settings::get( 'booking.notify_email', '' ) ) {
+			$upd['booking']['notify_email'] = 'zencentralapartments@gmail.com';
+		}
+		if ( array( 'transfer', 'cash', 'card' ) === array_values( (array) Zen_Settings::get( 'booking.payments', array() ) ) ) {
+			$upd['booking']['payments'] = array( 'card', 'transfer' );
+		}
+		$upd['booking']['auto_confirm'] = false; // minden foglalást a tulajdonos hagy jóvá (e-mailből egy kattintással)
+		Zen_Settings::update( $upd );
+		// 3) Apartman éjszakai árak (csak ha még nincs ár megadva).
+		$prices = array( 'relax' => 30000, 'jinjang' => 60000, 'lotus' => 40000 );
+		$apts   = Zen_Settings::apartments();
+		foreach ( $apts as &$a ) {
+			if ( isset( $prices[ $a['key'] ] ) && (float) ( $a['price'] ?? 0 ) <= 0 ) {
+				$a['price'] = $prices[ $a['key'] ];
+			}
+		}
+		unset( $a );
+		Zen_Settings::save_apartments( $apts );
+		if ( class_exists( 'Zen_AI' ) ) {
+			Zen_AI::flush_ctx();
+		}
+		if ( class_exists( 'Zen_Performance' ) ) {
+			Zen_Performance::purge_everything();
+		}
 	}
 );

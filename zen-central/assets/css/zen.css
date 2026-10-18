@@ -700,3 +700,20 @@ html.zc-lock, html.zc-lock body { overflow: hidden; }
 	.zc-hero { min-height: 0 !important; color: #000; background: none; }
 	.zc-hero__media, .zc-hero__veil { display: none; }
 }
+
+
+/* ---------- 1.2.0: SZÉP-kártya jelvény + akciós / last minute doboz ---------- */
+.zc-szep { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; font-size: .86rem; font-weight: 600; line-height: 1.2;
+	color: var(--zc-accent); background: color-mix(in srgb, var(--zc-accent) 12%, transparent); border: 1px solid color-mix(in srgb, var(--zc-accent) 35%, transparent); }
+.zc-szep svg { flex: none; }
+.zcb + .zc-szep, .zc-szep + .zcb { margin-top: 10px; }
+.zc-promo { padding: clamp(18px, 3vw, 34px) 0 0; }
+.zc-promo__in { display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: center; justify-content: space-between; padding: clamp(18px, 3vw, 30px) clamp(18px, 3.4vw, 38px);
+	border-radius: var(--zc-radius); background: linear-gradient(120deg, color-mix(in srgb, var(--zc-accent) 18%, var(--zc-surface)), color-mix(in srgb, var(--zc-accent-2) 14%, var(--zc-surface)));
+	border: 1px solid var(--zc-glass-line); box-shadow: var(--zc-shadow); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.zc-promo__txt { flex: 1 1 320px; min-width: 0; }
+.zc-promo__badge { display: inline-block; margin-bottom: 8px; padding: 5px 14px; border-radius: 999px; font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--zc-accent-ink); background: var(--zc-accent); }
+.zc-promo__title { margin: 0 0 6px; font-family: var(--zc-font-h); font-size: clamp(1.25rem, 2.6vw, 1.7rem); line-height: 1.2; color: var(--zc-text); }
+.zc-promo__text { margin: 0; color: var(--zc-muted); max-width: 62ch; }
+.zc-promo__act { display: flex; flex-wrap: wrap; gap: 10px; }
+@media (max-width: 640px) { .zc-promo__act { width: 100%; } .zc-promo__act .zc-btn { flex: 1 1 100%; justify-content: center; } }

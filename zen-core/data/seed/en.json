@@ -26,8 +26,8 @@
         "title": "Frequently Asked Questions",
         "groups": [
           { "title": "Booking and contact", "items": [
-            { "q": "How can I book an apartment?", "a": "<p>You can book on <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> or by phone at <b>+36 30 116 9431</b>.</p>" },
-            { "q": "Do I need to pay a deposit?", "a": "<p>Yes, the deposit is 50% of the total amount. For bookings made through certain partner sites the full amount is payable in advance.</p>" },
+            { "q": "How can I book an apartment?", "a": "<p>You can book on <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> or by phone at <b>+36 20 971 7556</b>.</p>" },
+            { "q": "Do I need to pay a deposit?", "a": "<p>Yes, the deposit is 100% of the total amount, i.e. the full amount is payable in advance.</p>" },
             { "q": "How can I cancel my booking?", "a": "<p>For direct bookings (website, e-mail) cancellation is free of charge up to <b>15 days</b> before arrival and the amount paid is refunded.<br>For cancellations within 15 days we charge <b>50%</b> of the accommodation fee, in case of no-show <b>100%</b> as a penalty. Please send your cancellation by e-mail: <b>zencentralapartments@gmail.com</b></p>" }
           ]},
           { "title": "Arrival and departure", "items": [
@@ -35,7 +35,7 @@
             { "q": "We arrive very late – how do we get in?", "a": "<p>Check-in is self-service with a key safe, so arriving late is no problem.</p>" }
           ]},
           { "title": "Payment and invoicing", "items": [
-            { "q": "When do I have to pay?", "a": "<p>The remaining amount after the deposit is payable on arrival.</p>" },
+            { "q": "When do I have to pay?", "a": "<p>The full amount is paid in advance, so on arrival only the tourist tax has to be paid on site.</p>" },
             { "q": "Which payment methods do you accept?", "a": "<ul><li>Cash or bank transfer (for direct bookings)</li><li>Bank card (MasterCard, Maestro, VISA, VISA Electron) – only online, for bookings on the website or partner sites</li><li>SZÉP card is currently not accepted</li></ul>" },
             { "q": "Do the prices include VAT and tourist tax?", "a": "<p>Prices include VAT but not the tourist tax. The tourist tax is HUF 500 / person / night (over 18).</p>" }
           ]},
@@ -235,7 +235,7 @@
           "notice": "We are unable to provide information about the availability and prices of the apartments over the phone! You can request a quote by clicking on the \"BOOK NOW\" button on our website.",
           "info_title": "General Information:",
           "info": [
-            { "label": "+36 30 116 9431", "url": "tel:+36301169431", "icon": "phone" },
+            { "label": "+36 20 971 7556", "url": "tel:+36209717556", "icon": "phone" },
             { "label": "info@zencentralapartments.com", "url": "mailto:info@zencentralapartments.com", "icon": "mail" },
             { "label": "H-8200 Veszprém, Festő street 6.", "url": "https://maps.google.com/?q=ZEN+Central+Apartments+Veszpr%C3%A9m", "icon": "pin" }
           ],

@@ -58,11 +58,11 @@
             "items": [
               {
                 "q": "Kako mogu rezervirati apartman?",
-                "a": "<p>Rezervirati možete na <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> ili telefonom na broj <b>+36 30 116 9431</b>.</p>"
+                "a": "<p>Rezervirati možete na <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> ili telefonom na broj <b>+36 20 971 7556</b>.</p>"
               },
               {
                 "q": "Moram li platiti predujam?",
-                "a": "<p>Da, predujam iznosi 50 % ukupnog iznosa. Za rezervacije putem nekih partnerskih portala cijeli se iznos plaća unaprijed.</p>"
+                "a": "<p>Da, predujam iznosi 100 % ukupnog iznosa, odnosno cijeli se iznos plaća unaprijed.</p>"
               },
               {
                 "q": "Kako mogu otkazati rezervaciju?",
@@ -88,7 +88,7 @@
             "items": [
               {
                 "q": "Kada moram platiti?",
-                "a": "<p>Preostali iznos nakon predujma plaća se pri dolasku.</p>"
+                "a": "<p>Cijeli se iznos plaća unaprijed, pa se po dolasku na licu mjesta plaća samo turistička pristojba.</p>"
               },
               {
                 "q": "Koje načine plaćanja prihvaćate?",
@@ -832,8 +832,8 @@
             "info_title": "Opće informacije:",
             "info": [
               {
-                "label": "+36 30 116 9431",
-                "url": "tel:+36301169431",
+                "label": "+36 20 971 7556",
+                "url": "tel:+36209717556",
                 "icon": "phone"
               },
               {

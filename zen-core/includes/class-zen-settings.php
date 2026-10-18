@@ -23,8 +23,8 @@ class Zen_Settings {
 			'general'    => array(
 				'site_name'      => 'ZEN Central Apartments',
 				'tagline'        => 'Szálláshely Veszprém szívében',
-				'phone'          => '+36 30 116 9431',
-				'phone_booking'  => '+36 30 116 9431',
+				'phone'          => '+36 20 971 7556',
+				'phone_booking'  => '+36 20 971 7556',
 				'email'          => 'info@zencentralapartments.com',
 				'email_cancel'   => 'zencentralapartments@gmail.com',
 				'address_line'   => 'H-8200 Veszprém, Festő utca 6.',
@@ -41,7 +41,7 @@ class Zen_Settings {
 				'checkin'        => '14:00',
 				'checkout'       => '10:00',
 				'tourist_tax'    => 500,
-				'deposit_pct'    => 50,
+				'deposit_pct'    => 100,   // ügyfél válasza: 100% előleg
 				'free_cancel_days' => 15,
 				'facebook'       => 'https://www.facebook.com/p/Central-Apartments-Veszpr%C3%A9m-100063516369252/',
 				'instagram'      => '',
@@ -99,14 +99,14 @@ class Zen_Settings {
 				'max_advance'   => 540,
 				'max_rooms'     => 3,
 				'auto_confirm'  => false,
-				'notify_email'  => 'info@zencentralapartments.com',
+				'notify_email'  => 'zencentralapartments@gmail.com', // ügyfél válasza: ide jöjjenek a foglalási értesítések
 				'cleaning_fee'  => 0,
 				'seasons'       => array(), // [{name,from,to,prices:{relax:0},min_nights}]
 				'events'        => array(
 					array( 'name' => 'VeszprémFest', 'from' => '', 'to' => '' ),
 				),
 				'blocked'       => array(), // [{apt,from,to,note}]
-				'payments'      => array( 'transfer', 'cash', 'card' ),
+				'payments'      => array( 'card', 'transfer' ), // ügyfél válasza: online kártyás fizetés kell, 100% előleg
 				'extras'        => array(
 					array( 'key' => 'parking', 'label' => array( 'hu' => 'Saját parkolóhely az udvarban', 'en' => 'Private parking space in the courtyard', 'de' => 'Eigener Parkplatz im Innenhof', 'fr' => 'Place de parking privée dans la cour', 'nl' => 'Eigen parkeerplaats op de binnenplaats' ), 'price' => 0, 'per' => 'stay' ),
 					array( 'key' => 'early', 'label' => array( 'hu' => 'Korai érkezés (egyeztetés szerint, felár)', 'en' => 'Early check-in (on request, surcharge)', 'de' => 'Früher Check-in (auf Anfrage, Aufpreis)', 'fr' => 'Arrivée anticipée (sur demande, avec supplément)', 'nl' => 'Vroege aankomst (op aanvraag, tegen meerprijs)' ), 'price' => 0, 'per' => 'stay' ),
@@ -164,6 +164,7 @@ class Zen_Settings {
 				'purge_on_save' => true,
 				'html_ttl'      => 0,
 			),
+			'extras'     => class_exists( 'Zen_Extras' ) ? Zen_Extras::defaults() : array(),
 			'strings'    => array(), // [lang => [key => value]]
 		);
 	}
@@ -180,7 +181,7 @@ class Zen_Settings {
 			array(
 				'key'      => 'relax',
 				'name'     => array( 'hu' => 'RELAX Apartman', 'en' => 'RELAX Apartment', 'de' => 'RELAX Apartment' ),
-				'capacity' => 2, 'size' => 20, 'bedrooms' => 0, 'price' => 0, 'price_weekend' => 0, 'min_nights' => 1,
+				'capacity' => 2, 'size' => 20, 'bedrooms' => 0, 'price' => 30000, 'price_weekend' => 0, 'min_nights' => 1,
 				'short'    => array( 'hu' => 'Stúdió 2 főre, 20 m², terasz, zárt udvari parkoló.', 'en' => 'Studio for 2, 20 m², terrace, closed courtyard parking.', 'de' => 'Studio für 2, 20 m², Terrasse, geschlossener Hofparkplatz.' ),
 				'cover'    => $m( 'Zen_Central_Relax.webp', 'RELAX Apartman' ),
 				'icon'     => $m( 'ZEN_Central_Relax_icon.webp', 'RELAX' ),
@@ -192,7 +193,7 @@ class Zen_Settings {
 			array(
 				'key'      => 'jinjang',
 				'name'     => array( 'hu' => 'JIN-JANG Apartman', 'en' => 'JIN-JANG Apartment', 'de' => 'JIN-JANG Apartment' ),
-				'capacity' => 4, 'size' => 35, 'bedrooms' => 2, 'price' => 0, 'price_weekend' => 0, 'min_nights' => 1,
+				'capacity' => 4, 'size' => 35, 'bedrooms' => 2, 'price' => 60000, 'price_weekend' => 0, 'min_nights' => 1,
 				'short'    => array( 'hu' => '2 hálószobás apartman 4 főre, 35 m², terasz.', 'en' => '2-bedroom apartment for 4, 35 m², terrace.', 'de' => 'Apartment mit 2 Schlafzimmern für 4, 35 m², Terrasse.' ),
 				'cover'    => $m( 'Zen_Central_Jin_Jang.webp', 'JIN-JANG Apartman' ),
 				'icon'     => $m( 'ZEN_Central_YinYang_icon.webp', 'JIN-JANG' ),
@@ -204,7 +205,7 @@ class Zen_Settings {
 			array(
 				'key'      => 'lotus',
 				'name'     => array( 'hu' => 'LOTUS Apartman', 'en' => 'LOTUS Apartment', 'de' => 'LOTUS Apartment' ),
-				'capacity' => 3, 'size' => 25, 'bedrooms' => 0, 'price' => 0, 'price_weekend' => 0, 'min_nights' => 1,
+				'capacity' => 3, 'size' => 25, 'bedrooms' => 0, 'price' => 40000, 'price_weekend' => 0, 'min_nights' => 1,
 				'short'    => array( 'hu' => 'Stúdió 3 főre, 25 m², terasz, zárt udvari parkoló.', 'en' => 'Studio for 3, 25 m², terrace, closed courtyard parking.', 'de' => 'Studio für 3, 25 m², Terrasse, geschlossener Hofparkplatz.' ),
 				'cover'    => $m( 'Zen_Central_Lotus.webp', 'LOTUS Apartman' ),
 				'icon'     => $m( 'ZEN_Central_Lotus_icon.webp', 'LOTUS' ),

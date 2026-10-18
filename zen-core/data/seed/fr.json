@@ -58,11 +58,11 @@
             "items": [
               {
                 "q": "Comment réserver une chambre ou un appartement ?",
-                "a": "<p>Vous pouvez réserver sur <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> ou par téléphone au <b>+36 30 116 9431</b>.</p>"
+                "a": "<p>Vous pouvez réserver sur <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> ou par téléphone au <b>+36 20 971 7556</b>.</p>"
               },
               {
                 "q": "Faut-il verser un acompte pour réserver ?",
-                "a": "<p>Oui, l’acompte s’élève à 50 % du montant total. Pour les réservations effectuées via certains sites partenaires, la totalité du montant est à régler à l’avance.</p>"
+                "a": "<p>Oui, l’acompte s’élève à 100 % du montant total, c’est-à-dire que la totalité du montant est à régler à l’avance.</p>"
               },
               {
                 "q": "Comment annuler ma réservation ?",
@@ -88,7 +88,7 @@
             "items": [
               {
                 "q": "Quand dois-je payer ?",
-                "a": "<p>Le solde restant après l’acompte est à régler à l’arrivée.</p>"
+                "a": "<p>La totalité du montant étant réglée à l’avance, seule la taxe de séjour est à payer sur place à l’arrivée.</p>"
               },
               {
                 "q": "Quels moyens de paiement acceptez-vous ?",
@@ -832,8 +832,8 @@
             "info_title": "Informations générales :",
             "info": [
               {
-                "label": "+36 30 116 9431",
-                "url": "tel:+36301169431",
+                "label": "+36 20 971 7556",
+                "url": "tel:+36209717556",
                 "icon": "phone"
               },
               {

@@ -58,11 +58,11 @@
             "items": [
               {
                 "q": "Ako si môžem rezervovať apartmán?",
-                "a": "<p>Rezervovať môžete na <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> alebo telefonicky na čísle <b>+36 30 116 9431</b>.</p>"
+                "a": "<p>Rezervovať môžete na <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> alebo telefonicky na čísle <b>+36 20 971 7556</b>.</p>"
               },
               {
                 "q": "Musím zaplatiť zálohu?",
-                "a": "<p>Áno, záloha predstavuje 50 % z celkovej sumy. Pri rezerváciách cez niektoré partnerské portály sa celá suma platí vopred.</p>"
+                "a": "<p>Áno, záloha predstavuje 100 % z celkovej sumy, teda celá suma sa platí vopred.</p>"
               },
               {
                 "q": "Ako môžem zrušiť rezerváciu?",
@@ -88,7 +88,7 @@
             "items": [
               {
                 "q": "Kedy mám zaplatiť?",
-                "a": "<p>Zvyšnú sumu po odpočítaní zálohy uhradíte pri príchode.</p>"
+                "a": "<p>Celá suma sa platí vopred, takže pri príchode sa na mieste platí iba miestny poplatok.</p>"
               },
               {
                 "q": "Aké spôsoby platby prijímate?",
@@ -832,8 +832,8 @@
             "info_title": "Všeobecné informácie:",
             "info": [
               {
-                "label": "+36 30 116 9431",
-                "url": "tel:+36301169431",
+                "label": "+36 20 971 7556",
+                "url": "tel:+36209717556",
                 "icon": "phone"
               },
               {

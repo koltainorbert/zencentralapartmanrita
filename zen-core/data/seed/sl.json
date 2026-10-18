@@ -58,11 +58,11 @@
             "items": [
               {
                 "q": "Kako lahko rezerviram apartma?",
-                "a": "<p>Rezervirate lahko na <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> ali po telefonu na številki <b>+36 30 116 9431</b>.</p>"
+                "a": "<p>Rezervirate lahko na <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> ali po telefonu na številki <b>+36 20 971 7556</b>.</p>"
               },
               {
                 "q": "Ali moram plačati predplačilo?",
-                "a": "<p>Da, predplačilo znaša 50 % skupnega zneska. Pri rezervacijah prek nekaterih partnerskih portalov se celoten znesek plača vnaprej.</p>"
+                "a": "<p>Da, predplačilo znaša 100 % skupnega zneska, torej se celoten znesek plača vnaprej.</p>"
               },
               {
                 "q": "Kako lahko odpovem rezervacijo?",
@@ -88,7 +88,7 @@
             "items": [
               {
                 "q": "Kdaj moram plačati?",
-                "a": "<p>Preostanek zneska po predplačilu poravnate ob prihodu.</p>"
+                "a": "<p>Celoten znesek se plača vnaprej, zato je ob prihodu treba na kraju plačati le turistično takso.</p>"
               },
               {
                 "q": "Katere načine plačila sprejemate?",
@@ -832,8 +832,8 @@
             "info_title": "Splošne informacije:",
             "info": [
               {
-                "label": "+36 30 116 9431",
-                "url": "tel:+36301169431",
+                "label": "+36 20 971 7556",
+                "url": "tel:+36209717556",
                 "icon": "phone"
               },
               {

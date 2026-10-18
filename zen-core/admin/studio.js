@@ -29,6 +29,7 @@
 		['pages', 'Oldalak & tartalom', 'M6 2h9l5 5v15H6zm8 1.5V8h4.5z'],
 		['languages', 'Nyelvek & szövegek', 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-3a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8zM12 4a14 14 0 0 1 1.9 4h-3.8A14 14 0 0 1 12 4z'],
 		['booking', 'Foglalás & Booking/Airbnb', 'M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2zm-2 8h14v10H5z'],
+		['extras', 'Vendégkalauz, SZÉP, akció', 'M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17l-6.1 3.6 1.4-6.8L2.2 9.1l6.9-.8z'],
 		['ai', 'Zen AI', 'M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4z'],
 		['forms', 'Űrlapok & vélemények', 'M4 4h16v12H8l-4 4z'],
 		['seo', 'SEO & AI SEO', 'M10 2a8 8 0 1 0 4.9 14.3l5.4 5.4 1.4-1.4-5.4-5.4A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z'],
@@ -285,6 +286,43 @@
 			card('Kézi zárások (karbantartás, saját használat)', [F.field({ k: 'booking.blocked', t: 'repeater', fields: [{ k: 'apt', l: 'Apartman', t: 'select', opts: [['all', 'Mindegyik']].concat(A.map(function (a) { return [a.key, (a.name && a.name.hu) || a.key]; })) }, { k: 'from', l: 'Első zárt éj', t: 'date' }, { k: 'to', l: 'Távozás napja (kizárva)', t: 'date' }, { k: 'note', l: 'Megjegyzés' }], item: 'Zárás', add: 'Új zárás', blank: { apt: 'all', from: '', to: '', note: '' } }, S, mark)]),
 			card('Extrák', [F.field({ k: 'booking.extras', t: 'repeater', fields: [{ k: 'key', l: 'Azonosító' }, { k: 'label', l: 'Felirat', t: 'langtext', langs: L }, { k: 'price', l: 'Ár (Ft, 0 = egyeztetés)', t: 'number', min: 0 }, { k: 'per', l: 'Egység', t: 'select', opts: [['stay', 'foglalásonként'], ['night', 'éjszakánként']] }], item: 'Extra', add: 'Új extra', blank: { key: '', label: {}, price: 0, per: 'stay' } }, S, mark)]),
 			card('NetHotelBooking (csak ha visszakapcsolnád)', [grid(fields([{ k: 'booking.nhb_url', l: 'NHB URL', t: 'url' }, { k: 'booking.nhb_script', l: 'NHB script', t: 'url' }]))])
+		]);
+	};
+
+
+	VIEWS.extras = function () {
+		var L = LANGS();
+		var lt = function (k, l, multi, help) { return { k: k, l: l, t: 'langtext', langs: L, multiline: !!multi, help: help }; };
+		var testHref = Z.guideTestUrl || '#';
+		var params = new URLSearchParams(location.search);
+		var note = params.get('zen_guide_test') ? h('p', { class: 'zs-help', text: params.get('zen_guide_test') === 'ok' ? 'A próba-levél elment a saját e-mail-címedre.' : 'A próba-levél küldése nem sikerült (ellenőrizd az e-mail beállításokat).' }) : null;
+		return h('div', { class: 'zs-stack' }, [
+			card('1) Vendégkalauz – automatikus e-mail a foglalás után', [grid(fields([
+				{ k: 'extras.guide.enabled', l: 'Vendégkalauz bekapcsolva', t: 'toggle' },
+				{ k: 'extras.guide.send_on', l: 'Mikor menjen ki?', t: 'select', opts: [['confirmed', 'A foglalás visszaigazolásakor (ajánlott kézi jóváhagyásnál – a kulcs/wifi adatok csak megerősített vendéghez kerülnek)'], ['created', 'Azonnal a foglalás leadásakor']] }
+			])), grid(fields([
+				lt('extras.guide.subject', 'E-mail tárgya ({ref} = foglalási szám)'), lt('extras.guide.intro', 'Bevezető szöveg', true),
+				lt('extras.guide.key', 'Kulcsátvétel / kapukód', true, 'Üresen hagyva nem jelenik meg a levélben.'), lt('extras.guide.parking', 'Parkolás', true),
+				{ k: 'extras.guide.wifi_name', l: 'Wi-Fi neve' }, { k: 'extras.guide.wifi_pass', l: 'Wi-Fi jelszava' },
+				{ k: 'extras.guide.checkin', l: 'Bejelentkezés ideje (üres = Általános beállítás)', ph: '14:00' }, { k: 'extras.guide.checkout', l: 'Kijelentkezés ideje (üres = Általános beállítás)', ph: '10:00' },
+				lt('extras.guide.rules', 'Házirend', true, 'Üresen hagyva nem jelenik meg a levélben.'), lt('extras.guide.tips', 'Helyi tippek (étterem, látnivaló, bolt)', true),
+				lt('extras.guide.footer', 'Záró szöveg ({phone} = foglalási telefonszám)', true)
+			])), h('div', { class: 'zs-row' }, [h('a', { class: 'zs-btn zs-btn--sm', href: testHref }, ['Próba-levél küldése nekem']), ' ', h('span', { class: 'zs-help', text: 'Előbb mentsd el a változtatásokat. A foglalás szerkesztő oldalán a levél újraküldhető.' })]), note,
+			h('details', {}, [h('summary', { text: 'Címkék (szakaszcímek) nyelvenként' }), grid(fields([
+				lt('extras.guide.l_address', 'Cím'), lt('extras.guide.l_checkin', 'Bejelentkezés'), lt('extras.guide.l_checkout', 'Kijelentkezés'), lt('extras.guide.l_key', 'Kulcs / kapukód'),
+				lt('extras.guide.l_parking', 'Parkolás'), lt('extras.guide.l_wifi', 'Wi-Fi'), lt('extras.guide.l_rules', 'Házirend'), lt('extras.guide.l_tips', 'Helyi tippek')
+			]))])], 'A levél a vendég nyelvén megy ki. Ha egy nyelven üres egy mező, a magyar szöveg jelenik meg.'),
+			card('2) SZÉP-kártya elfogadás jelzése', [grid(fields([
+				{ k: 'extras.szep.enabled', l: 'SZÉP-jelzés funkció bekapcsolva', t: 'toggle' },
+				{ k: 'extras.szep.accepted', l: 'Elfogadunk SZÉP-kártyát (ezzel jelenik meg a jelvény)', t: 'toggle' },
+				{ k: 'extras.szep.in_footer', l: 'Jelvény a láblécben', t: 'toggle' }, { k: 'extras.szep.in_booking', l: 'Jelvény a foglalónál', t: 'toggle' },
+				lt('extras.szep.label', 'Jelvény felirata')
+			]))], 'Jelenleg a „Elfogadunk SZÉP-kártyát” kapcsoló KI van, mert az ügyfél a kérdőívben azt válaszolta, hogy nem fogad SZÉP-kártyát. Amint elfogadjátok, kapcsold be – a jelvény azonnal megjelenik. A shortcode: [zen_szep].'),
+			card('3) Akciós / last minute doboz (hírlevéllel összekötve)', [grid(fields([
+				{ k: 'extras.promo.enabled', l: 'Akciós doboz bekapcsolva', t: 'toggle' }, { k: 'extras.promo.show_book', l: 'Foglalás gomb a dobozban', t: 'toggle' },
+				{ k: 'extras.promo.discount', l: 'Kedvezmény jelölés (pl. -15%) – opcionális' }, { k: 'extras.promo.from', l: 'Látható ettől (opcionális)', t: 'date' }, { k: 'extras.promo.to', l: 'Látható eddig (opcionális)', t: 'date' },
+				lt('extras.promo.badge', 'Jelvény felirata'), lt('extras.promo.title', 'Cím'), lt('extras.promo.text', 'Szöveg', true), lt('extras.promo.cta', 'Hírlevél gomb felirata')
+			]))], 'A doboz a lábléc fölött jelenik meg minden oldalon; a gomb a hírlevél-feliratkozó ablakot nyitja. Lejárat dátumnál automatikusan eltűnik. A shortcode: [zen_promo].')
 		]);
 	};
 

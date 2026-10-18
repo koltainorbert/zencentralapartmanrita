@@ -58,11 +58,11 @@
             "items": [
               {
                 "q": "Hoe kan ik een appartement boeken?",
-                "a": "<p>U kunt boeken via <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> of telefonisch via <b>+36 30 116 9431</b>.</p>"
+                "a": "<p>U kunt boeken via <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> of telefonisch via <b>+36 20 971 7556</b>.</p>"
               },
               {
                 "q": "Moet ik een aanbetaling doen?",
-                "a": "<p>Ja, de aanbetaling bedraagt 50% van het totaalbedrag. Bij boekingen via bepaalde partnersites betaalt u het volledige bedrag vooraf.</p>"
+                "a": "<p>Ja, de aanbetaling bedraagt 100% van het totaalbedrag, dus het volledige bedrag wordt vooraf betaald.</p>"
               },
               {
                 "q": "Hoe kan ik mijn boeking annuleren?",
@@ -88,7 +88,7 @@
             "items": [
               {
                 "q": "Wanneer moet ik betalen?",
-                "a": "<p>Het restbedrag na aftrek van de aanbetaling voldoet u bij aankomst.</p>"
+                "a": "<p>Het volledige bedrag wordt vooraf betaald, dus bij aankomst hoeft u alleen de toeristenbelasting ter plaatse te voldoen.</p>"
               },
               {
                 "q": "Welke betaalmethoden accepteert u?",
@@ -832,8 +832,8 @@
             "info_title": "Algemene informatie:",
             "info": [
               {
-                "label": "+36 30 116 9431",
-                "url": "tel:+36301169431",
+                "label": "+36 20 971 7556",
+                "url": "tel:+36209717556",
                 "icon": "phone"
               },
               {

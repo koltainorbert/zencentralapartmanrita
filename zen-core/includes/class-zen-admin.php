@@ -90,6 +90,7 @@ class Zen_Admin {
 			'home'       => home_url( '/' ),
 			'calendar'   => admin_url( 'admin.php?page=zen-booking-calendar' ),
 			'purgeUrl'   => wp_nonce_url( admin_url( 'admin-post.php?action=zen_cf_purge' ), 'zen_cf_purge' ),
+			'guideTestUrl' => wp_nonce_url( admin_url( 'admin-post.php?action=zen_guide_test' ), 'zen_guide_test' ),
 			'purgeLast'  => get_option( 'zen_purge_last', array() ),
 			'icalUrls'   => self::ical_urls(),
 			'defaultPrompt' => class_exists( 'Zen_AI' ) ? Zen_AI::default_prompt() : '',

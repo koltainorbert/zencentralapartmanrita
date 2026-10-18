@@ -13,6 +13,7 @@ $zc_pay   = zc_opt( 'general.payment_logo', array() );
 ?>
 </main>
 
+<?php echo function_exists( 'zen_promo_box' ) ? zen_promo_box() : ''; // phpcs:ignore ?>
 <footer class="zc-footer">
 	<div class="zc-footer__cta">
 		<div class="zc-wrap zc-footer__cta-in">
@@ -29,6 +30,7 @@ $zc_pay   = zc_opt( 'general.payment_logo', array() );
 				<li><?php echo zc_icon( 'parking', 16 ); // phpcs:ignore ?><?php echo esc_html( zc_t( 'trust_parking' ) ); ?></li>
 				<li><?php echo zc_icon( 'key', 16 ); // phpcs:ignore ?><?php echo esc_html( zc_t( 'trust_checkin' ) ); ?></li>
 				<li><?php echo zc_icon( 'wifi', 16 ); // phpcs:ignore ?><?php echo esc_html( zc_t( 'trust_wifi' ) ); ?></li>
+				<?php $zc_szep = function_exists( 'zen_szep_badge' ) ? zen_szep_badge( 'footer' ) : ''; if ( $zc_szep ) : ?><li><?php echo $zc_szep; // phpcs:ignore ?></li><?php endif; ?>
 			</ul>
 		</div>
 

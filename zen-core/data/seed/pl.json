@@ -58,11 +58,11 @@
             "items": [
               {
                 "q": "Jak mogę zarezerwować apartament?",
-                "a": "<p>Rezerwacji możesz dokonać na stronie <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> lub telefonicznie pod numerem <b>+36 30 116 9431</b>.</p>"
+                "a": "<p>Rezerwacji możesz dokonać na stronie <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> lub telefonicznie pod numerem <b>+36 20 971 7556</b>.</p>"
               },
               {
                 "q": "Czy trzeba wpłacić zaliczkę?",
-                "a": "<p>Tak, zaliczka wynosi 50% całkowitej kwoty. W przypadku rezerwacji przez niektóre serwisy partnerskie cała kwota jest płatna z góry.</p>"
+                "a": "<p>Tak, zaliczka wynosi 100% całkowitej kwoty, czyli cała kwota jest płatna z góry.</p>"
               },
               {
                 "q": "Jak mogę anulować rezerwację?",
@@ -88,7 +88,7 @@
             "items": [
               {
                 "q": "Kiedy muszę zapłacić?",
-                "a": "<p>Pozostała kwota po wpłacie zaliczki jest płatna przy przyjeździe.</p>"
+                "a": "<p>Cała kwota jest płatna z góry, więc na miejscu przy przyjeździe należy zapłacić tylko opłatę turystyczną.</p>"
               },
               {
                 "q": "Jakie formy płatności akceptujecie?",
@@ -832,8 +832,8 @@
             "info_title": "Informacje ogólne:",
             "info": [
               {
-                "label": "+36 30 116 9431",
-                "url": "tel:+36301169431",
+                "label": "+36 20 971 7556",
+                "url": "tel:+36209717556",
                 "icon": "phone"
               },
               {

@@ -773,6 +773,11 @@ class Zen_Booking {
 			. '</table></td></tr></table></body></html>';
 	}
 
+	/** Nyilvános e-mail keret (a Zen_Extras vendégkalauz használja). */
+	public static function wrap_html( $title, $body_html ) {
+		return self::mail_wrap( $title, $body_html );
+	}
+
 	protected static function table( $rows, $head = array() ) {
 		$h = '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:16px 0;font-size:14px">';
 		if ( $head ) {
@@ -1051,6 +1056,7 @@ class Zen_Booking {
 		$phone = Zen_Settings::get( 'general.phone_booking', Zen_Settings::get( 'general.phone' ) );
 		ob_start();
 		?>
+		<?php echo class_exists( 'Zen_Extras' ) ? Zen_Extras::szep_html( 'booking' ) : ''; // phpcs:ignore ?>
 		<div class="zcb" data-zcb>
 			<div class="zcb__loading" aria-hidden="true"><span></span><span></span><span></span></div>
 			<noscript><p class="zcb__noscript"><?php echo esc_html( zen_t( 'bk_help' ) ); ?>: <a href="tel:<?php echo esc_attr( preg_replace( '/[^+0-9]/', '', $phone ) ); ?>"><?php echo esc_html( $phone ); ?></a> · <a href="mailto:<?php echo esc_attr( Zen_Settings::get( 'general.email' ) ); ?>"><?php echo esc_html( Zen_Settings::get( 'general.email' ) ); ?></a></p></noscript>
@@ -1234,6 +1240,9 @@ class Zen_Booking {
 			$base = admin_url( 'admin-post.php?action=zen_booking_status&id=' . $post->ID );
 			echo '<p><a class="button button-primary zs-pill" href="' . esc_url( wp_nonce_url( $base . '&s=confirmed', 'zen_bs_' . $post->ID ) ) . '">Visszaigazolás + e-mail a vendégnek</a></p>';
 			echo '<p><a class="button zs-pill" href="' . esc_url( wp_nonce_url( $base . '&s=cancelled', 'zen_bs_' . $post->ID ) ) . '" onclick="return confirm(\'Biztosan lemondod? A vendég e-mailt kap.\')">Lemondás + e-mail</a></p>';
+		}
+		if ( class_exists( 'Zen_Extras' ) ) {
+			Zen_Extras::booking_box_button( $post->ID );
 		}
 		echo '<p class="description">A visszaigazolt és a függő foglalások azonnal lezárják a napokat a weboldalon, és megjelennek a Booking.com / Airbnb felé küldött iCal-ban.</p>';
 	}

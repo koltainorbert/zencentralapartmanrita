@@ -17,8 +17,8 @@
         "title": "Häufig gestellte Fragen",
         "groups": [
           { "title": "Buchung und Kontakt", "items": [
-            { "q": "Wie kann ich ein Apartment buchen?", "a": "<p>Buchungen sind auf <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> oder telefonisch unter <b>+36 30 116 9431</b> möglich.</p>" },
-            { "q": "Muss ich eine Anzahlung leisten?", "a": "<p>Ja, die Anzahlung beträgt 50 % des Gesamtbetrags. Bei Buchungen über bestimmte Partnerseiten ist der gesamte Betrag im Voraus zu zahlen.</p>" },
+            { "q": "Wie kann ich ein Apartment buchen?", "a": "<p>Buchungen sind auf <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> oder telefonisch unter <b>+36 20 971 7556</b> möglich.</p>" },
+            { "q": "Muss ich eine Anzahlung leisten?", "a": "<p>Ja, die Anzahlung beträgt 100 % des Gesamtbetrags, d. h. der gesamte Betrag ist im Voraus zu zahlen.</p>" },
             { "q": "Wie kann ich meine Buchung stornieren?", "a": "<p>Bei Direktbuchungen (Website, E-Mail) ist die Stornierung bis <b>15 Tage</b> vor der Anreise kostenlos, der gezahlte Betrag wird erstattet.<br>Bei Stornierung innerhalb von 15 Tagen berechnen wir <b>50 %</b>, bei Nichterscheinen <b>100 %</b> des Übernachtungspreises. Stornierungen bitte per E-Mail an: <b>zencentralapartments@gmail.com</b></p>" }
           ]},
           { "title": "Anreise und Abreise", "items": [
@@ -26,7 +26,7 @@
             { "q": "Wir kommen sehr spät an – wie kommen wir hinein?", "a": "<p>Der Check-in erfolgt selbstständig über einen Schlüsselsafe, daher ist auch eine späte Anreise problemlos.</p>" }
           ]},
           { "title": "Zahlung und Rechnung", "items": [
-            { "q": "Wann muss ich bezahlen?", "a": "<p>Der Restbetrag nach der Anzahlung ist bei Anreise zu begleichen.</p>" },
+            { "q": "Wann muss ich bezahlen?", "a": "<p>Der gesamte Betrag wird im Voraus bezahlt, bei der Anreise ist vor Ort nur noch die Ortstaxe zu entrichten.</p>" },
             { "q": "Welche Zahlungsarten akzeptieren Sie?", "a": "<ul><li>Bargeld oder Überweisung (bei Direktbuchung)</li><li>Bankkarte (MasterCard, Maestro, VISA, VISA Electron) – nur online, bei Buchung über die Website oder Partnerseiten</li><li>SZÉP-Karte wird derzeit nicht akzeptiert</li></ul>" },
             { "q": "Sind MwSt. und Kurtaxe im Preis enthalten?", "a": "<p>Die Preise enthalten die MwSt., aber nicht die Kurtaxe. Die Kurtaxe beträgt 500 HUF / Person / Nacht (ab 18 Jahren).</p>" }
           ]},
@@ -226,7 +226,7 @@
           "notice": "Telefonisch können wir keine Auskünfte über die Verfügbarkeit und Preise der Apartments geben! Sie können ein Angebot anfordern, indem Sie auf den \"JETZT BUCHEN\" Button klicken.",
           "info_title": "Allgemeine Informationen:",
           "info": [
-            { "label": "+36 30 116 9431", "url": "tel:+36301169431", "icon": "phone" },
+            { "label": "+36 20 971 7556", "url": "tel:+36209717556", "icon": "phone" },
             { "label": "info@zencentralapartments.com", "url": "mailto:info@zencentralapartments.com", "icon": "mail" },
             { "label": "Ungarn, 8200 Veszprém, Festő Straße 6.", "url": "https://maps.google.com/?q=ZEN+Central+Apartments+Veszpr%C3%A9m", "icon": "pin" }
           ],

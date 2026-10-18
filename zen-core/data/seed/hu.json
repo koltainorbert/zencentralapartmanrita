@@ -17,8 +17,8 @@
         "title": "Gyakran Ismételt Kérdések",
         "groups": [
           { "title": "Foglalás és kapcsolatfelvétel", "items": [
-            { "q": "Hogyan tudom lefoglalni a szobát vagy az apartmant?", "a": "<p>Foglalni a <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> oldalon vagy telefonon a <b>+36 30 116 9431</b> számon lehet.</p>" },
-            { "q": "Kell előleget fizetni a foglaláshoz?", "a": "<p>Igen, az előleg mértéke a teljes összeg 50%-a. Bizonyos partneroldalakon keresztül történő foglalás esetén a teljes összeg előre fizetendő.</p>" },
+            { "q": "Hogyan tudom lefoglalni a szobát vagy az apartmant?", "a": "<p>Foglalni a <a href=\"https://www.zencentralapartments.com/\">www.zencentralapartments.com</a> oldalon vagy telefonon a <b>+36 20 971 7556</b> számon lehet.</p>" },
+            { "q": "Kell előleget fizetni a foglaláshoz?", "a": "<p>Igen, az előleg mértéke a teljes összeg 100%-a, vagyis a foglalás teljes összegét előre kell fizetni.</p>" },
             { "q": "Hogyan mondhatom le a foglalásomat?", "a": "<p>Közvetlen foglalás (honlap, email) esetén az érkezést megelőző <b>15 napig</b> a lemondás díjmentes, a befizetett összeget visszatérítjük.<br>15 napon belüli lemondás esetén a szállásdíj <b>50%-át</b>, meg nem jelenés esetén a <b>100%-át</b> számítjuk fel kötbérként. Lemondási igényét e-mailben kérjük jelezze: <b>zencentralapartments@gmail.com</b></p>" }
           ]},
           { "title": "Érkezés és távozás", "items": [
@@ -26,7 +26,7 @@
             { "q": "Nagyon későn érkezünk, hogyan jutunk be?", "a": "<p>A bejutás önállóan történik kulcsszéf segítségével, így késői érkezés esetén is zökkenőmentes a check-in.</p>" }
           ]},
           { "title": "Fizetés és számlázás", "items": [
-            { "q": "Mikor kell fizetni?", "a": "<p>Az előleg után fennmaradó összeget érkezéskor kell rendezni.</p>" },
+            { "q": "Mikor kell fizetni?", "a": "<p>A teljes összeget előre kell kifizetni, így érkezéskor csak az idegenforgalmi adót kell helyben megfizetni.</p>" },
             { "q": "Milyen fizetési módokat fogadnak el?", "a": "<ul><li>Készpénz vagy átutalás (közvetlen foglalás esetén)</li><li>Bankkártya (MasterCard, Maestro, VISA, VISA Electron) – csak online, a weboldalon vagy közvetítő oldalakon történő foglalásnál</li><li>SZÉP kártyát jelenleg nem fogadunk el</li></ul>" },
             { "q": "Tartalmazzák az árak az ÁFÁ-t és az idegenforgalmi adót?", "a": "<p>Az árak ÁFÁ-t tartalmazzák, az idegenforgalmi adót nem. Az IFA mértéke 2025 évben 500 Ft / fő / éj (18 év felett).</p>" }
           ]},
@@ -243,7 +243,7 @@
           "notice": "Telefonon az apartmanok foglalhatóságáról és árakról nem tudunk tájékoztatást adni! Ajánlatot a FOGLALÁS gombra kattintva kérhet.",
           "info_title": "Általános Információ:",
           "info": [
-            { "label": "+36 30 116 9431", "url": "tel:+36301169431", "icon": "phone" },
+            { "label": "+36 20 971 7556", "url": "tel:+36209717556", "icon": "phone" },
             { "label": "info@zencentralapartments.com", "url": "mailto:info@zencentralapartments.com", "icon": "mail" },
             { "label": "H-8200 Veszprém, Festő utca 6.", "url": "https://maps.google.com/?q=ZEN+Central+Apartments+Veszpr%C3%A9m", "icon": "pin" }
           ],
