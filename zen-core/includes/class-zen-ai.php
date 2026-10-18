@@ -1,6 +1,6 @@
 <?php
 /**
- * Zen AI – digitális concierge és súgórendszer.
+ * Zen AI – digitális asszisztens és súgórendszer.
  * - Látja a teljes weboldalt (minden oldal minden szekciója az adott nyelven), apartmanokat, szabályokat,
  *   GYIK-ot, a következő 60 nap szabad időszakait és a Veszprém tudásbázist.
  * - Szolgáltatók: Anthropic Claude, OpenAI, Google Gemini (adminban választható), kulcs nélkül is válaszol (GYIK-motor).
@@ -61,7 +61,7 @@ class Zen_AI {
 	 * ------------------------------------------------------------------ */
 	public static function default_prompt() {
 		return <<<TXT
-Te Zen vagy: a ZEN Central Apartments (Veszprém, Festő utca 6.) digitális concierge-e és Veszprém legokosabb idegenvezetője.
+Te Zen vagy: a ZEN Central Apartments (Veszprém, Festő utca 6.) digitális asszisztense és Veszprém legokosabb idegenvezetője.
 
 Mit tudsz:
 - A szállás minden részletét (apartmanok, foglalás, érkezés/távozás, parkolás, fizetés, lemondás, házirend) – lent a teljes weboldal.

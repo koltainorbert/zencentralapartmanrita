@@ -87,7 +87,7 @@
         { "type": "map_list", "style": { "tone": "alt", "pad": "l" }, "data": {
           "title": "Közeli látnivalók", "map_query": "ZEN Central Apartments Veszprém",
           "items": ["Óváros tér: 400 m", "Sétálóutca: 900 m", "Vásárcsarnok, piac: 1200 m", "Állatkert: 1300 m", "Gyárkert: 1400 m", "Szerelem sziget: 1100 m", "Séd patak völgye: 1400 m", "Laczkó forrás: 2600 m", "Veszprém Aréna: 3200 m", "Tihany: 27 km"] } },
-        { "type": "guide", "style": { "pad": "l" }, "data": { "title": "Fedezze fel Veszprémet", "text": "Zen, a digitális concierge-ünk válogatása a környék legjobb látnivalóiból és programjaiból.", "category": "sight", "limit": 6 } },
+        { "type": "guide", "style": { "pad": "l" }, "data": { "title": "Fedezze fel Veszprémet", "text": "Zen, a digitális asszisztensünk válogatása a környék legjobb látnivalóiból és programjaiból.", "category": "sight", "limit": 6 } },
         { "type": "reviews", "style": { "tone": "alt", "pad": "l" }, "data": { "title": "Vendégeink mondták", "text": "", "source": "feedback", "items": [] } },
         { "ref": "cta", "data": { "lines": ["A garantáltan legjobb áron itt foglalhat hozzánk!", "Szabad időpontok és árajánlat kérése gyorsan és egyszerűen."] } },
         { "ref": "faq" }
@@ -297,11 +297,11 @@
     "help": {
       "slug": "sugo",
       "title": "Súgó és ügyfélszolgálat",
-      "seo_title": "Súgó és ügyfélszolgálat – Zen AI concierge | ZEN Central Apartments",
-      "seo_desc": "Kérdése van foglalásról, érkezésről, parkolásról vagy veszprémi programokról? Zen, a mesterséges intelligenciás concierge-ünk éjjel-nappal segít.",
+      "seo_title": "Súgó és ügyfélszolgálat – Zen AI asszisztens | ZEN Central Apartments",
+      "seo_desc": "Kérdése van foglalásról, érkezésről, parkolásról vagy veszprémi programokról? Zen, a mesterséges intelligenciás asszisztensünk éjjel-nappal segít.",
       "focus_kw": "ZEN Central súgó",
       "sections": [
-        { "type": "hero", "data": { "kicker": "Éjjel-nappal elérhető", "title": "Miben segíthetünk?", "text": "Kérdezze Zent, a digitális concierge-ünket – ismeri az apartmanokat, a foglalás menetét és Veszprém minden zugát.", "media": "U/ZEN_Central_Veszprem_7.webp", "height": "medium", "breadcrumbs": true } },
+        { "type": "hero", "data": { "kicker": "Éjjel-nappal elérhető", "title": "Miben segíthetünk?", "text": "Kérdezze Zent, a digitális asszisztensünket – ismeri az apartmanokat, a foglalás menetét és Veszprém minden zugát.", "media": "U/ZEN_Central_Veszprem_7.webp", "height": "medium", "breadcrumbs": true } },
         { "type": "richtext", "style": { "pad": "l" }, "data": { "title": "", "html": "[zen_help]" } },
         { "ref": "faq" },
         { "type": "form", "style": { "tone": "alt", "pad": "l" }, "data": { "form": "contact", "title": "Kérdése van? Írjon nekünk!", "text": "" } }

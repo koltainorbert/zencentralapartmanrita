@@ -3,7 +3,7 @@
  * Plugin Name:       ZEN Core – Apartman motor
  * Plugin URI:        https://zencentralapartments.com/
  * Description:       ZEN Central Apartments: Zen Studio admin (minden szöveg, kép, videó, design), többnyelvűség, foglalómotor, Zen AI concierge, űrlapok, elégedettségi portál, SEO + AI SEO (Rank Math és Site Kit kompatibilis), Cloudflare.
- * Version:           1.1.2
+ * Version:           1.1.3
  * Requires at least: 6.4
  * Requires PHP:      8.0
  * Author:            InfoStudio Hungary
@@ -16,7 +16,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'ZEN_CORE_VER', '1.1.2' );
+define( 'ZEN_CORE_VER', '1.1.3' );
 define( 'ZEN_CORE_FILE', __FILE__ );
 define( 'ZEN_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ZEN_CORE_URL', plugin_dir_url( __FILE__ ) );
@@ -350,6 +350,48 @@ add_action(
 			if ( $changed ) {
 				Zen_Content::save_sections( $p['id'], $secs );
 			}
+		}
+		if ( class_exists( 'Zen_Performance' ) ) {
+			Zen_Performance::purge_everything();
+		}
+	}
+);
+
+/* Frissítés 1.1.3: Google utcatérkép alapértelmezés; magyar szövegekben „asszisztens” a „concierge” helyett. */
+add_action(
+	'admin_init',
+	function () {
+		if ( '1.1.3' === get_option( 'zen_fix3_v' ) || ! class_exists( 'Zen_Content' ) || ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+		update_option( 'zen_fix3_v', '1.1.3', false );
+		if ( 'osm' === Zen_Settings::get( 'general.map_provider', 'google' ) ) {
+			Zen_Settings::update( array( 'general' => array( 'map_provider' => 'google' ) ) );
+		}
+		$map = array( 'digitális concierge-ünket' => 'digitális asszisztensünket', 'digitális concierge-ünk' => 'digitális asszisztensünk', 'intelligenciás concierge-ünk' => 'intelligenciás asszisztensünk', 'Zen AI concierge' => 'Zen AI asszisztens', 'digitális concierge-e' => 'digitális asszisztense', 'digitális concierge' => 'digitális asszisztens' );
+		foreach ( Zen_Content::pages( 'hu' ) as $p ) {
+			$secs = Zen_Content::get_sections( $p['id'] );
+			$raw  = wp_json_encode( $secs );
+			array_walk_recursive(
+				$secs,
+				function ( &$v ) use ( $map ) {
+					if ( is_string( $v ) ) {
+						$v = strtr( $v, $map );
+					}
+				}
+			);
+			if ( wp_json_encode( $secs ) !== $raw ) {
+				Zen_Content::save_sections( $p['id'], $secs );
+			}
+			foreach ( array( '_zen_seo_title', '_zen_seo_desc', 'rank_math_title', 'rank_math_description' ) as $mk ) {
+				$v = (string) get_post_meta( $p['id'], $mk, true );
+				if ( '' !== $v && false !== strpos( $v, 'concierge' ) ) {
+					update_post_meta( $p['id'], $mk, strtr( $v, $map ) );
+				}
+			}
+		}
+		if ( class_exists( 'Zen_AI' ) ) {
+			Zen_AI::flush_ctx();
 		}
 		if ( class_exists( 'Zen_Performance' ) ) {
 			Zen_Performance::purge_everything();

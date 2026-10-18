@@ -56,10 +56,12 @@ $zc_pay   = zc_opt( 'general.payment_logo', array() );
 		<div class="zc-footer__col">
 			<h4><?php echo esc_html( zc_t( 'newsletter_title' ) ); ?></h4>
 			<p><?php echo esc_html( zc_t( 'newsletter_text' ) ); ?></p>
-			<button type="button" class="zc-btn zc-btn--ghost zc-btn--sm" data-zen-newsletter><span><?php echo esc_html( zc_t( 'newsletter_btn' ) ); ?></span></button>
-			<?php if ( ! empty( $zc_pay['url'] ) ) : ?>
-				<a class="zc-footer__pay" href="<?php echo esc_url( zc_opt( 'general.payment_url', '#' ) ); ?>" target="_blank" rel="noopener"><img src="<?php echo esc_url( $zc_pay['url'] ); ?>" alt="<?php echo esc_attr( $zc_pay['alt'] ?? '' ); ?>" loading="lazy" width="220" height="40"></a>
-			<?php endif; ?>
+			<div class="zc-footer__actions">
+				<button type="button" class="zc-btn zc-btn--ghost zc-btn--sm" data-zen-newsletter><span><?php echo esc_html( zc_t( 'newsletter_btn' ) ); ?></span></button>
+				<?php if ( ! empty( $zc_pay['url'] ) ) : ?>
+					<a class="zc-footer__pay" href="<?php echo esc_url( zc_opt( 'general.payment_url', '#' ) ); ?>" target="_blank" rel="noopener"><img src="<?php echo esc_url( $zc_pay['url'] ); ?>" alt="<?php echo esc_attr( $zc_pay['alt'] ?? '' ); ?>" loading="lazy" width="220" height="40"></a>
+				<?php endif; ?>
+			</div>
 		</div>
 	</div>
 

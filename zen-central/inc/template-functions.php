@@ -471,22 +471,45 @@ function zc_apt_meta( $key ) {
 }
 
 /**
- * Térkép. Alapból OpenStreetMap (sütimentes → azonnal, görgetéskor betöltődik, jelölővel),
- * opcionálisan Google Térkép kattintásra (GDPR). Beállítás: general.map_provider = osm|google.
+ * Google utcatérkép (alapértelmezés) – útvonaltervezéssel. API-kulccsal a hivatalos Maps Embed API-t használja,
+ * kulcs nélkül a kulcs nélküli Google beágyazást. Betöltés: süti-hozzájárulás után magától, előtte egy kattintással
+ * (general.map_autoload = consent|always). OpenStreetMap választható (general.map_provider = osm).
  */
-function zc_map( $query, $class = '' ) {
-	$q    = rawurlencode( (string) $query );
-	$lnk  = zc_opt( 'general.google_maps', 'https://maps.google.com/?q=' . $q );
-	$prov = zc_opt( 'general.map_provider', 'osm' );
-	$lat  = (float) zc_opt( 'general.lat', 0 );
-	$lng  = (float) zc_opt( 'general.lng', 0 );
-	if ( 'google' !== $prov && $lat && $lng ) {
-		$d   = 0.0065;
-		$src = 'https://www.openstreetmap.org/export/embed.html?bbox=' . rawurlencode( sprintf( '%.5f,%.5f,%.5f,%.5f', $lng - $d * 1.6, $lat - $d, $lng + $d * 1.6, $lat + $d ) ) . '&layer=mapnik&marker=' . rawurlencode( sprintf( '%.5f,%.5f', $lat, $lng ) );
-		return '<div class="zc-map zc-map--osm ' . esc_attr( $class ) . '" data-map="' . esc_url( $src ) . '" data-map-auto><div class="zc-map__ph">' . zc_icon( 'map', 34 ) . '<button type="button" class="zc-btn zc-btn--sm" data-map-load>' . esc_html( zc_t( 'map_load' ) ) . '</button></div><a class="zc-map__open" href="' . esc_url( $lnk ) . '" target="_blank" rel="noopener">' . zc_icon( 'pin', 16 ) . '<span>' . esc_html( zc_t( 'open_maps' ) ) . '</span>' . zc_icon( 'external', 14 ) . '</a></div>';
+function zc_map_cfg() {
+	return array(
+		'lat'  => (float) zc_opt( 'general.lat', 0 ),
+		'lng'  => (float) zc_opt( 'general.lng', 0 ),
+		'key'  => trim( (string) zc_opt( 'general.google_maps_key', '' ) ),
+		'q'    => (string) zc_opt( 'general.map_query', '' ),
+		'auto' => (string) zc_opt( 'general.map_autoload', 'consent' ),
+	);
+}
+
+function zc_map_src( $dest = '', $mode = 'walking' ) {
+	$c      = zc_map_cfg();
+	$origin = ( $c['lat'] && $c['lng'] ) ? sprintf( '%.6f,%.6f', $c['lat'], $c['lng'] ) : $c['q'];
+	if ( $c['key'] ) {
+		return '' === $dest
+			? 'https://www.google.com/maps/embed/v1/place?key=' . rawurlencode( $c['key'] ) . '&q=' . rawurlencode( $c['q'] ?: $origin ) . '&zoom=16'
+			: 'https://www.google.com/maps/embed/v1/directions?key=' . rawurlencode( $c['key'] ) . '&origin=' . rawurlencode( $origin ) . '&destination=' . rawurlencode( $dest ) . '&mode=' . rawurlencode( $mode );
 	}
-	$src = 'https://maps.google.com/maps?q=' . $q . '&t=m&z=16&output=embed&iwloc=near';
-	return '<div class="zc-map ' . esc_attr( $class ) . '" data-map="' . esc_url( $src ) . '"><div class="zc-map__ph">' . zc_icon( 'map', 34 ) . '<button type="button" class="zc-btn zc-btn--sm" data-map-load>' . esc_html( zc_t( 'map_load' ) ) . '</button><small>' . esc_html( zc_t( 'map_note' ) ) . '</small><a href="' . esc_url( $lnk ) . '" target="_blank" rel="noopener">' . esc_html( zc_t( 'open_maps' ) ) . ' ' . zc_icon( 'external', 14 ) . '</a></div></div>';
+	return '' === $dest
+		? 'https://maps.google.com/maps?q=' . rawurlencode( $c['q'] ?: $origin ) . '&t=m&z=16&hl=' . rawurlencode( zc_lang() ) . '&output=embed'
+		: 'https://maps.google.com/maps?saddr=' . rawurlencode( $origin ) . '&daddr=' . rawurlencode( $dest ) . '&dirflg=' . ( 'driving' === $mode ? 'd' : 'w' ) . '&hl=' . rawurlencode( zc_lang() ) . '&output=embed';
+}
+
+function zc_map( $query, $class = '' ) {
+	$c   = zc_map_cfg();
+	$lnk = zc_opt( 'general.google_maps', 'https://maps.google.com/?q=' . rawurlencode( (string) $query ) );
+	if ( 'osm' === zc_opt( 'general.map_provider', 'google' ) && $c['lat'] && $c['lng'] ) {
+		$d   = 0.0065;
+		$src = 'https://www.openstreetmap.org/export/embed.html?bbox=' . rawurlencode( sprintf( '%.5f,%.5f,%.5f,%.5f', $c['lng'] - $d * 1.6, $c['lat'] - $d, $c['lng'] + $d * 1.6, $c['lat'] + $d ) ) . '&layer=mapnik&marker=' . rawurlencode( sprintf( '%.5f,%.5f', $c['lat'], $c['lng'] ) );
+		return '<div class="zc-map zc-map--osm ' . esc_attr( $class ) . '" data-map="' . esc_url( $src ) . '" data-map-auto="always"><div class="zc-map__ph">' . zc_icon( 'map', 34 ) . '<button type="button" class="zc-btn zc-btn--sm" data-map-load>' . esc_html( zc_t( 'map_load' ) ) . '</button></div><a class="zc-map__open" href="' . esc_url( $lnk ) . '" target="_blank" rel="noopener">' . zc_icon( 'pin', 16 ) . '<span>' . esc_html( zc_t( 'open_maps' ) ) . '</span>' . zc_icon( 'external', 14 ) . '</a></div>';
+	}
+	$origin = ( $c['lat'] && $c['lng'] ) ? sprintf( '%.6f,%.6f', $c['lat'], $c['lng'] ) : $c['q'];
+	return '<div class="zc-map zc-map--google ' . esc_attr( $class ) . '" data-map="' . esc_url( zc_map_src() ) . '" data-map-auto="' . esc_attr( 'always' === $c['auto'] ? 'always' : 'consent' ) . '" data-origin="' . esc_attr( $origin ) . '" data-key="' . esc_attr( $c['key'] ) . '" data-hl="' . esc_attr( zc_lang() ) . '">'
+		. '<div class="zc-map__ph">' . zc_icon( 'map', 34 ) . '<button type="button" class="zc-btn zc-btn--sm" data-map-load>' . esc_html( zc_t( 'map_load' ) ) . '</button><small>' . esc_html( zc_t( 'map_note' ) ) . '</small></div>'
+		. '<a class="zc-map__open" href="' . esc_url( $lnk ) . '" target="_blank" rel="noopener" data-map-open>' . zc_icon( 'pin', 16 ) . '<span>' . esc_html( zc_t( 'open_maps' ) ) . '</span>' . zc_icon( 'external', 14 ) . '</a></div>';
 }
 
 /** Kártya média URL (bejegyzés kép). */

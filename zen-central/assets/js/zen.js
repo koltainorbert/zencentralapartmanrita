@@ -169,28 +169,54 @@
 		l.appendChild(f);
 	});
 
-	/* ---------- Térkép: OSM görgetéskor magától, Google kattintásra ---------- */
-	function loadMap(m) {
-		if (!m || m.classList.contains('is-loaded')) { return; }
-		var f = d.createElement('iframe');
-		f.src = m.getAttribute('data-map');
-		f.loading = 'lazy';
-		f.title = m.classList.contains('zc-map--osm') ? 'OpenStreetMap' : 'Google Maps';
-		f.referrerPolicy = 'no-referrer-when-downgrade';
-		f.setAttribute('allowfullscreen', '');
-		m.insertBefore(f, m.firstChild);
+	/* ---------- Térkép: Google utcatérkép + útvonal a szállástól a kiválasztott helyig ---------- */
+	function consentOk() { try { return localStorage.getItem('zc-consent') === 'all'; } catch (e) { return false; } }
+	function loadMap(m, src) {
+		if (!m) { return; }
+		var f = $('iframe', m);
+		if (!f) {
+			f = d.createElement('iframe');
+			f.loading = 'lazy';
+			f.title = m.classList.contains('zc-map--osm') ? 'OpenStreetMap' : 'Google Maps';
+			f.referrerPolicy = 'no-referrer-when-downgrade';
+			f.setAttribute('allowfullscreen', '');
+			m.insertBefore(f, m.firstChild);
+		}
+		var u = src || m.getAttribute('data-map');
+		if (f.getAttribute('src') !== u) { f.setAttribute('src', u); }
 		m.classList.add('is-loaded');
+	}
+	function routeUrl(m, dest, mode) {
+		var o = m.getAttribute('data-origin') || '', k = m.getAttribute('data-key') || '', hl = m.getAttribute('data-hl') || 'hu';
+		if (k) { return 'https://www.google.com/maps/embed/v1/directions?key=' + encodeURIComponent(k) + '&origin=' + encodeURIComponent(o) + '&destination=' + encodeURIComponent(dest) + '&mode=' + encodeURIComponent(mode); }
+		return 'https://maps.google.com/maps?saddr=' + encodeURIComponent(o) + '&daddr=' + encodeURIComponent(dest) + '&dirflg=' + (mode === 'driving' ? 'd' : 'w') + '&hl=' + encodeURIComponent(hl) + '&output=embed';
 	}
 	d.addEventListener('click', function (e) {
 		var b = e.target.closest('[data-map-load]');
-		if (b) { loadMap(b.closest('[data-map]')); }
+		if (b) { loadMap(b.closest('[data-map]')); return; }
+		var r = e.target.closest('[data-route]');
+		if (r) {
+			var sec = r.closest('.zc-sec') || d, m = $('.zc-map--google', sec) || $('[data-map]', sec);
+			if (!m) { return; }
+			$$('[data-route]', sec).forEach(function (x) { x.setAttribute('aria-pressed', x === r ? 'true' : 'false'); });
+			var dest = r.getAttribute('data-route'), mode = r.getAttribute('data-mode') || 'walking';
+			if (m.classList.contains('zc-map--google')) {
+				loadMap(m, routeUrl(m, dest, mode));
+				var o = $('[data-map-open]', m);
+				if (o) { o.href = 'https://www.google.com/maps/dir/?api=1&origin=' + encodeURIComponent(m.getAttribute('data-origin') || '') + '&destination=' + encodeURIComponent(dest) + '&travelmode=' + mode; }
+			} else { loadMap(m); }
+			if (w.matchMedia('(max-width: 1024px)').matches) { m.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }); }
+			return;
+		}
+		// Süti-elfogadás után a térképek azonnal betöltődnek.
+		if (e.target.closest('[data-consent="all"]')) { setTimeout(function () { $$('[data-map-auto="consent"]').forEach(function (m) { loadMap(m); }); }, 50); }
 	});
-	var autoMaps = $$('[data-map-auto]');
+	var autoMaps = $$('[data-map-auto]').filter(function (m) { return m.getAttribute('data-map-auto') === 'always' || consentOk(); });
 	if (autoMaps.length) {
 		if ('IntersectionObserver' in w) {
 			var mo = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { loadMap(x.target); mo.unobserve(x.target); } }); }, { rootMargin: '300px 0px' });
 			autoMaps.forEach(function (m) { mo.observe(m); });
-		} else { autoMaps.forEach(loadMap); }
+		} else { autoMaps.forEach(function (m) { loadMap(m); }); }
 	}
 
 	/* ---------- Fülek (GYIK) ---------- */
