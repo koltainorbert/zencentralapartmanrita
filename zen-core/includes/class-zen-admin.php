@@ -66,14 +66,6 @@ class Zen_Admin {
 	/** A Studio indulóadatai. */
 	public static function boot() {
 		$settings = Zen_Settings::all();
-		// Régi készítő-felirat („Designed by KOLORdsgn”) → új alapérték (InfoStudio Hungary, nyelvenként).
-		$cr = $settings['general']['credit_text'] ?? '';
-		if ( ! is_array( $cr ) && ( '' === trim( (string) $cr ) || false !== stripos( (string) $cr, 'KOLORdsgn' ) ) ) {
-			$settings['general']['credit_text'] = Zen_Settings::defaults()['general']['credit_text'];
-		}
-		if ( empty( $settings['general']['credit_url'] ) ) {
-			$settings['general']['credit_url'] = 'https://www.infostudio.hu';
-		}
 		// API kulcsok: csak jelző, a valós érték nem megy ki a böngészőbe.
 		$settings['ai']['api_key']           = '' !== (string) $settings['ai']['api_key'] ? '••••••••' : '';
 		$settings['cloudflare']['api_token'] = '' !== (string) $settings['cloudflare']['api_token'] ? '••••••••' : '';
