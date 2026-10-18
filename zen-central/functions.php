@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'ZC_VER', '1.2.12' );
+define( 'ZC_VER', '1.2.14' );
 define( 'ZC_DIR', get_template_directory() . '/' );
 define( 'ZC_URI', get_template_directory_uri() . '/' );
 
