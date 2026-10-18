@@ -53,6 +53,7 @@ $zc_email = zc_opt( 'general.email', '' );
 			<?php echo zc_lang_switcher(); // phpcs:ignore ?>
 			<?php echo zc_theme_toggle(); // phpcs:ignore ?>
 			<a class="zc-btn zc-btn--sm zc-header__book" href="<?php echo esc_url( zc_page_url( 'booking' ) ); ?>"><span><?php echo esc_html( zc_t( 'nav_book' ) ); ?></span></a>
+			<?php if ( zc_opt( 'design.sticky_book', true ) ) : ?><a class="zc-header__free" href="<?php echo esc_url( zc_page_url( 'booking' ) ); ?>"><?php echo zc_icon( 'calendar', 15 ); // phpcs:ignore ?><span class="zc-header__free-l"><?php echo esc_html( zc_t( 'sticky_book' ) ); ?></span><span class="zc-header__free-s"><?php echo esc_html( zc_t( 'nav_book' ) ); ?></span></a><?php endif; ?>
 			<button type="button" class="zc-burger" aria-expanded="false" aria-controls="zc-drawer" aria-label="<?php echo esc_attr( zc_t( 'menu' ) ); ?>" data-drawer-open><?php echo zc_icon( 'menu', 22 ); // phpcs:ignore ?></button>
 		</div>
 	</div>

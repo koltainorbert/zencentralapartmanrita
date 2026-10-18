@@ -117,14 +117,14 @@
 	var launcher = d.querySelector('.zca-launcher'), lastFocus = null;
 	function open(prompt) {
 		if (panel.hidden) { lastFocus = d.activeElement; panel.hidden = false; requestAnimationFrame(function () { panel.classList.add('is-open'); }); if (launcher) { launcher.classList.add('is-hidden'); } if (!log.childNodes.length) { boot(); } }
-		if (window.matchMedia('(max-width: 640px)').matches) { panel.setAttribute('aria-modal', 'true'); d.body.style.overflow = 'hidden'; }
+		if (window.matchMedia('(max-width: 640px)').matches) { panel.setAttribute('aria-modal', 'true'); d.body.style.overflow = 'hidden'; d.documentElement.style.overflow = 'hidden'; }
 		if (prompt) { ask(prompt); } else { setTimeout(function () { ta.focus(); }, 80); }
 	}
 	function close() {
 		panel.classList.remove('is-open');
 		setTimeout(function () { panel.hidden = true; }, reduce ? 0 : 260);
 		if (launcher) { launcher.classList.remove('is-hidden'); }
-		d.body.style.overflow = '';
+		d.body.style.overflow = ''; d.documentElement.style.overflow = '';
 		if (lastFocus) { lastFocus.focus(); }
 	}
 	closeB.addEventListener('click', close);

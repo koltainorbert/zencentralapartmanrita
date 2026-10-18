@@ -75,9 +75,6 @@ $zc_pay   = zc_opt( 'general.payment_logo', array() );
 	</div>
 </footer>
 
-<?php if ( zc_opt( 'design.sticky_book', true ) && ! ( zc_core() && is_page() && get_queried_object_id() === Zen_Content::page_id( 'booking', zc_lang() ) ) ) : ?>
-	<a class="zc-sticky-book" href="<?php echo esc_url( zc_page_url( 'booking' ) ); ?>"><?php echo zc_icon( 'calendar', 18 ); // phpcs:ignore ?><span><?php echo esc_html( zc_t( 'sticky_book' ) ); ?></span></a>
-<?php endif; ?>
 
 <div class="zc-lightbox" hidden data-lightbox role="dialog" aria-modal="true">
 	<button type="button" class="zc-icon-btn zc-lightbox__close" data-lb-close aria-label="<?php echo esc_attr( zc_t( 'close' ) ); ?>"><?php echo zc_icon( 'close', 22 ); // phpcs:ignore ?></button>

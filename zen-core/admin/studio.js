@@ -163,7 +163,7 @@
 			card('Effektek és elemek', [grid(fields([
 				{ k: 'design.animations', l: 'Finom megjelenési animációk', t: 'toggle' },
 				{ k: 'design.rail', l: 'Oldalsó kapcsolat-sáv (10 stílus)', t: 'select', opts: Z.railStyles || [['off', 'Kikapcsolva']] },
-				{ k: 'design.sticky_book', l: 'Mobil ragadós „Szabad időpontok” gomb', t: 'toggle' }, { k: 'design.post_author', l: 'Blogbejegyzés szerzőjének kiírása', t: 'toggle' },
+				{ k: 'design.sticky_book', l: 'Mobilon „Szabad időpontok” pill a fejlécben', t: 'toggle' }, { k: 'design.post_author', l: 'Blogbejegyzés szerzőjének kiírása', t: 'toggle' },
 				{ k: 'design.grain', l: 'Finom szemcse textúra', t: 'toggle' }
 			])), F.field({ k: 'design.custom_css', l: 'Egyedi CSS', t: 'code', rows: 8, help: 'Haladó: saját CSS szabályok. Változók: --zc-accent, --zc-bg, --zc-text, --zc-radius…' }, S, mark)])
 		]);

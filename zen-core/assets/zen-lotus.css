@@ -68,7 +68,7 @@
 .zl--static *, .zl--static { animation: none !important; }
 .zl--static .zl-root { stroke-dashoffset: 0; }
 
-@media (max-width: 1024px) { .zca-launcher { bottom: max(84px, calc(env(safe-area-inset-bottom) + 72px)); } .zca-launcher__orb { width: 66px; height: 66px; } }
-@media (max-width: 380px) { .zca-launcher { right: 12px; } .zca-launcher--left { left: 12px; } .zca-launcher__orb { width: 58px; height: 58px; } }
+@media (max-width: 1024px) { .zca-launcher, .zca-launcher--left { left: auto; right: 14px; bottom: max(16px, env(safe-area-inset-bottom)); } .zca-launcher__orb { width: 64px; height: 64px; } }
+@media (max-width: 380px) { .zca-launcher, .zca-launcher--left { right: 12px; } .zca-launcher__orb { width: 58px; height: 58px; } }
 @media (prefers-reduced-motion: reduce) { .zca-launcher, .zca-launcher * { animation: none !important; transition: none !important; } .zl-root { stroke-dashoffset: 0; } }
 @media print { .zca-launcher { display: none !important; } }
