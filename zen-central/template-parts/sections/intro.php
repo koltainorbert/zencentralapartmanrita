@@ -17,6 +17,7 @@ echo zc_section_open( $s, 'zc-intro zc-intro--' . $zc_layout ); // phpcs:ignore
 	</div>
 	<?php if ( ! empty( $d['media']['url'] ) && 'center' !== $zc_layout ) : ?>
 		<figure class="zc-intro__media" data-parallax><?php echo zc_media( $d['media'], array( 'cover' => true, 'alt' => $d['title'] ?? '', 'sizes' => '(min-width: 900px) 50vw, 100vw' ) ); // phpcs:ignore ?></figure>
+		<?php echo zc_section_deco( $s, 'card' ); // phpcs:ignore – lótusz a kép sarkán ?>
 	<?php endif; ?>
 </div>
 <?php

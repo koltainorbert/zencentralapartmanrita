@@ -163,6 +163,7 @@ class Zen_Extras {
 				'animate'      => true,     // automatikus képcsere + Ken Burns + belépő animáció
 				'show_link'    => true,     // „Galéria megnyitása” gomb a nagy képen
 				'hide_gallery' => true,     // a Galéria oldalon ne jelenjen meg (ott amúgy is ott vannak a képek)
+				'bg'           => 'beige',  // beige | page | dark – a sáv háttere a képek között
 			),
 		);
 	}
@@ -269,7 +270,8 @@ class Zen_Extras {
 				'a' => (string) ( $m['alt'] ?? '' ),
 			);
 		}
-		$h  = '<section class="zc-strip' . ( $anim ? ' zc-strip--anim' : '' ) . ' zc-strip--n' . $n . '" data-zen-strip data-gallery data-interval="' . $ms . '" aria-label="' . esc_attr( $label ) . '">';
+		$sbg = in_array( (string) self::opt( 'strip.bg', 'beige' ), array( 'beige', 'page', 'dark' ), true ) ? (string) self::opt( 'strip.bg', 'beige' ) : 'beige';
+		$h  = '<section class="zc-strip zc-strip--bg-' . $sbg . ( $anim ? ' zc-strip--anim' : '' ) . ' zc-strip--n' . $n . '" data-zen-strip data-gallery data-interval="' . $ms . '" aria-label="' . esc_attr( $label ) . '">';
 		$h .= '<div class="zc-strip__grid">';
 		for ( $i = 0; $i < $n; $i++ ) {
 			$src = 0 === $i ? $json[ $i ]['w'] : $json[ $i ]['t'];

@@ -15,6 +15,7 @@ echo zc_section_open( $s, 'zc-formsec zc-formsec--' . $zc_type ); // phpcs:ignor
 ?>
 <div class="zc-wrap zc-wrap--narrow">
 	<div class="zc-card zc-card--glass zc-formsec__card" data-reveal>
+		<?php echo zc_section_deco( $s, 'card' ); // phpcs:ignore – lótusz a doboz jobb alsó sarkán ?>
 		<?php echo zc_head( $d ); // phpcs:ignore ?>
 		<?php if ( ! empty( $d['text'] ) ) : ?><p class="zc-lead zc-center"><?php echo esc_html( $d['text'] ); ?></p><?php endif; ?>
 		<?php echo $zc_html; // phpcs:ignore ?>

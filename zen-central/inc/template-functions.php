@@ -217,14 +217,31 @@ function zc_deco_conf( $s ) {
 	$def   = array(
 		'cards'   => array( 'jinjang', 'tl', 'm' ),
 		'cta'     => array( 'lotus', 'card', 'm' ),
-		'form'    => array( 'jinjang', 'tr', 'm' ),
+		'form'    => array( 'lotus', 'card', 'm' ),
 		'booking' => array( 'jinjang', 'tr', 'm' ),
 		'gallery' => array( 'jinjang', 'tl', 's' ),
 	);
 	$d = $def[ $type ] ?? array( 'none', 'r', 'm' );
+	// Főoldal: az első bevezető szekció egy halvány lótuszt kap a szöveg oldalán (a kártyás Jin-Jang mellé).
+	static $first_intro = null;
+	if ( 'intro' === $type && function_exists( 'is_front_page' ) && is_front_page() ) {
+		if ( null === $first_intro ) {
+			$first_intro = (string) ( $s['id'] ?? '' );
+		}
+		if ( (string) ( $s['id'] ?? '' ) === $first_intro ) {
+			$lay = (string) ( $s['data']['layout'] ?? 'right' );
+			$d   = array( 'lotus', 'center' === $lay ? 'r' : 'card', 'm' );
+			if ( '' === $motif ) {
+				$motif = 'lotus';
+			}
+		}
+	}
+	if ( 'form' === $type && in_array( $motif, array( 'jinjang', 'lotus' ), true ) ) {
+		$motif = 'lotus'; // űrlapnál a doboz sarkán lótusz (mint a „Kérjen ajánlatot” dobozban)
+	}
 	if ( '' !== $motif ) {
 		$d[0] = $motif; // a háttérként megadott motívum lesz a vízjel (kicsiben)
-	} elseif ( ! in_array( $type, array( 'cards', 'cta' ), true ) ) {
+	} elseif ( ! in_array( $type, array( 'cards', 'cta', 'form' ), true ) ) {
 		$d[0] = 'none'; // űrlap / foglaló / galéria: csak ha a régi oldalon is volt motívum
 	}
 	$deco = (string) ( $st['deco'] ?? 'auto' );
@@ -234,7 +251,7 @@ function zc_deco_conf( $s ) {
 	}
 	$pos = (string) ( $st['deco_pos'] ?? 'auto' );
 	$pos = in_array( $pos, array( 'tl', 'tr', 'l', 'r', 'bl', 'br', 'card' ), true ) ? $pos : $d[1];
-	if ( 'card' === $pos && 'cta' !== $type ) {
+	if ( 'card' === $pos && ! in_array( $type, array( 'cta', 'form', 'intro' ), true ) ) {
 		$pos = 'br';
 	}
 	$size = (string) ( $st['deco_size'] ?? 'auto' );
