@@ -203,47 +203,71 @@ function zc_bg_motif( $st ) {
 	return 'img';
 }
 
-function zc_section_deco( $s ) {
+/**
+ * Vízjel beállítások feloldása: [ típus, hely, méret, nagyítás %, erősség % ] vagy null.
+ * Hely: tl, tr, l, r, bl, br (szekció széle) vagy card (a középső doboz jobb alsó sarka, a doboz fölött).
+ */
+function zc_deco_conf( $s ) {
 	if ( ! class_exists( 'Zen_Logos' ) ) {
-		return '';
+		return null;
 	}
 	$st    = $s['style'] ?? array();
 	$type  = (string) ( $s['type'] ?? '' );
 	$motif = zc_bg_motif( $st );
 	$def   = array(
 		'cards'   => array( 'jinjang', 'tl', 'm' ),
-		'cta'     => array( 'lotus', 'r', 'm' ),
+		'cta'     => array( 'lotus', 'card', 'm' ),
 		'form'    => array( 'jinjang', 'tr', 'm' ),
 		'booking' => array( 'jinjang', 'tr', 'm' ),
 		'gallery' => array( 'jinjang', 'tl', 's' ),
 	);
-	$d     = $def[ $type ] ?? array( 'none', 'r', 'm' );
+	$d = $def[ $type ] ?? array( 'none', 'r', 'm' );
 	if ( '' !== $motif ) {
 		$d[0] = $motif; // a háttérként megadott motívum lesz a vízjel (kicsiben)
 	} elseif ( ! in_array( $type, array( 'cards', 'cta' ), true ) ) {
 		$d[0] = 'none'; // űrlap / foglaló / galéria: csak ha a régi oldalon is volt motívum
 	}
 	$deco = (string) ( $st['deco'] ?? 'auto' );
-	$deco = ( '' === $deco || 'auto' === $deco ) ? $d[0] : $deco;
+	$deco = ( '' === $deco || 'auto' === $deco ) ? $d[0] : sanitize_key( $deco );
 	if ( 'none' === $deco ) {
+		return null;
+	}
+	$pos = (string) ( $st['deco_pos'] ?? 'auto' );
+	$pos = in_array( $pos, array( 'tl', 'tr', 'l', 'r', 'bl', 'br', 'card' ), true ) ? $pos : $d[1];
+	if ( 'card' === $pos && 'cta' !== $type ) {
+		$pos = 'br';
+	}
+	$size = (string) ( $st['deco_size'] ?? 'auto' );
+	$size = in_array( $size, array( 's', 'm', 'l' ), true ) ? $size : $d[2];
+	$zoom = isset( $st['deco_scale'] ) && '' !== $st['deco_scale'] ? max( 30, min( 250, (int) $st['deco_scale'] ) ) : 100;
+	$op   = isset( $st['deco_opacity'] ) && '' !== $st['deco_opacity'] ? max( 0, min( 100, (int) $st['deco_opacity'] ) ) : 0; // 0 = automatikus
+	return array( $deco, $pos, $size, $zoom, $op );
+}
+
+/** A vízjel HTML. $where: 'section' (szekció háttér) vagy 'card' (a CTA dobozon belül). */
+function zc_section_deco( $s, $where = 'section' ) {
+	$c = zc_deco_conf( $s );
+	if ( ! $c ) {
+		return '';
+	}
+	list( $deco, $pos, $size, $zoom, $op ) = $c;
+	if ( ( 'card' === $pos ) !== ( 'card' === $where ) ) {
 		return '';
 	}
 	if ( 'img' === $deco ) {
-		$bg  = $st['bg'] ?? array();
-		$url = is_array( $bg ) ? ( function_exists( 'zen_media_url' ) ? zen_media_url( $bg, 'large' ) : ( $bg['url'] ?? '' ) ) : (string) $bg;
-		$pos = in_array( (string) ( $st['deco_pos'] ?? '' ), array( 'tl', 'tr', 'l', 'r', 'bl', 'br' ), true ) ? $st['deco_pos'] : $d[1];
-		$sz  = in_array( (string) ( $st['deco_size'] ?? '' ), array( 's', 'm', 'l' ), true ) ? $st['deco_size'] : $d[2];
-		return $url ? '<div class="zc-sec__deco zc-deco--' . esc_attr( $pos ) . ' zc-deco--' . esc_attr( $sz ) . ' zc-deco--img" aria-hidden="true"><span class="zc-deco__mark"><img src="' . esc_url( $url ) . '" alt="" loading="lazy" decoding="async"></span></div>' : '';
+		$st    = $s['style'] ?? array();
+		$bg    = $st['bg'] ?? array();
+		$url   = is_array( $bg ) ? ( function_exists( 'zen_media_url' ) ? zen_media_url( $bg, 'large' ) : ( $bg['url'] ?? '' ) ) : (string) $bg;
+		$inner = $url ? '<img src="' . esc_url( $url ) . '" alt="" loading="lazy" decoding="async">' : '';
+	} else {
+		$inner = Zen_Logos::svg( $deco );
 	}
-	$pos  = (string) ( $st['deco_pos'] ?? 'auto' );
-	$pos  = in_array( $pos, array( 'tl', 'tr', 'l', 'r', 'bl', 'br' ), true ) ? $pos : $d[1];
-	$size = (string) ( $st['deco_size'] ?? 'auto' );
-	$size = in_array( $size, array( 's', 'm', 'l' ), true ) ? $size : $d[2];
-	$svg  = Zen_Logos::svg( sanitize_key( $deco ) );
-	if ( '' === $svg ) {
+	if ( '' === $inner ) {
 		return '';
 	}
-	return '<div class="zc-sec__deco zc-deco--' . esc_attr( $pos ) . ' zc-deco--' . esc_attr( $size ) . ' zc-deco--' . esc_attr( sanitize_key( $deco ) ) . '" aria-hidden="true"><span class="zc-deco__mark">' . $svg . '</span></div>';
+	$style = '--dz:' . ( $zoom / 100 ) . ';' . ( $op ? '--do:' . ( $op / 100 ) . ';' : '' );
+	$cls   = 'zc-sec__deco zc-deco--' . $pos . ' zc-deco--sz-' . $size . ' zc-deco--' . $deco . ( $op ? ' zc-deco--op' : '' );
+	return '<div class="' . esc_attr( $cls ) . '" style="' . esc_attr( $style ) . '" aria-hidden="true"><span class="zc-deco__mark">' . $inner . '</span></div>';
 }
 
 function zc_section_close() {

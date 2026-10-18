@@ -62,7 +62,8 @@ echo zc_section_open( $s, 'zc-apt' ); // phpcs:ignore
 		<?php if ( ! empty( $d['amenities'] ) ) : ?>
 			<div class="zc-amenities">
 				<?php if ( ! empty( $d['amenities_title'] ) ) : ?><h3 class="zc-amenities__title"><?php echo esc_html( $d['amenities_title'] ); ?></h3><?php endif; ?>
-				<ul class="zc-amenities__list">
+				<?php $zc_ams = isset( $d['amenity_icon_size'] ) && '' !== $d['amenity_icon_size'] ? max( 28, min( 72, (int) $d['amenity_icon_size'] ) ) : 0; ?>
+				<ul class="zc-amenities__list"<?php echo $zc_ams ? ' style="--am:' . (int) $zc_ams . 'px"' : ''; ?>>
 					<?php foreach ( (array) $d['amenities'] as $zc_a ) : ?>
 						<?php
 						if ( function_exists( 'zen_amenity' ) ) {

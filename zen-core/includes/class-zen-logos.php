@@ -98,16 +98,18 @@ class Zen_Logos {
 		$label = function_exists( 'zen_apt_name' ) && ! empty( $apt['key'] ) ? zen_apt_name( $apt['key'] ) : '';
 		list( $type, $val ) = self::resolve( $apt );
 		$cls = trim( 'zen-badge ' . $class );
+		$sz  = isset( $apt['badge_size'] ) && '' !== $apt['badge_size'] ? max( 32, min( 140, (int) $apt['badge_size'] ) ) : 0;
+		$sty = $sz ? ' style="--zb-size:' . $sz . 'px"' : '';
 		switch ( $type ) {
 			case 'logo':
-				return '<span class="' . esc_attr( $cls . ' zen-badge--' . $val ) . '">' . self::svg( $val, $label ) . '</span>';
+				return '<span class="' . esc_attr( $cls . ' zen-badge--' . $val ) . '"' . $sty . '>' . self::svg( $val, $label ) . '</span>';
 			case 'image':
-				return '<span class="' . esc_attr( $cls . ' zen-badge--image' ) . '"><img src="' . esc_url( $val ) . '" alt="' . esc_attr( $label ) . '" loading="lazy" width="64" height="64"></span>';
+				return '<span class="' . esc_attr( $cls . ' zen-badge--image' ) . '"' . $sty . '><img src="' . esc_url( $val ) . '" alt="' . esc_attr( $label ) . '" loading="lazy" width="64" height="64"></span>';
 			case 'monogram':
 				$src = '' !== $label ? $label : (string) ( $apt['key'] ?? '' );
 				$src = trim( preg_replace( '/\b(apartman|apartment|apartmán|apartament|appartamento|appartement|apartma|studio|stúdió)\b/iu', '', $src ) );
 				$ch  = mb_strtoupper( mb_substr( '' !== $src ? $src : 'Z', 0, 1, 'UTF-8' ), 'UTF-8' );
-				return '<span class="' . esc_attr( $cls . ' zen-badge--monogram' ) . '" role="img" aria-label="' . esc_attr( $label ) . '"><span aria-hidden="true">' . esc_html( $ch ) . '</span></span>';
+				return '<span class="' . esc_attr( $cls . ' zen-badge--monogram' ) . '"' . $sty . ' role="img" aria-label="' . esc_attr( $label ) . '"><span aria-hidden="true">' . esc_html( $ch ) . '</span></span>';
 		}
 		return '';
 	}

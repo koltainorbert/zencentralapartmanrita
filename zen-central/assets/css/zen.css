@@ -252,26 +252,31 @@ html.zc-lock, html.zc-lock body { overflow: hidden; }
 .zc-sec__bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
 .zc-sec__bg .zc-media { width: 100%; height: 100%; object-fit: cover; opacity: calc(1 - var(--ov, .35)); }
 /* Díszítő vízjel (régi oldal stílusa): halvány, a szekció szélén kifutó szimbólum */
-.zc-sec__deco { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
-.zc-deco__mark { position: absolute; display: block; color: #fff; opacity: .55; }
-.zc-deco__mark svg { display: block; width: 100%; height: auto; }
-.zc-deco--s .zc-deco__mark { width: clamp(130px, 15vw, 230px); }
-.zc-deco--m .zc-deco__mark { width: clamp(170px, 23vw, 360px); }
-.zc-deco--l .zc-deco__mark { width: clamp(220px, 32vw, 520px); }
+.zc-sec__deco { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; --dw: clamp(170px, 23vw, 360px); --dop: .55; }
+.zc-deco__mark { position: absolute; display: block; color: #fff; width: calc(var(--dw) * var(--dz, 1)); opacity: var(--do, var(--dop)); }
+.zc-deco__mark svg, .zc-deco__mark img { display: block; width: 100%; height: auto; }
+.zc-deco--sz-s { --dw: clamp(130px, 15vw, 230px); }
+.zc-deco--sz-m { --dw: clamp(170px, 23vw, 360px); }
+.zc-deco--sz-l { --dw: clamp(220px, 32vw, 520px); }
 .zc-deco--tl .zc-deco__mark { left: -3%; top: -10%; }
 .zc-deco--tr .zc-deco__mark { right: -3%; top: -10%; }
 .zc-deco--l .zc-deco__mark { left: 3%; top: 50%; translate: 0 -50%; }
 .zc-deco--r .zc-deco__mark { right: 4%; top: 50%; translate: 0 -50%; }
 .zc-deco--bl .zc-deco__mark { left: -3%; bottom: -10%; }
 .zc-deco--br .zc-deco__mark { right: -3%; bottom: -10%; }
-.zc-deco--jinjang .zc-deco__mark { opacity: .5; transform: scaleX(-1); }
-.zc-deco--lotus .zc-deco__mark { opacity: .62; }
-.zc-deco--relax .zc-deco__mark { opacity: .5; }
-.zc-deco--img .zc-deco__mark { opacity: .7; }
-.zc-deco__mark img { display: block; width: 100%; height: auto; }
-.tone-dark .zc-deco__mark, .zc-sec:has(.zc-sec__bg) .zc-deco__mark { opacity: .06; }
+.zc-deco--jinjang { --dop: .5; } .zc-deco--jinjang .zc-deco__mark { transform: scaleX(-1); }
+.zc-deco--lotus { --dop: .62; }
+.zc-deco--relax { --dop: .5; }
+.zc-deco--img { --dop: .7; }
+.tone-dark .zc-sec__deco:not(.zc-deco--op), .zc-sec:has(.zc-sec__bg) .zc-sec__deco:not(.zc-deco--op) { --dop: .06; }
 .tone-accent .zc-deco__mark { color: var(--zc-surface); }
-@media (max-width: 760px) { .zc-deco--r .zc-deco__mark, .zc-deco--l .zc-deco__mark { opacity: .35; } .zc-deco--tl .zc-deco__mark, .zc-deco--tr .zc-deco__mark { top: -8%; } }
+/* Lótusz a „Kérjen ajánlatot” doboz jobb alsó sarkán, a doboz fölött (z-index 0) */
+.zc-cta__card > :not(.zc-deco--card) { position: relative; z-index: 1; }
+.zc-sec__deco.zc-deco--card { inset: auto; right: 0; bottom: 0; width: 0; height: 0; z-index: 0; overflow: visible; --dw: clamp(120px, 15vw, 210px); --dop: .77; }
+.zc-deco--card.zc-deco--sz-s { --dw: clamp(90px, 11vw, 150px); }
+.zc-deco--card.zc-deco--sz-l { --dw: clamp(160px, 20vw, 290px); }
+.zc-deco--card .zc-deco__mark { right: calc(var(--dw) * var(--dz, 1) * -.42); bottom: calc(var(--dw) * var(--dz, 1) * -.2); color: color-mix(in srgb, var(--zc-accent) 34%, #fff); filter: drop-shadow(0 6px 14px color-mix(in srgb, var(--zc-accent) 22%, transparent)); }
+@media (max-width: 760px) { .zc-deco--r, .zc-deco--l { --dop: .35; } .zc-deco--tl .zc-deco__mark, .zc-deco--tr .zc-deco__mark { top: -8%; } .zc-deco--card .zc-deco__mark { right: -8px; bottom: calc(var(--dw) * var(--dz, 1) * -.32); } }
 .tone-alt .zc-sec__bg .zc-media, .tone-auto .zc-sec__bg .zc-media { opacity: .5; mix-blend-mode: multiply; }
 :root[data-theme="dark"] .zc-sec__bg .zc-media { opacity: .08; mix-blend-mode: screen; filter: invert(1) grayscale(1); }
 .tone-accent .zc-sec__bg .zc-media { opacity: .4; mix-blend-mode: multiply; }
@@ -355,22 +360,22 @@ html.zc-lock, html.zc-lock body { overflow: hidden; }
 .zc-apt-card:hover .zc-apt-card__media .zc-media { transform: scale(1.06); }
 .zc-apt-card__media::after { content: ""; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.28)); }
 /* Apartman jelvény (vektoros arany logó sötét üvegen) */
-.zen-badge { --zb-h: 64px; display: inline-grid; place-items: center; box-sizing: border-box; height: var(--zb-h); min-width: var(--zb-h); padding: 0 12px; border-radius: 999px;
+.zen-badge { --zb-h: var(--zb-size, 64px); display: inline-grid; place-items: center; box-sizing: border-box; height: var(--zb-h); min-width: var(--zb-h); padding: 0 calc(var(--zb-h) * .19); border-radius: 999px;
 	color: color-mix(in srgb, var(--zc-accent) 80%, #fff); background: radial-gradient(120% 140% at 30% 15%, rgba(38,31,22,.86), rgba(10,8,6,.78));
 	border: 1px solid color-mix(in srgb, var(--zc-accent) 55%, transparent); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2);
 	box-shadow: 0 14px 30px -14px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.14), 0 0 0 4px color-mix(in srgb, var(--zc-accent) 14%, transparent);
 	transition: transform .45s var(--zc-ease, ease), box-shadow .45s var(--zc-ease, ease); }
 .zen-badge svg { display: block; filter: drop-shadow(0 1px 1px rgba(0,0,0,.35)); }
-.zen-badge--jinjang svg { width: 42px; height: 42px; }
-.zen-badge--lotus svg { width: 46px; height: auto; }
-.zen-badge--relax { padding: 0 16px; }
-.zen-badge--relax svg { width: 70px; height: auto; transform: translateY(1px); }
-.zen-badge--monogram span { font: italic 600 30px/1 var(--zc-font-h); letter-spacing: -.02em; transform: translateY(-1px); }
-.zen-badge--image { padding: 9px; }
-.zen-badge--image img { width: 44px; height: 44px; object-fit: contain; border-radius: 999px; }
+.zen-badge--jinjang svg { width: calc(var(--zb-h) * .66); height: auto; }
+.zen-badge--lotus svg { width: calc(var(--zb-h) * .72); height: auto; }
+.zen-badge--relax { padding: 0 calc(var(--zb-h) * .25); }
+.zen-badge--relax svg { width: calc(var(--zb-h) * 1.1); height: auto; transform: translateY(1px); }
+.zen-badge--monogram span { font: italic 600 calc(var(--zb-h) * .47)/1 var(--zc-font-h); letter-spacing: -.02em; transform: translateY(-1px); }
+.zen-badge--image { padding: calc(var(--zb-h) * .14); }
+.zen-badge--image img { width: calc(var(--zb-h) * .69); height: calc(var(--zb-h) * .69); object-fit: contain; border-radius: 999px; }
 .zc-apt-card__badge { position: absolute; z-index: 2; top: 14px; left: 14px; }
 .zc-apt-card:hover .zc-apt-card__badge { transform: translateY(-2px) scale(1.04); box-shadow: 0 18px 34px -14px rgba(0,0,0,.75), inset 0 1px 0 rgba(255,255,255,.18), 0 0 0 5px color-mix(in srgb, var(--zc-accent) 26%, transparent); }
-@media (max-width: 640px) { .zen-badge { --zb-h: 56px; } .zen-badge--jinjang svg { width: 36px; height: 36px; } .zen-badge--lotus svg { width: 40px; } .zen-badge--relax svg { width: 60px; } }
+@media (max-width: 640px) { .zen-badge { --zb-h: calc(var(--zb-size, 64px) * .875); } }
 @media (prefers-reduced-motion: reduce) { .zen-badge { transition: none; } .zc-apt-card:hover .zc-apt-card__badge { transform: none; } }
 .zc-apt-card__body { padding: 16px 20px 20px; display: flex; flex-direction: column; flex: 1; }
 .zc-apt-card__title { font-size: clamp(20px, 1.6vw, 24px); margin-bottom: 10px; }
@@ -435,6 +440,7 @@ html.zc-lock, html.zc-lock body { overflow: hidden; }
 .zc-cta__mark svg { width: 30px; height: 30px; }
 .zc-cta__line { font-size: clamp(15.5px, 1.2vw, 17.5px); color: var(--zc-muted); margin: 0 auto .4em; max-width: 60ch; }
 .zc-cta .zc-btns { margin-top: 20px; }
+.zc-cta { overflow-x: clip; }
 
 /* ---------- GYIK – üveg dashboard, két egyforma oldal ---------- */
 .zc-faq__board { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(14px, 2vw, 24px); padding: clamp(14px, 2vw, 24px); border-radius: clamp(28px, 3vw, 44px); background: var(--zc-glass); border: 1px solid var(--zc-glass-line); backdrop-filter: blur(26px) saturate(1.4); -webkit-backdrop-filter: blur(26px) saturate(1.4); box-shadow: var(--zc-shadow), inset 0 1px 0 rgba(255,255,255,.3); isolation: isolate; overflow: hidden; }
@@ -522,12 +528,12 @@ html.zc-lock, html.zc-lock body { overflow: hidden; }
 .zc-amenities__title { font-size: 26px; margin-bottom: 18px; }
 .zc-amenities__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 28px; }
 .zc-amenities__list li { display: flex; gap: 14px; align-items: flex-start; font-size: 15px; line-height: 1.5; }
-.zc-amen__ico { flex: none; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 14px; color: var(--zc-accent);
+.zc-amen__ico { flex: none; display: grid; place-items: center; width: var(--am, 42px); height: var(--am, 42px); border-radius: calc(var(--am, 42px) * .33); color: var(--zc-accent);
 	background: linear-gradient(145deg, color-mix(in srgb, var(--zc-accent) 16%, var(--zc-surface)), color-mix(in srgb, var(--zc-accent) 6%, var(--zc-surface)));
 	box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--zc-accent) 24%, transparent), 0 8px 18px -12px color-mix(in srgb, var(--zc-accent) 70%, transparent);
 	transition: transform .25s ease, box-shadow .25s ease; }
-.zc-amen__ico svg { width: 22px; height: 22px; }
-.zc-amen__txt { min-width: 0; padding-top: calc((42px - 1.5em) / 2); }
+.zc-amen__ico svg { width: calc(var(--am, 42px) * .52); height: calc(var(--am, 42px) * .52); }
+.zc-amen__txt { min-width: 0; padding-top: max(0px, calc((var(--am, 42px) - 1.5em) / 2)); }
 .zc-amenities__list li:hover .zc-amen__ico { transform: translateY(-2px); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--zc-accent) 40%, transparent), 0 12px 22px -12px color-mix(in srgb, var(--zc-accent) 80%, transparent); }
 @media (prefers-reduced-motion: reduce) { .zc-amen__ico { transition: none; } .zc-amenities__list li:hover .zc-amen__ico { transform: none; } }
 .zc-apt__gallery { margin-top: clamp(40px, 5vw, 64px); }

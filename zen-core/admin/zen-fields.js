@@ -271,7 +271,7 @@
 			case 'code': ctrl = h('textarea', { id: fid, class: 'zs-input zs-input--code', rows: def.rows || 8, value: val || '', spellcheck: 'false', oninput: function (e) { change(e.target.value); } }); break;
 			case 'html': ctrl = htmlEditor(val, change); break;
 			case 'number': ctrl = h('input', { id: fid, type: 'number', class: 'zs-input zs-input--num', value: val === undefined ? '' : val, min: def.min, max: def.max, step: def.step || 1, oninput: function (e) { change(e.target.value === '' ? 0 : Number(e.target.value)); } }); break;
-			case 'range': var out = h('output', { text: String(val) }); ctrl = h('div', { class: 'zs-range' }, [h('input', { id: fid, type: 'range', min: def.min, max: def.max, step: def.step || 1, value: val, oninput: function (e) { out.textContent = e.target.value; change(Number(e.target.value)); } }), out]); break;
+			case 'range': if (val === undefined || val === null || val === '') { val = def.dflt !== undefined ? def.dflt : def.min; } var out = h('output', { text: String(val) + (def.unit || '') }); ctrl = h('div', { class: 'zs-range' }, [h('input', { id: fid, type: 'range', min: def.min, max: def.max, step: def.step || 1, value: val, oninput: function (e) { out.textContent = e.target.value + (def.unit || ''); change(Number(e.target.value)); } }), out]); break;
 			case 'toggle': ctrl = toggle(!!val, change, def.l); break;
 			case 'select': ctrl = h('select', { id: fid, class: 'zs-input zs-select', onchange: function (e) { change(e.target.value); } }, (def.opts || []).map(function (o) { var v = Array.isArray(o) ? o[0] : o, l = Array.isArray(o) ? o[1] : o; return h('option', { value: v, selected: String(v) === String(val) ? 'selected' : null }, [l]); })); break;
 			case 'color':
