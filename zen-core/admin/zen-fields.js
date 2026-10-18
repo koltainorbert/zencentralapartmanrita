@@ -123,17 +123,77 @@
 		return wrap;
 	}
 
+	/* ---------------- Felszereltség ikonok (automatikus + kézi „[[ikon]]” előtag) ---------------- */
+	var AM_PRE = /^\s*\[\[([a-z0-9-]+)\]\]\s*/;
+	function amData() { var a = w.ZenAmenityIcons; return a && a.icons ? a : null; }
+	function amMatch(text) {
+		var A = amData(), t = ' ' + String(text || '').toLowerCase() + ' ', best = 'check', pos = 1e9, len = 0;
+		if (!A || !A.rules) { return best; }
+		Object.keys(A.rules).forEach(function (ic) {
+			(A.rules[ic] || []).forEach(function (wd) {
+				var p = wd ? t.indexOf(wd) : -1;
+				if (p > -1 && (p < pos || (p === pos && wd.length > len))) { pos = p; len = wd.length; best = ic; }
+			});
+		});
+		return best;
+	}
+	function amSplit(v) {
+		var A = amData(), s = String(v || ''), m = s.match(AM_PRE);
+		if (m && A && A.icons[m[1]]) { return { icon: m[1], text: s.replace(AM_PRE, ''), manual: true }; }
+		return { icon: null, text: s.replace(AM_PRE, ''), manual: false };
+	}
+	function amPicker(anchor, current, manual, onpick) {
+		var A = amData(), old = d.querySelector('.zs-amen-pop');
+		if (old) { old.remove(); }
+		var pop = h('div', { class: 'zs-amen-pop', role: 'dialog', 'aria-label': 'Ikon választása' });
+		pop.appendChild(h('button', { type: 'button', class: 'zs-amen-opt zs-amen-opt--auto' + (!manual ? ' is-on' : ''), title: 'Automatikus (a szövegből)', onclick: function () { onpick(null); pop.remove(); } }, [h('span', { class: 'zs-amen-ico', html: A.icons[current] ? A.icons[current].svg : '' }), h('span', { text: 'Automatikus' })]));
+		var grid = h('div', { class: 'zs-amen-grid' });
+		Object.keys(A.icons).forEach(function (k) {
+			grid.appendChild(h('button', { type: 'button', class: 'zs-amen-opt' + (manual && k === current ? ' is-on' : ''), title: A.icons[k].l, 'aria-label': A.icons[k].l, onclick: function () { onpick(k); pop.remove(); } }, [h('span', { class: 'zs-amen-ico', html: A.icons[k].svg }), h('span', { class: 'zs-amen-l', text: A.icons[k].l })]));
+		});
+		pop.appendChild(grid);
+		d.body.appendChild(pop);
+		var r = anchor.getBoundingClientRect(), pw = Math.min(420, w.innerWidth - 24);
+		pop.style.width = pw + 'px';
+		pop.style.left = Math.max(12, Math.min(r.left + w.scrollX, w.scrollX + w.innerWidth - pw - 12)) + 'px';
+		pop.style.top = (r.bottom + w.scrollY + 8) + 'px';
+		setTimeout(function () {
+			function off(e) { if (!pop.contains(e.target) && e.target !== anchor) { pop.remove(); d.removeEventListener('mousedown', off); d.removeEventListener('keydown', esc); } }
+			function esc(e) { if (e.key === 'Escape') { pop.remove(); d.removeEventListener('mousedown', off); d.removeEventListener('keydown', esc); anchor.focus(); } }
+			d.addEventListener('mousedown', off);
+			d.addEventListener('keydown', esc);
+		}, 0);
+	}
+
 	/* ---------------- Szöveglista ---------------- */
 	function list(arr, onch, opts) {
 		arr = (arr || []).slice();
 		opts = opts || {};
-		var wrap = h('div', { class: 'zs-list' });
+		var wrap = h('div', { class: 'zs-list' + (opts.icons && amData() ? ' zs-list--icons' : '') });
 		function emit() { onch(arr.slice()); }
 		function render() {
 			wrap.innerHTML = '';
 			arr.forEach(function (v, i) {
-				var inp = opts.multiline ? h('textarea', { class: 'zs-input', rows: 2, value: v, oninput: function (e) { arr[i] = e.target.value; emit(); } }) : h('input', { type: 'text', class: 'zs-input', value: v, placeholder: opts.ph || '', oninput: function (e) { arr[i] = e.target.value; emit(); } });
-				wrap.appendChild(h('div', { class: 'zs-list__row' }, [inp, ib('up', 'Fel', function () { if (i > 0) { var t = arr[i - 1]; arr[i - 1] = arr[i]; arr[i] = t; emit(); render(); } }), ib('del', 'Törlés', function () { arr.splice(i, 1); emit(); render(); }, 'is-danger')]));
+				var useIco = opts.icons && amData(), part = useIco ? amSplit(v) : { text: v }, btn = null;
+				function store(txt) { part.text = txt; arr[i] = (part.manual ? '[[' + part.icon + ']] ' : '') + txt; }
+				function paint() {
+					if (!btn) { return; }
+					var A = amData(), ic = part.manual ? part.icon : amMatch(part.text);
+					btn.innerHTML = A.icons[ic] ? A.icons[ic].svg : '';
+					btn.className = 'zs-amen-btn' + (part.manual ? ' is-manual' : '');
+					btn.title = (part.manual ? 'Kézi ikon: ' : 'Automatikus ikon: ') + (A.icons[ic] ? A.icons[ic].l : '') + ' – kattints a cseréhez';
+				}
+				var onIn = function (e) { if (useIco) { store(e.target.value); paint(); } else { arr[i] = e.target.value; } emit(); };
+				var inp = opts.multiline ? h('textarea', { class: 'zs-input', rows: 2, value: part.text, oninput: onIn }) : h('input', { type: 'text', class: 'zs-input', value: part.text, placeholder: opts.ph || '', oninput: onIn });
+				if (useIco) {
+					btn = h('button', { type: 'button', class: 'zs-amen-btn', onclick: function () {
+						amPicker(btn, part.manual ? part.icon : amMatch(part.text), part.manual, function (k) {
+							part.manual = !!k; part.icon = k; store(part.text); emit(); paint();
+						});
+					} });
+					paint();
+				}
+				wrap.appendChild(h('div', { class: 'zs-list__row' }, [btn, inp, ib('up', 'Fel', function () { if (i > 0) { var t = arr[i - 1]; arr[i - 1] = arr[i]; arr[i] = t; emit(); render(); } }), ib('del', 'Törlés', function () { arr.splice(i, 1); emit(); render(); }, 'is-danger')]));
 			});
 			wrap.appendChild(h('button', { type: 'button', class: 'zs-btn zs-btn--sm zs-btn--ghost', onclick: function () { arr.push(''); emit(); render(); var l = wrap.querySelectorAll('.zs-input'); if (l.length) { l[l.length - 1].focus(); } } }, ['+ ' + (opts.add || 'Új sor')]));
 		}

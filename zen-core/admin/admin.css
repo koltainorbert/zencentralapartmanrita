@@ -119,6 +119,18 @@ textarea.zs-input { min-height: 80px; resize: vertical; }
 /* Lista + ismétlő */
 .zs-list { display: grid; gap: 6px; }
 .zs-list__row { display: flex; gap: 6px; align-items: center; }
+.zs-list--icons .zs-list__row { align-items: flex-start; }
+.zs-amen-btn { flex: none; display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--zs-acc, #a9844c) 28%, transparent); background: color-mix(in srgb, var(--zs-acc, #a9844c) 12%, #fff); color: var(--zs-acc, #a9844c); cursor: pointer; transition: transform .15s, box-shadow .15s; }
+.zs-amen-btn:hover, .zs-amen-btn:focus-visible { transform: translateY(-1px); box-shadow: 0 0 0 3px color-mix(in srgb, var(--zs-acc, #a9844c) 22%, transparent); outline: none; }
+.zs-amen-btn.is-manual { border-color: var(--zs-acc, #a9844c); border-width: 1.5px; }
+.zs-amen-pop { position: absolute; z-index: 100100; box-sizing: border-box; max-height: 360px; overflow: auto; padding: 10px; border-radius: 20px; background: #fff; border: 1px solid #e7e2d8; box-shadow: 0 24px 60px -24px rgba(23,21,15,.45); font: 13px/1.3 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; color: #17150f; }
+.zs-amen-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 6px; margin-top: 8px; }
+.zs-amen-opt { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 10px 6px; border-radius: 16px; border: 1px solid transparent; background: #faf8f4; color: #17150f; cursor: pointer; text-align: center; }
+.zs-amen-opt:hover, .zs-amen-opt:focus-visible { border-color: #a9844c; outline: none; }
+.zs-amen-opt.is-on { border-color: #a9844c; background: color-mix(in srgb, #a9844c 12%, #fff); }
+.zs-amen-opt--auto { flex-direction: row; justify-content: center; width: 100%; border-radius: 999px; font-weight: 700; }
+.zs-amen-ico { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 999px; background: color-mix(in srgb, #a9844c 12%, #fff); color: #a9844c; }
+.zs-amen-l { font-size: 11.5px; line-height: 1.25; color: #6d675d; }
 .zs-rep { display: grid; gap: 8px; }
 .zs-rep__it { border: 1px solid var(--zs-line); border-radius: 18px; background: #fff; overflow: hidden; }
 .zs-rep__it.is-open { box-shadow: var(--zs-shadow); }

@@ -64,7 +64,17 @@ echo zc_section_open( $s, 'zc-apt' ); // phpcs:ignore
 				<?php if ( ! empty( $d['amenities_title'] ) ) : ?><h3 class="zc-amenities__title"><?php echo esc_html( $d['amenities_title'] ); ?></h3><?php endif; ?>
 				<ul class="zc-amenities__list">
 					<?php foreach ( (array) $d['amenities'] as $zc_a ) : ?>
-						<li><?php echo zc_icon( 'check', 16 ); // phpcs:ignore ?><span><?php echo esc_html( $zc_a ); ?></span></li>
+						<?php
+						if ( function_exists( 'zen_amenity' ) ) {
+							$zc_am = zen_amenity( $zc_a, 22 );
+						} else {
+							$zc_am = array( 'icon' => 'check', 'svg' => zc_icon( 'check', 18 ), 'text' => preg_replace( '/^\s*\[\[[a-z0-9-]+\]\]\s*/u', '', (string) $zc_a ) );
+						}
+						if ( '' === trim( (string) $zc_am['text'] ) ) {
+							continue;
+						}
+						?>
+						<li class="zc-amen zc-amen--<?php echo esc_attr( $zc_am['icon'] ); ?>" data-reveal><span class="zc-amen__ico"><?php echo $zc_am['svg']; // phpcs:ignore ?></span><span class="zc-amen__txt"><?php echo esc_html( $zc_am['text'] ); ?></span></li>
 					<?php endforeach; ?>
 				</ul>
 			</div>

@@ -125,7 +125,7 @@ class Zen_Sections_Editor {
 					'post'       => $post ? $post->ID : 0,
 					'trans'      => $tr,
 				)
-			) . ';',
+			) . ';window.ZenAmenityIcons=' . wp_json_encode( class_exists( 'Zen_Amenities' ) ? Zen_Amenities::admin_data() : null ) . ';',
 			'before'
 		);
 	}
