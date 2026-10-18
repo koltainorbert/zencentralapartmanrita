@@ -292,6 +292,9 @@ class Zen_Admin {
 		if ( in_array( $key, array( 'url', 'poster', 'facebook', 'instagram', 'google_maps', 'payment_url', 'nhb_url', 'nhb_script', 'card_payment_url', 'google_review_url', 'booking_review_url' ), true ) ) {
 			return esc_url_raw( $v );
 		}
+		if ( 'credit_text' === $key ) {
+			return wp_kses( $v, array( 'a' => array( 'href' => true, 'target' => true, 'rel' => true, 'title' => true, 'class' => true ) ) ); // készítő felirat: link engedélyezett
+		}
 		if ( in_array( $key, array( 'kb_extra', 'bank_details', 'system_prompt', 'custom_css', 'short', 'note' ), true ) || false !== strpos( $v, "\n" ) ) {
 			return sanitize_textarea_field( $v );
 		}

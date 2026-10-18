@@ -74,7 +74,7 @@ $zc_pay   = zc_opt( 'general.payment_logo', array() );
 				<span><?php echo esc_html( str_replace( '{year}', (string) zc_opt( 'general.copyright_year', gmdate( 'Y' ) ), zc_t( 'copyright' ) ) ); ?></span>
 				<a href="<?php echo esc_url( zc_page_url( 'privacy' ) ); ?>"><?php echo esc_html( zc_t( 'privacy' ) ); ?></a>
 				<span><?php echo esc_html( zc_t( 'ntak' ) ); ?></span>
-				<span><?php echo esc_html( zc_opt( 'general.credit_text', zc_t( 'credit' ) ) ); ?></span>
+				<span class="zc-footer__credit"><?php echo wp_kses( (string) zc_opt( 'general.credit_text', zc_t( 'credit' ) ), array( 'a' => array( 'href' => true, 'target' => true, 'rel' => true, 'title' => true, 'class' => true ) ) ); ?></span>
 			</p>
 		</div>
 	</div>
