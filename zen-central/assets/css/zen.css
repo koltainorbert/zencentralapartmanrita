@@ -272,10 +272,10 @@ html.zc-lock, html.zc-lock body { overflow: hidden; }
 .tone-accent .zc-deco__mark { color: var(--zc-surface); }
 /* Lótusz a „Kérjen ajánlatot” doboz jobb alsó sarkán, a doboz fölött (z-index 0) */
 .zc-cta__card > :not(.zc-deco--card) { position: relative; z-index: 1; }
-.zc-sec__deco.zc-deco--card { inset: auto; right: 0; bottom: 0; width: 0; height: 0; z-index: 0; overflow: visible; --dw: clamp(120px, 15vw, 210px); --dop: .77; }
+.zc-sec__deco.zc-deco--card { inset: auto; right: 0; bottom: 0; width: 0; height: 0; z-index: 0; overflow: visible; --dw: clamp(120px, 15vw, 210px); --dop: .5; }
 .zc-deco--card.zc-deco--sz-s { --dw: clamp(90px, 11vw, 150px); }
 .zc-deco--card.zc-deco--sz-l { --dw: clamp(160px, 20vw, 290px); }
-.zc-deco--card .zc-deco__mark { right: calc(var(--dw) * var(--dz, 1) * -.42); bottom: calc(var(--dw) * var(--dz, 1) * -.2); color: color-mix(in srgb, var(--zc-accent) 34%, #fff); filter: drop-shadow(0 6px 14px color-mix(in srgb, var(--zc-accent) 22%, transparent)); }
+.zc-deco--card .zc-deco__mark { right: calc(var(--dw) * var(--dz, 1) * -.42); bottom: calc(var(--dw) * var(--dz, 1) * -.2); color: color-mix(in srgb, var(--zc-accent) 34%, #fff); }
 @media (max-width: 760px) { .zc-deco--r, .zc-deco--l { --dop: .35; } .zc-deco--tl .zc-deco__mark, .zc-deco--tr .zc-deco__mark { top: -8%; } .zc-deco--card .zc-deco__mark { right: -8px; bottom: calc(var(--dw) * var(--dz, 1) * -.32); } }
 .tone-alt .zc-sec__bg .zc-media, .tone-auto .zc-sec__bg .zc-media { opacity: .5; mix-blend-mode: multiply; }
 :root[data-theme="dark"] .zc-sec__bg .zc-media { opacity: .08; mix-blend-mode: screen; filter: invert(1) grayscale(1); }

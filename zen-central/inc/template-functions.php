@@ -220,8 +220,8 @@ function zc_deco_conf( $s ) {
 		'form'    => array( 'lotus', 'card', 'm' ),
 		'booking' => array( 'jinjang', 'tr', 'm' ),
 		'gallery' => array( 'jinjang', 'tl', 's' ),
-		// Közeli látnivalók: lótusz a lista jobb felső sarkán – 20%-kal nagyobb, halványabb.
-		'map_list' => array( 'lotus', 'card', 'm', 120, 50 ),
+		// Közeli látnivalók: lótusz a lista jobb felső sarkán (egységes, halvány – mint mindenhol).
+		'map_list' => array( 'lotus', 'card', 'm' ),
 	);
 	$d = $def[ $type ] ?? array( 'none', 'r', 'm' );
 	// Főoldal: az első bevezető szekció egy halvány lótuszt kap a szöveg oldalán (a kártyás Jin-Jang mellé).
