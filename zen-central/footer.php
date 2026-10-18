@@ -13,6 +13,7 @@ $zc_pay   = zc_opt( 'general.payment_logo', array() );
 ?>
 </main>
 
+<?php echo function_exists( 'zen_photo_strip' ) ? zen_photo_strip() : ''; // phpcs:ignore ?>
 <?php echo function_exists( 'zen_promo_box' ) ? zen_promo_box() : ''; // phpcs:ignore ?>
 <footer class="zc-footer">
 	<div class="zc-footer__cta">

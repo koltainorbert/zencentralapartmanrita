@@ -156,6 +156,14 @@ class Zen_Extras {
 				'from'       => '',
 				'to'         => '',
 			),
+			'strip' => array(
+				'enabled'      => true,
+				'images'       => array(),  // üres = automatikusan az apartmanok borító- és galériaképei
+				'interval'     => 3.2,      // másodperc két képcsere között
+				'animate'      => true,     // automatikus képcsere + Ken Burns + belépő animáció
+				'show_link'    => true,     // „Galéria megnyitása” gomb a nagy képen
+				'hide_gallery' => true,     // a Galéria oldalon ne jelenjen meg (ott amúgy is ott vannak a képek)
+			),
 		);
 	}
 
@@ -192,6 +200,97 @@ class Zen_Extras {
 		add_action( 'admin_post_zen_guide_test', array( __CLASS__, 'admin_test' ) );
 		add_shortcode( 'zen_szep', array( __CLASS__, 'sc_szep' ) );
 		add_shortcode( 'zen_promo', array( __CLASS__, 'sc_promo' ) );
+		add_shortcode( 'zen_photo_strip', array( __CLASS__, 'strip_html' ) );
+	}
+
+	/* ==================================================================
+	 * 4) Fotósáv a lábléc fölött (régi oldal galéria-sávja, modern animációval)
+	 * ================================================================== */
+
+	/** A sáv képei: admin lista, vagy automatikusan az apartmanok képei (felváltva, ismétlés nélkül). */
+	public static function strip_pool() {
+		$own  = array_values( array_filter( (array) self::opt( 'strip.images', array() ), fn( $m ) => is_array( $m ) && ( ! empty( $m['url'] ) || ! empty( $m['id'] ) ) && 'video' !== ( $m['type'] ?? 'image' ) ) );
+		$list = $own;
+		if ( ! $list && function_exists( 'zen_apartments' ) ) {
+			$cols = array();
+			foreach ( zen_apartments() as $a ) {
+				$c = array();
+				if ( ! empty( $a['cover']['url'] ) || ! empty( $a['cover']['id'] ) ) {
+					$c[] = $a['cover'];
+				}
+				foreach ( (array) ( $a['gallery'] ?? array() ) as $g ) {
+					$c[] = $g;
+				}
+				$cols[] = array_values( array_filter( $c, fn( $m ) => is_array( $m ) && 'video' !== ( $m['type'] ?? 'image' ) && ( ! empty( $m['url'] ) || ! empty( $m['id'] ) ) ) );
+			}
+			for ( $i = 0, $max = $cols ? max( array_map( 'count', $cols ) ) : 0; $i < $max; $i++ ) {
+				foreach ( $cols as $c ) {
+					if ( isset( $c[ $i ] ) ) {
+						$list[] = $c[ $i ];
+					}
+				}
+			}
+		}
+		$seen = array();
+		$out  = array();
+		foreach ( $list as $m ) {
+			$k = ! empty( $m['id'] ) ? 'id' . (int) $m['id'] : (string) $m['url'];
+			if ( isset( $seen[ $k ] ) ) {
+				continue;
+			}
+			$seen[ $k ] = 1;
+			$out[]      = $m;
+		}
+		return array_slice( $out, 0, 60 );
+	}
+
+	public static function strip_html() {
+		if ( ! self::opt( 'strip.enabled', true ) ) {
+			return '';
+		}
+		if ( self::opt( 'strip.hide_gallery', true ) && is_singular() && 'gallery' === get_post_meta( get_queried_object_id(), '_zen_key', true ) ) {
+			return '';
+		}
+		$pool = self::strip_pool();
+		if ( count( $pool ) < 3 ) {
+			return '';
+		}
+		$n     = min( 7, count( $pool ) );
+		$anim  = (bool) self::opt( 'strip.animate', true );
+		$ms    = (int) round( max( 1.5, min( 15, (float) self::opt( 'strip.interval', 3.2 ) ) ) * 1000 );
+		$lang  = function_exists( 'zen_lang' ) ? zen_lang() : 'hu';
+		$label = function_exists( 'zen_t' ) ? zen_t( 'open_gallery' ) : 'Galéria';
+		$count = function_exists( 'zen_t' ) ? zen_t( 'photos', null, array( 'n' => count( $pool ) ) ) : count( $pool ) . ' fotó';
+		$json  = array();
+		foreach ( $pool as $m ) {
+			$json[] = array(
+				't' => Zen_Media::url( $m, 'medium_large' ),
+				'w' => Zen_Media::url( $m, 'zc-wide' ),
+				'a' => (string) ( $m['alt'] ?? '' ),
+			);
+		}
+		$h  = '<section class="zc-strip' . ( $anim ? ' zc-strip--anim' : '' ) . ' zc-strip--n' . $n . '" data-zen-strip data-gallery data-interval="' . $ms . '" aria-label="' . esc_attr( $label ) . '">';
+		$h .= '<div class="zc-strip__grid">';
+		for ( $i = 0; $i < $n; $i++ ) {
+			$src = 0 === $i ? $json[ $i ]['w'] : $json[ $i ]['t'];
+			$alt = '' !== $json[ $i ]['a'] ? $json[ $i ]['a'] : $label;
+			$h  .= '<button type="button" class="zc-strip__tile' . ( 0 === $i ? ' zc-strip__tile--hero' : '' ) . '" data-i="' . $i . '" style="--k:' . $i . '" aria-label="' . esc_attr( $label ) . '">';
+			$h  .= '<span class="zc-strip__img"><img src="' . esc_url( $src ) . '" alt="' . esc_attr( $alt ) . '" loading="lazy" decoding="async"' . ( 0 === $i ? ' sizes="50vw"' : '' ) . '></span>';
+			$h  .= '<span class="zc-strip__zoom" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2M11 8.5v5M8.5 11h5"/></svg></span>';
+			$h  .= '</button>';
+		}
+		$h .= '</div>';
+		if ( self::opt( 'strip.show_link', true ) && function_exists( 'zen_page_url' ) ) {
+			$h .= '<a class="zc-strip__cta" href="' . esc_url( zen_page_url( 'gallery', $lang ) ) . '"><span class="zc-strip__cta-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/></svg></span><span class="zc-strip__cta-t"><b>' . esc_html( $label ) . '</b><small>' . esc_html( $count ) . '</small></span><span class="zc-strip__cta-arr" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>';
+		}
+		// A teljes kép-készlet a lightboxnak (rejtve) + JSON az animációhoz.
+		$h .= '<div class="zc-strip__pool" hidden>';
+		foreach ( $pool as $i => $m ) {
+			$h .= '<button type="button" tabindex="-1" data-lb="' . esc_url( Zen_Media::url( $m, 'full' ) ) . '" data-type="image"><img alt="' . esc_attr( $json[ $i ]['a'] ) . '" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" width="1" height="1"></button>';
+		}
+		$h .= '</div><script type="application/json" data-strip-pool>' . wp_json_encode( $json ) . '</script>';
+		$h .= '</section>';
+		return $h;
 	}
 
 	/* ==================================================================

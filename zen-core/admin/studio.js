@@ -322,7 +322,13 @@
 				{ k: 'extras.promo.enabled', l: 'Akciós doboz bekapcsolva', t: 'toggle' }, { k: 'extras.promo.show_book', l: 'Foglalás gomb a dobozban', t: 'toggle' },
 				{ k: 'extras.promo.discount', l: 'Kedvezmény jelölés (pl. -15%) – opcionális' }, { k: 'extras.promo.from', l: 'Látható ettől (opcionális)', t: 'date' }, { k: 'extras.promo.to', l: 'Látható eddig (opcionális)', t: 'date' },
 				lt('extras.promo.badge', 'Jelvény felirata'), lt('extras.promo.title', 'Cím'), lt('extras.promo.text', 'Szöveg', true), lt('extras.promo.cta', 'Hírlevél gomb felirata')
-			]))], 'A doboz a lábléc fölött jelenik meg minden oldalon; a gomb a hírlevél-feliratkozó ablakot nyitja. Lejárat dátumnál automatikusan eltűnik. A shortcode: [zen_promo].')
+			]))], 'A doboz a lábléc fölött jelenik meg minden oldalon; a gomb a hírlevél-feliratkozó ablakot nyitja. Lejárat dátumnál automatikusan eltűnik. A shortcode: [zen_promo].'),
+			card('4) Fotósáv az oldalak alján (nagy kép + 6 csempe, élő képcsere)', [grid(fields([
+				{ k: 'extras.strip.enabled', l: 'Fotósáv bekapcsolva', t: 'toggle' }, { k: 'extras.strip.animate', l: 'Animáció (képcsere, lassú zoom, belépő effekt)', t: 'toggle' },
+				{ k: 'extras.strip.show_link', l: '„Galéria megnyitása” gomb a nagy képen', t: 'toggle' }, { k: 'extras.strip.hide_gallery', l: 'A Galéria oldalon ne jelenjen meg', t: 'toggle' },
+				{ k: 'extras.strip.interval', l: 'Képcsere gyakorisága (másodperc)', t: 'range', min: 1.5, max: 10, step: 0.5 },
+				{ k: 'extras.strip.images', l: 'Saját képek (üresen hagyva: az apartmanok borító- és galériaképei, felváltva)', t: 'gallery', wide: true }
+			]))], 'Minden oldal alján, a lábléc fölött jelenik meg. Kattintásra a képek nagyban, lapozhatóan nyílnak. Ha az egér a sáv fölött van, a képcsere szünetel. A shortcode: [zen_photo_strip].')
 		]);
 	};
 

@@ -339,4 +339,71 @@
 			}, { passive: true });
 		}
 	}
+
+	/* ---------- Fotósáv (lábléc fölött): belépő függöny, élő képcsere, parallax ---------- */
+	$$('[data-zen-strip]').forEach(function (st) {
+		var data = [];
+		try { data = JSON.parse(($('[data-strip-pool]', st) || {}).textContent || '[]'); } catch (e) { data = []; }
+		var tiles = $$('.zc-strip__tile', st), pool = $$('.zc-strip__pool [data-lb]', st);
+		var anim = st.classList.contains('zc-strip--anim') && !reduce;
+		var shown = tiles.map(function (t) { return +t.getAttribute('data-i'); });
+		tiles.forEach(function (t) {
+			t.addEventListener('click', function () { var p = pool[+t.getAttribute('data-i')]; if (p) { p.click(); } });
+		});
+		if (!anim) { st.classList.add('is-in'); return; }
+		var timer = null, hover = false, next = tiles.length, last = -1, fx = 0;
+		st.addEventListener('mouseenter', function () { hover = true; });
+		st.addEventListener('mouseleave', function () { hover = false; });
+		st.addEventListener('focusin', function () { hover = true; });
+		st.addEventListener('focusout', function () { hover = false; });
+		function pickTile() { var c, n = 0; do { c = Math.floor(Math.random() * tiles.length); n++; } while (n < 8 && (c === last || (c === 0 && Math.random() < .55))); last = c; return c; }
+		function nextIdx() {
+			for (var k = 0; k < data.length; k++) { var i = (next + k) % data.length; if (shown.indexOf(i) < 0) { next = i + 1; return i; } }
+			return -1;
+		}
+		function swap() {
+			if (hover || d.hidden || data.length <= tiles.length) { return; }
+			var ti = pickTile(), t = tiles[ti], idx = nextIdx();
+			if (idx < 0) { return; }
+			var it = data[idx], img = new Image();
+			img.decoding = 'async'; img.alt = it.a || '';
+			var go = function () {
+				var old = $('.zc-strip__img', t), layer = d.createElement('span');
+				layer.className = 'zc-strip__img zc-strip__img--in fx-' + (fx++ % 4);
+				layer.appendChild(img);
+				t.appendChild(layer);
+				t.classList.remove('is-swap'); void t.offsetWidth; t.classList.add('is-swap');
+				requestAnimationFrame(function () { requestAnimationFrame(function () { layer.classList.add('is-on'); }); });
+				shown[ti] = idx; t.setAttribute('data-i', idx);
+				setTimeout(function () {
+					if (old && old.parentNode) { old.parentNode.removeChild(old); }
+					layer.className = 'zc-strip__img';
+					t.classList.remove('is-swap');
+				}, 1700);
+			};
+			img.onload = go;
+			img.src = ti === 0 ? (it.w || it.t) : (it.t || it.w);
+		}
+		function start() { if (!timer && data.length > tiles.length) { timer = setInterval(swap, +st.getAttribute('data-interval') || 3200); } }
+		function stop() { if (timer) { clearInterval(timer); timer = null; } }
+		if ('IntersectionObserver' in w) {
+			var io = new IntersectionObserver(function (es) {
+				es.forEach(function (e) {
+					if (e.isIntersecting) { st.classList.add('is-in'); setTimeout(start, 1400); } else { stop(); }
+				});
+			}, { threshold: 0.15 });
+			io.observe(st);
+		} else { st.classList.add('is-in'); start(); }
+		// Finom parallax görgetéskor
+		var raf = 0;
+		function par() {
+			raf = 0;
+			var r = st.getBoundingClientRect(), vh = w.innerHeight || 800;
+			if (r.bottom < 0 || r.top > vh) { return; }
+			var p = ((r.top + r.height / 2) - vh / 2) / (vh / 2 + r.height / 2);
+			st.style.setProperty('--py', Math.max(-1, Math.min(1, p)).toFixed(3));
+		}
+		w.addEventListener('scroll', function () { if (!raf) { raf = requestAnimationFrame(par); } }, { passive: true });
+		par();
+	});
 })();
