@@ -96,6 +96,7 @@ class Zen_Admin {
 			'defaultPrompt' => class_exists( 'Zen_AI' ) ? Zen_AI::default_prompt() : '',
 			'kb'         => class_exists( 'Zen_AI' ) ? Zen_AI::kb() : array(),
 			'eventsLast' => (int) get_option( 'zen_events_last', 0 ),
+			'aiStatus'   => get_option( 'zen_ai_status', array() ),
 			'eventsCount'=> count( (array) get_option( 'zen_live_events', array() ) ),
 			'version'    => ZEN_CORE_VER,
 		);
@@ -166,6 +167,11 @@ class Zen_Admin {
 		) );
 		register_rest_route( 'zen/v1', '/admin/sideload', array(
 			array( 'methods' => 'POST', 'permission_callback' => $perm, 'callback' => fn() => rest_ensure_response( Zen_Importer::sideload_batch( 8 ) ) ),
+		) );
+		register_rest_route( 'zen/v1', '/admin/ai-test', array(
+			array( 'methods' => 'POST', 'permission_callback' => $perm, 'callback' => function ( WP_REST_Request $r ) {
+				return rest_ensure_response( class_exists( 'Zen_AI' ) ? Zen_AI::test( (string) $r->get_param( 'q' ) ) : array( 'ok' => false, 'error' => 'Zen AI nincs betöltve' ) );
+			} ),
 		) );
 		register_rest_route( 'zen/v1', '/admin/events', array(
 			array( 'methods' => 'POST', 'permission_callback' => $perm, 'callback' => fn() => rest_ensure_response( array( 'status' => class_exists( 'Zen_AI' ) ? Zen_AI::sync_events() : array() ) ) ),

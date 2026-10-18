@@ -257,15 +257,93 @@ TXT;
 		return $send( array( 'reply' => $text, 'chips' => self::chips( $lang, $text ), 'actions' => $actions ) );
 	}
 
+	/** Alapértelmezett Anthropic modell (ha az adminban üres vagy ismeretlen a megadott). */
+	const DEFAULT_MODEL = 'claude-sonnet-5-5';
+
+	/** Az utolsó hívás adatai (modell, keresés, próbálkozások) – az admin teszthez. */
+	protected static $meta = array();
+
 	/**
-	 * Szolgáltató hívása. $system: [statikus, dinamikus] (vagy szöveg).
-	 * Anthropic: prompt-gyorsítótár + élő webes keresés (web_search) · Gemini: Google Search grounding · OpenAI: szöveg.
+	 * Szolgáltató hívása + állapot rögzítése (utolsó hiba / siker az adminban látszik).
 	 */
 	protected static function call_provider( $system, $msgs ) {
+		self::$meta = array( 'provider' => Zen_Settings::get( 'ai.provider', 'anthropic' ), 'model' => '', 'search' => false, 'notes' => array() );
+		$t0 = microtime( true );
+		$r  = self::provider_request( $system, $msgs );
+		if ( ! is_wp_error( $r ) && '' === trim( (string) $r ) ) {
+			$r = new WP_Error( 'empty', 'Üres válasz érkezett.' );
+		}
+		self::$meta['ms'] = (int) round( ( microtime( true ) - $t0 ) * 1000 );
+		self::note( $r );
+		return $r;
+	}
+
+	/** Állapot mentése: hiba mindig, siker csak ha előtte hiba volt vagy 1 óra eltelt (kevés DB-írás). */
+	protected static function note( $r ) {
+		$prev = (array) get_option( 'zen_ai_status', array() );
+		$ok   = ! is_wp_error( $r );
+		if ( $ok && ! empty( $prev['ok'] ) && time() - (int) ( $prev['t'] ?? 0 ) < HOUR_IN_SECONDS ) {
+			return;
+		}
+		$row = array(
+			't'        => time(),
+			'ok'       => $ok,
+			'provider' => self::$meta['provider'] ?? '',
+			'model'    => self::$meta['model'] ?? '',
+			'search'   => ! empty( self::$meta['search'] ),
+			'notes'    => implode( ' · ', (array) ( self::$meta['notes'] ?? array() ) ),
+			'code'     => $ok ? '' : (string) $r->get_error_code(),
+			'msg'      => $ok ? '' : mb_substr( (string) $r->get_error_message(), 0, 400 ),
+		);
+		$row['hint'] = $ok ? '' : self::hint( $row['code'], $row['msg'] );
+		update_option( 'zen_ai_status', $row, false );
+	}
+
+	/** Hibaüzenet → érthető magyar teendő. */
+	public static function hint( $code, $msg ) {
+		$m = strtolower( (string) $msg . ' ' . (string) $code );
+		$map = array(
+			'nokey'          => 'Nincs API kulcs elmentve (AI fül → API kulcs, majd Mentés).',
+			'credit balance' => 'Elfogyott az Anthropic kredit: console.anthropic.com → Billing, tölts fel egyenleget.',
+			'invalid x-api-key' => 'Hibás API kulcs. Másold be újra (sk-ant-… kezdetű), majd Mentés.',
+			'authentication' => 'Hibás vagy visszavont API kulcs. Hozz létre újat a Console-ban és mentsd el.',
+			'api_401'        => 'Hibás vagy visszavont API kulcs. Hozz létre újat a Console-ban és mentsd el.',
+			'model'          => 'Ismeretlen modellnév. Hagyd üresen a Modell mezőt (alapértelmezett: ' . self::DEFAULT_MODEL . ').',
+			'rate_limit'     => 'Elérted a fiók percenkénti limitjét. Pár perc múlva újra megy; tartósan: Console → Limits.',
+			'api_429'        => 'Elérted a fiók percenkénti limitjét. Pár perc múlva újra megy.',
+			'overloaded'     => 'Az Anthropic szerver túlterhelt volt. Átmeneti, magától rendeződik.',
+			'curl error 28'  => 'Időtúllépés a tárhely és az API között. Kapcsold ki a webes keresést vagy csökkentsd a keresések számát.',
+			'timed out'      => 'Időtúllépés a tárhely és az API között. Kapcsold ki a webes keresést vagy csökkentsd a keresések számát.',
+			'curl error'     => 'A tárhely nem éri el az API-t (hálózat/tűzfal). SiteGround: kimenő kapcsolatok ellenőrzése.',
+			'permission'     => 'A kulcs fiókja nem jogosult erre (pl. webes keresés nincs engedélyezve a Console-ban).',
+		);
+		foreach ( $map as $needle => $txt ) {
+			if ( false !== strpos( $m, $needle ) ) {
+				return $txt;
+			}
+		}
+		return 'Ismeretlen hiba – a nyers üzenet fent látható.';
+	}
+
+	/** Hibaüzenet kiolvasása az API JSON válaszából. */
+	protected static function api_error( $res ) {
+		$code = (int) wp_remote_retrieve_response_code( $res );
+		$raw  = (string) wp_remote_retrieve_body( $res );
+		$j    = json_decode( $raw, true );
+		$msg  = $j['error']['message'] ?? ( is_string( $j['error'] ?? null ) ? $j['error'] : $raw );
+		$type = $j['error']['type'] ?? ( $j['error']['status'] ?? '' );
+		return array( $code, trim( $type . ': ' . $msg, ': ' ) );
+	}
+
+	/**
+	 * Tényleges HTTP hívás. $system: [statikus, dinamikus] (vagy szöveg).
+	 * Anthropic: prompt-gyorsítótár + élő webes keresés, automatikus újrapróbálás (keresés / temperature / cache / modell nélkül).
+	 */
+	protected static function provider_request( $system, $msgs ) {
 		$provider = Zen_Settings::get( 'ai.provider', 'anthropic' );
-		$key      = Zen_Security::decrypt( (string) Zen_Settings::get( 'ai.api_key', '' ) );
+		$key      = trim( Zen_Security::decrypt( (string) Zen_Settings::get( 'ai.api_key', '' ) ) );
 		if ( '' === $key ) {
-			return new WP_Error( 'nokey', 'No API key' );
+			return new WP_Error( 'nokey', 'Nincs API kulcs (vagy a titkosított kulcs nem fejthető vissza – mentsd el újra).' );
 		}
 		$parts  = is_array( $system ) ? $system : array( (string) $system, '' );
 		$sys    = trim( implode( "\n\n", array_filter( $parts ) ) );
@@ -276,10 +354,11 @@ TXT;
 		$args   = array( 'timeout' => $search ? 60 : 35, 'headers' => array( 'Content-Type' => 'application/json' ) );
 
 		if ( 'openai' === $provider ) {
+			self::$meta['model'] = $model ?: 'gpt-4o-mini';
 			$args['headers']['Authorization'] = 'Bearer ' . $key;
 			$args['body']                     = wp_json_encode(
 				array(
-					'model'       => $model ?: 'gpt-4o-mini',
+					'model'       => self::$meta['model'],
 					'temperature' => $temp,
 					'max_tokens'  => $max,
 					'messages'    => array_merge( array( array( 'role' => 'system', 'content' => $sys ) ), $msgs ),
@@ -290,10 +369,16 @@ TXT;
 				return $res;
 			}
 			$j = json_decode( wp_remote_retrieve_body( $res ), true );
-			return $j['choices'][0]['message']['content'] ?? new WP_Error( 'api', wp_remote_retrieve_body( $res ) );
+			if ( isset( $j['choices'][0]['message']['content'] ) ) {
+				return $j['choices'][0]['message']['content'];
+			}
+			list( $c, $e ) = self::api_error( $res );
+			return new WP_Error( 'api_' . $c, $e );
 		}
 
 		if ( 'gemini' === $provider ) {
+			self::$meta['model']  = $model ?: 'gemini-2.5-flash';
+			self::$meta['search'] = $search;
 			$contents = array();
 			foreach ( $msgs as $m ) {
 				$contents[] = array( 'role' => 'assistant' === $m['role'] ? 'model' : 'user', 'parts' => array( array( 'text' => $m['content'] ) ) );
@@ -307,8 +392,7 @@ TXT;
 				$body['tools'] = array( array( 'google_search' => new stdClass() ) );
 			}
 			$args['body'] = wp_json_encode( $body );
-			$m   = rawurlencode( $model ?: 'gemini-2.5-flash' );
-			$res = wp_remote_post( 'https://generativelanguage.googleapis.com/v1beta/models/' . $m . ':generateContent?key=' . rawurlencode( $key ), $args );
+			$res = wp_remote_post( 'https://generativelanguage.googleapis.com/v1beta/models/' . rawurlencode( self::$meta['model'] ) . ':generateContent?key=' . rawurlencode( $key ), $args );
 			if ( is_wp_error( $res ) ) {
 				return $res;
 			}
@@ -323,51 +407,108 @@ TXT;
 					$src[ $ch['web']['uri'] ] = $ch['web']['title'] ?? $ch['web']['uri'];
 				}
 			}
-			return '' !== $txt ? $txt . self::sources_md( $src ) : new WP_Error( 'api', wp_remote_retrieve_body( $res ) );
+			if ( '' !== $txt ) {
+				return $txt . self::sources_md( $src );
+			}
+			list( $c, $e ) = self::api_error( $res );
+			return new WP_Error( 'api_' . $c, $e );
 		}
 
 		// Anthropic Claude (alapértelmezett).
 		$args['headers']['x-api-key']         = $key;
 		$args['headers']['anthropic-version'] = '2023-06-01';
-		$blocks = array( array( 'type' => 'text', 'text' => $parts[0], 'cache_control' => array( 'type' => 'ephemeral' ) ) );
-		if ( ! empty( $parts[1] ) ) {
-			$blocks[] = array( 'type' => 'text', 'text' => $parts[1] );
-		}
-		$body = array(
-			'model'       => $model ?: 'claude-sonnet-5-5',
-			'max_tokens'  => $max,
-			'temperature' => $temp,
-			'system'      => $blocks,
-			'messages'    => $msgs,
-		);
-		if ( $search ) {
-			$body['tools'] = array(
-				array(
-					'type'          => 'web_search_20250305',
-					'name'          => 'web_search',
-					'max_uses'      => max( 1, min( 8, (int) Zen_Settings::get( 'ai.web_search_max', 3 ) ) ),
-					'user_location' => array( 'type' => 'approximate', 'city' => 'Veszprém', 'region' => 'Veszprém', 'country' => 'HU', 'timezone' => 'Europe/Budapest' ),
-				),
-			);
-		}
-		$txt = '';
-		$src = array();
-		for ( $round = 0; $round < 3; $round++ ) {
-			$args['body'] = wp_json_encode( $body );
-			$res          = wp_remote_post( 'https://api.anthropic.com/v1/messages', $args );
-			if ( is_wp_error( $res ) ) {
-				return '' !== $txt ? $txt : $res;
+		$use_model = $model ?: self::DEFAULT_MODEL;
+		$use_temp  = true;
+		$use_cache = true;
+		$tools     = $search ? array(
+			array(
+				'type'          => 'web_search_20250305',
+				'name'          => 'web_search',
+				'max_uses'      => max( 1, min( 8, (int) Zen_Settings::get( 'ai.web_search_max', 3 ) ) ),
+				'user_location' => array( 'type' => 'approximate', 'city' => 'Veszprém', 'region' => 'Veszprém', 'country' => 'HU', 'timezone' => 'Europe/Budapest' ),
+			),
+		) : null;
+		$messages = $msgs;
+		$txt      = '';
+		$src      = array();
+		$retried  = false;
+		$err      = null;
+
+		for ( $i = 0; $i < 7; $i++ ) {
+			$blocks = array( array( 'type' => 'text', 'text' => $parts[0] ) );
+			if ( $use_cache ) {
+				$blocks[0]['cache_control'] = array( 'type' => 'ephemeral' );
 			}
-			$j = json_decode( wp_remote_retrieve_body( $res ), true );
-			if ( empty( $j['content'] ) ) {
-				// Ha a modell nem támogatja a webes keresést, próbáljuk újra nélküle.
-				if ( $search && 0 === $round && false !== strpos( wp_remote_retrieve_body( $res ), 'web_search' ) ) {
-					unset( $body['tools'] );
-					$search = false;
+			if ( ! empty( $parts[1] ) ) {
+				$blocks[] = array( 'type' => 'text', 'text' => $parts[1] );
+			}
+			$body = array(
+				'model'      => $use_model,
+				'max_tokens' => $max,
+				'system'     => $blocks,
+				'messages'   => $messages,
+			);
+			if ( $use_temp ) {
+				$body['temperature'] = $temp;
+			}
+			if ( $tools ) {
+				$body['tools'] = $tools;
+			}
+			self::$meta['model']  = $use_model;
+			self::$meta['search'] = (bool) $tools;
+			$args['body']    = wp_json_encode( $body );
+			$args['timeout'] = $tools ? 50 : 30;
+			$res             = wp_remote_post( 'https://api.anthropic.com/v1/messages', $args );
+
+			if ( is_wp_error( $res ) ) {
+				// Időtúllépés kereséssel → újra keresés nélkül (gyorsabb).
+				if ( $tools && '' === trim( $txt ) ) {
+					$tools = null;
+					self::$meta['notes'][] = 'keresés kikapcsolva (' . $res->get_error_message() . ')';
 					continue;
 				}
-				break;
+				return '' !== trim( $txt ) ? $txt . self::sources_md( $src ) : $res;
 			}
+
+			$j = json_decode( wp_remote_retrieve_body( $res ), true );
+			if ( (int) wp_remote_retrieve_response_code( $res ) >= 400 || empty( $j['content'] ) ) {
+				list( $code, $emsg ) = self::api_error( $res );
+				$low = strtolower( $emsg );
+				$err = new WP_Error( 'api_' . $code, $emsg );
+				if ( in_array( $code, array( 400, 403 ), true ) && $tools && ( false !== strpos( $low, 'web' ) || false !== strpos( $low, 'tool' ) || false !== strpos( $low, 'permission' ) ) ) {
+					$tools = null;
+					self::$meta['notes'][] = 'webes keresés nem elérhető';
+					continue;
+				}
+				if ( 400 === $code && $use_temp && false !== strpos( $low, 'temperature' ) ) {
+					$use_temp = false;
+					self::$meta['notes'][] = 'temperature nélkül';
+					continue;
+				}
+				if ( 400 === $code && $use_cache && false !== strpos( $low, 'cache' ) ) {
+					$use_cache = false;
+					self::$meta['notes'][] = 'gyorsítótár nélkül';
+					continue;
+				}
+				if ( ( 404 === $code || false !== strpos( $low, 'not_found' ) || false !== strpos( $low, 'model:' ) ) && self::DEFAULT_MODEL !== $use_model ) {
+					self::$meta['notes'][] = 'ismeretlen modell (' . $use_model . ') → ' . self::DEFAULT_MODEL;
+					$use_model = self::DEFAULT_MODEL;
+					continue;
+				}
+				if ( ! $retried && ( in_array( $code, array( 429, 500, 502, 503, 529 ), true ) || false !== strpos( $low, 'overloaded' ) ) ) {
+					$retried = true;
+					self::$meta['notes'][] = 'újrapróbálva (' . $code . ')';
+					sleep( 2 );
+					continue;
+				}
+				if ( 400 === $code && $tools ) {
+					$tools = null;
+					self::$meta['notes'][] = 'keresés nélkül újra';
+					continue;
+				}
+				return '' !== trim( $txt ) ? $txt . self::sources_md( $src ) : $err;
+			}
+
 			foreach ( (array) $j['content'] as $c ) {
 				if ( 'text' === ( $c['type'] ?? '' ) ) {
 					$txt .= $c['text'];
@@ -378,15 +519,31 @@ TXT;
 					}
 				}
 			}
-			// Hosszú keresés megszakítva → az asszisztens üzenetet változatlanul visszaküldve folytatjuk.
+			// Hosszú keresés megszakítva → az asszisztens üzenetet változatlanul visszaküldve folytatjuk (az eddigi szöveg megmarad).
 			if ( 'pause_turn' === ( $j['stop_reason'] ?? '' ) ) {
-				$body['messages'][] = array( 'role' => 'assistant', 'content' => $j['content'] );
-				$txt = '';
+				$messages[] = array( 'role' => 'assistant', 'content' => $j['content'] );
 				continue;
 			}
 			break;
 		}
-		return '' !== trim( $txt ) ? $txt . self::sources_md( $src ) : new WP_Error( 'api', isset( $res ) && ! is_wp_error( $res ) ? wp_remote_retrieve_body( $res ) : 'empty' );
+		return '' !== trim( $txt ) ? $txt . self::sources_md( $src ) : ( $err ?: new WP_Error( 'empty', 'Üres válasz érkezett.' ) );
+	}
+
+	/** Admin teszt: valódi hívás, nyers hibával és teendővel. */
+	public static function test( $q ) {
+		$q       = mb_substr( wp_strip_all_tags( (string) $q ), 0, 500 ) ?: 'Szia! Mit érdemes ma csinálni Veszprémben?';
+		$static  = ( trim( (string) Zen_Settings::get( 'ai.system_prompt', '' ) ) ?: self::default_prompt() ) . "\n\n" . self::context( 'hu' );
+		$dynamic = 'Mai dátum és idő: ' . wp_date( 'Y-m-d H:i (l)' ) . ' – időzóna: Europe/Budapest. Az oldal nyelve: hu.';
+		$r       = self::call_provider( array( $static, $dynamic ), array( array( 'role' => 'user', 'content' => $q ) ) );
+		$ok      = ! is_wp_error( $r );
+		return array(
+			'ok'     => $ok,
+			'reply'  => $ok ? self::parse_actions( (string) $r, 'hu' )[0] : '',
+			'error'  => $ok ? '' : $r->get_error_code() . ' – ' . $r->get_error_message(),
+			'hint'   => $ok ? '' : self::hint( $r->get_error_code(), $r->get_error_message() ),
+			'meta'   => self::$meta,
+			'status' => get_option( 'zen_ai_status', array() ),
+		);
 	}
 
 	/** Forráslinkek (legfeljebb 3) a válasz végére, markdownban. */

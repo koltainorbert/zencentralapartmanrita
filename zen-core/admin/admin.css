@@ -198,6 +198,11 @@ textarea.zs-input { min-height: 80px; resize: vertical; }
 .zs-ical__row { display: grid; grid-template-columns: 160px 1fr 1fr; gap: 10px; align-items: end; }
 @media (max-width: 900px) { .zs-ical__row { grid-template-columns: 1fr; } }
 .zs-ical__f { display: grid; gap: 4px; }
+.zs-ai-status { white-space: pre-wrap; padding: 12px 16px; border-radius: 999px; font-size: 13px; line-height: 1.45; margin-bottom: 12px; }
+.zs-ai-status--ok { background: #ecf7ef; color: #1d6b38; }
+.zs-ai-status--err { background: #fdeeee; color: #9b1c1c; border-radius: 16px; }
+.zs-ai-test--ok { border-color: #bfe3c9; }
+.zs-ai-test--err { border-color: #f1b7b7; background: #fff7f7; color: #9b1c1c; }
 .zs-ai-test { white-space: pre-wrap; padding: 14px 16px; border-radius: 16px; background: #faf8f4; border: 1px solid var(--zs-line); min-height: 60px; }
 .zs-info { padding: 12px 14px; border-radius: 14px; background: #faf8f4; }
 .zs-skel { height: 160px; border-radius: 22px; background: linear-gradient(90deg, #eee9e0, #f7f4ef, #eee9e0); background-size: 200% 100%; animation: zsSh 1.2s linear infinite; }
