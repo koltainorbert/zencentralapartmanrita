@@ -105,9 +105,9 @@ class Zen_Settings {
 				'blocked'       => array(), // [{apt,from,to,note}]
 				'payments'      => array( 'transfer', 'cash', 'card' ),
 				'extras'        => array(
-					array( 'key' => 'parking', 'label' => array( 'hu' => 'Saját parkolóhely az udvarban', 'en' => 'Private parking space in the courtyard', 'de' => 'Eigener Parkplatz im Innenhof' ), 'price' => 0, 'per' => 'stay' ),
-					array( 'key' => 'early', 'label' => array( 'hu' => 'Korai érkezés (egyeztetés szerint, felár)', 'en' => 'Early check-in (on request, surcharge)', 'de' => 'Früher Check-in (auf Anfrage, Aufpreis)' ), 'price' => 0, 'per' => 'stay' ),
-					array( 'key' => 'late', 'label' => array( 'hu' => 'Késői távozás (egyeztetés szerint, felár)', 'en' => 'Late check-out (on request, surcharge)', 'de' => 'Später Check-out (auf Anfrage, Aufpreis)' ), 'price' => 0, 'per' => 'stay' ),
+					array( 'key' => 'parking', 'label' => array( 'hu' => 'Saját parkolóhely az udvarban', 'en' => 'Private parking space in the courtyard', 'de' => 'Eigener Parkplatz im Innenhof', 'fr' => 'Place de parking privée dans la cour', 'nl' => 'Eigen parkeerplaats op de binnenplaats' ), 'price' => 0, 'per' => 'stay' ),
+					array( 'key' => 'early', 'label' => array( 'hu' => 'Korai érkezés (egyeztetés szerint, felár)', 'en' => 'Early check-in (on request, surcharge)', 'de' => 'Früher Check-in (auf Anfrage, Aufpreis)', 'fr' => 'Arrivée anticipée (sur demande, avec supplément)', 'nl' => 'Vroege aankomst (op aanvraag, tegen meerprijs)' ), 'price' => 0, 'per' => 'stay' ),
+					array( 'key' => 'late', 'label' => array( 'hu' => 'Késői távozás (egyeztetés szerint, felár)', 'en' => 'Late check-out (on request, surcharge)', 'de' => 'Später Check-out (auf Anfrage, Aufpreis)', 'fr' => 'Départ tardif (sur demande, avec supplément)', 'nl' => 'Laat vertrek (op aanvraag, tegen meerprijs)' ), 'price' => 0, 'per' => 'stay' ),
 				),
 				
 			),
@@ -326,6 +326,15 @@ class Zen_Settings {
 		$apts = get_option( self::OPT_APTS, null );
 		if ( ! is_array( $apts ) || empty( $apts ) ) {
 			$apts = self::default_apartments();
+			if ( function_exists( 'zen_lang_fill_data' ) ) {
+				$fill = zen_lang_fill_data();
+				foreach ( $apts as &$a ) {
+					foreach ( array( 'name', 'short' ) as $f ) {
+						$a[ $f ] += $fill['apts'][ $a['key'] ][ $f ] ?? array();
+					}
+				}
+				unset( $a );
+			}
 		}
 		return $apts;
 	}

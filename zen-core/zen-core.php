@@ -196,3 +196,86 @@ add_action(
 	},
 	5
 );
+
+/* ------------------------------------------------------------------
+ * Frissítés 1.1.0: francia és holland apartmannevek, rövid leírások, extrák
+ * (a mentett adatban hiányzó nyelvi kulcsokat pótolja, a meglévőt nem írja felül)
+ * ------------------------------------------------------------------ */
+function zen_lang_fill_data() {
+	return array(
+		'apts'   => array(
+			'relax'   => array(
+				'name'  => array( 'fr' => 'Appartement RELAX', 'nl' => 'RELAX-appartement' ),
+				'short' => array( 'fr' => 'Studio pour 2 personnes, 20 m², terrasse, parking dans la cour fermée.', 'nl' => 'Studio voor 2 personen, 20 m², terras, parkeerplaats op de afgesloten binnenplaats.' ),
+			),
+			'jinjang' => array(
+				'name'  => array( 'fr' => 'Appartement JIN-JANG', 'nl' => 'JIN-JANG-appartement' ),
+				'short' => array( 'fr' => 'Appartement de 2 chambres pour 4 personnes, 35 m², terrasse.', 'nl' => 'Appartement met 2 slaapkamers voor 4 personen, 35 m², terras.' ),
+			),
+			'lotus'   => array(
+				'name'  => array( 'fr' => 'Appartement LOTUS', 'nl' => 'LOTUS-appartement' ),
+				'short' => array( 'fr' => 'Studio pour 3 personnes, 25 m², terrasse, parking dans la cour fermée.', 'nl' => 'Studio voor 3 personen, 25 m², terras, parkeerplaats op de afgesloten binnenplaats.' ),
+			),
+		),
+		'extras' => array(
+			'parking' => array( 'fr' => 'Place de parking privée dans la cour', 'nl' => 'Eigen parkeerplaats op de binnenplaats' ),
+			'early'   => array( 'fr' => 'Arrivée anticipée (sur demande, avec supplément)', 'nl' => 'Vroege aankomst (op aanvraag, tegen meerprijs)' ),
+			'late'    => array( 'fr' => 'Départ tardif (sur demande, avec supplément)', 'nl' => 'Laat vertrek (op aanvraag, tegen meerprijs)' ),
+		),
+	);
+}
+
+add_action(
+	'init',
+	function () {
+		if ( version_compare( (string) get_option( 'zen_core_db', '1.0.0' ), '1.1.0', '>=' ) || ! class_exists( 'Zen_Settings' ) ) {
+			return;
+		}
+		$fill = zen_lang_fill_data();
+		$saved = get_option( Zen_Settings::OPT_APTS, null );
+		if ( is_array( $saved ) && $saved ) {
+			foreach ( $saved as &$a ) {
+				foreach ( array( 'name', 'short' ) as $f ) {
+					if ( isset( $fill['apts'][ $a['key'] ?? '' ][ $f ] ) && is_array( $a[ $f ] ?? null ) ) {
+						$a[ $f ] += $fill['apts'][ $a['key'] ][ $f ];
+					}
+				}
+			}
+			unset( $a );
+			update_option( Zen_Settings::OPT_APTS, $saved, true );
+		}
+		$opt = get_option( Zen_Settings::OPT, array() );
+		if ( is_array( $opt ) && ! empty( $opt['booking']['extras'] ) && is_array( $opt['booking']['extras'] ) ) {
+			foreach ( $opt['booking']['extras'] as &$e ) {
+				if ( isset( $fill['extras'][ $e['key'] ?? '' ] ) && is_array( $e['label'] ?? null ) ) {
+					$e['label'] += $fill['extras'][ $e['key'] ];
+				}
+			}
+			unset( $e );
+			update_option( Zen_Settings::OPT, $opt, true );
+			Zen_Settings::flush();
+		}
+		update_option( 'zen_core_db', '1.1.0', true );
+	},
+	1
+);
+
+/* Frissítés 1.1.0: a lektorált francia és holland oldalszövegek egyszeri betöltése (URL-ek változatlanok).
+ * Csak adminban fut, egyszer; utána a szövegek a megszokott módon szerkeszthetők. */
+add_action(
+	'admin_init',
+	function () {
+		if ( '1.1.0' === get_option( 'zen_fr_nl_v' ) || ! class_exists( 'Zen_Importer' ) || ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+		update_option( 'zen_fr_nl_v', '1.1.0', false );
+		foreach ( array( 'fr', 'nl' ) as $l ) {
+			if ( in_array( $l, (array) Zen_Settings::get( 'languages.enabled', array() ), true ) ) {
+				Zen_Importer::run( array( 'force' => true, 'lang' => $l ) );
+			}
+		}
+		if ( class_exists( 'Zen_Performance' ) ) {
+			Zen_Performance::purge_everything();
+		}
+	}
+);
