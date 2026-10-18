@@ -163,7 +163,39 @@ function zc_section_open( $s, $extra_class = '' ) {
 		$ov   = isset( $st['overlay'] ) ? max( 0, min( 1, (float) $st['overlay'] ) ) : 0.35;
 		$out .= '<div class="zc-sec__bg" aria-hidden="true" style="--ov:' . esc_attr( $ov ) . '">' . zc_media( $bg, array( 'cover' => true, 'background' => true, 'alt' => '' ) ) . '</div>';
 	}
+	$out .= zc_section_deco( $s );
 	return $out;
+}
+
+/**
+ * Díszítő vízjel a szekció hátterében (a régi oldal stílusa): halvány Jin-Jang / Lótusz / Relax.
+ * Admin: Szekció stílus → Díszítő vízjel, helye, mérete. „auto” = a szekciótípus alapértéke.
+ */
+function zc_section_deco( $s ) {
+	if ( ! class_exists( 'Zen_Logos' ) ) {
+		return '';
+	}
+	$st   = $s['style'] ?? array();
+	$type = (string) ( $s['type'] ?? '' );
+	$def  = array(
+		'cards' => array( 'jinjang', 'tl', 'm' ),
+		'cta'   => array( 'lotus', 'r', 'm' ),
+	);
+	$d    = $def[ $type ] ?? array( 'none', 'r', 'm' );
+	$deco = (string) ( $st['deco'] ?? 'auto' );
+	$deco = ( '' === $deco || 'auto' === $deco ) ? $d[0] : $deco;
+	if ( 'none' === $deco ) {
+		return '';
+	}
+	$pos  = (string) ( $st['deco_pos'] ?? 'auto' );
+	$pos  = in_array( $pos, array( 'tl', 'tr', 'l', 'r', 'bl', 'br' ), true ) ? $pos : $d[1];
+	$size = (string) ( $st['deco_size'] ?? 'auto' );
+	$size = in_array( $size, array( 's', 'm', 'l' ), true ) ? $size : $d[2];
+	$svg  = Zen_Logos::svg( sanitize_key( $deco ) );
+	if ( '' === $svg ) {
+		return '';
+	}
+	return '<div class="zc-sec__deco zc-deco--' . esc_attr( $pos ) . ' zc-deco--' . esc_attr( $size ) . ' zc-deco--' . esc_attr( sanitize_key( $deco ) ) . '" aria-hidden="true"><span class="zc-deco__mark">' . $svg . '</span></div>';
 }
 
 function zc_section_close() {

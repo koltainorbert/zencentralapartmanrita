@@ -251,6 +251,25 @@ html.zc-lock, html.zc-lock body { overflow: hidden; }
 .tone-dark { background: #0f0d0b; color: #f3ede3; --zc-text: #f3ede3; --zc-muted: rgba(243,237,227,.72); --zc-line: rgba(255,255,255,.14); --zc-surface: rgba(255,255,255,.06); --zc-surface-2: rgba(255,255,255,.08); }
 .zc-sec__bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
 .zc-sec__bg .zc-media { width: 100%; height: 100%; object-fit: cover; opacity: calc(1 - var(--ov, .35)); }
+/* Díszítő vízjel (régi oldal stílusa): halvány, a szekció szélén kifutó szimbólum */
+.zc-sec__deco { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.zc-deco__mark { position: absolute; display: block; color: #fff; opacity: .55; }
+.zc-deco__mark svg { display: block; width: 100%; height: auto; }
+.zc-deco--s .zc-deco__mark { width: clamp(180px, 24vw, 340px); }
+.zc-deco--m .zc-deco__mark { width: clamp(240px, 34vw, 520px); }
+.zc-deco--l .zc-deco__mark { width: clamp(300px, 46vw, 760px); }
+.zc-deco--tl .zc-deco__mark { left: -6%; top: -14%; }
+.zc-deco--tr .zc-deco__mark { right: -6%; top: -14%; }
+.zc-deco--l .zc-deco__mark { left: 3%; top: 50%; translate: 0 -50%; }
+.zc-deco--r .zc-deco__mark { right: 3%; top: 50%; translate: 0 -50%; }
+.zc-deco--bl .zc-deco__mark { left: -6%; bottom: -14%; }
+.zc-deco--br .zc-deco__mark { right: -6%; bottom: -14%; }
+.zc-deco--jinjang .zc-deco__mark { opacity: .5; transform: scaleX(-1); }
+.zc-deco--lotus .zc-deco__mark { opacity: .62; }
+.zc-deco--relax .zc-deco__mark { opacity: .5; }
+.tone-dark .zc-deco__mark, .zc-sec:has(.zc-sec__bg) .zc-deco__mark { opacity: .06; }
+.tone-accent .zc-deco__mark { color: var(--zc-surface); }
+@media (max-width: 760px) { .zc-deco--r .zc-deco__mark, .zc-deco--l .zc-deco__mark { opacity: .35; } .zc-deco--tl .zc-deco__mark, .zc-deco--tr .zc-deco__mark { top: -8%; } }
 .tone-alt .zc-sec__bg .zc-media, .tone-auto .zc-sec__bg .zc-media { opacity: .5; mix-blend-mode: multiply; }
 :root[data-theme="dark"] .zc-sec__bg .zc-media { opacity: .08; mix-blend-mode: screen; filter: invert(1) grayscale(1); }
 .tone-accent .zc-sec__bg .zc-media { opacity: .4; mix-blend-mode: multiply; }

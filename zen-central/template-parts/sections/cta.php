@@ -10,7 +10,7 @@ echo zc_section_open( $s, 'zc-cta' ); // phpcs:ignore
 ?>
 <div class="zc-wrap">
 	<div class="zc-cta__card" data-reveal>
-		<span class="zc-cta__mark" aria-hidden="true"><?php echo zc_icon( 'lotus', 44 ); // phpcs:ignore ?></span>
+		<?php if ( '' === zc_section_deco( $s ) ) : ?><span class="zc-cta__mark" aria-hidden="true"><?php echo zc_icon( 'lotus', 44 ); // phpcs:ignore ?></span><?php endif; ?>
 		<?php if ( ! empty( $d['title'] ) ) : ?><h2 class="zc-title"><?php echo esc_html( $d['title'] ); ?></h2><?php endif; ?>
 		<?php foreach ( (array) ( $d['lines'] ?? array() ) as $zc_l ) : ?>
 			<?php if ( '' !== trim( (string) $zc_l ) ) : ?><p class="zc-cta__line"><?php echo esc_html( $zc_l ); ?></p><?php endif; ?>
