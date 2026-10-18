@@ -1097,9 +1097,7 @@ TXT;
 		$o .= '<path class="zl-leaf zl-leaf--r" d="M73 73.2m-12 0a12 3.2 0 1 0 24 0a12 3.2 0 1 0 -24 0Z" fill="url(#' . $u . 'leaf)" opacity=".92"/><path d="M73 73.2L61.6 72.2L62 74.4Z" fill="#3a2c18" opacity=".9"/>';
 		// szár + virág
 		$o .= '<g class="zl-flower"><path d="M50 73.5C50 69 50 66 50 61" stroke="#8a6a38" stroke-width="2.2" stroke-linecap="round"/><g class="zl-petals">' . $petals . '</g></g>';
-		// vízkérő buborék, hulló cseppek, csillogás
-		$o .= '<g class="zl-ask"><circle cx="77" cy="22" r="9" fill="rgba(255,255,255,.94)"/><path d="M77 15.6C74.4 19.4 73.2 21.4 73.2 23.4a3.8 3.8 0 0 0 7.6 0C80.8 21.4 79.6 19.4 77 15.6Z" fill="#c9a463"/><circle cx="75.6" cy="22.8" r=".9" fill="#fff5df"/></g>';
-		$o .= '<g fill="#f3d38a"><path class="zl-drop" style="--d:0s" d="M42 8C40.6 10.2 40 11.4 40 12.4a2 2 0 0 0 4 0C44 11.4 43.4 10.2 42 8Z"/><path class="zl-drop" style="--d:.18s" d="M51 4C49.6 6.2 49 7.4 49 8.4a2 2 0 0 0 4 0C53 7.4 52.4 6.2 51 4Z"/><path class="zl-drop" style="--d:.34s" d="M59 9C57.6 11.2 57 12.4 57 13.4a2 2 0 0 0 4 0C61 12.4 60.4 11.2 59 9Z"/></g>';
+		// (vízcsepp-buborék és hulló cseppek eltávolítva – a lótusz mindig nyitott)
 		$o .= '<g fill="#fff6c9"><path class="zl-spark" style="transform-origin:30px 36px" d="M30 32l1 3 3 1-3 1-1 3-1-3-3-1 3-1Z"/><path class="zl-spark" style="transform-origin:71px 38px" d="M71 35l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8Z"/><path class="zl-spark" style="transform-origin:50px 22px" d="M50 19l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8Z"/></g>';
 		$o .= '</g><circle cx="50" cy="50" r="49.4" stroke="rgba(255,255,255,.2)" stroke-width="1"/></svg>';
 		return $o;

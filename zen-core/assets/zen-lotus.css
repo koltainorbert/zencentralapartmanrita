@@ -31,21 +31,9 @@
 .zl-leaf--r { animation-delay: -4.5s; }
 .zl-star { animation: zlTw 3.4s ease-in-out infinite; }
 .zl-star:nth-child(2) { animation-delay: 1.1s; } .zl-star:nth-child(3) { animation-delay: 2.2s; }
-.zl-ask, .zl-drop, .zl-spark { opacity: 0; }
-.zl-ask { transform-origin: 77px 22px; }
+.zl-spark { opacity: 0; }
 
-/* szomjas: a szirmok lekonyulnak, fakulnak, és egy vízcsepp-buborékban vizet kér */
-.is-thirsty .zl-p { animation: zlDroop 2s ease forwards; animation-delay: calc(var(--i) * .05s); }
-.is-thirsty .zl-petals { filter: saturate(.4) brightness(.85); }
-.is-thirsty .zl-ask { opacity: 1; animation: zlAsk 1.6s ease-in-out infinite; transition: opacity .4s; }
-.is-thirsty .zl-flower { animation-duration: 12s; }
-
-/* öntözés: cseppek hullanak, a víz gyűrűzik, a virág újra kinyílik és csillog */
-.is-watering .zl-drop { animation: zlFall 1.05s ease-in forwards; animation-delay: var(--d); }
-.is-watering .zl-p { animation: zlRevive 1.7s .75s cubic-bezier(.34, 1.56, .64, 1) both, zlBreath 6.5s ease-in-out infinite; animation-delay: calc(.75s + var(--i) * .06s), calc(2.6s + var(--i) * .17s); }
-.is-watering .zl-rip { animation-duration: 1.6s; }
-.is-watering .zl-spark { animation: zlSpark 1.5s 1.15s ease-out both; }
-.is-watering .zl-spark:nth-child(2) { animation-delay: 1.35s; } .is-watering .zl-spark:nth-child(3) { animation-delay: 1.55s; }
+/* (szomjas / öntözés állapot eltávolítva – nincs vízcsepp, a lótusz mindig nyitott) */
 
 @keyframes zlSway { 0%, 100% { transform: rotate(-2.6deg); } 50% { transform: rotate(2.6deg); } }
 @keyframes zlBloom { 0% { transform: rotate(calc(var(--a) * .06deg)) scale(.5, .72); opacity: 0; } 22% { opacity: 1; } 100% { transform: rotate(calc(var(--a) * 1deg)) scale(1); opacity: 1; } }
