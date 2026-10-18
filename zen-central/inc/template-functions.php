@@ -159,6 +159,10 @@ function zc_section_open( $s, $extra_class = '' ) {
 	$class = trim( 'zc-sec zc-sec--' . sanitize_html_class( $s['type'] ) . ' tone-' . $tone . ' pad-' . $pad . ' ' . $extra_class );
 	$bg    = $st['bg'] ?? null;
 	$out   = '<section id="' . esc_attr( $id ) . '" class="' . esc_attr( $class ) . '" data-reveal>';
+	// A régi oldal fehér motívum-grafikái (pl. ZEN_Central_YinYang_feher) nem kitöltő háttérként, hanem kis vízjelként jelennek meg.
+	if ( '' !== zc_bg_motif( $st ) ) {
+		$bg = null;
+	}
 	if ( $bg && ! empty( $bg['url'] ) ) {
 		$ov   = isset( $st['overlay'] ) ? max( 0, min( 1, (float) $st['overlay'] ) ) : 0.35;
 		$out .= '<div class="zc-sec__bg" aria-hidden="true" style="--ov:' . esc_attr( $ov ) . '">' . zc_media( $bg, array( 'cover' => true, 'background' => true, 'alt' => '' ) ) . '</div>';
@@ -171,21 +175,65 @@ function zc_section_open( $s, $extra_class = '' ) {
  * Díszítő vízjel a szekció hátterében (a régi oldal stílusa): halvány Jin-Jang / Lótusz / Relax.
  * Admin: Szekció stílus → Díszítő vízjel, helye, mérete. „auto” = a szekciótípus alapértéke.
  */
+/**
+ * Motívum-háttér felismerése: a szekció háttérképe díszítő grafika (nem fotó)?
+ * Visszaad: 'jinjang' | 'lotus' | 'relax' (beépített vektoros logó) | 'img' (saját kép) | '' (normál kitöltő háttér).
+ * Admin: Szekció stílus → „Háttérkép módja” (automatikus / kitöltő / motívum).
+ */
+function zc_bg_motif( $st ) {
+	$bg   = $st['bg'] ?? null;
+	$url  = is_array( $bg ) ? (string) ( $bg['url'] ?? '' ) : (string) $bg;
+	$mode = (string) ( $st['bg_mode'] ?? 'auto' );
+	if ( '' === $url || 'cover' === $mode || ( is_array( $bg ) && 'video' === ( $bg['type'] ?? '' ) ) ) {
+		return '';
+	}
+	$file = strtolower( basename( (string) wp_parse_url( $url, PHP_URL_PATH ) ) );
+	if ( 'motif' !== $mode && ! preg_match( '/(_|-)(feher|fehér|white|icon|motif|motivum)\b|(_|-)(feher|white)(-|_|\.)/u', $file ) ) {
+		return '';
+	}
+	if ( preg_match( '/yin.?yang|jin.?jang/', $file ) ) {
+		return 'jinjang';
+	}
+	if ( false !== strpos( $file, 'lotus' ) || false !== strpos( $file, 'lotusz' ) ) {
+		return 'lotus';
+	}
+	if ( false !== strpos( $file, 'relax' ) ) {
+		return 'relax';
+	}
+	return 'img';
+}
+
 function zc_section_deco( $s ) {
 	if ( ! class_exists( 'Zen_Logos' ) ) {
 		return '';
 	}
-	$st   = $s['style'] ?? array();
-	$type = (string) ( $s['type'] ?? '' );
-	$def  = array(
-		'cards' => array( 'jinjang', 'tl', 'm' ),
-		'cta'   => array( 'lotus', 'r', 'm' ),
+	$st    = $s['style'] ?? array();
+	$type  = (string) ( $s['type'] ?? '' );
+	$motif = zc_bg_motif( $st );
+	$def   = array(
+		'cards'   => array( 'jinjang', 'tl', 'm' ),
+		'cta'     => array( 'lotus', 'r', 'm' ),
+		'form'    => array( 'jinjang', 'tr', 'm' ),
+		'booking' => array( 'jinjang', 'tr', 'm' ),
+		'gallery' => array( 'jinjang', 'tl', 's' ),
 	);
-	$d    = $def[ $type ] ?? array( 'none', 'r', 'm' );
+	$d     = $def[ $type ] ?? array( 'none', 'r', 'm' );
+	if ( '' !== $motif ) {
+		$d[0] = $motif; // a háttérként megadott motívum lesz a vízjel (kicsiben)
+	} elseif ( ! in_array( $type, array( 'cards', 'cta' ), true ) ) {
+		$d[0] = 'none'; // űrlap / foglaló / galéria: csak ha a régi oldalon is volt motívum
+	}
 	$deco = (string) ( $st['deco'] ?? 'auto' );
 	$deco = ( '' === $deco || 'auto' === $deco ) ? $d[0] : $deco;
 	if ( 'none' === $deco ) {
 		return '';
+	}
+	if ( 'img' === $deco ) {
+		$bg  = $st['bg'] ?? array();
+		$url = is_array( $bg ) ? ( function_exists( 'zen_media_url' ) ? zen_media_url( $bg, 'large' ) : ( $bg['url'] ?? '' ) ) : (string) $bg;
+		$pos = in_array( (string) ( $st['deco_pos'] ?? '' ), array( 'tl', 'tr', 'l', 'r', 'bl', 'br' ), true ) ? $st['deco_pos'] : $d[1];
+		$sz  = in_array( (string) ( $st['deco_size'] ?? '' ), array( 's', 'm', 'l' ), true ) ? $st['deco_size'] : $d[2];
+		return $url ? '<div class="zc-sec__deco zc-deco--' . esc_attr( $pos ) . ' zc-deco--' . esc_attr( $sz ) . ' zc-deco--img" aria-hidden="true"><span class="zc-deco__mark"><img src="' . esc_url( $url ) . '" alt="" loading="lazy" decoding="async"></span></div>' : '';
 	}
 	$pos  = (string) ( $st['deco_pos'] ?? 'auto' );
 	$pos  = in_array( $pos, array( 'tl', 'tr', 'l', 'r', 'bl', 'br' ), true ) ? $pos : $d[1];

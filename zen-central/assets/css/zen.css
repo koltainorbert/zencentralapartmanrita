@@ -255,18 +255,20 @@ html.zc-lock, html.zc-lock body { overflow: hidden; }
 .zc-sec__deco { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
 .zc-deco__mark { position: absolute; display: block; color: #fff; opacity: .55; }
 .zc-deco__mark svg { display: block; width: 100%; height: auto; }
-.zc-deco--s .zc-deco__mark { width: clamp(180px, 24vw, 340px); }
-.zc-deco--m .zc-deco__mark { width: clamp(240px, 34vw, 520px); }
-.zc-deco--l .zc-deco__mark { width: clamp(300px, 46vw, 760px); }
-.zc-deco--tl .zc-deco__mark { left: -6%; top: -14%; }
-.zc-deco--tr .zc-deco__mark { right: -6%; top: -14%; }
+.zc-deco--s .zc-deco__mark { width: clamp(130px, 15vw, 230px); }
+.zc-deco--m .zc-deco__mark { width: clamp(170px, 23vw, 360px); }
+.zc-deco--l .zc-deco__mark { width: clamp(220px, 32vw, 520px); }
+.zc-deco--tl .zc-deco__mark { left: -3%; top: -10%; }
+.zc-deco--tr .zc-deco__mark { right: -3%; top: -10%; }
 .zc-deco--l .zc-deco__mark { left: 3%; top: 50%; translate: 0 -50%; }
-.zc-deco--r .zc-deco__mark { right: 3%; top: 50%; translate: 0 -50%; }
-.zc-deco--bl .zc-deco__mark { left: -6%; bottom: -14%; }
-.zc-deco--br .zc-deco__mark { right: -6%; bottom: -14%; }
+.zc-deco--r .zc-deco__mark { right: 4%; top: 50%; translate: 0 -50%; }
+.zc-deco--bl .zc-deco__mark { left: -3%; bottom: -10%; }
+.zc-deco--br .zc-deco__mark { right: -3%; bottom: -10%; }
 .zc-deco--jinjang .zc-deco__mark { opacity: .5; transform: scaleX(-1); }
 .zc-deco--lotus .zc-deco__mark { opacity: .62; }
 .zc-deco--relax .zc-deco__mark { opacity: .5; }
+.zc-deco--img .zc-deco__mark { opacity: .7; }
+.zc-deco__mark img { display: block; width: 100%; height: auto; }
 .tone-dark .zc-deco__mark, .zc-sec:has(.zc-sec__bg) .zc-deco__mark { opacity: .06; }
 .tone-accent .zc-deco__mark { color: var(--zc-surface); }
 @media (max-width: 760px) { .zc-deco--r .zc-deco__mark, .zc-deco--l .zc-deco__mark { opacity: .35; } .zc-deco--tl .zc-deco__mark, .zc-deco--tr .zc-deco__mark { top: -8%; } }
